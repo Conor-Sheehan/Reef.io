@@ -7,13 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16D6F315C56F038B83EE24F3 /* Pods_ReefTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 083D1C103DF00AD810B7D108 /* Pods_ReefTests.framework */; };
+		46614BCD211A7F7E00AAC9B1 /* MMSlidingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46614BCC211A7F7E00AAC9B1 /* MMSlidingButton.swift */; };
+		46614BCF211B669E00AAC9B1 /* BluetoothConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46614BCE211B669E00AAC9B1 /* BluetoothConnect.swift */; };
+		46614BD2211B7DD100AAC9B1 /* FishAndAquascaping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46614BD1211B7DD100AAC9B1 /* FishAndAquascaping.swift */; };
+		46614BD4211D0A2D00AAC9B1 /* FeederAndBasin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46614BD3211D0A2C00AAC9B1 /* FeederAndBasin.swift */; };
+		46614BD6211DFC7D00AAC9B1 /* SecondHalfSetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46614BD5211DFC7D00AAC9B1 /* SecondHalfSetup.storyboard */; };
+		46614BD9211DFEB400AAC9B1 /* Planting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46614BD8211DFEB400AAC9B1 /* Planting.swift */; };
 		46E69F0D21092CEB003C466F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69F0C21092CEB003C466F /* AppDelegate.swift */; };
-		46E69F0F21092CEB003C466F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69F0E21092CEB003C466F /* ViewController.swift */; };
+		46E69F0F21092CEB003C466F /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69F0E21092CEB003C466F /* SplashScreen.swift */; };
 		46E69F1221092CEB003C466F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46E69F1021092CEB003C466F /* Main.storyboard */; };
 		46E69F1421092CEE003C466F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46E69F1321092CEE003C466F /* Assets.xcassets */; };
 		46E69F1721092CEE003C466F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46E69F1521092CEE003C466F /* LaunchScreen.storyboard */; };
 		46E69F2221092CEE003C466F /* ReefTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69F2121092CEE003C466F /* ReefTests.swift */; };
 		46E69F2D21092CEE003C466F /* ReefUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69F2C21092CEE003C466F /* ReefUITests.swift */; };
+		46E69F3B21093469003C466F /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69F3A21093469003C466F /* WelcomeVC.swift */; };
+		46E69F3D210948A3003C466F /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69F3C210948A3003C466F /* SignUpVC.swift */; };
+		46E69F3F21094C41003C466F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46E69F3E21094C41003C466F /* GoogleService-Info.plist */; };
+		46E69F412109558A003C466F /* SynergisticVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69F402109558A003C466F /* SynergisticVC.swift */; };
+		46E69F43210955A6003C466F /* IntelligentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69F42210955A6003C466F /* IntelligentVC.swift */; };
+		46E69F45210955B7003C466F /* InteractiveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69F44210955B6003C466F /* InteractiveVC.swift */; };
+		46E69F4A210E82FB003C466F /* InitialSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69F49210E82FB003C466F /* InitialSetup.swift */; };
+		46E69F50211501EE003C466F /* AnimationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69F4F211501EE003C466F /* AnimationHandler.swift */; };
+		DD664EBF8C01A48E203FCA06 /* Pods_Reef.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B622AA16385860CBD36DC789 /* Pods_Reef.framework */; };
+		F67D52D24E8170F01177AA42 /* Pods_ReefUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 705D0ED95BF00B3B1E4B4211 /* Pods_ReefUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +51,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		083D1C103DF00AD810B7D108 /* Pods_ReefTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReefTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DA43608979106943F135039 /* Pods-ReefUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReefUITests/Pods-ReefUITests.release.xcconfig"; sourceTree = "<group>"; };
+		46614BCC211A7F7E00AAC9B1 /* MMSlidingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMSlidingButton.swift; sourceTree = "<group>"; };
+		46614BCE211B669E00AAC9B1 /* BluetoothConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothConnect.swift; sourceTree = "<group>"; };
+		46614BD1211B7DD100AAC9B1 /* FishAndAquascaping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishAndAquascaping.swift; sourceTree = "<group>"; };
+		46614BD3211D0A2C00AAC9B1 /* FeederAndBasin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeederAndBasin.swift; sourceTree = "<group>"; };
+		46614BD5211DFC7D00AAC9B1 /* SecondHalfSetup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondHalfSetup.storyboard; sourceTree = "<group>"; };
+		46614BD8211DFEB400AAC9B1 /* Planting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planting.swift; sourceTree = "<group>"; };
 		46E69F0921092CEB003C466F /* Reef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reef.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E69F0C21092CEB003C466F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		46E69F0E21092CEB003C466F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		46E69F0E21092CEB003C466F /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		46E69F1121092CEB003C466F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		46E69F1321092CEE003C466F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46E69F1621092CEE003C466F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +72,21 @@
 		46E69F2821092CEE003C466F /* ReefUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReefUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E69F2C21092CEE003C466F /* ReefUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReefUITests.swift; sourceTree = "<group>"; };
 		46E69F2E21092CEE003C466F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46E69F3A21093469003C466F /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
+		46E69F3C210948A3003C466F /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		46E69F3E21094C41003C466F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		46E69F402109558A003C466F /* SynergisticVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynergisticVC.swift; sourceTree = "<group>"; };
+		46E69F42210955A6003C466F /* IntelligentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntelligentVC.swift; sourceTree = "<group>"; };
+		46E69F44210955B6003C466F /* InteractiveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveVC.swift; sourceTree = "<group>"; };
+		46E69F49210E82FB003C466F /* InitialSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSetup.swift; sourceTree = "<group>"; };
+		46E69F4F211501EE003C466F /* AnimationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationHandler.swift; sourceTree = "<group>"; };
+		705D0ED95BF00B3B1E4B4211 /* Pods_ReefUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReefUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A43A1D1FCEE94C25F02338C8 /* Pods-Reef.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reef.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reef/Pods-Reef.debug.xcconfig"; sourceTree = "<group>"; };
+		AFE4224B8CF55A9CB3B3FE82 /* Pods-Reef.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reef.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reef/Pods-Reef.release.xcconfig"; sourceTree = "<group>"; };
+		B622AA16385860CBD36DC789 /* Pods_Reef.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reef.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB95A35C07B61FAFF2BED101 /* Pods-ReefUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReefUITests/Pods-ReefUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D9B10F64E4B1D02A3A52E919 /* Pods-ReefTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReefTests/Pods-ReefTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F9FC855232C642737CEA3750 /* Pods-ReefTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReefTests/Pods-ReefTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD664EBF8C01A48E203FCA06 /* Pods_Reef.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16D6F315C56F038B83EE24F3 /* Pods_ReefTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +110,56 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F67D52D24E8170F01177AA42 /* Pods_ReefUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		326228C47C4496A68FFD9C74 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B622AA16385860CBD36DC789 /* Pods_Reef.framework */,
+				083D1C103DF00AD810B7D108 /* Pods_ReefTests.framework */,
+				705D0ED95BF00B3B1E4B4211 /* Pods_ReefUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		46614BD0211B6A3600AAC9B1 /* Scroll Views (Not used) */ = {
+			isa = PBXGroup;
+			children = (
+				46E69F402109558A003C466F /* SynergisticVC.swift */,
+				46E69F42210955A6003C466F /* IntelligentVC.swift */,
+				46E69F44210955B6003C466F /* InteractiveVC.swift */,
+			);
+			path = "Scroll Views (Not used)";
+			sourceTree = "<group>";
+		};
+		46614BD7211DFE8400AAC9B1 /* FirstHalfSetup */ = {
+			isa = PBXGroup;
+			children = (
+				46E69F1021092CEB003C466F /* Main.storyboard */,
+				46E69F3A21093469003C466F /* WelcomeVC.swift */,
+				46E69F3C210948A3003C466F /* SignUpVC.swift */,
+				46E69F49210E82FB003C466F /* InitialSetup.swift */,
+				46E69F4F211501EE003C466F /* AnimationHandler.swift */,
+			);
+			path = FirstHalfSetup;
+			sourceTree = "<group>";
+		};
+		46614BDA211DFEBE00AAC9B1 /* SecondHalfSetup */ = {
+			isa = PBXGroup;
+			children = (
+				46614BD5211DFC7D00AAC9B1 /* SecondHalfSetup.storyboard */,
+				46614BD1211B7DD100AAC9B1 /* FishAndAquascaping.swift */,
+				46614BD3211D0A2C00AAC9B1 /* FeederAndBasin.swift */,
+				46614BD8211DFEB400AAC9B1 /* Planting.swift */,
+			);
+			path = SecondHalfSetup;
+			sourceTree = "<group>";
+		};
 		46E69F0021092CEA003C466F = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +167,8 @@
 				46E69F2021092CEE003C466F /* ReefTests */,
 				46E69F2B21092CEE003C466F /* ReefUITests */,
 				46E69F0A21092CEB003C466F /* Products */,
+				8AD9B2A5FDC2B35FDE58B733 /* Pods */,
+				326228C47C4496A68FFD9C74 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,9 +185,11 @@
 		46E69F0B21092CEB003C466F /* Reef */ = {
 			isa = PBXGroup;
 			children = (
+				46E69F3E21094C41003C466F /* GoogleService-Info.plist */,
+				46614BCC211A7F7E00AAC9B1 /* MMSlidingButton.swift */,
 				46E69F0C21092CEB003C466F /* AppDelegate.swift */,
-				46E69F0E21092CEB003C466F /* ViewController.swift */,
-				46E69F1021092CEB003C466F /* Main.storyboard */,
+				46E69F0E21092CEB003C466F /* SplashScreen.swift */,
+				46E69F48210E80C3003C466F /* Setup */,
 				46E69F1321092CEE003C466F /* Assets.xcassets */,
 				46E69F1521092CEE003C466F /* LaunchScreen.storyboard */,
 				46E69F1821092CEE003C466F /* Info.plist */,
@@ -125,6 +215,30 @@
 			path = ReefUITests;
 			sourceTree = "<group>";
 		};
+		46E69F48210E80C3003C466F /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				46614BDA211DFEBE00AAC9B1 /* SecondHalfSetup */,
+				46614BD7211DFE8400AAC9B1 /* FirstHalfSetup */,
+				46614BD0211B6A3600AAC9B1 /* Scroll Views (Not used) */,
+				46614BCE211B669E00AAC9B1 /* BluetoothConnect.swift */,
+			);
+			path = Setup;
+			sourceTree = "<group>";
+		};
+		8AD9B2A5FDC2B35FDE58B733 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A43A1D1FCEE94C25F02338C8 /* Pods-Reef.debug.xcconfig */,
+				AFE4224B8CF55A9CB3B3FE82 /* Pods-Reef.release.xcconfig */,
+				D9B10F64E4B1D02A3A52E919 /* Pods-ReefTests.debug.xcconfig */,
+				F9FC855232C642737CEA3750 /* Pods-ReefTests.release.xcconfig */,
+				BB95A35C07B61FAFF2BED101 /* Pods-ReefUITests.debug.xcconfig */,
+				3DA43608979106943F135039 /* Pods-ReefUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +246,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46E69F3121092CEE003C466F /* Build configuration list for PBXNativeTarget "Reef" */;
 			buildPhases = (
+				8BDEF261D62778373FDAF481 /* [CP] Check Pods Manifest.lock */,
 				46E69F0521092CEB003C466F /* Sources */,
 				46E69F0621092CEB003C466F /* Frameworks */,
 				46E69F0721092CEB003C466F /* Resources */,
+				D9C9F574FF512C35F4DC40D7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +265,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46E69F3421092CEE003C466F /* Build configuration list for PBXNativeTarget "ReefTests" */;
 			buildPhases = (
+				900434832F5D744281105F0D /* [CP] Check Pods Manifest.lock */,
 				46E69F1921092CEE003C466F /* Sources */,
 				46E69F1A21092CEE003C466F /* Frameworks */,
 				46E69F1B21092CEE003C466F /* Resources */,
@@ -167,6 +284,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46E69F3721092CEE003C466F /* Build configuration list for PBXNativeTarget "ReefUITests" */;
 			buildPhases = (
+				3619AD2621F093BF5573F23F /* [CP] Check Pods Manifest.lock */,
 				46E69F2421092CEE003C466F /* Sources */,
 				46E69F2521092CEE003C466F /* Frameworks */,
 				46E69F2621092CEE003C466F /* Resources */,
@@ -230,7 +348,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				46E69F1721092CEE003C466F /* LaunchScreen.storyboard in Resources */,
+				46E69F3F21094C41003C466F /* GoogleService-Info.plist in Resources */,
 				46E69F1421092CEE003C466F /* Assets.xcassets in Resources */,
+				46614BD6211DFC7D00AAC9B1 /* SecondHalfSetup.storyboard in Resources */,
 				46E69F1221092CEB003C466F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,12 +371,107 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3619AD2621F093BF5573F23F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReefUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8BDEF261D62778373FDAF481 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Reef-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		900434832F5D744281105F0D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReefTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9C9F574FF512C35F4DC40D7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Reef/Pods-Reef-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Reef/Pods-Reef-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		46E69F0521092CEB003C466F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46E69F0F21092CEB003C466F /* ViewController.swift in Sources */,
+				46E69F45210955B7003C466F /* InteractiveVC.swift in Sources */,
+				46E69F50211501EE003C466F /* AnimationHandler.swift in Sources */,
+				46614BD9211DFEB400AAC9B1 /* Planting.swift in Sources */,
+				46614BCD211A7F7E00AAC9B1 /* MMSlidingButton.swift in Sources */,
+				46E69F4A210E82FB003C466F /* InitialSetup.swift in Sources */,
+				46614BCF211B669E00AAC9B1 /* BluetoothConnect.swift in Sources */,
+				46E69F43210955A6003C466F /* IntelligentVC.swift in Sources */,
+				46614BD4211D0A2D00AAC9B1 /* FeederAndBasin.swift in Sources */,
+				46E69F3D210948A3003C466F /* SignUpVC.swift in Sources */,
+				46E69F3B21093469003C466F /* WelcomeVC.swift in Sources */,
+				46E69F0F21092CEB003C466F /* SplashScreen.swift in Sources */,
+				46614BD2211B7DD100AAC9B1 /* FishAndAquascaping.swift in Sources */,
+				46E69F412109558A003C466F /* SynergisticVC.swift in Sources */,
 				46E69F0D21092CEB003C466F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,6 +643,7 @@
 		};
 		46E69F3221092CEE003C466F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A43A1D1FCEE94C25F02338C8 /* Pods-Reef.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -446,6 +662,7 @@
 		};
 		46E69F3321092CEE003C466F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFE4224B8CF55A9CB3B3FE82 /* Pods-Reef.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -464,6 +681,7 @@
 		};
 		46E69F3521092CEE003C466F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9B10F64E4B1D02A3A52E919 /* Pods-ReefTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -485,6 +703,7 @@
 		};
 		46E69F3621092CEE003C466F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9FC855232C642737CEA3750 /* Pods-ReefTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -506,6 +725,7 @@
 		};
 		46E69F3821092CEE003C466F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB95A35C07B61FAFF2BED101 /* Pods-ReefUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -526,6 +746,7 @@
 		};
 		46E69F3921092CEE003C466F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DA43608979106943F135039 /* Pods-ReefUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
