@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Trends-->
+        <scene sceneID="UsF-gs-pKF">
+            <objects>
+                <viewController storyboardIdentifier="Trends" id="Xjt-nm-8lW" customClass="TrendsVC" customModule="Reef" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="exB-WM-mka">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="YGh-nJ-aOx"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Trends" image="Trend Icon" id="M6E-Sk-k4D"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X4f-0m-9zA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="554" y="143"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="wkQ-x4-v3I">
+            <objects>
+                <viewController storyboardIdentifier="Home" id="gw5-Gs-5ap" customClass="HomeVC" customModule="Reef" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ktu-La-mML">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="DRS-he-GB1"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="Home Icon" id="dLY-nA-rhh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AgS-aZ-lux" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-238" y="144"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="79a-4l-BVk">
+            <objects>
+                <tabBarController storyboardIdentifier="TabController" id="IgU-Y1-GDA" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NM2-1j-HjQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.41809301339999999" green="0.59353188450000005" blue="0.57683421759999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                            <color key="value" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="gw5-Gs-5ap" kind="relationship" relationship="viewControllers" id="ic1-rv-pLv"/>
+                        <segue destination="Xjt-nm-8lW" kind="relationship" relationship="viewControllers" id="uww-VM-m2U"/>
+                        <segue destination="0W2-ZI-Tjl" kind="relationship" relationship="viewControllers" id="Tvl-4A-qbt"/>
+                        <segue destination="VEq-ih-Mej" kind="relationship" relationship="viewControllers" id="tdE-4q-TFA"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QwD-cQ-ENC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-174" y="-643"/>
+        </scene>
+        <!--Guide-->
+        <scene sceneID="YHO-EL-UUg">
+            <objects>
+                <viewController storyboardIdentifier="Guide" id="0W2-ZI-Tjl" customClass="GuideVC" customModule="Reef" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wXv-QE-RKv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="VMg-ze-lE2"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Guide" image="Guide icon" id="WcK-o1-6ke"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GF9-qZ-SRm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1324" y="143"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="yRS-0N-rBb">
+            <objects>
+                <viewController storyboardIdentifier="Settings" id="VEq-ih-Mej" customClass="SettingsVC" customModule="Reef" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fan-eb-msg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="IIn-3p-SMr"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="Settings" id="ie6-1Q-dBS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6D0-0q-Ycd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2058" y="143"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Guide icon" width="25" height="34"/>
+        <image name="Home Icon" width="32" height="30"/>
+        <image name="Settings" width="31" height="31"/>
+        <image name="Trend Icon" width="40" height="40"/>
+    </resources>
+</document>
