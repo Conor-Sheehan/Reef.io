@@ -27,7 +27,7 @@ class ConnectVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.connectedToReef), name: NSNotification.Name(rawValue: "connected"), object: nil)
         
         // Set setup location identifier to 1
-        //UserDefaults.standard.set(1, forKey: "setupLocation")
+        UserDefaults.standard.set(1, forKey: "setupLocation")
     }
     
 

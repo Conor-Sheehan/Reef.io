@@ -14,7 +14,6 @@ extension AppDelegate: CBPeripheralDelegate {
     // Discovered bluetooth device services
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
         // Look through the service list
-        
         if let servicePeripheral = peripheral.services! as [CBService]?{
             for service in servicePeripheral{
                 peripheral.discoverCharacteristics(nil, for: service)
@@ -29,7 +28,7 @@ extension AppDelegate: CBPeripheralDelegate {
         // Find characteristics of BLE Device
         for characteristic in service.characteristics! {
             
-            if(characteristic.uuid == CBUUID(string: UuidCharacteristic)){
+            if (characteristic.uuid == CBUUID(string: UuidCharacteristic)) {
                 
                 let thisCharacteristic = characteristic as CBCharacteristic
                 
@@ -38,7 +37,8 @@ extension AppDelegate: CBPeripheralDelegate {
                 self.reefBluetooth.setNotifyValue(true, for: thisCharacteristic)
                 
                 // After connecting and verifying characteristics, then check in Reef
-                checkInWithReef()
+                // If setup is complete, then check in with Reef
+                if setupComplete { checkInWithReef() }
             }
         }
     }
@@ -119,15 +119,28 @@ extension AppDelegate {
         }
         
         // CHECK-IN RESPONSE
-        if responseMsg.contains("OKC")          {
-            instantNotification(notificationTitle: "Connected with Reef", notifcationBody: "You connected with Reef: " + responseMsg)
-            self.appBrain.parseBluetoothMessage(message: responseMsg); sendMessage(message: "0D1");  }
-        else if responseMsg.contains("OKD1")    { self.appBrain.parseBluetoothMessage(message: responseMsg); sendMessage(message: "0D2");  }
-        else if responseMsg.contains("OKD2")    { if appIsInBackground { stayConnected = false; disconnectFromReef() }}
+        if responseMsg.contains("OKC") {
+            
+            // If user has completed setup, then store the data and request sensor data from Reef
+            if setupComplete { appBrain.parseBluetoothMessage(message: responseMsg); sendMessage(message: "0D1") }
+            // Else, notify the setup VC that we have established a complete connection with Reef
+            else { NotificationCenter.default.post(name: NSNotification.Name(rawValue: "connected"), object: nil)  }
+        }
+            
+        // Aquarium Pumps Response
+        else if responseMsg.contains("OKA,1") { NotificationCenter.default.post(name: NSNotification.Name(rawValue: "pumpsTurnedOn"), object: nil) }
+        else if responseMsg.contains("OKB,4") {
+            appBrain.parseBluetoothMessage(message: responseMsg)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "allBasinsFilled"), object: nil) }
+            
+        else if responseMsg.contains("OKD1")    { appBrain.parseBluetoothMessage(message: responseMsg); sendMessage(message: "0D2");  }
+        else if responseMsg.contains("OKD2")    { if appIsInBackground { stayConnected = false; disconnectFromReef() } }
         else if responseMsg.contains("OKS")     { NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updatedSunrise"), object: nil) }
         else if responseMsg.contains("OKR")     { NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updatedAqrLight"), object: nil) }
+        
+        else if responseMsg.contains("OKH")     { NotificationCenter.default.post(name: NSNotification.Name(rawValue: "setDayHours"), object: nil) }
         else if responseMsg.contains("OKB")     {
-            self.appBrain.parseBluetoothMessage(message: responseMsg)
+            appBrain.parseBluetoothMessage(message: responseMsg)
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refilledBasin"), object: nil)
         }
         else { self.appBrain.parseBluetoothMessage(message: responseMsg) }
@@ -137,10 +150,12 @@ extension AppDelegate {
     /// Sends a message to Reef
     func sendMessage(message: String) {
         
-        // Package string into Data Object
-        if let data = message.data(using: String.Encoding.utf8) {
-            self.reefBluetooth.writeValue(data, for: self.writeCharacteristic, type: self.writeType)
-            print("Sending message to Reef: " + message)
+        if connected {
+            // Package string into Data Object
+            if let data = message.data(using: String.Encoding.utf8) {
+                self.reefBluetooth.writeValue(data, for: self.writeCharacteristic, type: self.writeType)
+                print("Sending message to Reef: " + message)
+            }
         }
     }
     

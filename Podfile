@@ -17,9 +17,9 @@ target 'Reef' do
     # Pods for testing
   end
 
-  pod 'Hero'
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
+  pod 'QuickTableViewController'
 
 end

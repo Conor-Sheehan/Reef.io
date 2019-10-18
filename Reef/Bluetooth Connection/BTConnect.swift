@@ -26,19 +26,23 @@ extension AppDelegate: CBCentralManagerDelegate {
         
     }
     
-// Called after a bluetooth device is discovered
+    // Called after a bluetooth device is discovered
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         
         if let deviceName = peripheral.name {
             
             if deviceName == "DSDTECH HM-10" {
                 
-                print("\nConnecting with Reef")
-            
-                self.connectionController.stopScan()
-                self.reefBluetooth = peripheral
-                self.reefBluetooth.delegate = self
-                self.connected = true
+                print("\nDiscovered Reef")
+                
+                // REEF CONNECTION PROTOCOL
+                connectionController.stopScan()     // Stop Scanning for Peripherals
+                reefBluetooth = peripheral          // Set reef to discovered peripheral
+                reefBluetooth.delegate = self       // Set reef's bluetooth delegate to self to receive messages
+                connected = true
+                
+                // If app is not in Background, Then notify VC of connection state change
+                if !appIsInBackground { NotificationCenter.default.post(name: NSNotification.Name(rawValue: "connectionStateChange"), object: nil)  }
                 
                 // Connect to the perhipheral proper
                 connectionController.connect(self.reefBluetooth, options: nil )
@@ -60,6 +64,7 @@ extension AppDelegate: CBCentralManagerDelegate {
     // Called anytime that the peripheral is disconnected
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
         connected = false
+        if !appIsInBackground { NotificationCenter.default.post(name: NSNotification.Name(rawValue: "connectionStateChange"), object: nil)  }
         print("Disconnecting from Reef")
         scanForReef()
     }

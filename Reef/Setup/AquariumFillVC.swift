@@ -27,7 +27,7 @@ class AquariumFillVC: UIViewController {
         activityIndicator.alpha = 0.0
         
         // Set setup location identifier to 3
-        // UserDefaults.standard.set(3, forKey: "setupLocation")
+        UserDefaults.standard.set(3, forKey: "setupLocation")
         
         // FOR FUTURE DEVELOPMENT //
         // Animate aquarium to fill and empty for more enjoyable UX
@@ -70,6 +70,13 @@ class AquariumFillVC: UIViewController {
         filledButton.setTitle("Filled!", for: .normal)
         activityIndicator.stopAnimating()
         activityIndicator.alpha = 0.0
+        
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            // Set aquarium to full
+            appDelegate.appBrain.setAquariumStatus(status: "Full")
+            // Store start date of the aquarium
+            appDelegate.appBrain.storeEcosystemStartDate()
+        }
         
         // Perform Segue to Basin Refill VC
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {

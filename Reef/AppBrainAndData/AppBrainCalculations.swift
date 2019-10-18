@@ -38,26 +38,28 @@ extension AppBrain {
     }
     
     func daysSinceDate(date: Date) -> Int {
-        return (Calendar.current.dateComponents([.day], from: date, to: Date()).day! + 1)
-        
+        let currentDate = Calendar.current.startOfDay(for: Date())
+        let firstDate = Calendar.current.startOfDay(for: date)
+        return Calendar.current.dateComponents([.day], from: firstDate, to: currentDate).day!
     }
     
     // findGrowStage() computes the growStage based on day counts,
     // plant height, and day hours
-    func findGrowStage(){
+    func findGrowStage() {
+        
         let daysSinceSeedStarted: Int = self.daysSinceDate(date: self.seedlingStartDate!)
         
-        if(daysSinceSeedStarted <= 16){
+        print("DAYS SINCE SEED STARTED", daysSinceSeedStarted)
+        
+        if daysSinceSeedStarted <= 16 {
             self.growStage = 0
-            self.currentDayCountInStage = daysSinceSeedStarted
-            self.daysUntilNextStage = 16 - daysSinceSeedStarted
-            self.percentStage = Double((16 - self.daysUntilNextStage))/16.0
+            let daysUntilNextStage = 16 - daysSinceSeedStarted
+            self.percentStage = Double((16 - daysUntilNextStage))/16.0
         }
-        else if(daysSinceSeedStarted > 16){
+        else if daysSinceSeedStarted > 16 {
             self.growStage = 1
-            self.currentDayCountInStage = daysSinceSeedStarted - 16
-            self.daysUntilNextStage = 60 - self.currentDayCountInStage
-            self.percentStage = Double((60 - self.daysUntilNextStage))/60.0
+            let daysUntilNextStage = 60 - (daysSinceSeedStarted - 16)
+            self.percentStage = Double((60 - daysUntilNextStage))/60.0
         }
         
         // Add functionality to compute when to switch to flowering (if mode is auto-flower)
@@ -65,22 +67,30 @@ extension AppBrain {
         // If mode is manual then just check if user set 12 or 18 hours
     }
     
-    func parseBluetoothMessage(value: String){
+    func parseBluetoothMessage(message: String){
         
         // If app checked in with Reef
-        if value.contains("OKC") {
-            compiledData = ""
-            compiledData += value
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25){
-                self.storeBasinReadings(basinString: self.compiledData)
+        if message.contains("OKC") {
+            let BasinString = self.matches(for: "^OKC,[0-9]{1,3},[0-9]{1,3},[0-9]{1,3},$", in: message)
+            
+            if BasinString.count != 0 {
+                
+                let basinSubString = message.split(separator: ",")
+                basinLevels[0] = Int(basinSubString[1])!
+                basinLevels[1] = Int(basinSubString[2])!
+                basinLevels[2] = Int(basinSubString[3])!
+                
+                self.storeBasinLevels(nutrientLevel: basinLevels[0], pHDownLevel: basinLevels[1], pHUpLevel: basinLevels[2])
+                
+                print("Nutrient lvl:", basinLevels[0], "\npH Up Lvl:", basinLevels[1], "\npH Down Lvl:", basinLevels[2])
             }
             
         }
             
-        // If app is receiving pH and plant Height Data
-        else if value.contains("OKD1") {
+        // If app is receiving pH and plant Height Array Data
+        else if message.contains("OKD1") {
             compiledData = ""
-            compiledData += value
+            compiledData += message
             
             print("ADDING TO COMPILED DATA")
             
@@ -91,19 +101,55 @@ extension AppBrain {
             
         }
         // If app is receiving basin refilled data
-        else if value.contains("OKB") {
-            let responseSplit = value.split(separator: ",")
+        else if message.contains("OKB") {
+            
+            let responseSplit = message.split(separator: ",")
             let basinNumber = Int(responseSplit[1])!
             
-            storeRefilledBasin(basin: basinNumber)
+            print("Refilling basin #", basinNumber)
+            
+            switch basinNumber {
+            case 1:
+                self.storeBasinLevels(nutrientLevel: 70, pHDownLevel: -1, pHUpLevel: -1)
+                basinLevels[0] = 70
+            case 2:
+                self.storeBasinLevels(nutrientLevel: -1, pHDownLevel: 70, pHUpLevel: -1)
+                basinLevels[1] = 70
+            case 3:
+                self.storeBasinLevels(nutrientLevel: -1, pHDownLevel: -1, pHUpLevel: 70)
+                basinLevels[2] = 70
+            default:
+                print("Entering the default case")
+                storeBasinLevels(nutrientLevel: 70, pHDownLevel: 70, pHUpLevel: 70)
+                basinLevels[0] = 70; basinLevels[1] = 70; basinLevels[2] = 70;
+            }
+            
         }
             
         else {
-            print("ADDING TO COMPILED DATA IN ELSE LOOP")
-            compiledData += value
+            print("ADDING TO COMPILED DATA")
+            compiledData += message
         }
     }
     
+    
+    
+    
+    /// matches() is a function that returns the substrings that match the regex
+    func matches(for regex: String, in text: String) -> [String] {
+        
+        do {
+            let regex = try NSRegularExpression(pattern: regex)
+            let results = regex.matches(in: text,
+                                        range: NSRange(text.startIndex..., in: text))
+            return results.map {
+                String(text[Range($0.range, in: text)!])
+            }
+        } catch let error {
+            print("invalid regex: \(error.localizedDescription)")
+            return []
+        }
+    }
     
     
 }

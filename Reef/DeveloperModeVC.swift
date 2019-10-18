@@ -86,12 +86,12 @@ class DeveloperModeVC: UIViewController, UITextFieldDelegate {
     }
     @IBAction func firepHUp(_ sender: UIButton) {
         self.responseMessages = ""
-        appDeleg.sendMessage(message: "0F2")
+        appDeleg.sendMessage(message: "0F3")
         stringSent.text = "Fire pH Up"
     }
     @IBAction func firepHDown(_ sender: UIButton) {
         self.responseMessages = ""
-        appDeleg.sendMessage(message: "0F3")
+        appDeleg.sendMessage(message: "0F2")
         stringSent.text = "Fire pH Down"
     }
     

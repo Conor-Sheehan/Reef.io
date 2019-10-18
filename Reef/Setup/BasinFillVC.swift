@@ -27,7 +27,7 @@ class BasinFillVC: UIViewController {
         activityIndicator.alpha = 0.0
         
         // Set setup location identifier to 4
-        // UserDefaults.standard.set(4, forKey: "setupLocation")
+        UserDefaults.standard.set(4, forKey: "setupLocation")
     }
     
     @IBAction func filledBasins(_ sender: UIButton) {
@@ -70,7 +70,7 @@ class BasinFillVC: UIViewController {
         // Perform Segue to Basin Refill VC
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
             // Perform Segue to Next Steps VC
-            self.performSegue(withIdentifier: "segueToInfo", sender: self)
+            self.performSegue(withIdentifier: "segueToSunrise", sender: self)
         }
     }
     

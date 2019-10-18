@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Hero
 import Firebase
 
 class SignUpVC: UIViewController, UITextFieldDelegate {
@@ -33,7 +32,7 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
         SignUp.frame = CGRect(x: self.view.frame.midX - 110, y:  self.view.frame.midY*1.7, width: 220, height: 44)
         
         // Set setup location identifier to 2
-        // UserDefaults.standard.set(2, forKey: "setupLocation")
+         UserDefaults.standard.set(2, forKey: "setupLocation")
         
     }
 

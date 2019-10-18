@@ -10,110 +10,146 @@ import UIKit
 import QuickTableViewController
 
 class SettingsNavVC: QuickTableViewController {
+    
+    var msgCounter: Int = 1
+    
+    var brain: AppBrain!
+    var appDeleg: AppDelegate!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if(brain.getSettings().navigatingTo == "GrowMode"){
-            self.setGrowModeTable()
-        }
-        else if(brain.getSettings().navigatingTo == "AquariumLighting"){
-            self.setAquariumLightingTable()
+        // Load the app delegate to activate instabug and access app delegate data model singleton
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            appDeleg = appDelegate
+            brain = appDelegate.appBrain
         }
         
-        else{
-            self.setFeederModeTable()
+        // User is navigating to grow mode 
+        if brain.getSettings().navigatingTo == "GrowMode" {
+            self.setGrowModeTable()
         }
+        else if brain.getSettings().navigatingTo == "AquariumLighting" {
+//            self.setAquariumLightingTable()
+        }
+        else {
+            self.setAquariumStatusTable()
+        }
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updatedAqrLight), name: NSNotification.Name(rawValue: "updatedAqrLight"), object: nil)
+    }
 
-    }
     
+    /// Sets the settings grow mode table to select auto flower or manual flowering mode
     func setGrowModeTable(){
-        if(brain.getSettings().growMode == "Auto-Flower"){
-            tableContents = [
-                RadioSection(title: "Grow Mode", options: [
-                    OptionRow(title: "Auto-Flower", isSelected: true, action: { [weak self] _ in
-                        brain.setGrowMode(GrowMode: "Auto-Flower") }),
-                    OptionRow(title: "Manual", isSelected: false, action: { [weak self] _ in
-                        brain.setGrowMode(GrowMode: "Manual") }),
-                    ], footer: "See RadioSection for more details."),
-            ]
-        }
-        else{
-            tableContents = [
-                RadioSection(title: "Grow Mode", options: [
-                    OptionRow(title: "Auto-Flower", isSelected: false, action: { [weak self] _ in
-                        brain.setGrowMode(GrowMode: "Auto-Flower") }),
-                    OptionRow(title: "Manual", isSelected: true, action: { [weak self] _ in
-                        brain.setGrowMode(GrowMode: "Manual") }),
-                    ], footer: "See RadioSection for more details."),
-                
-            ]
-        }
+        var autoFlower = false
+        if brain.getSettings().growMode == "Auto-Flower" { autoFlower = true }
+        
+        tableContents = [
+            RadioSection(title: "Grow Mode", options: [
+                OptionRow(text: "Auto-Flower", isSelected: autoFlower, action: { [weak self] _ in
+                    self?.brain.setGrowMode(GrowMode: "Auto-Flower") }),
+                OptionRow(text: "Manual", isSelected: !autoFlower, action: { [weak self] _ in
+                    self?.brain.setGrowMode(GrowMode: "Manual") }),
+                ], footer: "If you select Auto-Flower, Reef will automatically determine when to flower your grow."),
+        ]
+    }
+    
+    func setAquariumStatusTable(){
+        
+        var status = false
+        if brain.getSettings().aquariumStatus == "Full" { status = true }
+        
+        tableContents = [
+            RadioSection(title: "Aquarium Status", options: [
+                OptionRow(text: "Full", isSelected: status, action: { [weak self] _ in
+                   self?.changeAquariumStatus(status: true)  }),
+                OptionRow(text: "Empty", isSelected: !status, action: { [weak self] _ in
+                    self?.changeAquariumStatus(status: false)  }),
+                ], footer: "If you select empty, your smart aquarium features will turn off."),
+        ]
     }
     
     
-    func setFeederModeTable(){
-        if(brain.getSettings().feederMode == "Auto-Feed"){
-            tableContents = [
-                RadioSection(title: "Fish Feeder Mode", options: [
-                    OptionRow(title: "Auto-Feed", isSelected: true, action: { [weak self] _ in
-                        brain.setFeederMode(FeederMode: "Auto-Feed") }),
-                    OptionRow(title: "Manual", isSelected: false, action: { [weak self] _ in
-                        brain.setFeederMode(FeederMode: "Manual") }),
-                    ], footer: "If you select Manual, you'll receive daily notifications to feed your fish. Auto-Feed will automatically feed your fish twice a day."),
-            ]
+//    func setAquariumLightingTable(){
+//
+//        var daylight = false
+//        var ocean = false
+//        var wavey = false
+//
+//        if brain.getSettings().aquariumLighting == "Daylight" { daylight = true }
+//        else if brain.getSettings().aquariumLighting == "Ocean" { ocean = true }
+//        else{ wavey = true }
+//
+//        tableContents = [
+//            RadioSection(title: "Aquarium Lighting", options: [
+//                OptionRow(title: "Daylight", isSelected: daylight, action: { [weak self] _ in
+//                    self?.changeAquariumLight(lightSetting: 0) }),
+//                OptionRow(title: "Ocean", isSelected: ocean, action: { [weak self] _ in
+//                    self?.changeAquariumLight(lightSetting: 1) }),
+//                OptionRow(title: "Wavey", isSelected: wavey, action: { [weak self] _ in
+//                    self?.changeAquariumLight(lightSetting: 2) }), ]),
+//        ]
+//    }
+    
+//    func changeAquariumLight(lightSetting: Int) {
+//        if appDeleg.connected {
+//
+//            switch lightSetting {
+//                case 0: brain.setAquariumLighting(AquariumLighting: "Daylight")
+//                case 1: brain.setAquariumLighting(AquariumLighting: "Ocean")
+//                default: brain.setAquariumLighting(AquariumLighting: "Wavey")
+//            }
+//
+//            if msgCounter == 1 {
+//                msgCounter += 1
+//            }
+//            else{
+//                print("Light setting", lightSetting)
+//                appDeleg.sendMessage(message: "0R" + String(lightSetting))
+//                msgCounter = 1
+//            }
+//
+//        }
+//        else{
+//            self.setAquariumLightingTable()
+//            self.alertView(ttle: "Disconnected from Reef", msg: "To update Reef's settings connect to Reef and try again")
+//        }
+//    }
+    
+    /// Changes the status of the smart aquarium features (On/Off)
+    func changeAquariumStatus(status: Bool) {
+
+        if appDeleg.connected {
+            if status {
+                if msgCounter == 1 { msgCounter += 1 }
+                else { appDeleg.sendMessage(message: "0A1"); msgCounter = 1 }
+                self.brain.setAquariumStatus(status: "Full")
+            }
+            else {
+                if msgCounter == 1 { msgCounter += 1 }
+                else { appDeleg.sendMessage(message: "0A0"); msgCounter = 1 }
+                self.brain.setAquariumStatus(status: "Empty")
+            }
         }
-        else{
-            tableContents = [
-                RadioSection(title: "Fish Feeder Mode", options: [
-                    OptionRow(title: "Auto-Feed", isSelected: false, action: { [weak self] _ in
-                        brain.setFeederMode(FeederMode: "Auto-Feed") }),
-                    OptionRow(title: "Manual", isSelected: true, action: { [weak self] _ in
-                        brain.setFeederMode(FeederMode: "Manual") }),
-                    ], footer: "If you select Manual, you'll receive daily notifications to feed your fish. Auto-Feed will automatically feed your fish twice a day."),
-            ]
+        else {
+            self.alertView(ttle: "Disconnected from Reef", msg: "To update Reef's settings connect to Reef and try again")
+            self.setAquariumStatusTable()
         }
     }
     
-    func setAquariumLightingTable(){
-        if(brain.getSettings().aquariumLighting == "Ocean"){
-            tableContents = [
-                RadioSection(title: "Aquarium Lighting", options: [
-                    OptionRow(title: "Ocean", isSelected: true, action: { [weak self] _ in
-                        brain.setAquariumLighting(AquariumLighting: "Ocean") }),
-                    OptionRow(title: "Daylight", isSelected: false, action: { [weak self] _ in
-                        brain.setAquariumLighting(AquariumLighting: "Daylight") }),
-                    OptionRow(title: "Tropical", isSelected: false, action: { [weak self] _ in
-                        brain.setAquariumLighting(AquariumLighting: "Tropical") }),
-                    ], footer: "If you select Manual, you'll receive daily notifications to feed your fish."),
-            ]
-        }
-        else if(brain.getSettings().aquariumLighting == "Daylight"){
-            tableContents = [
-                RadioSection(title: "Aquarium Lighting", options: [
-                    OptionRow(title: "Ocean", isSelected: false, action: { [weak self] _ in
-                        brain.setAquariumLighting(AquariumLighting: "Ocean") }),
-                    OptionRow(title: "Daylight", isSelected: true, action: { [weak self] _ in
-                        brain.setAquariumLighting(AquariumLighting: "Daylight") }),
-                    OptionRow(title: "Tropical", isSelected: false, action: { [weak self] _ in
-                        brain.setAquariumLighting(AquariumLighting: "Tropical") }),
-                    ], footer: "If you select Manual, you'll receive daily notifications to feed your fish."),
-            ]
-        }
-        else{
-            tableContents = [
-                RadioSection(title: "Aquarium Lighting", options: [
-                    OptionRow(title: "Ocean", isSelected: false, action: { [weak self] _ in
-                        brain.setAquariumLighting(AquariumLighting: "Ocean") }),
-                    OptionRow(title: "Daylight", isSelected: false, action: { [weak self] _ in
-                        brain.setAquariumLighting(AquariumLighting: "Daylight") }),
-                    OptionRow(title: "Tropical", isSelected: true, action: { [weak self] _ in
-                        brain.setAquariumLighting(AquariumLighting: "Tropical") }),
-                    ], footer: "If you select Manual, you'll receive daily notifications to feed your fish."),
-            ]
-        }
+    @objc func updatedAqrLight() { alertView(ttle: "Updated!", msg: "Aquarium LED has been successfully updated.") }
+    
+    
+    func alertView(ttle: String, msg: String){
+        
+        let alert = UIAlertController(title: ttle, message: msg, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
 
 
 }
+

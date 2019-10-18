@@ -12,7 +12,7 @@ class InfoVC: UIViewController {
     
     let infoTitles = ["Introducing Fish.", "Cycle.", "Plant New Life."]
     let infoDescriptions = ["We reccomend waiting 2-3 days after setting up Reef to introduce new life.",
-                            "During this time, Reef will cycle and filter the water to prepare it for new life.",
+                            "During this time, Reef will cycle and filter the water to prepare it for your fish farmers.",
                             "You may take this time to begin planting the seeds you wish to grow."]
     let infoImages: [UIImage] = [#imageLiteral(resourceName: "Fish Group"), #imageLiteral(resourceName: "Fish single"),#imageLiteral(resourceName: "Plant-1")]
     let sliderImages: [UIImage] = [ #imageLiteral(resourceName: "Slider Circles1"), #imageLiteral(resourceName: "Slider Circles2"), #imageLiteral(resourceName: "Slider Circles3")]
@@ -32,6 +32,8 @@ class InfoVC: UIViewController {
         addGestureRecognizers()
         completeButton.alpha = 0.0
         
+        // Set setup location identifier to 6
+        UserDefaults.standard.set(6, forKey: "setupLocation")
     }
     
     func addGestureRecognizers() {
@@ -43,6 +45,12 @@ class InfoVC: UIViewController {
         swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
         self.view.addGestureRecognizer(swipeLeft)
     }
+    
+    
+    @IBAction func completeSetup(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "segueToHome", sender: self)
+    }
+    
     
     @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {

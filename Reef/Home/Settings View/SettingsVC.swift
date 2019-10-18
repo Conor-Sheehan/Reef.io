@@ -9,7 +9,6 @@
 import UIKit
 import QuickTableViewController
 
-var brain = AppBrain()
 
 class SettingsVC:  QuickTableViewController {
    
@@ -17,58 +16,77 @@ class SettingsVC:  QuickTableViewController {
     @IBOutlet weak var pickerBackground: UIImageView!
     @IBOutlet weak var doneButton: UIButton!
     
+    var brain: AppBrain!
+    var appDeleg: AppDelegate!
+    
+    var growStartedText = "Start Grow"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.bringSubview(toFront: self.pickerBackground)
-        self.view.bringSubview(toFront: self.timePicker)
-        self.view.bringSubview(toFront: self.doneButton)
+        self.navigationController?.isNavigationBarHidden = false
+        
+        self.view.bringSubviewToFront(self.pickerBackground)
+        self.view.bringSubviewToFront(self.timePicker)
+        self.view.bringSubviewToFront(self.doneButton)
         
         self.timePicker.alpha = 0.0
         self.pickerBackground.alpha = 0.0
         self.doneButton.alpha = 0.0
-
+    
+        
+        // Load the app delegate to activate instabug and access app delegate data model singleton
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            appDeleg = appDelegate
+            brain = appDelegate.appBrain
+        }
+        
+        if brain.getSettings().growStarted { growStartedText = "End Grow"}
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updatedSunrise), name: NSNotification.Name(rawValue: "updatedSunrise"), object: nil)
     }
     
-    func setTableContents(){
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    /// Sets the contents in the settings table anytime data is updated
+    func setTableContents() {
+        
         tableContents = [
-            
             Section(title: "Grow Settings", rows: [
-                NavigationRow(title: "Grow Mode", subtitle: .rightAligned(brain.getSettings().growMode), icon: nil, action: { [weak self] in self?.navigateToGrowMode($0)}),
-                NavigationRow(title: "Sunrise Time", subtitle: .rightAligned(brain.getSettings().sunriseTime), icon: nil, action: { [weak self] in self?.showTimePicker($0) }),
-                NavigationRow(title: "Day Length", subtitle: .rightAligned("18 Hours"), icon: nil)
+                NavigationRow(text: "Grow Mode", detailText: .value1(brain.getSettings().growMode), icon: .none, action: { [weak self] in self?.navigateToGrowMode($0)}),
+                NavigationRow(text: "Sunrise Time", detailText: .value1(brain.getSettings().sunriseTime), icon: .none, action: { [weak self] in self?.showTimePicker($0) }),
+                NavigationRow(text: "Day Length", detailText: .value1("18 Hours"), icon: nil)
                 ]),
             
             Section(title: "Aquarium Settings", rows: [
-                NavigationRow(title: "Aquarium LED", subtitle: .rightAligned(brain.getSettings().aquariumLighting), icon: nil, action: { [weak self] in self?.navigateToAquariumLighting($0) }),
-                NavigationRow(title: "Fish Feeder Mode", subtitle: .rightAligned(brain.getSettings().feederMode), icon: nil, action: { [weak self] in self?.navigateToFeederMode($0) }),
+                NavigationRow(title: "Aquarium Status", subtitle: .rightAligned(brain.getSettings().aquariumStatus), icon: nil, action: { [weak self] in self?.navigateToAquariumStatus($0) }),
                 ]),
             
             Section(title: "App Settings", rows: [
                 SwitchRow(title: "Notifications", switchValue: true, action: { _ in }),
                 ], footer: "Reef will send you notifications about the progress of your grow and when you need to interact with the ecosystem."),
             
-            Section(title: "Start Grow", rows: [
-                TapActionRow(title: "Start Grow", action: { [weak self] in self?.showAlert($0) })
+            Section(title: "Grow State", rows: [
+                TapActionRow(title: growStartedText, action: { [weak self] in self?.startEndGrow($0) })
                 ]),
-            
         ]
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print("View Did Appear")
         self.setTableContents()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
-    private func showAlert(_ sender: Row) {
-        // ...
+    private func startEndGrow(_ sender: Row) {
+       print("Start Grow")
+        if growStartedText == "End Grow" {
+            brain.setGrowStartedState(GrowStarted: false)
+        }
+        else { brain.setGrowStartedState(GrowStarted: true) }
+        
+        self.setTableContents()
     }
     
     private func navigateToGrowMode(_ sender: Row){
@@ -81,8 +99,8 @@ class SettingsVC:  QuickTableViewController {
         self.performSegue(withIdentifier: "SettingsNavVC", sender: self)
     }
     
-    private func navigateToFeederMode(_ sender: Row){
-        brain.setNavigatingTo(NavigatingTo: "FeederMode")
+    private func navigateToAquariumStatus(_ sender: Row){
+        brain.setNavigatingTo(NavigatingTo: "AquariumStatus")
         self.performSegue(withIdentifier: "SettingsNavVC", sender: self)
     }
     
@@ -93,16 +111,33 @@ class SettingsVC:  QuickTableViewController {
             self.doneButton.alpha = 1.0
         })
     }
+    
     @IBAction func chooseTime(_ sender: UIButton) {
+        
         let timeFormatter = DateFormatter()
         timeFormatter.dateFormat = "h:mm a"
         timeFormatter.amSymbol = "AM"
         timeFormatter.pmSymbol = "PM"
         let formattedTime = timeFormatter.string(from: timePicker.date)
-        brain.setSunriseTime(SunriseTime: formattedTime)
+        let sunriseHourComponent = Calendar.current.dateComponents([.hour], from: timePicker.date)
+        let sunriseHour = sunriseHourComponent.hour!
         
-        self.setTableContents()
+        print(sunriseHour)
         
+        // if user is connected with Reef, then send time
+        if appDeleg.connected {
+            brain.setSunriseTime(SunriseTime: formattedTime)
+            self.setTableContents()
+            appDeleg.sendMessage(message: "0S" + String(sunriseHour))
+        }
+        
+        else{
+            self.setTableContents()
+            self.alertView(ttle: "Disconnected from Reef", msg: "To update Reef's settings connect to Reef and try again")
+        }
+        
+        
+        // Hide time picker
         UIView.animate(withDuration: 0.1, delay: 0.0, options: [.curveEaseOut], animations: {
             self.timePicker.alpha = 0.0
             self.pickerBackground.alpha = 0.0
@@ -110,4 +145,14 @@ class SettingsVC:  QuickTableViewController {
         })
     }
     
+    @objc func updatedSunrise() { alertView(ttle: "Updated!", msg: "Reef's sunrise time was successfully updated.") }
+    
+    func alertView(ttle: String, msg: String){
+        
+        let alert = UIAlertController(title: ttle, message: msg, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }
+

@@ -140,7 +140,7 @@ protocol SlideButtonDelegate{
             self.dragPointButtonLabel.textColor     = self.dragPointTextColor
             self.dragPoint.addSubview(self.dragPointButtonLabel)
         }
-        self.bringSubview(toFront: self.dragPoint)
+        self.bringSubviewToFront(self.dragPoint)
         
         if self.imageName != UIImage(){
             self.imageView = UIImageView(frame: CGRect(x: self.frame.size.width - dragPointWidth, y: 0, width: self.dragPointWidth, height: self.frame.size.height))
@@ -173,7 +173,7 @@ protocol SlideButtonDelegate{
             }
             
             let animationDuration:Double = abs(Double(velocityX) * 0.0002) + 0.2
-            UIView.transition(with: self, duration: animationDuration, options: UIViewAnimationOptions.curveEaseOut, animations: {
+            UIView.transition(with: self, duration: animationDuration, options: UIView.AnimationOptions.curveEaseOut, animations: {
                 }, completion: { (Status) in
                     if Status{
                         self.animationFinished()

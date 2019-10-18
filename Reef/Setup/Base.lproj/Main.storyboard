@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -9,27 +9,32 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Biysk.ttf">
+            <string>Biysk-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--WelcomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="WelcomeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="WelcomeVC" customModule="Reef" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Reef Logo-1" translatesAutoresizingMaskIntoConstraints="NO" id="lu2-Ph-wTf">
-                                <rect key="frame" x="127.66666666666669" y="251.33333333333337" width="120" height="147"/>
+                                <rect key="frame" x="147" y="285" width="120" height="147"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="DNK-Uv-fx0"/>
                                     <constraint firstAttribute="width" secondItem="lu2-Ph-wTf" secondAttribute="height" multiplier="139:170" id="kPM-Un-QP9"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7E-cm-sX5">
-                                <rect key="frame" x="78" y="676.66666666666663" width="219" height="44"/>
+                                <rect key="frame" x="97.5" y="748" width="219" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="4of-Ad-lIa"/>
-                                    <constraint firstAttribute="width" constant="219" id="sGr-HE-nA9"/>
+                                    <constraint firstAttribute="width" secondItem="F7E-cm-sX5" secondAttribute="height" multiplier="219:44" id="cpG-ad-I1s"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
                                 <state key="normal" title="Get Started." backgroundImage="White Button-1">
@@ -65,34 +70,34 @@
             <objects>
                 <viewController storyboardIdentifier="BasinFillVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="atG-gd-fkQ" customClass="BasinFillVC" customModule="Reef" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X2l-dB-NBW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fill Dosing System" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHX-e2-Ji8">
-                                <rect key="frame" x="69" y="357" width="237" height="37.666666666666686"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="29"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="90" y="382.5" width="234" height="30.5"/>
+                                <fontDescription key="fontDescription" name="Biysk-Regular" family="Biysk" pointSize="34"/>
+                                <color key="textColor" red="0.9879259467" green="0.94650369879999996" blue="0.83527499439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On the back of your Reef, fill each basin with the corresponding solution (Nutrients, pH Down, pH Up)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="juY-9X-F57">
-                                <rect key="frame" x="36" y="402.66666666666669" width="303" height="69.666666666666686"/>
+                                <rect key="frame" x="57" y="421" width="300" height="90"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="juY-9X-F57" secondAttribute="height" multiplier="100:23" id="lpi-8Z-cbh"/>
-                                    <constraint firstAttribute="height" constant="69.670000000000002" id="v7g-QK-D8C"/>
+                                    <constraint firstAttribute="width" secondItem="juY-9X-F57" secondAttribute="height" multiplier="100:30" id="lpi-8Z-cbh"/>
+                                    <constraint firstAttribute="height" constant="90" id="v7g-QK-D8C"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Triple Basin " translatesAutoresizingMaskIntoConstraints="NO" id="fMT-gM-0sQ">
-                                <rect key="frame" x="121.66666666666669" y="186" width="132" height="121"/>
+                                <rect key="frame" x="141" y="211.5" width="132" height="121"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="132" id="BHd-x1-6g6"/>
                                     <constraint firstAttribute="height" constant="121" id="CyH-LZ-CAh"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nef-dl-8Y8">
-                                <rect key="frame" x="78" y="676.66666666666663" width="219" height="44"/>
+                                <rect key="frame" x="97.5" y="748" width="219" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="9jX-cD-4XK"/>
                                     <constraint firstAttribute="width" secondItem="nef-dl-8Y8" secondAttribute="height" multiplier="219:44" id="Ibq-cx-MWU"/>
@@ -108,7 +113,7 @@
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Pd5-xa-C25">
-                                <rect key="frame" x="177" y="688" width="20" height="20"/>
+                                <rect key="frame" x="197" y="760" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.16630250220000001" green="0.43830657010000001" blue="0.49413025379999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -130,33 +135,119 @@
                         <outlet property="activityIndicator" destination="Pd5-xa-C25" id="cT1-3n-6JG"/>
                         <outlet property="basinImage" destination="fMT-gM-0sQ" id="U51-24-CbK"/>
                         <outlet property="filledButton" destination="nef-dl-8Y8" id="48x-6W-fTv"/>
-                        <segue destination="IXH-5w-VLW" kind="show" identifier="segueToInfo" id="099-hY-olG"/>
+                        <segue destination="EDp-Eh-eHF" kind="show" identifier="segueToSunrise" id="dWz-RE-Rrj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GsK-DS-ITM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2823" y="134"/>
         </scene>
+        <!--SunriseVC-->
+        <scene sceneID="abw-Rj-rnj">
+            <objects>
+                <viewController storyboardIdentifier="SunriseVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EDp-Eh-eHF" customClass="SunriseVC" customModule="Reef" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NUs-xy-4yP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="pfZ-S7-TT5">
+                                <rect key="frame" x="0.0" y="393" width="414" height="120"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="Daz-xg-6fT"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="592348732.13610196">
+                                    <!--2019-10-09 21:18:52 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1f-wP-puw">
+                                <rect key="frame" x="97.5" y="748" width="219" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="v1f-wP-puw" secondAttribute="height" multiplier="219:44" id="71p-86-9Dk"/>
+                                    <constraint firstAttribute="height" constant="44" id="A9A-Wg-dMB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                <state key="normal" title="Set time" backgroundImage="White Button-1">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="SignUp:" destination="FNB-5y-fAy" eventType="touchUpInside" id="axL-4j-rWG"/>
+                                    <action selector="filledAquarium:" destination="gtq-zf-5c0" eventType="touchUpInside" id="kOv-ho-2bs"/>
+                                    <action selector="filledBasins:" destination="atG-gd-fkQ" eventType="touchUpInside" id="4t1-zL-TzJ"/>
+                                    <action selector="setTime:" destination="EDp-Eh-eHF" eventType="touchUpInside" id="Hnl-PJ-N1y"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="RSt-zP-dhh">
+                                <rect key="frame" x="197" y="760" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reef's Sunrise" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQ8-KS-NpK">
+                                <rect key="frame" x="90" y="192.5" width="234" height="37.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37.670000000000002" id="FtC-PN-YyB"/>
+                                    <constraint firstAttribute="width" secondItem="sQ8-KS-NpK" secondAttribute="height" multiplier="230:37" id="opO-Pj-QVG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Biysk-Regular" family="Biysk" pointSize="34"/>
+                                <color key="textColor" red="0.9879259467" green="0.94650369879999996" blue="0.83527499439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the time when Reef will turn on the grow and aquarium lights each day." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aL9-c3-Apl">
+                                <rect key="frame" x="54" y="254" width="306" height="69.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69.670000000000002" id="MHd-Kg-9Vc"/>
+                                    <constraint firstAttribute="width" secondItem="aL9-c3-Apl" secondAttribute="height" multiplier="101:23" id="eMn-zS-rNM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.16630250220000001" green="0.43830657010000001" blue="0.49413025379999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="pfZ-S7-TT5" firstAttribute="leading" secondItem="DVh-jP-dHy" secondAttribute="leading" id="2sp-ye-e33"/>
+                            <constraint firstItem="DVh-jP-dHy" firstAttribute="trailing" secondItem="pfZ-S7-TT5" secondAttribute="trailing" id="44I-2q-PRj"/>
+                            <constraint firstItem="v1f-wP-puw" firstAttribute="centerY" secondItem="DVh-jP-dHy" secondAttribute="centerY" multiplier="1.7" id="5SE-29-MmB"/>
+                            <constraint firstItem="pfZ-S7-TT5" firstAttribute="centerY" secondItem="DVh-jP-dHy" secondAttribute="centerY" id="7Ut-Mw-LPc"/>
+                            <constraint firstItem="aL9-c3-Apl" firstAttribute="centerX" secondItem="pfZ-S7-TT5" secondAttribute="centerX" id="9Hb-z5-4K0"/>
+                            <constraint firstItem="aL9-c3-Apl" firstAttribute="top" secondItem="sQ8-KS-NpK" secondAttribute="bottom" constant="24" id="JAW-wK-4of"/>
+                            <constraint firstItem="RSt-zP-dhh" firstAttribute="centerX" secondItem="v1f-wP-puw" secondAttribute="centerX" id="NRt-5c-85i"/>
+                            <constraint firstItem="sQ8-KS-NpK" firstAttribute="centerX" secondItem="aL9-c3-Apl" secondAttribute="centerX" id="Poz-ZZ-sq6"/>
+                            <constraint firstItem="RSt-zP-dhh" firstAttribute="centerY" secondItem="v1f-wP-puw" secondAttribute="centerY" id="WKO-a4-7cg"/>
+                            <constraint firstItem="v1f-wP-puw" firstAttribute="centerX" secondItem="DVh-jP-dHy" secondAttribute="centerX" id="kNN-kg-PJv"/>
+                            <constraint firstItem="pfZ-S7-TT5" firstAttribute="top" secondItem="aL9-c3-Apl" secondAttribute="bottom" constant="69.333333333333314" id="mhF-Yd-16o"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DVh-jP-dHy"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="RSt-zP-dhh" id="RKD-1r-xJk"/>
+                        <outlet property="setButton" destination="v1f-wP-puw" id="RiS-1C-xIh"/>
+                        <outlet property="timePicker" destination="pfZ-S7-TT5" id="qz2-R2-QFs"/>
+                        <segue destination="IXH-5w-VLW" kind="show" identifier="segueToInfo" id="Sdi-4m-n1y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BdC-w7-Jvo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3544.8000000000002" y="133.74384236453201"/>
+        </scene>
         <!--InfoVC-->
         <scene sceneID="Huw-Ju-Tuu">
             <objects>
                 <viewController storyboardIdentifier="InfoVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IXH-5w-VLW" customClass="InfoVC" customModule="Reef" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ybd-kE-aue">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Introducing Fish" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNv-SM-X6m">
-                                <rect key="frame" x="67" y="354.66666666666669" width="241" height="37.666666666666686"/>
+                                <rect key="frame" x="86.5" y="380" width="241" height="37.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37.670000000000002" id="G6G-xI-Ptj"/>
                                     <constraint firstAttribute="width" secondItem="cNv-SM-X6m" secondAttribute="height" multiplier="237:37" id="ta0-bV-wjP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="29"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Biysk-Regular" family="Biysk" pointSize="34"/>
+                                <color key="textColor" red="0.9879259467" green="0.94650369879999996" blue="0.83527499439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We reccomend waiting 2-3 days after setting up Reef to introduce new life." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDW-vv-tJD">
-                                <rect key="frame" x="47.666666666666657" y="407.33333333333331" width="280" height="70"/>
+                                <rect key="frame" x="67" y="432.5" width="280" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="5JS-be-4pa"/>
                                     <constraint firstAttribute="width" secondItem="yDW-vv-tJD" secondAttribute="height" multiplier="4:1" id="jHv-WD-dgg"/>
@@ -166,21 +257,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fish Group" translatesAutoresizingMaskIntoConstraints="NO" id="X3p-QR-fgO">
-                                <rect key="frame" x="137" y="208.66666666666666" width="101" height="75.999999999999972"/>
+                                <rect key="frame" x="156.5" y="234" width="101" height="76"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="101" id="0vz-5Q-MkX"/>
                                     <constraint firstAttribute="height" constant="76" id="42d-V7-Q6L"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Slider Circles1" translatesAutoresizingMaskIntoConstraints="NO" id="A5F-Zc-6r2">
-                                <rect key="frame" x="150.66666666666666" y="690.66666666666663" width="74" height="16"/>
+                                <rect key="frame" x="170" y="807.5" width="74" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="A5F-Zc-6r2" secondAttribute="height" multiplier="37:8" id="NFI-2z-T6b"/>
                                     <constraint firstAttribute="height" constant="16" id="OZi-CA-PUa"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6w-2J-XFY">
-                                <rect key="frame" x="78" y="537" width="219" height="44"/>
+                                <rect key="frame" x="97.5" y="562" width="219" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="d6w-2J-XFY" secondAttribute="height" multiplier="219:44" id="k2z-ai-HnZ"/>
                                     <constraint firstAttribute="height" constant="44" id="ue2-SC-a0x"/>
@@ -191,6 +282,7 @@
                                 </state>
                                 <connections>
                                     <action selector="SignUp:" destination="FNB-5y-fAy" eventType="touchUpInside" id="76Y-Qw-SCl"/>
+                                    <action selector="completeSetup:" destination="IXH-5w-VLW" eventType="touchUpInside" id="X5e-Du-p5b"/>
                                     <action selector="filledAquarium:" destination="gtq-zf-5c0" eventType="touchUpInside" id="R9O-Sw-agn"/>
                                     <action selector="filledBasins:" destination="atG-gd-fkQ" eventType="touchUpInside" id="J8R-Dp-0e5"/>
                                 </connections>
@@ -201,7 +293,7 @@
                             <constraint firstItem="yDW-vv-tJD" firstAttribute="centerX" secondItem="cNv-SM-X6m" secondAttribute="centerX" id="3dh-6k-TtM"/>
                             <constraint firstItem="cNv-SM-X6m" firstAttribute="top" secondItem="X3p-QR-fgO" secondAttribute="bottom" constant="70" id="Fti-IO-r8d"/>
                             <constraint firstItem="cNv-SM-X6m" firstAttribute="centerX" secondItem="X3p-QR-fgO" secondAttribute="centerX" id="ODT-eD-BNF"/>
-                            <constraint firstItem="A5F-Zc-6r2" firstAttribute="centerY" secondItem="Gqi-lP-LFq" secondAttribute="centerY" multiplier="1.7" id="OxG-b3-mSt"/>
+                            <constraint firstItem="A5F-Zc-6r2" firstAttribute="centerY" secondItem="Gqi-lP-LFq" secondAttribute="centerY" multiplier="1.8" id="OxG-b3-mSt"/>
                             <constraint firstItem="yDW-vv-tJD" firstAttribute="top" secondItem="cNv-SM-X6m" secondAttribute="bottom" constant="15" id="SJU-lO-bu5"/>
                             <constraint firstItem="d6w-2J-XFY" firstAttribute="top" secondItem="yDW-vv-tJD" secondAttribute="bottom" constant="59.666666666666686" id="mSr-lP-897"/>
                             <constraint firstItem="d6w-2J-XFY" firstAttribute="centerX" secondItem="yDW-vv-tJD" secondAttribute="centerX" id="paT-gp-XNY"/>
@@ -217,18 +309,27 @@
                         <outlet property="image" destination="X3p-QR-fgO" id="l6s-CK-YTn"/>
                         <outlet property="sliderImage" destination="A5F-Zc-6r2" id="Vmu-lE-aDK"/>
                         <outlet property="titleText" destination="cNv-SM-X6m" id="FbF-6r-fgY"/>
+                        <segue destination="dOW-Vs-yK6" kind="show" identifier="segueToHome" id="eeh-EP-VUQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JBi-8R-EOz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3473" y="134"/>
+            <point key="canvasLocation" x="4230" y="132"/>
+        </scene>
+        <!--HomeVC-->
+        <scene sceneID="0BG-dP-UE0">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="HomeVC" id="dOW-Vs-yK6" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lyj-A3-27r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4907" y="125"/>
         </scene>
         <!--Sign UpVC-->
         <scene sceneID="aIo-kQ-8La">
             <objects>
                 <viewController storyboardIdentifier="SignUpVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FNB-5y-fAy" customClass="SignUpVC" customModule="Reef" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="REp-D3-T1R">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9R-e1-Pbr">
@@ -243,7 +344,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="center" minimumFontSize="17" background="Email TextField" translatesAutoresizingMaskIntoConstraints="NO" id="TuL-VS-5jr">
-                                <rect key="frame" x="50.666666666666657" y="329.33333333333331" width="274" height="44"/>
+                                <rect key="frame" x="70" y="350" width="274" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="TuL-VS-5jr" secondAttribute="height" multiplier="137:22" id="3e8-ON-dE9"/>
                                     <constraint firstAttribute="width" constant="274" id="JZ7-EP-dAy"/>
@@ -253,7 +354,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" background="Password TextField" translatesAutoresizingMaskIntoConstraints="NO" id="gXo-I9-y2P">
-                                <rect key="frame" x="50.666666666666657" y="403.33333333333331" width="274" height="44"/>
+                                <rect key="frame" x="70" y="424" width="274" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="274" id="Ya7-RR-3XS"/>
                                     <constraint firstAttribute="width" secondItem="gXo-I9-y2P" secondAttribute="height" multiplier="137:22" id="we7-bL-LZT"/>
@@ -263,17 +364,17 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Join the Reef" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlN-In-yoc">
-                                <rect key="frame" x="37.666666666666657" y="176.66666666666666" width="300" height="52.666666666666657"/>
+                                <rect key="frame" x="57" y="198" width="300" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="Kqg-xA-IxP"/>
                                     <constraint firstAttribute="width" secondItem="nlN-In-yoc" secondAttribute="height" multiplier="229:40" id="X7Q-24-Mui"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="40"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Biysk-Regular" family="Biysk" pointSize="40"/>
+                                <color key="textColor" red="0.9879259467" green="0.94650369879999996" blue="0.83527499439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create your account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZlS-et-DI5">
-                                <rect key="frame" x="77.666666666666686" y="229.33333333333334" width="220" height="45.000000000000028"/>
+                                <rect key="frame" x="97" y="250" width="220" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="IsS-zf-eK2"/>
                                     <constraint firstAttribute="width" constant="220" id="KKA-Hu-9bS"/>
@@ -316,11 +417,11 @@
             <objects>
                 <viewController storyboardIdentifier="AquariumFillVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gtq-zf-5c0" customClass="AquariumFillVC" customModule="Reef" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ONZ-ZS-xwC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Once the aquarium light turns on, fill with water until approximately 2&quot; from the top." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTs-6u-Hrv">
-                                <rect key="frame" x="37.666666666666657" y="397.33333333333331" width="300" height="74"/>
+                                <rect key="frame" x="57" y="415.5" width="300" height="74"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="74" id="UNm-bd-A0s"/>
                                     <constraint firstAttribute="width" secondItem="tTs-6u-Hrv" secondAttribute="height" multiplier="150:37" id="jyB-z3-dgt"/>
@@ -330,13 +431,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fill Reef's Aquarium" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XON-d0-2gM">
-                                <rect key="frame" x="57.333333333333343" y="351.66666666666669" width="260.33333333333326" height="37.666666666666686"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="29"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="83.5" y="377" width="247.5" height="30.5"/>
+                                <fontDescription key="fontDescription" name="Biysk-Regular" family="Biysk" pointSize="34"/>
+                                <color key="textColor" red="0.9879259467" green="0.94650369879999996" blue="0.83527499439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdH-8e-rES">
-                                <rect key="frame" x="78" y="676.66666666666663" width="219" height="44"/>
+                                <rect key="frame" x="97.5" y="748" width="219" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="bdH-8e-rES" secondAttribute="height" multiplier="219:44" id="Ehf-fd-BcF"/>
                                     <constraint firstAttribute="height" constant="44" id="zGg-C8-D3S"/>
@@ -351,14 +452,14 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Aquarium-1" translatesAutoresizingMaskIntoConstraints="NO" id="TCb-Cz-4XP">
-                                <rect key="frame" x="127" y="191.66666666666666" width="121" height="109.99999999999997"/>
+                                <rect key="frame" x="146.5" y="217" width="121" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="121" id="E5N-jx-0Cz"/>
                                     <constraint firstAttribute="height" constant="110" id="LvI-9c-6hY"/>
                                 </constraints>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="7Dh-Oz-dwB">
-                                <rect key="frame" x="177.66666666666666" y="688.66666666666663" width="20" height="20"/>
+                                <rect key="frame" x="197" y="760" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.16630250220000001" green="0.43830657010000001" blue="0.49413025379999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -390,19 +491,19 @@
         <!--ConnectVC-->
         <scene sceneID="X74-Hq-gEz">
             <objects>
-                <viewController storyboardIdentifier="InitialSetup" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YVQ-pY-Pou" customClass="ConnectVC" customModule="Reef" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConnectVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YVQ-pY-Pou" customClass="ConnectVC" customModule="Reef" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GvH-xa-rmk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect with Reef." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCb-1T-ua3">
-                                <rect key="frame" x="64.666666666666686" y="397" width="246" height="37.666666666666686"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="29"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="66" y="422.5" width="282" height="35"/>
+                                <fontDescription key="fontDescription" name="Biysk-Regular" family="Biysk" pointSize="39"/>
+                                <color key="textColor" red="0.9879259467" green="0.94650369879999996" blue="0.83527499439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn on your bluetooth and then tap below to connect." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGf-7a-daY">
-                                <rect key="frame" x="37.666666666666657" y="449.66666666666669" width="300" height="49.333333333333314"/>
+                                <rect key="frame" x="57" y="472.5" width="300" height="49.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="HXe-qD-MSg"/>
                                 </constraints>
@@ -411,14 +512,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Reef" translatesAutoresizingMaskIntoConstraints="NO" id="Spj-br-iTH">
-                                <rect key="frame" x="143.66666666666666" y="181" width="88" height="131"/>
+                                <rect key="frame" x="163" y="206.5" width="88" height="131"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="Xed-c6-58U"/>
                                     <constraint firstAttribute="height" constant="131" id="xWk-Rh-OJr"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKF-Cq-96H">
-                                <rect key="frame" x="78" y="676.66666666666663" width="219" height="44"/>
+                                <rect key="frame" x="97.5" y="748" width="219" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="MwA-z5-brq"/>
                                     <constraint firstAttribute="width" constant="219" id="mKj-IM-ZGJ"/>
@@ -432,7 +533,7 @@
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hSs-p9-o2j">
-                                <rect key="frame" x="177.66666666666666" y="688.66666666666663" width="20" height="20"/>
+                                <rect key="frame" x="197" y="760" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.16630250220000001" green="0.43830657010000001" blue="0.49413025379999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
