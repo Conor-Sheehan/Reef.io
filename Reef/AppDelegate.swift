@@ -7,30 +7,148 @@
 //
 
 import UIKit
+import Firebase
+import UserNotifications
+import CoreBluetooth
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    // Bluetooth variables and constants
+    var connectionController: CBCentralManager!
+    var reefBluetooth: CBPeripheral!
+    var writeType: CBCharacteristicWriteType = .withResponse
+    let serviceUUIDForScanning: [CBUUID] = [CBUUID(string: "0000ffe0-0000-1000-8000-00805f9b34fb")]
+    var writeCharacteristic: CBCharacteristic!
+    let UuidCharacteristic = "0000ffe1-0000-1000-8000-00805f9b34fb"
+    var bluetoothCounter: Int = 1
+    var connected: Bool = false     // connected is True if the Reef bluetooth is connected, False if not currently connected
+    var stayConnected: Bool = false // stayConnected is True when app is in foreground and prevents the bluetooth from disconnecting automatically,  False when in background
+    var lastCommunication: Date?    // lastCommunication tracks the last time that Reef and the app communicated
+    var noResponse: Bool = false    // If app sent message, but didn't receive a response, then restart connection
+    var mostRecentMessage: String = ""
+    var sentMessage: String = ""
+    var correctResponse: Bool = false
+    
+    var appIsInBackground = false
+    
+    // Track where user is in Setup Process
+    var setupLocation: Int = 0
+    var setupComplete: Bool = false
+    
+    // Data Model
+    var appBrain: AppBrain!
 
     var window: UIWindow?
+    
+    let content = UNMutableNotificationContent()
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        FirebaseApp.configure()
+        
+        // Set interval to fetch new data in background
+        application.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalMinimum)
+        
+        
+        // CHECK WHERE USER IS IN SETUP PROCESS (1-8)
+        setupLocation = UserDefaults.standard.integer(forKey: "setupLocation")
+        
+        print("SETUP LOCATION", setupLocation)
+        
+        // If user has already established connection with Reef, then start bluetooth
+        if setupLocation > 1 { startBluetoothConnection() }
+        // Else if user has already signed up with Reef Community
+        if setupLocation > 2 {
+            // Initialize App Brain
+            initializeAppBrain()
+       }
+        if setupLocation == 7 {
+            setupComplete = true
+            activateNotifications()
+        }
+        
+        // FOR TESTING PURPOSES ONLY
+        window?.rootViewController = initialViewController(setupLocation: setupLocation)
+        
+        // Stay connected when app is in foreground
+        stayConnected = true
+        
         return true
+    }
+    
+    func startBluetoothConnection() { connectionController = CBCentralManager(delegate: self, queue: nil) }
+    func initializeAppBrain()       { appBrain = AppBrain(); appBrain.initialize() }
+    
+    
+    /// Returns the first ViewController in the User's UX based on setup Compleetion
+    ///
+    /// - Parameter setupLocation: Integer representing the step within the setup that the user occupies
+    private func initialViewController(setupLocation: Int) -> UIViewController {
+        switch setupLocation {
+        case 0:
+            return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WelcomeVC")
+        case 1:
+            return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ConnectVC")
+        case 2:
+            return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SignUpVC")
+        case 3:
+            return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AquariumFillVC")
+        case 4:
+            return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BasinFillVC")
+        case 5:
+            return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SunriseVC")
+        case 6:
+            return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InfoVC")
+        case 7:
+            return UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeVC")
+        default:
+            return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WelcomeVC")
+        }
+        
+    }
+    
+    
+    func activateNotifications() {
+        UNUserNotificationCenter.current().delegate = self
+        
+        let center = UNUserNotificationCenter.current()
+        
+        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+            // Enable or disable features based on authorization.
+            if error != nil {
+                print("Request authorization failed.")
+            }
+        }
+    }
+    
+    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        print("App WOKE UP IN BACKGROUND. Restarting scan")
+        
+        if connected { disconnectFromReef() }
+        scanForReef()
+        completionHandler(.newData)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        print("Entering Background State")
+        // Continuously re-connect when app is in background
+        if connected { disconnectFromReef() }
+        stayConnected = false
+        appIsInBackground = true
     }
 
+    /// Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
     func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        
+        // Stay connected when app is in foreground
+        if connected { disconnectFromReef() }
+        stayConnected = true
+        appIsInBackground = false
+        
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -44,3 +162,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+    // called when user interacts with notification (app not running in foreground)
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse, withCompletionHandler
+        completionHandler: @escaping () -> Void) {
+        
+        // do something with the notification
+        print(response.notification.request.content.userInfo)
+        
+        // the docs say you should execute this asap
+        return completionHandler()
+    }
+    
+    // called if app is running in foreground
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent
+        notification: UNNotification, withCompletionHandler completionHandler:
+        @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        // show alert while app is running in foreground
+        return completionHandler(UNNotificationPresentationOptions.alert)
+    }
+    
+    func instantNotification(notificationTitle: String, notifcationBody: String){
+        
+        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        //creating the notification content
+        print("Adding Notification")
+        let content = UNMutableNotificationContent()
+        
+        //adding title, subtitle, body and badge
+        content.title = notificationTitle
+        content.body = notifcationBody
+        content.badge = 1
+        
+        //getting the notification trigger
+        //it will be called after 5 seconds
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        
+        //getting the notification request
+        let request = UNNotificationRequest(identifier: "Reef.connected2", content: content, trigger: trigger)
+        
+        //adding the notification to notification center
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
+}
