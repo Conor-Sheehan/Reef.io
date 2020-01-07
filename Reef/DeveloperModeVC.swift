@@ -84,15 +84,15 @@ class DeveloperModeVC: UIViewController, UITextFieldDelegate {
         appDeleg.sendMessage(message: "0F1")
         stringSent.text = "Fire Nutrients"
     }
-    @IBAction func firepHUp(_ sender: UIButton) {
+    @IBAction func firePHUp(_ sender: UIButton) {
         self.responseMessages = ""
         appDeleg.sendMessage(message: "0F3")
-        stringSent.text = "Fire pH Up"
+        stringSent.text = "Fire PH Up"
     }
-    @IBAction func firepHDown(_ sender: UIButton) {
+    @IBAction func firePHDown(_ sender: UIButton) {
         self.responseMessages = ""
         appDeleg.sendMessage(message: "0F2")
-        stringSent.text = "Fire pH Down"
+        stringSent.text = "Fire PH Down"
     }
     
     @IBAction func getPlantHeightData(_ sender: UIButton) {
@@ -101,10 +101,10 @@ class DeveloperModeVC: UIViewController, UITextFieldDelegate {
         stringSent.text = "Get Plant Height Data"
     }
     
-    @IBAction func getpHData(_ sender: UIButton) {
+    @IBAction func getPHData(_ sender: UIButton) {
         self.responseMessages = ""
         appDeleg.sendMessage(message: "0D1")
-        stringSent.text = "Get pH Data"
+        stringSent.text = "Get PH Data"
     }
     @IBAction func customMessage(_ sender: UIButton) {
         guard let msg = textField.text else { return }

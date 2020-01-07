@@ -7,186 +7,123 @@
 //
 
 import Foundation
+import Firebase
 
-// Firebase Extenstion
+// Firebase Extension for reading
 extension AppBrain {
     
-    func readGrowData(){
-        databaseRef.child("GrowData").child(userUID!).child("CurrentPlantHeight").observeSingleEvent(of: .value){ (snapshot) in
-            if let currentPlantHeight = snapshot.value as? Int {
-                self.currentPlantHeight = currentPlantHeight
+    func readGrowData() {
+        
+        if let firebaseUID = userUID {
+            
+            databaseRef.child(firebaseUID).child("GrowData").child("CurrentPlantHeight").observeSingleEvent(of: .value){ (snapshot) in
+                if let currentPlantHeight = snapshot.value as? Int {
+                    self.currentPlantHeight = currentPlantHeight
+                }
             }
+            
+            databaseRef.child(firebaseUID).child("GrowDates").child("SeedlingStartDates").observeSingleEvent(of: .value) { (snapshot) in
+                
+                // Count the number of seedlings started in Reef
+                var growCount = 0
+                var seedlingDates: [Date] = []
+                
+                for child in snapshot.children.allObjects as! [DataSnapshot] {
+                    // Get seedling start date
+                    let seedStartDate = self.convertStringToDate(str: child.key)
+                    growCount += 1 // Increment grow count
+                    seedlingDates.append(seedStartDate)
+                }
+                
+                // Store number of grows with reef
+                self.growsWithReef = growCount
+                
+                // Store grow date data, if there were dates to read from Firebase
+                if !seedlingDates.isEmpty {
+                    self.seedlingStartDate = seedlingDates.last
+                    self.findGrowStage()
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "growDataRead"), object: nil)
+                }
+            
+              }
+                      
+            databaseRef.child(firebaseUID).child("GrowDates").child("EcosystemStartDate").observeSingleEvent(of: .value){ (snapshot) in
+                  if let ecosystemStartedDate = snapshot.value as? String {
+                      self.ecosystemStartDate = self.convertStringToDate(str: ecosystemStartedDate)
+                  }
+              }
         }
     }
     
-    func readGrowDates(){
-        databaseRef.child("GrowDates").child(userUID!).child("SeedlingStartDate").observeSingleEvent(of: .value){ (snapshot) in
-            if let seedlingStartedDate = snapshot.value as? String {
-                self.seedlingStartDate = self.convertStringToDate(str: seedlingStartedDate)
-                self.findGrowStage()
+    func readSensorData() {
+        
+         if let firebaseUID = userUID {
+        
+            // READ THE PH DATA FROM FIREBASE
+            databaseRef.child(firebaseUID).child("PHData").observeSingleEvent(of: .value) { (snapshot) in
+            
+                // Store the current PH Value
+                var mostRecentPH = "7.5"
+            
+                // Iterate over all PH Data points stored in Firebbase
+                for child in snapshot.children.allObjects as! [DataSnapshot] {
+                    mostRecentPH = child.value as? String ?? "7.5"
+                    print("Current PH", mostRecentPH)
+                }
+                
+                self.currentPH = mostRecentPH
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "phRead"), object: nil)
             }
+            
         }
         
-        databaseRef.child("GrowDates").child(userUID!).child("EcosystemStartDate").observeSingleEvent(of: .value){ (snapshot) in
-            if let ecosystemStartedDate = snapshot.value as? String {
-                self.ecosystemStartDate = self.convertStringToDate(str: ecosystemStartedDate)
-                self.ecosystemLife = self.daysSinceDate(date: self.ecosystemStartDate!)
-            }
-        }
     }
     
     /// FIREBASE: Reads the current levels of Reef's basins from Firebase
     func readBasinLevels() {
-
-        databaseRef.child("BasinLevels").child(userUID!).child("PhUp").observeSingleEvent(of: .value){ (snapshot) in
-            if let phUpLvl = snapshot.value as? Int {
-                print("PH UP LEVEL", phUpLvl)
-                self.phUpLevel = phUpLvl
-            }
-        }
-        databaseRef.child("BasinLevels").child(userUID!).child("Nutrient").observeSingleEvent(of: .value){ (snapshot) in
-            if let nutrientLvl = snapshot.value as? Int {
-                print("NUTRIENT LEVEL", nutrientLvl)
-                self.nutrientLevel = nutrientLvl
-            }
-        }
-        databaseRef.child("BasinLevels").child(userUID!).child("PhDown").observeSingleEvent(of: .value){ (snapshot) in
-            if let phDownLvl = snapshot.value as? Int {
-                print("PH DOWN LEVEL", phDownLvl)
-                self.phDownLevel = phDownLvl
-            }
-        }
+        
+         if let firebaseUID = userUID {
             
-    }
-    
-    func readUserSettings(){
-        databaseRef.child("UserSettings").child(userUID!).child("GrowMode").observeSingleEvent(of: .value){ (snapshot) in
-            if let GrowMode = snapshot.value as? String {
-                self.growMode = GrowMode
-            }
-        }
-        databaseRef.child("UserSettings").child(userUID!).child("SunriseTime").observeSingleEvent(of: .value){ (snapshot) in
-            if let SunriseTime = snapshot.value as? String {
-                self.sunriseTime = SunriseTime
-            }
-        }
-        databaseRef.child("UserSettings").child(userUID!).child("AquariumLighting").observeSingleEvent(of: .value){ (snapshot) in
-            if let AquariumLighting = snapshot.value as? String {
-                self.aquariumLighting = AquariumLighting
-            }
-        }
-        databaseRef.child("UserSettings").child(userUID!).child("FeederMode").observeSingleEvent(of: .value){ (snapshot) in
-            if let FeederMode = snapshot.value as? String {
-                self.feederMode = FeederMode
-            }
-        }
-        databaseRef.child("UserSettings").child(userUID!).child("GrowStarted").observeSingleEvent(of: .value){ (snapshot) in
-            if let growStarted = snapshot.value as? Bool {
+            let firebaseName: [String] = ["Nutrient", "PhDown", "PhUp"]
+            
+            for basinIndex in 0...2 {
                 
-                if growStarted {
-                    self.growStarted = true
-                    self.growStartedText = "End Grow"
-                }
-                else{
-                    self.growStarted = false
-                    self.growStartedText = "Start Grow"
+                databaseRef.child(firebaseUID).child("BasinLevels").child(firebaseName[basinIndex]).observeSingleEvent(of: .value) { (snapshot) in
+                    if let basinLevel = snapshot.value as? Int {
+                        self.basinLevels[basinIndex] = basinLevel
+                        
+                        if basinIndex == 2 { NotificationCenter.default.post(name: NSNotification.Name(rawValue: "basinsRead"), object: nil) }
+                    }
                 }
             }
         }
     }
     
-    func storeMostRecentCommunicationDate() {
-        let recentCommunication = self.convertDateToString(date: Date())
-        databaseRef.child("GrowDates").child(userUID!).child("MostRecentCommunication").child(recentCommunication).setValue("Checked-in w/ Reef")
-    }
-    
-    
-    func storeEcosystemStartDate() {
-        let currentDate = Date()
-        databaseRef.child("GrowDates").child(userUID!).child("EcosystemStartDate").setValue(self.convertDateToString(date: currentDate))
-        self.ecosystemStartDate = Date()
-    }
-    
-    func storeSeedlingStartDate() {
-        // Store the Grow start date in the database
-        let currentDate = Date()
-        databaseRef.child("GrowDates").child(userUID!).child("SeedlingStartDate").setValue(self.convertDateToString(date: currentDate))
-        self.seedlingStartDate = Date()
-    }
-    
-    func storeBasinReadings(basinString: String){
-        let BasinString = self.matches(for: "^OKC,[0-9]{1,3},[0-9]{1,3},[0-9]{1,3},$", in: basinString)
+    func readUserSettings() {
         
-        
-        // if we matched on the proper return string
-        if BasinString.count != 0 {
-            let basinSubString = basinString.split(separator: ",")
-            nutrientLevel = Int(basinSubString[1])!
-            phUpLevel = Int(basinSubString[2])!
-            phDownLevel = Int(basinSubString[3])!
-
-            print("Nutrient lvl:", nutrientLevel, "\npH Up Lvl:", phUpLevel, "\npH Down Lvl:", phDownLevel)
+        if let firebaseUID = userUID {
             
-            databaseRef.child("BasinLevels").child(userUID!).child("Nutrient").setValue(nutrientLevel)
-            databaseRef.child("BasinLevels").child(userUID!).child("PhUp").setValue(phUpLevel)
-            databaseRef.child("BasinLevels").child(userUID!).child("PhDown").setValue(phDownLevel)
-        }
-    }
-    
-    func refillBasin(basin: Int) {
-        print("Refilling basin" , basin)
-        switch basin {
-        case 1:
-            databaseRef.child("BasinLevels").child(userUID!).child("Nutrient").setValue(300)
-            nutrientLevel = 300
-        case 2:
-            databaseRef.child("BasinLevels").child(userUID!).child("PhUp").setValue(300)
-            phUpLevel = 300
-        default:
-            databaseRef.child("BasinLevels").child(userUID!).child("PhDown").setValue(300)
-            phDownLevel = 300
-        }
-        
-    }
-    
-    // storepHData() takes the data sent from Reef and parses it and then stores it in
-    // firebase with it's corresponding date that the value was recorded
-    func storepHData(pHData: String){
-        let pHDataArr = pHData.split(separator: ",")
-        print("Parsed pH Data Array: ", pHDataArr)
-        
-        // if there is stored pH Data then store it in firebase
-        if(pHDataArr.count > 2) {
+            databaseRef.child(firebaseUID).child("UserSettings").child("GrowStarted").observeSingleEvent(of: .value) { (snapshot) in
+                if let growStart = snapshot.value as? Bool {
+                    self.growStarted = growStart
+                }
+            }
             
-            // Iterates through bluetooth communication to store each data entry in Firebase
-            for index in 2 ... (pHDataArr.count - 1) {
-                let hoursAgo = (pHDataArr.count - index - 1)*12 // Estimates how many hours ago each data entry was recorded
-                let pHDate = Calendar.current.date(byAdding: .hour, value: -hoursAgo, to: Date()) // Creates date-time object when data was recorded
-                let dateString = self.convertDateToString(date: pHDate!) // Converts date-time object to string for firebase storage
-                
-                databaseRef.child("pHData").child(userUID!).child(dateString).setValue(pHDataArr[index])
-                print("Storing pHData: ", pHDataArr[index])
-                
+            
+            let firebaseName: [String] = ["GrowMode", "SunriseTime", "AquariumStatus", "FirstName"]
+            
+            for index in 0...3 {
+                databaseRef.child(firebaseUID).child("UserSettings").child(firebaseName[index]).observeSingleEvent(of: .value) { (snapshot) in
+                    if let value = snapshot.value as? String {
+                        print("User Setttings", value)
+                        self.userSettingsData[index] = value
+                        if index == 3 { NotificationCenter.default.post(name: NSNotification.Name(rawValue: "userSettingsRead"), object: nil) }
+                    }
+                }
             }
-           
+            
         }
     }
     
-    
-    /// matches() is a function that returns the substrings that match the regex
-    func matches(for regex: String, in text: String) -> [String] {
-        
-        do {
-            let regex = try NSRegularExpression(pattern: regex)
-            let results = regex.matches(in: text,
-                                        range: NSRange(text.startIndex..., in: text))
-            return results.map {
-                String(text[Range($0.range, in: text)!])
-            }
-        } catch let error {
-            print("invalid regex: \(error.localizedDescription)")
-            return []
-        }
-    }
     
 }

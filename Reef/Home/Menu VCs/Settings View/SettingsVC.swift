@@ -46,9 +46,14 @@ class SettingsVC:  QuickTableViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.updatedSunrise), name: NSNotification.Name(rawValue: "updatedSunrise"), object: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+         self.navigationController?.isNavigationBarHidden = false
+    }
+
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
     }
+    
     
     /// Sets the contents in the settings table anytime data is updated
     func setTableContents() {

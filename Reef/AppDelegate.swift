@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var lastCommunication: Date?    // lastCommunication tracks the last time that Reef and the app communicated
     var noResponse: Bool = false    // If app sent message, but didn't receive a response, then restart connection
     var mostRecentMessage: String = ""
+    var sentMessage: String = ""
+    var correctResponse: Bool = false
     
     var appIsInBackground = false
     
@@ -48,10 +50,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Set interval to fetch new data in background
         application.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalMinimum)
         
-        activateNotifications()
         
         // CHECK WHERE USER IS IN SETUP PROCESS (1-8)
         setupLocation = UserDefaults.standard.integer(forKey: "setupLocation")
+        
+        print("SETUP LOCATION", setupLocation)
         
         // If user has already established connection with Reef, then start bluetooth
         if setupLocation > 1 { startBluetoothConnection() }
@@ -62,13 +65,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        }
         if setupLocation == 7 {
             setupComplete = true
+            activateNotifications()
         }
         
-        // Setup root view controller as initial view controller
-        // window?.rootViewController = initialViewController(setupLocation: setupLocation)
-        
         // FOR TESTING PURPOSES ONLY
-        window?.rootViewController = initialViewController(setupLocation: 7)
+        window?.rootViewController = initialViewController(setupLocation: setupLocation)
         
         // Stay connected when app is in foreground
         stayConnected = true
@@ -86,7 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func initialViewController(setupLocation: Int) -> UIViewController {
         switch setupLocation {
         case 0:
-            return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WelcomeeVC")
+            return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WelcomeVC")
         case 1:
             return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ConnectVC")
         case 2:

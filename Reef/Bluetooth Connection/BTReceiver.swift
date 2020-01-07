@@ -45,15 +45,16 @@ extension AppDelegate: CBPeripheralDelegate {
     
     // Called when App receives response from Reef
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
-        print("\nReceived message: ")
         noResponse = false
         
         if let response = String(data: characteristic.value!, encoding: String.Encoding.utf8) {
+            print("Received response:", response)
             parseBluetoothResponse(responseMsg: response)
-            print(response)
         }
         
-        else { print("INVALID MESSAGE RECEIVED FROM REEF")}
+        else {
+            sendMessage(message: sentMessage)
+            print("INVALID MESSAGE RECEIVED FROM REEF")}
         
     }
     
@@ -102,8 +103,6 @@ extension AppDelegate {
             stayConnected = true
             sendMessage(message: getCurrentCheckInMessage())
             
-            // Store most recent communication in firebase
-            appBrain.storeMostRecentCommunicationDate()
         }
         
     }
@@ -112,38 +111,47 @@ extension AppDelegate {
     /// Called when BLE Peripheral receives a valid response from Reef
     func parseBluetoothResponse(responseMsg: String) {
         
+        
         // if app is not in background, then notify VC of new message
         if !appIsInBackground {
             mostRecentMessage = responseMsg
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "receivedNewMessage"), object: nil)
         }
         
-        // CHECK-IN RESPONSE
-        if responseMsg.contains("OKC") {
-            
-            // If user has completed setup, then store the data and request sensor data from Reef
-            if setupComplete { appBrain.parseBluetoothMessage(message: responseMsg); sendMessage(message: "0D1") }
-            // Else, notify the setup VC that we have established a complete connection with Reef
-            else { NotificationCenter.default.post(name: NSNotification.Name(rawValue: "connected"), object: nil)  }
+        // If Reef improperly read the command, then RESEND the mssage
+        if !responseMsg.contains("K") && responseMsg != sentMessage  {
+            print("Resending message:", sentMessage)
+            sendMessage(message: sentMessage)
         }
-            
-        // Aquarium Pumps Response
-        else if responseMsg.contains("OKA,1") { NotificationCenter.default.post(name: NSNotification.Name(rawValue: "pumpsTurnedOn"), object: nil) }
-        else if responseMsg.contains("OKB,4") {
-            appBrain.parseBluetoothMessage(message: responseMsg)
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "allBasinsFilled"), object: nil) }
-            
-        else if responseMsg.contains("OKD1")    { appBrain.parseBluetoothMessage(message: responseMsg); sendMessage(message: "0D2");  }
-        else if responseMsg.contains("OKD2")    { if appIsInBackground { stayConnected = false; disconnectFromReef() } }
-        else if responseMsg.contains("OKS")     { NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updatedSunrise"), object: nil) }
-        else if responseMsg.contains("OKR")     { NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updatedAqrLight"), object: nil) }
+        // Else if Reef read the correct command, then tell Reef to Proceed
+        else if !responseMsg.contains("K") && responseMsg == sentMessage  { sendMessage(message: "P")
+        }
         
-        else if responseMsg.contains("OKH")     { NotificationCenter.default.post(name: NSNotification.Name(rawValue: "setDayHours"), object: nil) }
-        else if responseMsg.contains("OKB")     {
-            appBrain.parseBluetoothMessage(message: responseMsg)
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refilledBasin"), object: nil)
+        // Else we've received confirmation of Reef's update and need to update App UI/database accordingly
+        else { reefConfirmedResponseHandler(responseMsg: responseMsg) }
+        
+    }
+    
+    /// Handles the confirmed command responses from Reef, once Reef has properly received command from App
+    func reefConfirmedResponseHandler(responseMsg: String) {
+        let responses = ["OKC","OKD1", "OKD2", "OKS", "OKR","OKH", "OKA,1", "OKB", "OKB,4"]
+        let notificationNames = ["connected","receivedPHData", "receivedPlantHeightData", "updatedSunrise", "updatedAqrLight","setDayHours","pumpsTurnedOn", "refilledBasin","allBasinsFilled"]
+        var index = 0
+        
+        for response in responses {
+            // if response from Reef contains the response command
+            if responseMsg.contains(response) {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: notificationNames[index]), object: nil)
+                // If App Received Check in Msg Response from Reef
+                if response == responses[0] && setupComplete {// Store most recent communication in firebase
+                    appBrain.storeMostRecentCommunicationDate(); appBrain.parseBluetoothMessage(message: responseMsg); sendMessage(message: "0D1") }
+                else if response == responses[1] { appBrain.parseBluetoothMessage(message: responseMsg); sendMessage(message: "0D2"); }
+                else if response == responses[2] && appIsInBackground { stayConnected = false; disconnectFromReef() }
+                else if response == responses[7] || response == responses[8] { appBrain.parseBluetoothMessage(message: responseMsg) }
+            }
+            
+            index += 1
         }
-        else { self.appBrain.parseBluetoothMessage(message: responseMsg) }
         
     }
     
@@ -151,10 +159,13 @@ extension AppDelegate {
     func sendMessage(message: String) {
         
         if connected {
+            // store message sent if it is not a proceed command
+            if message != "P" { sentMessage = message; print("Sent message is now:", sentMessage) }
+
             // Package string into Data Object
             if let data = message.data(using: String.Encoding.utf8) {
                 self.reefBluetooth.writeValue(data, for: self.writeCharacteristic, type: self.writeType)
-                print("Sending message to Reef: " + message)
+                print("Sending message to Reef: " + message + "\n")
             }
         }
     }

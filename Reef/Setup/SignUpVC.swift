@@ -11,6 +11,7 @@ import Firebase
 
 class SignUpVC: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var name: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var SignUp: UIButton!
@@ -23,6 +24,7 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
         // Set delegates of textfields to current VC
         email.delegate = self
         password.delegate = self
+        name.delegate = self
         
         // Add observers and recognizers to VC
         addKeyboardObservers()
@@ -41,6 +43,7 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func SignUp(_ sender: UIButton) {
         
+        guard let name = name.text else { return }
         guard let email = email.text else { return }
         guard let password = password.text else { return }
         
@@ -49,7 +52,11 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
             
             if error == nil && user != nil {
                 print("User created")
-                if let appDelegate = UIApplication.shared.delegate as? AppDelegate { appDelegate.initializeAppBrain() }
+                // Initialize App Brain and store first name in firebbase
+                if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                    appDelegate.initializeAppBrain()
+                    appDelegate.appBrain.setFirstName(firstName: name)
+                }
                 self.alertUser(title: "Created Account!", message: "Welcome to the Reef.")
             }
             

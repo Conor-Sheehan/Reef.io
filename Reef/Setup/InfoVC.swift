@@ -14,7 +14,7 @@ class InfoVC: UIViewController {
     let infoDescriptions = ["We reccomend waiting 2-3 days after setting up Reef to introduce new life.",
                             "During this time, Reef will cycle and filter the water to prepare it for your fish farmers.",
                             "You may take this time to begin planting the seeds you wish to grow."]
-    let infoImages: [UIImage] = [#imageLiteral(resourceName: "Fish Group"), #imageLiteral(resourceName: "Fish single"),#imageLiteral(resourceName: "Plant-1")]
+    let infoImages: [UIImage] = [#imageLiteral(resourceName: "Fish Group"), #imageLiteral(resourceName: "Fish single"),#imageLiteral(resourceName: "HomeVC Start Grow Image")]
     let sliderImages: [UIImage] = [ #imageLiteral(resourceName: "Slider Circles1"), #imageLiteral(resourceName: "Slider Circles2"), #imageLiteral(resourceName: "Slider Circles3")]
     
     var tracker = 0
@@ -48,7 +48,10 @@ class InfoVC: UIViewController {
     
     
     @IBAction func completeSetup(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "segueToHome", sender: self)
+        let mainStoryBoard = UIStoryboard(name: "Home", bundle: nil)
+        let homeViewController = mainStoryBoard.instantiateViewController(withIdentifier: "HomeVC") as! UINavigationController
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = homeViewController
     }
     
     

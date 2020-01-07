@@ -9,36 +9,43 @@
 import UIKit
 import UserNotifications
 
-class HomeVC: UIViewController {
+class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     
     let shapeLayer = CAShapeLayer()
     let trackLayer = CAShapeLayer()
 
-    // UI ELEMENTS
+    // GROW TRACKER UI ELEMENTS
     @IBOutlet weak var startGrowButton: UIButton!
-    @IBOutlet weak var reefImage: UIButton!
-    @IBOutlet weak var bluetoothImage: UIImageView!
+    @IBOutlet weak var startGrowImage: UIImageView!
     @IBOutlet weak var growStage: UILabel!
     @IBOutlet weak var percentStage: UILabel!
     @IBOutlet weak var percentText: UILabel!
     @IBOutlet weak var growStageTracker: UIButton!
+
+    // CRITICAL READOUTS UI ELEMENTS
+    @IBOutlet weak var connectionState: UILabel!
+    @IBOutlet weak var daylightHours: UILabel!
+    @IBOutlet weak var plantHeight: UILabel!
+    @IBOutlet weak var PH: UILabel!
+    @IBOutlet weak var reefName: UILabel!
+    
+    // GROW TIPS UI ELEMENTS
+    @IBOutlet weak var tapView: UIImageView!
+    @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var growTips: UILabel!
+    @IBOutlet weak var upArrow: UIImageView!
+    var growTipsOpen = false
     
-    // BASIN UI ELEMENTS
-    @IBOutlet weak var nutrientsBar: UIProgressView!
-    @IBOutlet weak var nutrientPercent: UILabel!
-    @IBOutlet weak var phDownBar: UIProgressView!
-    @IBOutlet weak var phDownPercent: UILabel!
-    @IBOutlet weak var phUpBar: UIProgressView!
-    @IBOutlet weak var phUpPercent: UILabel!
     
-    private var growStages: [String] = ["Seedling", "Vegetative", "Flowering"]
+    private var growStages: [String] = ["SEEDLING", "VEGETATIVE", "FLOWERING"]
     
     private var compiledData: String = ""
     
     private var percentGrowStage: Double = 0.0
     
     var appDeleg: AppDelegate!
+    
+    var timer = Timer()
     //var brain: AppBrain!
     
     override func viewDidLoad() {
@@ -54,24 +61,87 @@ class HomeVC: UIViewController {
         
         // Set notifiers for when the basin levels are read and when Reef's Bluetooth Connection State Changes
         NotificationCenter.default.addObserver(self, selector: #selector(self.displayReefConnectionState), name: NSNotification.Name(rawValue: "connectionStateChange"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.displayBasinLevels), name: NSNotification.Name(rawValue: "basinsRead"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.displayGrowData), name: NSNotification.Name(rawValue: "growDataRead"), object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(self.viewDidAppear(_:)), name: UIApplication.willEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.displayUserName), name: NSNotification.Name(rawValue: "userSettingsRead"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.displayPHValue), name: NSNotification.Name(rawValue: "phRead"), object: nil)
         
-        
+        // Set UI Elements to Default Values
         percentStage.text = "0"
+        growTips.alpha = 0.0
+        
+        // Tap view setup
+        initialLayoutTapView()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
+        tap.delegate = self
+        // allow for user interaction
+        tapView.isUserInteractionEnabled = true
+        // add tap as a gestureRecognizer to tapView
+        tapView.addGestureRecognizer(tap)
+        
+        // Set default location to 7
+        UserDefaults.standard.set(7, forKey: "setupLocation")
+        appDeleg.setupComplete = true
     }
+    
+    
     
     override func viewDidAppear(_ animated: Bool) {
         // Display Reef Connection State
         displayReefConnectionState()
         // Display Grow Stage Tracker
         displayGrowStageTracker()
-        //Display Basin Levels
-        displayBasinLevels()
+        //Display Day Hours
+        displayDayHours()
+        //Display Plant Height
+        displayPlantHeight()
         // Display Grow Data
         displayGrowData()
         // Set display for grow tips
         displayGrowTips()
+    }
+    
+    /// When view will disappear then invalidate timer
+    override func viewWillDisappear(_ animated: Bool) {
+        if timer.isValid { timer.invalidate() }
+    }
+    
+    /// Called when user taps the GrowTips panel
+    @objc func handleTap() {
+        // If the growTips Tab is not open, then animate the Tab to open
+        if !growTipsOpen {
+            upArrow.alpha = 0.0
+            
+            UIView.animate(withDuration: 0.25, animations: {
+                self.tapView.frame = CGRect(x: self.view.frame.minX, y: self.view.frame.maxY - 150, width: self.view.frame.width, height: 150)
+                self.icon.frame = CGRect(x: self.tapView.frame.midX - 12.5, y: self.tapView.frame.minY + 30, width: 25, height: 25)
+                self.growTips.frame = CGRect(x: self.tapView.frame.midX - ((self.view.frame.width - 50)/2), y: self.icon.frame.maxY + 5, width: self.view.frame.width - 50, height: 60)
+                self.growTips.alpha = 1.0
+            })
+        }
+        else {
+            UIView.animate(withDuration: 0.25, animations: { self.initialLayoutTapView() }) { (success) in
+                self.upArrow.alpha = 1.0
+                self.growTips.alpha = 0.0
+            }
+        }
+        
+        growTipsOpen = !growTipsOpen
+    }
+    
+    func initialLayoutTapView() {
+        tapView.frame = CGRect(x: view.frame.minX, y: view.frame.maxY - 75, width: view.frame.width, height: 150)
+        icon.frame = CGRect(x: tapView.frame.midX - 12.5, y: tapView.frame.minY + 30, width: 25, height: 25)
+        growTips.frame = CGRect(x: tapView.frame.midX - ((view.frame.width - 50)/2), y: icon.frame.maxY + 20, width: view.frame.width - 50, height: 60)
+        upArrow.frame = CGRect(x: tapView.frame.midX - 7.5, y: tapView.frame.minY + 15, width: 15, height: 15)
+    }
+    
+    @objc func displayUserName() {
+        reefName.text = appDeleg.appBrain.getSettings().firstName + "'s Reef"
+    }
+    
+    @objc func displayPHValue() {
+        PH.text = appDeleg.appBrain.getGrowData().currentPH
     }
     
     @objc func displayGrowData() {
@@ -79,58 +149,68 @@ class HomeVC: UIViewController {
         let brain = appDeleg.appBrain!
         
         let growProgressElements = [percentStage, growStage, percentText, growStageTracker]
+    
         
         // Check if user's started grow
         if brain.getSettings().growStarted {
             
             for element in growProgressElements { element?.alpha = 1.0 }
             startGrowButton.alpha = 0.0
+            startGrowImage.alpha = 0.0
             displayGrowStatus()
         }
         else {
             for element in growProgressElements { element?.alpha = 0.0 }
             startGrowButton.alpha = 1.0
+            startGrowImage.alpha = 1.0
         }
 
     }
     
     /// Toggles the UI State Change when Reef connects/disconnects
     @objc func displayReefConnectionState() {
+        print("Displaying reef connection state")
         // If Reef is connected, then set indicators to ON
-        if appDeleg.connected { reefImage.alpha = 1.0; bluetoothImage.alpha = 1.0 }
+        if appDeleg.connected {
+            print("Reef is connected")
+            // Invalidate timer
+            if timer.isValid { timer.invalidate() }
+            connectionState.text = "Connected"
+        }
         // Else set to OFF
-        else { reefImage.alpha = 0.5; bluetoothImage.alpha = 0.0 }
+        else {
+            self.connectionState.text = "Searching."
+            if timer.isValid { timer.invalidate() } // invalidate active timers
+            timer = Timer.scheduledTimer(withTimeInterval: 0.75, repeats: true, block: { timer in
+                if self.connectionState.text == "Searching." { self.connectionState.text = "Searching.." }
+                else { self.connectionState.text = "Searching."  }
+            })
+        }
+    }
+    
+    func displayDayHours() {
+        let growStage = appDeleg.appBrain.growStage
+        let growStarted = appDeleg.appBrain.getSettings().growStarted
+        
+        // If user has not statrted grow, then set day hours to 0
+        if !growStarted { daylightHours.text = "0 Hours" }
+        // Else if user's grow stage is not flowering then set to 18 hours
+        else if growStage != 2 { daylightHours.text = "18 Hours" }
+        // Else set to 12 Hours
+        else { daylightHours.text = "12 Hours" }
+    }
+    
+    func displayPlantHeight() {
+        plantHeight.text = String(appDeleg.appBrain.getGrowData().currentPlantHeight)
+            + " in."
     }
     
     func displayGrowStageTracker() {
         let growStage = appDeleg.appBrain.growStage
-        let imageName = ["Grow Progress (1)","Grow Progress (2)","Grow Progress (3)"]
+        let imageName = ["Grow Stage (1)","Grow Stage (2)","Grow Stage (3)"]
         growStageTracker.setImage(UIImage(named: imageName[growStage]), for: .normal)
     }
     
-    @objc func displayBasinLevels() {
-        // Basin levels stored in brain
-        let basinLevels = [appDeleg.appBrain.getBasinLevels().nutrientLvl, appDeleg.appBrain.getBasinLevels().phDownLvl, appDeleg.appBrain.getBasinLevels().phUpLvl]
-        let basinProgressBars = [nutrientsBar,phDownBar,phUpBar]
-        let basinPercents = [nutrientPercent,phDownPercent,phUpPercent]
-        
-        
-        // Iterate over basin levels and convert into percent text and progress bars
-        for basin in 0...2 {
-            let basinLvl = basinLevels[basin]
-            basinProgressBars[basin]?.progress = (Float(basinLvl)/70.0)
-            basinPercents[basin]?.text = String(Int((Double(basinLvl)/70.0)*100.0)) + "%"
-        }
-        
-    }
-    
-    /// Segues user to proper Dispenser VC with proper basin loaded
-    @IBAction func basinTapped(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Home", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "DispenserRefillVC") as! DispenserRefillVC
-        vc.basin = sender.tag
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
     
     func displayGrowTips() {
         
@@ -142,7 +222,7 @@ class HomeVC: UIViewController {
             displayText = "To get started growing with Reef, tap the button above."
         }
         else if growStage == 0 {
-            displayText = "During seedling stage water your plant lightly once a day."
+            displayText = "During seedling, water your sprout lightly once per day."
         }
         else if growStage == 1 {
             displayText = "During vegeatative stage you can start training your plant."
@@ -159,7 +239,7 @@ class HomeVC: UIViewController {
     
 }
 
-// Firebase handler
+// Animation Extension
 extension HomeVC {
     
     /// Reads in Grow Data from brain
@@ -168,11 +248,11 @@ extension HomeVC {
         let currGrowStage = appDeleg.appBrain.growStage
         let currPercentStage = appDeleg.appBrain.getGrowData().percentStage
         
-        drawCircles()
-        
         // If percent of the grow stage has been updated
         if percentGrowStage != currPercentStage {
         
+            drawCircles()
+            
             percentGrowStage = currPercentStage
             
             // Read and display current stage of growth
@@ -184,17 +264,12 @@ extension HomeVC {
         }
     }
     
-}
-
-// Animation Extension
-extension HomeVC {
-    
     
     func countAnimation(counter: Int, total: Int){
         
         let delay = 1.2/(Double(total)+1.0)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + delay){
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
             self.percentStage.text = String(counter)
             if(counter < total) {
                 self.countAnimation(counter: counter + 1, total: total)
@@ -207,18 +282,18 @@ extension HomeVC {
         // Start the center of the circle to be the mid points of the percentage text
         let center = CGPoint(x: percentStage.frame.midX, y: percentStage.frame.midY)
         
-        let circularPath = UIBezierPath(arcCenter: center, radius: 105, startAngle: -5*CGFloat.pi/4, endAngle: CGFloat.pi/4, clockwise: true)
+        let circularPath = UIBezierPath(arcCenter: center, radius: 100, startAngle: -5*CGFloat.pi/4, endAngle: CGFloat.pi/4, clockwise: true)
         
         trackLayer.path = circularPath.cgPath
-        trackLayer.strokeColor = UIColor.lightGray.cgColor
-        trackLayer.lineWidth = 3
+        trackLayer.strokeColor = UIColor(red:0.91, green:0.91, blue:0.91, alpha:1.0).cgColor // Light Gray Outer Circle
+        trackLayer.lineWidth = 5
         trackLayer.fillColor = UIColor.clear.cgColor
         trackLayer.lineCap = CAShapeLayerLineCap.round
         view.layer.addSublayer(trackLayer)
         
         shapeLayer.path = circularPath.cgPath
-        shapeLayer.strokeColor = UIColor(red:0.89, green:0.81, blue:0.71, alpha:1.0).cgColor
-        shapeLayer.lineWidth = 3
+        shapeLayer.strokeColor = UIColor(red:0.89, green:0.81, blue:0.71, alpha:1.0).cgColor // Tan Progress
+        shapeLayer.lineWidth = 5
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.lineCap = CAShapeLayerLineCap.round
         shapeLayer.strokeEnd = 0
@@ -228,8 +303,6 @@ extension HomeVC {
     
     func animateCircle() {
         let brain = appDeleg.appBrain!
-        
-        print("Animate circle")
         
         let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
         basicAnimation.toValue = brain.getGrowData().percentStage

@@ -19,6 +19,7 @@ class MySideMenuNavigationController: SideMenuNavigationController {
         sideMenuManager = customSideMenuManager
         
         sideMenuManager.leftMenuNavigationController?.presentationStyle = .menuSlideIn
+        sideMenuManager.rightMenuNavigationController?.presentationStyle = .menuSlideIn
     }
     
     

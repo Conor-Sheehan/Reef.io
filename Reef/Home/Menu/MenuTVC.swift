@@ -11,8 +11,8 @@ import UIKit
 class MenuTVC: UITableViewController {
     
     let menuOptions = ["Connection", "Basins", "Grow Guide", "Settings"]
-    let menuImages = [ #imageLiteral(resourceName: "HomeVC Bluetooth Icon"), #imageLiteral(resourceName: "Home VC pH Icon"), #imageLiteral(resourceName: "Menu Plant Icon"),#imageLiteral(resourceName: "Menu Settings Icon")]
-    let segueIdentifiers = ["ConnectionVC", "DispenserRefillVC", "", "SettingsVC"]
+    let menuImages = [ #imageLiteral(resourceName: "HomeVC Bluetooth Icon"), #imageLiteral(resourceName: "Home VC PH Icon"), #imageLiteral(resourceName: "Menu Plant Icon"),#imageLiteral(resourceName: "Menu Settings Icon")]
+    let segueIdentifiers = ["ConnectionVC", "BasinVC", "GrowStageVC", "SettingsVC"]
 
     override func viewDidLoad() {
         super.viewDidLoad()

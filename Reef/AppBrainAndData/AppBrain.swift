@@ -17,7 +17,7 @@ class AppBrain {
     
     struct UserDefaultKeys {
         let growStarted          =    "GrowStarted"
-        let dailyReminderTime      =    "dailyPillTime"
+        let dailyReminderTime    =    "dailyPillTime"
     }
     
     // Firebase Data
@@ -28,17 +28,19 @@ class AppBrain {
     internal var navigatingTo = ""
     internal var growStarted = false
     
-    // SETTINGS PAGE DATA: [Grow Mode, Sunrise Time, Aquarium Status, Grow Started]
-    internal var settingsData: [String] = ["Auto-Flower","9:00 AM","Empty"]
+    // SETTINGS PAGE DATA: [Grow Mode, Sunrise Time, Aquarium Status, FirstName]
+    internal var userSettingsData: [String] = ["Auto-Flower","9:00 AM","Empty", "Name"]
     
     // Home Page Data
     internal var percentStage: Double = 0.0
     internal var seedlingStartDate: Date?
     internal var ecosystemStartDate: Date?
+    internal var growsWithReef: Int = 0
     internal var growStage: Int = 0
     
     // Ecosystem Analytics Data
     internal var currentPlantHeight: Int = 0
+    internal var currentPH: String = "7.5"
     
     //Basin Level Data [NUTRIENTS, PH DOWN, PH UP]
     internal var basinLevels: [Int] = [0,0,0]
@@ -54,11 +56,23 @@ class AppBrain {
         self.readUserSettings()
         self.readGrowData()
         self.readBasinLevels()
+        self.readSensorData()
     }
     
     
-    func getGrowData() -> (percentStage: Double, currentPlantHeight: Int, growStage: Int){
-        return  (self.percentStage, self.currentPlantHeight, self.growStage)
+    func getGrowData() -> (percentStage: Double, currentPlantHeight: Int, growStage: Int, growsWithReef: Int, currentPH: String){
+        return  (self.percentStage, self.currentPlantHeight, self.growStage, self.growsWithReef, self.currentPH)
+    }
+    
+    /// Returns the progress of the ecosystem bio-filter (180 day cycle) as a Double
+    func getEcosystemProgress() -> Float {
+        if let ecosystemStarted = ecosystemStartDate {
+            let daysSinceEcosystemStarted = self.daysSinceDate(date: ecosystemStarted)
+            
+            if daysSinceEcosystemStarted < 180 { return Float(daysSinceEcosystemStarted)/180.0 }
+            else { return 1.0 }
+        }
+        else { return 0.0 }
     }
     
     /// Returns the integer value levels of Reef's basins
@@ -67,19 +81,19 @@ class AppBrain {
     }
     
 
-    func getSettings() -> (growMode: String, sunriseTime: String, aquariumStatus: String, navigatingTo: String, growStarted: Bool) {
-        return (settingsData[0], settingsData[1], settingsData[2], self.navigatingTo, self.growStarted)
+    func getSettings() -> (growMode: String, sunriseTime: String, aquariumStatus: String, firstName: String, navigatingTo: String, growStarted: Bool) {
+        return (userSettingsData[0], userSettingsData[1], userSettingsData[2], userSettingsData[3], self.navigatingTo, self.growStarted)
     }
     
     
     // Setters for Settings Page Data
     func setGrowMode(GrowMode: String) {
-        settingsData[0] = GrowMode
+        userSettingsData[0] = GrowMode
         databaseRef.child(userUID!).child("UserSettings").child("GrowMode").setValue(GrowMode)
     }
     
     func setSunriseTime(SunriseTime: String){
-        settingsData[1] = SunriseTime
+        userSettingsData[1] = SunriseTime
         databaseRef.child(userUID!).child("UserSettings").child("SunriseTime").setValue(SunriseTime)
     }
     func setAquariumLighting(AquariumLighting: String){
@@ -88,7 +102,7 @@ class AppBrain {
     
     
     func setAquariumStatus(status: String){
-        settingsData[2] = status
+        userSettingsData[2] = status
         databaseRef.child(userUID!).child("UserSettings").child("AquariumStatus").setValue(status)
     }
     
@@ -103,9 +117,13 @@ class AppBrain {
         
         // Store data in user defaults
         Defaults.set(GrowStarted, forKey: UDkeys.growStarted)
-        
         // Store data in firebase
         databaseRef.child(userUID!).child("UserSettings").child("GrowStarted").setValue(GrowStarted)
+    }
+    
+    func setFirstName(firstName: String) {
+        userSettingsData[3] = firstName
+        databaseRef.child(userUID!).child("UserSettings").child("FirstName").setValue(firstName)
     }
     
 

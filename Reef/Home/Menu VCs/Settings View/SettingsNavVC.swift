@@ -39,6 +39,10 @@ class SettingsNavVC: QuickTableViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.updatedAqrLight), name: NSNotification.Name(rawValue: "updatedAqrLight"), object: nil)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+          self.navigationController?.isNavigationBarHidden = false
+     }
 
     
     /// Sets the settings grow mode table to select auto flower or manual flowering mode

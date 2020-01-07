@@ -1,0 +1,6 @@
+framework module Pods_ReefUITests {
+  umbrella header "Pods-ReefUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

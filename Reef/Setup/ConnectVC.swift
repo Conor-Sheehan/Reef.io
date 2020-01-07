@@ -43,9 +43,11 @@ class ConnectVC: UIViewController {
         connectButton.setTitle("", for: .normal)
         
         // Start Bluetooth Connection Protocol
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate { appDelegate.startBluetoothConnection() }
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            if !appDelegate.connected { appDelegate.startBluetoothConnection() }
+        }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
             
             if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
                 appDelegate.sendMessage(message: appDelegate.getCurrentCheckInMessage()) }

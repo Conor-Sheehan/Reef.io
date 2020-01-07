@@ -33,7 +33,7 @@ extension AppDelegate: CBCentralManagerDelegate {
             
             if deviceName == "DSDTECH HM-10" {
                 
-                print("\nDiscovered Reef")
+                print("\nConnecting to Reef")
                 
                 // REEF CONNECTION PROTOCOL
                 connectionController.stopScan()     // Stop Scanning for Peripherals

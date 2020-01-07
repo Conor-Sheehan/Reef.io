@@ -11,10 +11,14 @@ import UIKit
 class ConnectionVC: UIViewController {
     
     // UI ELEMENTS
-    @IBOutlet weak var bluetoothIndicator: UIImageView!
-    @IBOutlet weak var connectionText: UILabel!
     @IBOutlet weak var checkInButton: UIButton!
     @IBOutlet weak var reefImage: UIImageView!
+    @IBOutlet weak var connectionStatus: UILabel!
+    @IBOutlet weak var reefName: UILabel!
+    @IBOutlet weak var ecosystemProgressBar: UIProgressView!
+    @IBOutlet weak var ecosystemPercent: UILabel!
+    @IBOutlet weak var reefGrows: UILabel!
+    
     
     var appDeleg: AppDelegate!
     
@@ -26,6 +30,9 @@ class ConnectionVC: UIViewController {
         }
         
         displayReefConnectionState()
+        displayEcosystemProgress()
+        displayGrowsWithReef()
+        displayUsersName()
         
         // Set notifiers for when Reef's Bluetooth Connection State Changes
         NotificationCenter.default.addObserver(self, selector: #selector(self.displayReefConnectionState), name: NSNotification.Name(rawValue: "connectionStateChange"), object: nil)
@@ -40,27 +47,36 @@ class ConnectionVC: UIViewController {
           self.navigationController?.isNavigationBarHidden = true
       }
     
+    func displayUsersName() {
+        reefName.text = appDeleg.appBrain.getSettings().firstName + "'s Reef"
+    }
+    
     @objc func displayReefConnectionState() {
         // If Reef is connected, then set indicators to ON
         if appDeleg.connected {
-            bluetoothIndicator.image = #imageLiteral(resourceName: "Bluetooth State")
-            connectionText.text = "Connected"
-            checkInButton.alpha = 1.0
-            checkInButton.isEnabled = true
-            reefImage.alpha = 1.0
+            connectionStatus.text = "Connected"
         }
         // Else set to OFF
         else {
-            bluetoothIndicator.image = #imageLiteral(resourceName: "Disconnected")
-            connectionText.text = "Disconnected"
-            checkInButton.alpha = 0.5
-            checkInButton.isEnabled = false
-            reefImage.alpha = 0.5
+            connectionStatus.text = "Searching.."
         }
-        
     }
     
-
+    func displayEcosystemProgress() {
+        let ecoProgress = appDeleg.appBrain.getEcosystemProgress()
+        ecosystemProgressBar.progress = ecoProgress
+        ecosystemPercent.text = String(Int(ecoProgress*100)) + "%"
+    }
+    
+    func displayGrowsWithReef() {
+        let growsWithReef = appDeleg.appBrain.getGrowData().growsWithReef
+        reefGrows.text = String(growsWithReef)
+    }
+    
+    @IBAction func checkIn(_ sender: UIButton) {
+        appDeleg.sendMessage(message: appDeleg.getCurrentCheckInMessage())
+    }
+    
 
 
 }

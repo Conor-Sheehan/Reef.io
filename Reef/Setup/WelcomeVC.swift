@@ -11,7 +11,6 @@ import UIKit
 
 class WelcomeVC: UIViewController {
     
-    @IBOutlet weak var infinitryLogo: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

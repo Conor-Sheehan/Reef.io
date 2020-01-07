@@ -49,8 +49,6 @@ extension AppBrain {
         
         let daysSinceSeedStarted: Int = self.daysSinceDate(date: self.seedlingStartDate!)
         
-        print("DAYS SINCE SEED STARTED", daysSinceSeedStarted)
-        
         if daysSinceSeedStarted <= 16 {
             self.growStage = 0
             let daysUntilNextStage = 16 - daysSinceSeedStarted
@@ -80,14 +78,14 @@ extension AppBrain {
                 basinLevels[1] = Int(basinSubString[2])!
                 basinLevels[2] = Int(basinSubString[3])!
                 
-                self.storeBasinLevels(nutrientLevel: basinLevels[0], pHDownLevel: basinLevels[1], pHUpLevel: basinLevels[2])
+                self.storeBasinLevels(nutrientLevel: basinLevels[0], PHDownLevel: basinLevels[1], PHUpLevel: basinLevels[2])
                 
-                print("Nutrient lvl:", basinLevels[0], "\npH Up Lvl:", basinLevels[1], "\npH Down Lvl:", basinLevels[2])
+                print("Nutrient lvl:", basinLevels[0], "\nPH Up Lvl:", basinLevels[1], "\nPH Down Lvl:", basinLevels[2])
             }
             
         }
             
-        // If app is receiving pH and plant Height Array Data
+        // If app is receiving PH and plant Height Array Data
         else if message.contains("OKD1") {
             compiledData = ""
             compiledData += message
@@ -110,17 +108,17 @@ extension AppBrain {
             
             switch basinNumber {
             case 1:
-                self.storeBasinLevels(nutrientLevel: 70, pHDownLevel: -1, pHUpLevel: -1)
+                self.storeBasinLevels(nutrientLevel: 70, PHDownLevel: -1, PHUpLevel: -1)
                 basinLevels[0] = 70
             case 2:
-                self.storeBasinLevels(nutrientLevel: -1, pHDownLevel: 70, pHUpLevel: -1)
+                self.storeBasinLevels(nutrientLevel: -1, PHDownLevel: 70, PHUpLevel: -1)
                 basinLevels[1] = 70
             case 3:
-                self.storeBasinLevels(nutrientLevel: -1, pHDownLevel: -1, pHUpLevel: 70)
+                self.storeBasinLevels(nutrientLevel: -1, PHDownLevel: -1, PHUpLevel: 70)
                 basinLevels[2] = 70
             default:
                 print("Entering the default case")
-                storeBasinLevels(nutrientLevel: 70, pHDownLevel: 70, pHUpLevel: 70)
+                storeBasinLevels(nutrientLevel: 70, PHDownLevel: 70, PHUpLevel: 70)
                 basinLevels[0] = 70; basinLevels[1] = 70; basinLevels[2] = 70;
             }
             
