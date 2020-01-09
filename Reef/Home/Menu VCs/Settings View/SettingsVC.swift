@@ -129,20 +129,13 @@ class SettingsVC:  QuickTableViewController {
         
         print(sunriseHour)
         
-        // if user is connected with Reef, then send time
-        if appDeleg.connected {
-            brain.setSunriseTime(SunriseTime: formattedTime)
-            self.setTableContents()
-            appDeleg.sendMessage(message: "0S" + String(sunriseHour))
-        }
-        
-        else{
-            self.setTableContents()
-            self.alertView(ttle: "Disconnected from Reef", msg: "To update Reef's settings connect to Reef and try again")
-        }
+        // if user is connected with Reef, then store updated time
+        brain.setSunriseTime(SunriseTime: formattedTime)
+        self.setTableContents()
+
         
         
-        // Hide time picker
+        // Animate Hiding the Time Picker
         UIView.animate(withDuration: 0.1, delay: 0.0, options: [.curveEaseOut], animations: {
             self.timePicker.alpha = 0.0
             self.pickerBackground.alpha = 0.0

@@ -16,13 +16,13 @@ extension AppBrain {
         
         if let firebaseUID = userUID {
             
-            databaseRef.child(firebaseUID).child("GrowData").child("CurrentPlantHeight").observeSingleEvent(of: .value){ (snapshot) in
+            databaseRef.child("Users").child(firebaseUID).child("GrowData").child("CurrentPlantHeight").observeSingleEvent(of: .value){ (snapshot) in
                 if let currentPlantHeight = snapshot.value as? Int {
                     self.currentPlantHeight = currentPlantHeight
                 }
             }
             
-            databaseRef.child(firebaseUID).child("GrowDates").child("SeedlingStartDates").observeSingleEvent(of: .value) { (snapshot) in
+            databaseRef.child("Users").child(firebaseUID).child("GrowDates").child("SeedlingStartDates").observeSingleEvent(of: .value) { (snapshot) in
                 
                 // Count the number of seedlings started in Reef
                 var growCount = 0
@@ -47,7 +47,7 @@ extension AppBrain {
             
               }
                       
-            databaseRef.child(firebaseUID).child("GrowDates").child("EcosystemStartDate").observeSingleEvent(of: .value){ (snapshot) in
+            databaseRef.child("Users").child(firebaseUID).child("GrowDates").child("EcosystemStartDate").observeSingleEvent(of: .value){ (snapshot) in
                   if let ecosystemStartedDate = snapshot.value as? String {
                       self.ecosystemStartDate = self.convertStringToDate(str: ecosystemStartedDate)
                   }
@@ -60,7 +60,7 @@ extension AppBrain {
          if let firebaseUID = userUID {
         
             // READ THE PH DATA FROM FIREBASE
-            databaseRef.child(firebaseUID).child("PHData").observeSingleEvent(of: .value) { (snapshot) in
+            databaseRef.child("Users").child(firebaseUID).child("PHData").observeSingleEvent(of: .value) { (snapshot) in
             
                 // Store the current PH Value
                 var mostRecentPH = "7.5"
@@ -88,11 +88,10 @@ extension AppBrain {
             
             for basinIndex in 0...2 {
                 
-                databaseRef.child(firebaseUID).child("BasinLevels").child(firebaseName[basinIndex]).observeSingleEvent(of: .value) { (snapshot) in
+                databaseRef.child("Users").child(firebaseUID).child("BasinLevels").child(firebaseName[basinIndex]).observeSingleEvent(of: .value) { (snapshot) in
                     if let basinLevel = snapshot.value as? Int {
                         self.basinLevels[basinIndex] = basinLevel
                         
-                        if basinIndex == 2 { NotificationCenter.default.post(name: NSNotification.Name(rawValue: "basinsRead"), object: nil) }
                     }
                 }
             }
@@ -103,7 +102,7 @@ extension AppBrain {
         
         if let firebaseUID = userUID {
             
-            databaseRef.child(firebaseUID).child("UserSettings").child("GrowStarted").observeSingleEvent(of: .value) { (snapshot) in
+            databaseRef.child("Users").child(firebaseUID).child("UserSettings").child("GrowStarted").observeSingleEvent(of: .value) { (snapshot) in
                 if let growStart = snapshot.value as? Bool {
                     self.growStarted = growStart
                 }
@@ -113,7 +112,7 @@ extension AppBrain {
             let firebaseName: [String] = ["GrowMode", "SunriseTime", "AquariumStatus", "FirstName"]
             
             for index in 0...3 {
-                databaseRef.child(firebaseUID).child("UserSettings").child(firebaseName[index]).observeSingleEvent(of: .value) { (snapshot) in
+                databaseRef.child("Users").child(firebaseUID).child("UserSettings").child(firebaseName[index]).observeSingleEvent(of: .value) { (snapshot) in
                     if let value = snapshot.value as? String {
                         print("User Setttings", value)
                         self.userSettingsData[index] = value
@@ -124,6 +123,24 @@ extension AppBrain {
             
         }
     }
+    
+    func readWiFiConnected() {
+        
+        // Check if user has been authorized by firebase
+        if let firebaseID = userUID {
+            
+            // Begin reading path
+            databaseRef.child("Users").child(firebaseID).child("WiFiLastConnected").observe(.value, with: { (snapshot) in
+                if let connectionTime = snapshot.value as? String {
+                    print("WiFi connected successfully", connectionTime)
+                    self.wifiConnected = true
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "wifiConnected"), object: nil)
+                }
+                else { print("WiFi not yet connected")}
+            })
+        }
+    }
+    
     
     
 }

@@ -2,108 +2,77 @@
 //  ConnectVC.swift
 //  Reef
 //
-//  Created by Conor Sheehan on 10/7/19.
-//  Copyright © 2019 Infinitry. All rights reserved.
+//  Created by Conor Sheehan on 1/7/20.
+//  Copyright © 2020 Infinitry. All rights reserved.
 //
 
 import UIKit
-import AudioToolbox
 
 class ConnectVC: UIViewController {
     
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var wifiImage: UIImageView!
+    @IBOutlet weak var connectTitle: UILabel!
+    @IBOutlet weak var connectDescription: UILabel!
     @IBOutlet weak var connectButton: UIButton!
-    @IBOutlet weak var reefImage: UIImageView!
     
-    var connectSuccess = false
-    
+    var brain: AppBrain!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Hide activity indicator when view first loads
-        activityIndicator.alpha = 0.0
-        
-        // Notify VC when
-        NotificationCenter.default.addObserver(self, selector: #selector(self.connectedToReef), name: NSNotification.Name(rawValue: "connected"), object: nil)
-        
         // Set setup location identifier to 1
         UserDefaults.standard.set(1, forKey: "setupLocation")
-    }
-    
-
-    @IBAction func startConnectionProtocol(_ sender: UIButton) {
         
-        // Start animating activity indicator
-        activityIndicator.startAnimating()
-        activityIndicator.alpha = 1.0
-        
-        // Disable connect button
-        connectButton.isEnabled = false
-        connectButton.alpha = 0.5
-        connectButton.setTitle("", for: .normal)
-        
-        // Start Bluetooth Connection Protocol
+        // Retrieve and storee appbrain locally
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-            if !appDelegate.connected { appDelegate.startBluetoothConnection() }
+            brain = appDelegate.appBrain
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
+        // Add observers to notify VC when Wi-Fi is successfully connected
+        NotificationCenter.default.addObserver(self, selector: #selector(connectionTest), name: UIApplication.willEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(connectionTest), name: NSNotification.Name(rawValue: "wifiConnected"), object: nil)
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        // Animate Wi-Fi image to convey connection process UX
+        UIView.animate(withDuration: 1.0, delay: 0.0, options: [.autoreverse, .repeat], animations: {
+            self.wifiImage.alpha = 0.3
+           }, completion: nil)
+    }
+    
+    
+    /// Checks if Reef's Wi-Fi has been successfully conneected to the user's database
+    @objc func connectionTest() {
+        
+        // Check if Reef successfully connected to User's Wi-Fi
+        if brain.getWifiConnected() { print("Wifi Connected ConnectVC")
             
-            if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-                appDelegate.sendMessage(message: appDelegate.getCurrentCheckInMessage()) }
+            // Update UI elements to notify user
+            connectTitle.text = "Connected!"
+            connectDescription.text = "Reef is now connected to Wi-Fi. Tap below to continue"
+            
+            // Remove animation from wifi Image
+            wifiImage.layer.removeAllAnimations()
+            wifiImage.alpha = 1.0
+            
+            // Allow user to continue by enabling button
+            connectButton.isEnabled = true
+            connectButton.setTitle("Continue", for: .normal)
         }
+    }
+    
+    
+    @IBAction func settingsTapped(_ sender: UIButton) {
         
-        /// IMPLEMENT CONNECTION TIMEOUT PROTOCOL ///
-        DispatchQueue.main.asyncAfter(deadline: .now() + 8.0) {
+        NotificationCenter.default.removeObserver(UIApplication.willEnterForegroundNotification)
+        NotificationCenter.default.removeObserver(NSNotification.Name(rawValue: "wifiConnected"))
+       // Segue to setup
+        self.performSegue(withIdentifier: "segueToSetup", sender: self)
+    }
+    
+    
 
-            // if we have not received a connected to Reef notification, then time out and try again
-            if !self.connectSuccess {
-                /// SEND ALERT VC about connection timeout ///
-                self.alertUser(title: "Connection Failed", message: "Make sure Reef is turned on and your bluetooth is enabled then try again.")
-                
-                // Reset connection button
-                self.connectButton.isEnabled = true
-                self.connectButton.alpha = 1.0
-                self.connectButton.setTitle("Try again", for: .normal)
-                
-                // Stop animation and hide activity indicator
-                self.activityIndicator.stopAnimating()
-                self.activityIndicator.alpha = 0.0
-            }
-        }
-        
-        
-    }
-    
-    /// Called once user successfully connects to Reef's Bluetooth
-    @objc func connectedToReef() {
-        
-        // Set connection success to true
-        connectSuccess = true
-        
-        // Stop animation and hide activity indicator
-        activityIndicator.stopAnimating()
-        activityIndicator.alpha = 0.0
-        
-        // Signal success
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        self.connectButton.alpha = 1.0
-        reefImage.alpha = 1.0
-        self.connectButton.setTitle("Connected", for: .normal)
-        
-        // Segue to login sequence
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
-            self.performSegue(withIdentifier: "segueToLogin", sender: self)
-        }
-    }
-    
-    /// Alert user if their sign up attempt was valid or invalid
-    func alertUser(title: String, message: String){
-        let alertVC = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        let action = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction) -> Void in })
-        alertVC.addAction(action)
-        self.present(alertVC, animated: true, completion: nil)
-    }
-    
 
 }

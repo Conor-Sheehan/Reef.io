@@ -102,14 +102,6 @@ class BasinVC: UIViewController {
         let alertController = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
         let yes = UIAlertAction.init(title: "Yes", style: .default, handler: { action in
             
-            // if App is Connected to Reef's bluetooth, then send a refill mnessage
-            if self.appDeleg.connected {
-                let message = "0B" + String(self.basin+1)
-                self.appDeleg.sendMessage(message: message)
-            }
-            else {
-                self.displayAlert(title: "Disconnected from Reef", message: "Connect to Reef and try again")
-            }
         })
 
         let cancel = UIAlertAction.init(title: "Cancel", style: .cancel, handler: { action in })

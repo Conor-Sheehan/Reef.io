@@ -29,9 +29,6 @@ class StartGrowVC: UIViewController, SFSafariViewControllerDelegate {
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
             appDeleg = appDelegate
         }
-        
-        // Notifier for receiving bluetooth response from Reef after setting day hours
-        NotificationCenter.default.addObserver(self, selector: #selector(self.receivedResponse), name: NSNotification.Name(rawValue: "setDayHours"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,27 +65,19 @@ class StartGrowVC: UIViewController, SFSafariViewControllerDelegate {
         
         else {
             
-            // Send bluetooth mmessage to Reef 0H18 to update day hours
-            appDeleg.sendMessage(message: "0H18")
+            // Set grow started to true
+            appDeleg.appBrain.setGrowStartedState(GrowStarted: true)
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                // if Reef has not reesponded then
-                if !self.responseReceived {
-                    // Alert user that Reef did not receive message
-                    self.displayAlert(title: "Try Again.", message: "No response from Reef. Make sure you're connected and try again.")
-                }
-            }
+            // Set day hours to 18 in Firebase
+
+            // Dismiss view controller from stack
+            self.navigationController?.popViewController(animated: true)
+            
         }
         
     }
     
-    /// Called by notifier once App receives the response from Reef
-    @objc func receivedResponse() {
-        responseReceived = true
-        // Set grow started to true
-        appDeleg.appBrain.setGrowStartedState(GrowStarted: true)
-        self.navigationController?.popViewController(animated: true)
-    }
+
     
 
     func displayAlert(title: String, message: String) {

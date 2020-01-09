@@ -170,22 +170,7 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     /// Toggles the UI State Change when Reef connects/disconnects
     @objc func displayReefConnectionState() {
         print("Displaying reef connection state")
-        // If Reef is connected, then set indicators to ON
-        if appDeleg.connected {
-            print("Reef is connected")
-            // Invalidate timer
-            if timer.isValid { timer.invalidate() }
-            connectionState.text = "Connected"
-        }
-        // Else set to OFF
-        else {
-            self.connectionState.text = "Searching."
-            if timer.isValid { timer.invalidate() } // invalidate active timers
-            timer = Timer.scheduledTimer(withTimeInterval: 0.75, repeats: true, block: { timer in
-                if self.connectionState.text == "Searching." { self.connectionState.text = "Searching.." }
-                else { self.connectionState.text = "Searching."  }
-            })
-        }
+        // CHANGE TO SOME OTHER RELEVANT UI/UX
     }
     
     func displayDayHours() {

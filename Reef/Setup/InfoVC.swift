@@ -32,8 +32,6 @@ class InfoVC: UIViewController {
         addGestureRecognizers()
         completeButton.alpha = 0.0
         
-        // Set setup location identifier to 6
-        UserDefaults.standard.set(6, forKey: "setupLocation")
     }
     
     func addGestureRecognizers() {

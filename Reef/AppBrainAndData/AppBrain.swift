@@ -45,8 +45,9 @@ class AppBrain {
     //Basin Level Data [NUTRIENTS, PH DOWN, PH UP]
     internal var basinLevels: [Int] = [0,0,0]
     
-    //Bluetooth message compiler
-    internal var compiledData: String = ""
+    // WiFi connected variable
+    internal var wifiConnected = false
+
     
     // Initialize() will retrieve all data from storage when app returns from terminated state
     func initialize() {
@@ -57,6 +58,7 @@ class AppBrain {
         self.readGrowData()
         self.readBasinLevels()
         self.readSensorData()
+        self.readWiFiConnected()
     }
     
     
@@ -66,7 +68,11 @@ class AppBrain {
     
     /// Returns the progress of the ecosystem bio-filter (180 day cycle) as a Double
     func getEcosystemProgress() -> Float {
+        
+        // Get date that the user first filled the water in their Reef
         if let ecosystemStarted = ecosystemStartDate {
+            
+            // Calculate # of days since ecosystem was first established
             let daysSinceEcosystemStarted = self.daysSinceDate(date: ecosystemStarted)
             
             if daysSinceEcosystemStarted < 180 { return Float(daysSinceEcosystemStarted)/180.0 }
@@ -75,36 +81,19 @@ class AppBrain {
         else { return 0.0 }
     }
     
-    /// Returns the integer value levels of Reef's basins
+    
+    /// Returns the unique level of each of Reef's basins
     func getBasinLevels() -> (nutrientLvl: Int, phDownLvl: Int, phUpLvl: Int) {
         return (basinLevels[0], basinLevels[1], basinLevels[2])
     }
     
-
+    
+    /// Returns the unique values for all of the data displayed in the Settings Pages
     func getSettings() -> (growMode: String, sunriseTime: String, aquariumStatus: String, firstName: String, navigatingTo: String, growStarted: Bool) {
         return (userSettingsData[0], userSettingsData[1], userSettingsData[2], userSettingsData[3], self.navigatingTo, self.growStarted)
     }
     
     
-    // Setters for Settings Page Data
-    func setGrowMode(GrowMode: String) {
-        userSettingsData[0] = GrowMode
-        databaseRef.child(userUID!).child("UserSettings").child("GrowMode").setValue(GrowMode)
-    }
-    
-    func setSunriseTime(SunriseTime: String){
-        userSettingsData[1] = SunriseTime
-        databaseRef.child(userUID!).child("UserSettings").child("SunriseTime").setValue(SunriseTime)
-    }
-    func setAquariumLighting(AquariumLighting: String){
-        databaseRef.child(userUID!).child("UserSettings").child("AquariumLighting").setValue(AquariumLighting)
-    }
-    
-    
-    func setAquariumStatus(status: String){
-        userSettingsData[2] = status
-        databaseRef.child(userUID!).child("UserSettings").child("AquariumStatus").setValue(status)
-    }
     
     func setNavigatingTo(NavigatingTo: String) {
         self.navigatingTo = NavigatingTo
@@ -117,14 +106,20 @@ class AppBrain {
         
         // Store data in user defaults
         Defaults.set(GrowStarted, forKey: UDkeys.growStarted)
-        // Store data in firebase
-        databaseRef.child(userUID!).child("UserSettings").child("GrowStarted").setValue(GrowStarted)
+        
+        if let firebaseID = userUID {
+            // Store data in firebase
+            databaseRef.child(firebaseID).child("UserSettings").child("GrowStarted").setValue(GrowStarted)
+        }
     }
     
-    func setFirstName(firstName: String) {
-        userSettingsData[3] = firstName
-        databaseRef.child(userUID!).child("UserSettings").child("FirstName").setValue(firstName)
+    /// Returns whether or not user's Reef has successfully conneected to WiFi
+    func getWifiConnected() -> Bool {
+        return wifiConnected
     }
+    
+    
+
     
 
     

@@ -52,14 +52,6 @@ class ConnectionVC: UIViewController {
     }
     
     @objc func displayReefConnectionState() {
-        // If Reef is connected, then set indicators to ON
-        if appDeleg.connected {
-            connectionStatus.text = "Connected"
-        }
-        // Else set to OFF
-        else {
-            connectionStatus.text = "Searching.."
-        }
     }
     
     func displayEcosystemProgress() {
@@ -74,7 +66,7 @@ class ConnectionVC: UIViewController {
     }
     
     @IBAction func checkIn(_ sender: UIButton) {
-        appDeleg.sendMessage(message: appDeleg.getCurrentCheckInMessage())
+
     }
     
 

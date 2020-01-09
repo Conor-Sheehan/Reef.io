@@ -11,77 +11,95 @@ import Foundation
 // EXTENSION FOR STORING DATA IN FIREBASE
 extension AppBrain {
     
-    func storeMostRecentCommunicationDate() {
-        let recentCommunication = self.convertDateToString(date: Date())
-        databaseRef.child(userUID!).child("GrowDates").child("MostRecentCommunication").child(recentCommunication).setValue("Checked-in w/ Reef")
-    }
-    
     
     func storeEcosystemStartDate() {
         let currentDate = Date()
-        databaseRef.child(userUID!).child("GrowDates").child("EcosystemStartDate").setValue(self.convertDateToString(date: currentDate))
-        self.ecosystemStartDate = currentDate
+        
+        if let firebaseID = userUID {
+            databaseRef.child("Users").child(firebaseID).child("GrowDates").child("EcosystemStartDate").setValue(self.convertDateToString(date: currentDate))
+            self.ecosystemStartDate = currentDate
+        }
     }
     
     func storeSeedlingStartDate() {
         // Store the Grow start date in the database
         let currentDate = Date()
-        databaseRef.child(userUID!).child("GrowDates").child("SeedlingStartDates").child(self.convertDateToString(date: currentDate)).setValue("Started")
-        self.seedlingStartDate = currentDate
+        
+        if let firebaseID = userUID {
+            databaseRef.child("Users").child(firebaseID).child("GrowDates").child("SeedlingStartDates").child(self.convertDateToString(date: currentDate)).setValue("Started")
+            self.seedlingStartDate = currentDate
+        }
     }
     
     /// Stores the updated basin levels
     func storeBasinLevels(nutrientLevel: Int, PHDownLevel: Int, PHUpLevel: Int) {
     
         if let firebaseID = userUID {
-            if nutrientLevel >= 0   { databaseRef.child(firebaseID).child("BasinLevels").child("Nutrient").setValue(nutrientLevel) }
-            if PHDownLevel >= 0     { databaseRef.child(firebaseID).child("BasinLevels").child("PhDown").setValue(PHDownLevel) }
-            if PHUpLevel >= 0       { databaseRef.child(firebaseID).child("BasinLevels").child("PhUp").setValue(PHUpLevel) }
+            if nutrientLevel >= 0   { databaseRef.child("Users").child(firebaseID).child("BasinLevels").child("Nutrients").setValue(nutrientLevel) }
+            if PHDownLevel >= 0     { databaseRef.child("Users").child(firebaseID).child("BasinLevels").child("PhDown").setValue(PHDownLevel) }
+            if PHUpLevel >= 0       { databaseRef.child("Users").child(firebaseID).child("BasinLevels").child("PhUp").setValue(PHUpLevel) }
+        }
+    }
+    
+    func storeAquariumStatus(full: Int) {
+        
+         if let firebaseID = userUID {
+            userSettingsData[2] =  (full == 1) ? "Full" : "Empty"
+            databaseRef.child("Users").child(firebaseID).child("ReefSettings").child("aquariumFull").setValue(full)
+        }
+    }
+    
+    /// Stores the user's first name in their Firebase Database Tree (Used for personalizing user's profile)
+    /// - Parameter firstName: User's First Name
+    func setFirstName(firstName: String) {
+        if let firebaseID = userUID {
+            userSettingsData[3] = firstName
+            databaseRef.child("Users").child(firebaseID).child("UserData").child("FirstName").setValue(firstName)
         }
     }
     
     
-    // storePHData() takes the data sent from Reef and parses it and then stores it in
-    // firebase with it's corresponding date that the value was recorded
-    func storeDataArrays(data: String) {
-        let allData = data.split(separator: "&")
-        let PHDataArr = allData[0].split(separator: ",")
-        
-        if allData.count > 1 {
-           
-            let PHeightDataArr = allData[1].split(separator: ",")
-            print("Parsed plant height data: ", PHeightDataArr)
-            
-            if PHeightDataArr.count > 0 {
-                for index in 0 ... (PHeightDataArr.count - 1) {
-                    let hoursAgo = (PHeightDataArr.count - index - 1)*12 // Estimates how many hours ago each data entry was recorded
-                    let PHeightDate = Calendar.current.date(byAdding: .hour, value: -hoursAgo, to: Date()) // Creates date-time object when data was recorded
-                    let dateString = self.convertDateToString(date: PHeightDate!) // Converts date-time object to string for firebase storage
-                    
-                    databaseRef.child(userUID!).child("plantHeightData").child(dateString).setValue(PHeightDataArr[index])
-                    print("Storing plant Height Data: ", PHeightDataArr[index])
-                }
-            }
-            
+    /// Stores user's unique Reef Ecosystem ID in the Firebase (Used to sync Reef's Wi-Fi receiver to the user's database)
+    /// - Parameter reefID: User's unique Reef Ecosystem ID (engraved on Reef Ecosystem)
+    func storeReefID(reefID: String) {
+        if let firebaseID = userUID {
+            databaseRef.child("ReefID").child(reefID).setValue(firebaseID)
         }
+    }
+    
+    // Setters for Settings Page Data
+    func setGrowMode(GrowMode: String) {
         
-        print("Parsed PH Data Array: ", PHDataArr)
-        
-        
-        // if there is stored PH Data then store it in firebase
-        if PHDataArr.count > 1 {
-            
-            // Iterates through bluetooth communication to store each data entry in Firebase
-            for index in 1 ... (PHDataArr.count - 1) {
-                let hoursAgo = (PHDataArr.count - index - 1)*12 // Estimates how many hours ago each data entry was recorded
-                let PHDate = Calendar.current.date(byAdding: .hour, value: -hoursAgo, to: Date()) // Creates date-time object when data was recorded
-                let dateString = self.convertDateToString(date: PHDate!) // Converts date-time object to string for firebase storage
-                
-                databaseRef.child(userUID!).child("PHData").child(dateString).setValue(PHDataArr[index])
-                print("Storing PHData: ", PHDataArr[index])
-            }
+        if let firebaseID = userUID {
+            userSettingsData[0] = GrowMode
+            databaseRef.child("Users").child(firebaseID).child("ReefSettings").child("GrowMode").setValue(GrowMode)
         }
+    }
+    
+    
+    /// Stores the time that the user want's their Reef Ecosystem to turn on lights each day
+    /// - Parameter SunriseTime: Time each day user wants to turn on grow and aquarium lights
+    func setSunriseTime(SunriseTime: String) {
+         if let firebaseID = userUID {
+            userSettingsData[1] = SunriseTime
+            databaseRef.child("Users").child(firebaseID).child("ReefSettings").child("sunrise").setValue(SunriseTime)
+        }
+    }
+    
+    
+    /// Stores the Aquarium Light's RGB value in Firebase
+    /// - Parameter AquariumLRGB: RGB Value of the color for the aquarium led
+    func setAquariumLighting(AquariumRGB: String) {
         
+        if let firebaseID = userUID {
+            databaseRef.child("Users").child(firebaseID).child("ReefSettings").child("AquariumRGB").setValue(AquariumRGB)
+        }
+    }
+    
+    func storeMessagingToken(FCMtoken: String) {
+        if let firebaseID = userUID {
+            databaseRef.child("Users").child(firebaseID).child("UserData").child("FCMtoken").setValue(FCMtoken)
+        }
     }
 
     

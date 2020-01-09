@@ -36,8 +36,6 @@ class SettingsNavVC: QuickTableViewController {
             self.setAquariumStatusTable()
         }
         
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(self.updatedAqrLight), name: NSNotification.Name(rawValue: "updatedAqrLight"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -124,35 +122,12 @@ class SettingsNavVC: QuickTableViewController {
     
     /// Changes the status of the smart aquarium features (On/Off)
     func changeAquariumStatus(status: Bool) {
-
-        if appDeleg.connected {
-            if status {
-                if msgCounter == 1 { msgCounter += 1 }
-                else { appDeleg.sendMessage(message: "0A1"); msgCounter = 1 }
-                self.brain.setAquariumStatus(status: "Full")
-            }
-            else {
-                if msgCounter == 1 { msgCounter += 1 }
-                else { appDeleg.sendMessage(message: "0A0"); msgCounter = 1 }
-                self.brain.setAquariumStatus(status: "Empty")
-            }
-        }
-        else {
-            self.alertView(ttle: "Disconnected from Reef", msg: "To update Reef's settings connect to Reef and try again")
-            self.setAquariumStatusTable()
-        }
-    }
-    
-    @objc func updatedAqrLight() { alertView(ttle: "Updated!", msg: "Aquarium LED has been successfully updated.") }
-    
-    
-    func alertView(ttle: String, msg: String){
         
-        let alert = UIAlertController(title: ttle, message: msg, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        status ? brain.storeAquariumStatus(full: 1) : self.brain.storeAquariumStatus(full: 0)
+        setAquariumStatusTable()
     }
     
+ 
 
 
 }
