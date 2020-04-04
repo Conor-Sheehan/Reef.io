@@ -61,10 +61,11 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
                 
                 // Initialize App Brain and store first name in firebase
                 if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                    
                     appDelegate.initializeAppBrain()                    // Initialize App Brain Local Data Storage
                     appDelegate.activateNotifications()
                     appDelegate.activateRemoteNotifications()
-                    appDelegate.appBrain.setFirstName(firstName: name)  // Set the user's first name
+                    appDelegate.appBrain.use
                     appDelegate.appBrain.storeReefID(reefID: reefId)    // Store user's Reef ID in Firebase
                     appDelegate.appBrain.storeMessagingToken(FCMtoken: appDelegate.FCMtoken) // Store messaging tokeen
                 }

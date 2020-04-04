@@ -54,10 +54,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
             activateNotifications()
             activateRemoteNotifications()
        }
-        if setupLocation == 7 {
+        if setupLocation == 2 {
             setupComplete = true
             
         }
+        
+        //appBrain.reefSettings.
+        
         
         // FOR TESTING PURPOSES ONLY
         window?.rootViewController = initialViewController(setupLocation: setupLocation)

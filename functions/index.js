@@ -47,9 +47,9 @@ exports.initializeDatabase = functions.auth.user().onCreate((user) => {
 	admin.database().ref('/Users/' + uuid + '/ReefSettings/aquariumRGB').set('255,255,255');
 
 	// Initialize Basin Levels branch in user's database
-	admin.database().ref('/Users/' + uuid + '/BasinLevels/Nutrients').set(0);
-	admin.database().ref('/Users/' + uuid + '/BasinLevels/PhUp').set(0);
-	admin.database().ref('/Users/' + uuid + '/BasinLevels/PhDown').set(0);
+	admin.database().ref('/Users/' + uuid + '/ReefSettings/BasinLevels/nutrients').set(0);
+	admin.database().ref('/Users/' + uuid + '/ReefSettings/BasinLevels/phUp').set(0);
+	admin.database().ref('/Users/' + uuid + '/ReefSettings/BasinLevels/phDown').set(0);
 
 });
 

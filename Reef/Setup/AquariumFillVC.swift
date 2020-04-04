@@ -28,7 +28,7 @@ class AquariumFillVC: UIViewController {
          if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
             
             // Set aquarium to full to turn on pumps
-            appDelegate.appBrain.storeAquariumStatus(full: 1)
+            appDelegate.appBrain.setAquariumLevel(full: true)
             
             // Store start date of the aquarium
             appDelegate.appBrain.storeEcosystemStartDate()

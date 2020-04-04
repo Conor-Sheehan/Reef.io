@@ -80,7 +80,7 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
         tapView.addGestureRecognizer(tap)
         
         // Set default location to 7
-        UserDefaults.standard.set(7, forKey: "setupLocation")
+        UserDefaults.standard.set(2, forKey: "setupLocation")
         appDeleg.setupComplete = true
     }
     
@@ -137,7 +137,7 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @objc func displayUserName() {
-        reefName.text = appDeleg.appBrain.getSettings().firstName + "'s Reef"
+        reefName.text = appDeleg.appBrain.userData.firstName + "'s Reef"
     }
     
     @objc func displayPHValue() {
@@ -277,7 +277,7 @@ extension HomeVC {
         view.layer.addSublayer(trackLayer)
         
         shapeLayer.path = circularPath.cgPath
-        shapeLayer.strokeColor = UIColor(red:0.89, green:0.81, blue:0.71, alpha:1.0).cgColor // Tan Progress
+        shapeLayer.strokeColor = UIColor(red:0.57, green:0.67, blue:0.60, alpha:1.0).cgColor // Light Green Progress Bar
         shapeLayer.lineWidth = 5
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.lineCap = CAShapeLayerLineCap.round

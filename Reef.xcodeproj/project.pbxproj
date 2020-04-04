@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C0BAC8A9C011E58B5A47F3F /* Pods_ReefUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DB33C4D1458237BCBDCD92 /* Pods_ReefUITests.framework */; };
+		0B75FB875C02F6A67843CF93 /* Pods_ReefTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A91E408E506E249E3FFAF5A /* Pods_ReefTests.framework */; };
+		0FA6D3B1E446C2D7E229ECDD /* Pods_ReefUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF360C812D6FB32BBBB86705 /* Pods_ReefUITests.framework */; };
 		46099170235EA6F0000BE2F0 /* MySideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4609916F235EA6F0000BE2F0 /* MySideMenuNavigationController.swift */; };
 		46099173235EB030000BE2F0 /* GrowStageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46099172235EB030000BE2F0 /* GrowStageVC.swift */; };
 		461D530221399539007B6308 /* BasinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461D530121399539007B6308 /* BasinVC.swift */; };
@@ -17,8 +18,11 @@
 		4621596321286D3B00F8ADA4 /* AppBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621596221286D3B00F8ADA4 /* AppBrain.swift */; };
 		462A0B8C2149950C00D3108B /* AppBrainCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A0B8B2149950C00D3108B /* AppBrainCalculations.swift */; };
 		462A0B8E2149AE7200D3108B /* FirebaseReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A0B8D2149AE7200D3108B /* FirebaseReader.swift */; };
+		462A428223DAB00E0086096A /* ReefSettingsExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A428123DAB00E0086096A /* ReefSettingsExt.swift */; };
+		462A428423DF8A2B0086096A /* UserDataExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A428323DF8A2B0086096A /* UserDataExt.swift */; };
+		462A428723DF8C580086096A /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A428623DF8C580086096A /* DateExt.swift */; };
+		462A428923DF9DC00086096A /* GrowDataExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A428823DF9DC00086096A /* GrowDataExt.swift */; };
 		463962DF23C5922300849DD3 /* ConnectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463962DE23C5922300849DD3 /* ConnectVC.swift */; };
-		4642CDC72329557B00CB932C /* FirebaseWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4642CDC62329557B00CB932C /* FirebaseWriter.swift */; };
 		46699F73234D1555006EAC89 /* AquariumFillVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46699F72234D1555006EAC89 /* AquariumFillVC.swift */; };
 		46699F75234D3200006EAC89 /* BasinFillVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46699F74234D3200006EAC89 /* BasinFillVC.swift */; };
 		46699F77234D4A87006EAC89 /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46699F76234D4A87006EAC89 /* InfoVC.swift */; };
@@ -38,8 +42,7 @@
 		46E69F3D210948A3003C466F /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69F3C210948A3003C466F /* SignUpVC.swift */; };
 		46EE48332357BE7F00222035 /* StartGrowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EE48322357BE7F00222035 /* StartGrowVC.swift */; };
 		46F55639235A2C0B00DBC6E2 /* ConnectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F55638235A2C0B00DBC6E2 /* ConnectionVC.swift */; };
-		A6E86CCE75F025FCCE654861 /* Pods_Reef.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC21A8B03EA4EE6848CB3F68 /* Pods_Reef.framework */; };
-		EF4199A9EA64B433E452A8CF /* Pods_ReefTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF7505F7193F608E041724A /* Pods_ReefTests.framework */; };
+		800CE2CC326B141FDCCF84F0 /* Pods_Reef.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5CA9B080C8113410E3A117A /* Pods_Reef.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1FBE9ACA9A5D53C71FD7EAFA /* Pods-ReefTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReefTests/Pods-ReefTests.release.xcconfig"; sourceTree = "<group>"; };
+		24B908DB06A921B98386ABC7 /* Pods-Reef.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reef.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reef/Pods-Reef.debug.xcconfig"; sourceTree = "<group>"; };
+		308799469D6FECDB2F0CF6D5 /* Pods-Reef.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reef.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reef/Pods-Reef.release.xcconfig"; sourceTree = "<group>"; };
 		4609916F235EA6F0000BE2F0 /* MySideMenuNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySideMenuNavigationController.swift; sourceTree = "<group>"; };
 		46099172235EB030000BE2F0 /* GrowStageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowStageVC.swift; sourceTree = "<group>"; };
 		460EE4D5211F59950004A91C /* Reef.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Reef.entitlements; sourceTree = "<group>"; };
@@ -70,8 +76,11 @@
 		4621596221286D3B00F8ADA4 /* AppBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBrain.swift; sourceTree = "<group>"; };
 		462A0B8B2149950C00D3108B /* AppBrainCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBrainCalculations.swift; sourceTree = "<group>"; };
 		462A0B8D2149AE7200D3108B /* FirebaseReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseReader.swift; sourceTree = "<group>"; };
+		462A428123DAB00E0086096A /* ReefSettingsExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReefSettingsExt.swift; sourceTree = "<group>"; };
+		462A428323DF8A2B0086096A /* UserDataExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataExt.swift; sourceTree = "<group>"; };
+		462A428623DF8C580086096A /* DateExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
+		462A428823DF9DC00086096A /* GrowDataExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowDataExt.swift; sourceTree = "<group>"; };
 		463962DE23C5922300849DD3 /* ConnectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectVC.swift; sourceTree = "<group>"; };
-		4642CDC62329557B00CB932C /* FirebaseWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseWriter.swift; sourceTree = "<group>"; };
 		46699F72234D1555006EAC89 /* AquariumFillVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AquariumFillVC.swift; sourceTree = "<group>"; };
 		46699F74234D3200006EAC89 /* BasinFillVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasinFillVC.swift; sourceTree = "<group>"; };
 		46699F76234D4A87006EAC89 /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
@@ -97,15 +106,12 @@
 		46E69F3C210948A3003C466F /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		46EE48322357BE7F00222035 /* StartGrowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGrowVC.swift; sourceTree = "<group>"; };
 		46F55638235A2C0B00DBC6E2 /* ConnectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionVC.swift; sourceTree = "<group>"; };
-		537B7DE70103528EDD4CA4E2 /* Pods-ReefTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReefTests/Pods-ReefTests.debug.xcconfig"; sourceTree = "<group>"; };
-		56DB33C4D1458237BCBDCD92 /* Pods_ReefUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReefUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5CF337B1ABD655935FF0EE76 /* Pods-ReefTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReefTests/Pods-ReefTests.release.xcconfig"; sourceTree = "<group>"; };
-		87F3B3D0ABFF5B6FAB8FEE2F /* Pods-Reef.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reef.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reef/Pods-Reef.release.xcconfig"; sourceTree = "<group>"; };
-		9AF7505F7193F608E041724A /* Pods_ReefTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReefTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC21A8B03EA4EE6848CB3F68 /* Pods_Reef.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reef.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C468EC47562CDF7538A53B67 /* Pods-ReefUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReefUITests/Pods-ReefUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		D99760AB8014C054FF28D7D5 /* Pods-Reef.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reef.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reef/Pods-Reef.debug.xcconfig"; sourceTree = "<group>"; };
-		F7F96C7F80DCF5FD44FDE562 /* Pods-ReefUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReefUITests/Pods-ReefUITests.release.xcconfig"; sourceTree = "<group>"; };
+		48792FB4BFD2017A182F8C72 /* Pods-ReefUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReefUITests/Pods-ReefUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6A91E408E506E249E3FFAF5A /* Pods_ReefTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReefTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		970C819BB7F3A6511AB6E74E /* Pods-ReefUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReefUITests/Pods-ReefUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DD21A1168783ED074CBCF478 /* Pods-ReefTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReefTests/Pods-ReefTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E5CA9B080C8113410E3A117A /* Pods_Reef.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reef.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF360C812D6FB32BBBB86705 /* Pods_ReefUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReefUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6E86CCE75F025FCCE654861 /* Pods_Reef.framework in Frameworks */,
+				800CE2CC326B141FDCCF84F0 /* Pods_Reef.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,7 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF4199A9EA64B433E452A8CF /* Pods_ReefTests.framework in Frameworks */,
+				0B75FB875C02F6A67843CF93 /* Pods_ReefTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,13 +135,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C0BAC8A9C011E58B5A47F3F /* Pods_ReefUITests.framework in Frameworks */,
+				0FA6D3B1E446C2D7E229ECDD /* Pods_ReefUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		157533C02C535E7EDB03B72B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E5CA9B080C8113410E3A117A /* Pods_Reef.framework */,
+				6A91E408E506E249E3FFAF5A /* Pods_ReefTests.framework */,
+				FF360C812D6FB32BBBB86705 /* Pods_ReefUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		46099171235EA9C9000BE2F0 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,15 +194,33 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		462A0B8F2149AE7A00D3108B /* AppBrainAndData */ = {
+		462A0B8F2149AE7A00D3108B /* AppBrain */ = {
 			isa = PBXGroup;
 			children = (
 				4621596221286D3B00F8ADA4 /* AppBrain.swift */,
+				462A428A23DF9DC50086096A /* Data Struct Extensions */,
 				462A0B8B2149950C00D3108B /* AppBrainCalculations.swift */,
 				462A0B8D2149AE7200D3108B /* FirebaseReader.swift */,
-				4642CDC62329557B00CB932C /* FirebaseWriter.swift */,
 			);
-			path = AppBrainAndData;
+			path = AppBrain;
+			sourceTree = "<group>";
+		};
+		462A428523DF8C400086096A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				462A428623DF8C580086096A /* DateExt.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		462A428A23DF9DC50086096A /* Data Struct Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				462A428123DAB00E0086096A /* ReefSettingsExt.swift */,
+				462A428323DF8A2B0086096A /* UserDataExt.swift */,
+				462A428823DF9DC00086096A /* GrowDataExt.swift */,
+			);
+			path = "Data Struct Extensions";
 			sourceTree = "<group>";
 		};
 		46E69F0021092CEA003C466F = {
@@ -196,8 +230,8 @@
 				46E69F2021092CEE003C466F /* ReefTests */,
 				46E69F2B21092CEE003C466F /* ReefUITests */,
 				46E69F0A21092CEB003C466F /* Products */,
-				AE16E98196DDD9E31BBAE6EE /* Pods */,
-				B730BAD98C637C380E70FD26 /* Frameworks */,
+				C82FBA751358F98C9E50B590 /* Pods */,
+				157533C02C535E7EDB03B72B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -215,8 +249,9 @@
 			isa = PBXGroup;
 			children = (
 				46E69F0C21092CEB003C466F /* AppDelegate.swift */,
-				462A0B8F2149AE7A00D3108B /* AppBrainAndData */,
+				462A0B8F2149AE7A00D3108B /* AppBrain */,
 				4621595F2127358B00F8ADA4 /* Home */,
+				462A428523DF8C400086096A /* Extensions */,
 				46E69F48210E80C3003C466F /* Setup */,
 				46E69F1321092CEE003C466F /* Assets.xcassets */,
 				46699F7A2350D19F006EAC89 /* Biysk.ttf */,
@@ -261,27 +296,17 @@
 			path = Setup;
 			sourceTree = "<group>";
 		};
-		AE16E98196DDD9E31BBAE6EE /* Pods */ = {
+		C82FBA751358F98C9E50B590 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D99760AB8014C054FF28D7D5 /* Pods-Reef.debug.xcconfig */,
-				87F3B3D0ABFF5B6FAB8FEE2F /* Pods-Reef.release.xcconfig */,
-				537B7DE70103528EDD4CA4E2 /* Pods-ReefTests.debug.xcconfig */,
-				5CF337B1ABD655935FF0EE76 /* Pods-ReefTests.release.xcconfig */,
-				C468EC47562CDF7538A53B67 /* Pods-ReefUITests.debug.xcconfig */,
-				F7F96C7F80DCF5FD44FDE562 /* Pods-ReefUITests.release.xcconfig */,
+				24B908DB06A921B98386ABC7 /* Pods-Reef.debug.xcconfig */,
+				308799469D6FECDB2F0CF6D5 /* Pods-Reef.release.xcconfig */,
+				DD21A1168783ED074CBCF478 /* Pods-ReefTests.debug.xcconfig */,
+				1FBE9ACA9A5D53C71FD7EAFA /* Pods-ReefTests.release.xcconfig */,
+				48792FB4BFD2017A182F8C72 /* Pods-ReefUITests.debug.xcconfig */,
+				970C819BB7F3A6511AB6E74E /* Pods-ReefUITests.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		B730BAD98C637C380E70FD26 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				AC21A8B03EA4EE6848CB3F68 /* Pods_Reef.framework */,
-				9AF7505F7193F608E041724A /* Pods_ReefTests.framework */,
-				56DB33C4D1458237BCBDCD92 /* Pods_ReefUITests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,11 +316,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46E69F3121092CEE003C466F /* Build configuration list for PBXNativeTarget "Reef" */;
 			buildPhases = (
-				046A1A51E0D2BE5D604204BF /* [CP] Check Pods Manifest.lock */,
+				89DAE0AFF93B221E46445040 /* [CP] Check Pods Manifest.lock */,
 				46E69F0521092CEB003C466F /* Sources */,
 				46E69F0621092CEB003C466F /* Frameworks */,
 				46E69F0721092CEB003C466F /* Resources */,
-				5BA93BBDB9E50E5664326E95 /* [CP] Embed Pods Frameworks */,
+				3B7177A30FA303420EA56EA5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -310,7 +335,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46E69F3421092CEE003C466F /* Build configuration list for PBXNativeTarget "ReefTests" */;
 			buildPhases = (
-				599D8400F6C2D57D773BAB3F /* [CP] Check Pods Manifest.lock */,
+				5EB7E30BD8659DE3ADD82626 /* [CP] Check Pods Manifest.lock */,
 				46E69F1921092CEE003C466F /* Sources */,
 				46E69F1A21092CEE003C466F /* Frameworks */,
 				46E69F1B21092CEE003C466F /* Resources */,
@@ -329,7 +354,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46E69F3721092CEE003C466F /* Build configuration list for PBXNativeTarget "ReefUITests" */;
 			buildPhases = (
-				DDCFE05CFF60A4F3DB169E14 /* [CP] Check Pods Manifest.lock */,
+				BC8BACB76B9CAF36D7426779 /* [CP] Check Pods Manifest.lock */,
 				46E69F2421092CEE003C466F /* Sources */,
 				46E69F2521092CEE003C466F /* Frameworks */,
 				46E69F2621092CEE003C466F /* Resources */,
@@ -426,43 +451,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		046A1A51E0D2BE5D604204BF /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Reef-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		599D8400F6C2D57D773BAB3F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ReefTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5BA93BBDB9E50E5664326E95 /* [CP] Embed Pods Frameworks */ = {
+		3B7177A30FA303420EA56EA5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -492,7 +481,43 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Reef/Pods-Reef-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DDCFE05CFF60A4F3DB169E14 /* [CP] Check Pods Manifest.lock */ = {
+		5EB7E30BD8659DE3ADD82626 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReefTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89DAE0AFF93B221E46445040 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Reef-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC8BACB76B9CAF36D7426779 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -519,6 +544,8 @@
 			files = (
 				4621596321286D3B00F8ADA4 /* AppBrain.swift in Sources */,
 				46099170235EA6F0000BE2F0 /* MySideMenuNavigationController.swift in Sources */,
+				462A428923DF9DC00086096A /* GrowDataExt.swift in Sources */,
+				462A428723DF8C580086096A /* DateExt.swift in Sources */,
 				46699F77234D4A87006EAC89 /* InfoVC.swift in Sources */,
 				462A0B8C2149950C00D3108B /* AppBrainCalculations.swift in Sources */,
 				46099173235EB030000BE2F0 /* GrowStageVC.swift in Sources */,
@@ -532,12 +559,13 @@
 				46E69F3D210948A3003C466F /* SignUpVC.swift in Sources */,
 				46699F73234D1555006EAC89 /* AquariumFillVC.swift in Sources */,
 				46E69F0F21092CEB003C466F /* WelcomeVC.swift in Sources */,
-				4642CDC72329557B00CB932C /* FirebaseWriter.swift in Sources */,
 				46699F75234D3200006EAC89 /* BasinFillVC.swift in Sources */,
 				469E5BD5235C2A6E003F8471 /* MenuTVCell.swift in Sources */,
+				462A428223DAB00E0086096A /* ReefSettingsExt.swift in Sources */,
 				461D530221399539007B6308 /* BasinVC.swift in Sources */,
 				46E69F0D21092CEB003C466F /* AppDelegate.swift in Sources */,
 				462A0B8E2149AE7200D3108B /* FirebaseReader.swift in Sources */,
+				462A428423DF8A2B0086096A /* UserDataExt.swift in Sources */,
 				4621595E2127358400F8ADA4 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -709,7 +737,7 @@
 		};
 		46E69F3221092CEE003C466F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D99760AB8014C054FF28D7D5 /* Pods-Reef.debug.xcconfig */;
+			baseConfigurationReference = 24B908DB06A921B98386ABC7 /* Pods-Reef.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Reef/Reef.entitlements;
@@ -732,7 +760,7 @@
 		};
 		46E69F3321092CEE003C466F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 87F3B3D0ABFF5B6FAB8FEE2F /* Pods-Reef.release.xcconfig */;
+			baseConfigurationReference = 308799469D6FECDB2F0CF6D5 /* Pods-Reef.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Reef/Reef.entitlements;
@@ -755,7 +783,7 @@
 		};
 		46E69F3521092CEE003C466F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 537B7DE70103528EDD4CA4E2 /* Pods-ReefTests.debug.xcconfig */;
+			baseConfigurationReference = DD21A1168783ED074CBCF478 /* Pods-ReefTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -777,7 +805,7 @@
 		};
 		46E69F3621092CEE003C466F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5CF337B1ABD655935FF0EE76 /* Pods-ReefTests.release.xcconfig */;
+			baseConfigurationReference = 1FBE9ACA9A5D53C71FD7EAFA /* Pods-ReefTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -799,7 +827,7 @@
 		};
 		46E69F3821092CEE003C466F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C468EC47562CDF7538A53B67 /* Pods-ReefUITests.debug.xcconfig */;
+			baseConfigurationReference = 48792FB4BFD2017A182F8C72 /* Pods-ReefUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -820,7 +848,7 @@
 		};
 		46E69F3921092CEE003C466F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F7F96C7F80DCF5FD44FDE562 /* Pods-ReefUITests.release.xcconfig */;
+			baseConfigurationReference = 970C819BB7F3A6511AB6E74E /* Pods-ReefUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

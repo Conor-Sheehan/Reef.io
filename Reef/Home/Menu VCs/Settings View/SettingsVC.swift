@@ -41,7 +41,9 @@ class SettingsVC:  QuickTableViewController {
             brain = appDelegate.appBrain
         }
         
-        if brain.getSettings().growStarted { growStartedText = "End Grow"}
+       
+        
+        if brain.reefSettings.activeGrow() { growStartedText = "End Grow"}
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.updatedSunrise), name: NSNotification.Name(rawValue: "updatedSunrise"), object: nil)
     }
@@ -66,7 +68,7 @@ class SettingsVC:  QuickTableViewController {
                 ]),
             
             Section(title: "Aquarium Settings", rows: [
-                NavigationRow(title: "Aquarium Status", subtitle: .rightAligned(brain.getSettings().aquariumStatus), icon: nil, action: { [weak self] in self?.navigateToAquariumStatus($0) }),
+                NavigationRow(title: "Aquarium Full", subtitle: .rightAligned(brain.reefSettings.aquariumFull), icon: nil, action: { [weak self] in self?.navigateToAquariumStatus($0) }),
                 ]),
             
             Section(title: "App Settings", rows: [
@@ -86,10 +88,10 @@ class SettingsVC:  QuickTableViewController {
 
     private func startEndGrow(_ sender: Row) {
        print("Start Grow")
-        if growStartedText == "End Grow" {
-            brain.setGrowStartedState(GrowStarted: false)
+        if brain.reefSettings.activeGrow() {
+            brain.setGrowStage(stage: .inactive)
         }
-        else { brain.setGrowStartedState(GrowStarted: true) }
+        else { brain.setGrowStage(stage: .seedling) }
         
         self.setTableContents()
     }
@@ -120,20 +122,13 @@ class SettingsVC:  QuickTableViewController {
     @IBAction func chooseTime(_ sender: UIButton) {
         
         let timeFormatter = DateFormatter()
-        timeFormatter.dateFormat = "h:mm a"
-        timeFormatter.amSymbol = "AM"
-        timeFormatter.pmSymbol = "PM"
+        timeFormatter.dateFormat = "HH:mm"
         let formattedTime = timeFormatter.string(from: timePicker.date)
-        let sunriseHourComponent = Calendar.current.dateComponents([.hour], from: timePicker.date)
-        let sunriseHour = sunriseHourComponent.hour!
-        
-        print(sunriseHour)
         
         // if user is connected with Reef, then store updated time
-        brain.setSunriseTime(SunriseTime: formattedTime)
+        brain.setSunrise(time: formattedTime)
         self.setTableContents()
 
-        
         
         // Animate Hiding the Time Picker
         UIView.animate(withDuration: 0.1, delay: 0.0, options: [.curveEaseOut], animations: {

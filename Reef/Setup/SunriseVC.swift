@@ -14,27 +14,30 @@ class SunriseVC: UIViewController {
     @IBOutlet weak var timePicker: UIDatePicker!
     @IBOutlet weak var setButton: UIButton!
     
-    var received = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
     }
     
+    /// ACTION when user wants to set the sunrise time for their Reef Ecosystem
     @IBAction func setTime(_ sender: UIButton) {
-        // NOTE: ADD TIMEOUT TO ENSURE THAT COMMAND WAS SUCCESSFULLY SENT AND RECEIVED //
         
-        
+        // Retrieve sunrise time that user selected
         let sunriseTime = getSunriseTime()
         print("Sunrise Hour", sunriseTime)
         
+        // Store it in Firebase
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
             appDelegate.appBrain.setSunriseTime(SunriseTime: sunriseTime)
         }
+        
+        // segue to Info Slide Through
+        self.performSegue(withIdentifier: "segueToInfo", sender: self)
     }
     
     
+    /// Returns the selected time that the user chose for sunrise
     func getSunriseTime() -> String {
         
         let timeFormatter = DateFormatter()

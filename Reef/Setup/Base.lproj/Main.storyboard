@@ -218,26 +218,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Introducing Fish" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNv-SM-X6m">
-                                <rect key="frame" x="60.333333333333329" y="367.66666666666669" width="254.33333333333337" height="37.666666666666686"/>
+                                <rect key="frame" x="60.333333333333329" y="347.66666666666669" width="254.33333333333337" height="37.666666666666686"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37.670000000000002" id="G6G-xI-Ptj"/>
                                     <constraint firstAttribute="width" secondItem="cNv-SM-X6m" secondAttribute="height" multiplier="250:37" id="ta0-bV-wjP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Biysk-Regular" family="Biysk" pointSize="34"/>
-                                <color key="textColor" red="0.9879259467" green="0.94650369879999996" blue="0.83527499439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.0061122621410000001" green="0.44613313669999999" blue="0.50197434429999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We recommend waiting 2-3 days after setting up Reef to introduce new life." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDW-vv-tJD">
-                                <rect key="frame" x="47.666666666666657" y="420.33333333333331" width="280" height="70"/>
+                                <rect key="frame" x="47.666666666666657" y="400.33333333333331" width="280" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="5JS-be-4pa"/>
                                     <constraint firstAttribute="width" secondItem="yDW-vv-tJD" secondAttribute="height" multiplier="4:1" id="jHv-WD-dgg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fish Group" translatesAutoresizingMaskIntoConstraints="NO" id="X3p-QR-fgO">
+                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cycle" translatesAutoresizingMaskIntoConstraints="NO" id="X3p-QR-fgO">
                                 <rect key="frame" x="137" y="221.66666666666663" width="101" height="76"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="101" id="0vz-5Q-MkX"/>
@@ -245,21 +245,21 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Slider Circles1" translatesAutoresizingMaskIntoConstraints="NO" id="A5F-Zc-6r2">
-                                <rect key="frame" x="150.66666666666666" y="771.33333333333337" width="74" height="16"/>
+                                <rect key="frame" x="150.66666666666666" y="495.33333333333331" width="74" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="A5F-Zc-6r2" secondAttribute="height" multiplier="37:8" id="NFI-2z-T6b"/>
                                     <constraint firstAttribute="height" constant="16" id="OZi-CA-PUa"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6w-2J-XFY">
-                                <rect key="frame" x="78" y="550" width="219" height="44"/>
+                                <rect key="frame" x="78" y="530" width="219" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="d6w-2J-XFY" secondAttribute="height" multiplier="219:44" id="k2z-ai-HnZ"/>
                                     <constraint firstAttribute="height" constant="44" id="ue2-SC-a0x"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
-                                <state key="normal" title="Complete Setup." backgroundImage="White Button-1">
-                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Complete Setup." backgroundImage="Blue button">
+                                    <color key="titleColor" red="0.16630250220000001" green="0.43830657010000001" blue="0.49413025379999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="SignUp:" destination="FNB-5y-fAy" eventType="touchUpInside" id="76Y-Qw-SCl"/>
@@ -269,14 +269,14 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.16630250220000001" green="0.43830657010000001" blue="0.49413025379999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="yDW-vv-tJD" firstAttribute="centerX" secondItem="cNv-SM-X6m" secondAttribute="centerX" id="3dh-6k-TtM"/>
-                            <constraint firstItem="cNv-SM-X6m" firstAttribute="top" secondItem="X3p-QR-fgO" secondAttribute="bottom" constant="70" id="Fti-IO-r8d"/>
+                            <constraint firstItem="cNv-SM-X6m" firstAttribute="top" secondItem="X3p-QR-fgO" secondAttribute="bottom" constant="50" id="Fti-IO-r8d"/>
                             <constraint firstItem="cNv-SM-X6m" firstAttribute="centerX" secondItem="X3p-QR-fgO" secondAttribute="centerX" id="ODT-eD-BNF"/>
-                            <constraint firstItem="A5F-Zc-6r2" firstAttribute="centerY" secondItem="Gqi-lP-LFq" secondAttribute="centerY" multiplier="1.8" id="OxG-b3-mSt"/>
                             <constraint firstItem="yDW-vv-tJD" firstAttribute="top" secondItem="cNv-SM-X6m" secondAttribute="bottom" constant="15" id="SJU-lO-bu5"/>
                             <constraint firstItem="d6w-2J-XFY" firstAttribute="top" secondItem="yDW-vv-tJD" secondAttribute="bottom" constant="59.666666666666686" id="mSr-lP-897"/>
+                            <constraint firstItem="A5F-Zc-6r2" firstAttribute="top" secondItem="yDW-vv-tJD" secondAttribute="bottom" constant="25" id="mYs-yD-3Wv"/>
                             <constraint firstItem="d6w-2J-XFY" firstAttribute="centerX" secondItem="yDW-vv-tJD" secondAttribute="centerX" id="paT-gp-XNY"/>
                             <constraint firstItem="X3p-QR-fgO" firstAttribute="centerY" secondItem="Gqi-lP-LFq" secondAttribute="centerY" multiplier="0.6" id="qYt-n9-WlW"/>
                             <constraint firstItem="A5F-Zc-6r2" firstAttribute="centerX" secondItem="Gqi-lP-LFq" secondAttribute="centerX" id="qiV-X5-2dR"/>
@@ -604,14 +604,13 @@
         <image name="Aquarium" width="111" height="99"/>
         <image name="Blue button" width="221" height="51"/>
         <image name="Email TextField" width="317" height="56"/>
-        <image name="Fish Group" width="78" height="74"/>
         <image name="Name TextField" width="317" height="56"/>
         <image name="Password TextField" width="317" height="56"/>
         <image name="Reef Logo-2" width="694.66668701171875" height="694.66668701171875"/>
         <image name="Slider Circles1" width="67" height="10"/>
         <image name="Triple Basin " width="84" height="111"/>
-        <image name="White Button-1" width="279" height="64"/>
         <image name="WiFi" width="111" height="87"/>
+        <image name="cycle" width="73" height="63"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="T8X-Sj-5tv"/>

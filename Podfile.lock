@@ -1,4 +1,6 @@
 PODS:
+  - Firebase (6.14.0):
+    - Firebase/Core (= 6.14.0)
   - Firebase/Auth (6.14.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 6.4.1)
@@ -99,6 +101,7 @@ PODS:
   - SideMenu (6.4.7)
 
 DEPENDENCIES:
+  - Firebase
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -153,6 +156,6 @@ SPEC CHECKSUMS:
   QuickTableViewController: e633756f35ddaafc5997f71bab9b0e512439ed85
   SideMenu: 928a015669c3afc201e1fe3a87f1b0bc8993a664
 
-PODFILE CHECKSUM: 4d5f2ee1bc1ee1e602ae380bc3164c2148a9c252
+PODFILE CHECKSUM: b5cdbda43666e599ebcc02f017a9c66fa0700bd8
 
 COCOAPODS: 1.5.3

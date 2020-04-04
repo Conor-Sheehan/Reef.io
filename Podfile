@@ -17,6 +17,7 @@ target 'Reef' do
     # Pods for testing
   end
 
+  pod 'Firebase'
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'

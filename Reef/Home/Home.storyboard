@@ -77,8 +77,8 @@
                                     <constraint firstAttribute="width" secondItem="dkH-10-6C9" secondAttribute="height" multiplier="219:44" id="dCy-kR-GiF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
-                                <state key="normal" title="Start New Grow" backgroundImage="Tan Button">
-                                    <color key="titleColor" red="0.88592988250000004" green="0.81308287379999999" blue="0.70978456739999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Start New Grow" backgroundImage="Blue button">
+                                    <color key="titleColor" red="0.58470129969999995" green="0.71730637549999998" blue="0.73726165290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <segue destination="6pS-VM-5mG" kind="show" identifier="segueToPlant" id="VUg-k8-FIr"/>
@@ -88,7 +88,7 @@
                                 <rect key="frame" x="26.666666666666657" y="396.66666666666669" width="322" height="54"/>
                                 <state key="normal" image="Grow Stage (1)"/>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HomeVC Start Grow Image" translatesAutoresizingMaskIntoConstraints="NO" id="Ns1-Zz-dGh">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="start grow" translatesAutoresizingMaskIntoConstraints="NO" id="Ns1-Zz-dGh">
                                 <rect key="frame" x="142.66666666666666" y="214.66666666666663" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="3bn-dV-uej"/>
@@ -188,7 +188,7 @@
                                 <rect key="frame" x="0.0" y="723" width="375" height="148"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Reef Icon (Tan)" translatesAutoresizingMaskIntoConstraints="NO" id="LIh-yH-GJN">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Plant" translatesAutoresizingMaskIntoConstraints="NO" id="LIh-yH-GJN">
                                 <rect key="frame" x="175" y="763" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -581,7 +581,7 @@ Healthy seedlings look green and vibrant. With Reef, the only time you need to w
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="planting new life" translatesAutoresizingMaskIntoConstraints="NO" id="CDk-aJ-fNF">
+                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="start grow" translatesAutoresizingMaskIntoConstraints="NO" id="CDk-aJ-fNF">
                                 <rect key="frame" x="137" y="178.66666666666666" width="101" height="76"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="101" id="22V-y8-DKN"/>
@@ -595,7 +595,7 @@ Healthy seedlings look green and vibrant. With Reef, the only time you need to w
                                     <constraint firstAttribute="width" secondItem="oQI-2I-Dpa" secondAttribute="height" multiplier="241:37" id="v39-oK-Off"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Biysk-Regular" family="Biysk" pointSize="34"/>
-                                <color key="textColor" red="0.9879259467" green="0.94650369879999996" blue="0.83527499439999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.59222418070000005" green="0.69099956750000002" blue="0.62352222199999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vch-ei-9PQ">
@@ -607,7 +607,7 @@ Healthy seedlings look green and vibrant. With Reef, the only time you need to w
                                 <string key="text">To learn more about how to plant seeds for Reef follow the guide below.
 </string>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6N-gF-pYc">
@@ -616,8 +616,8 @@ Healthy seedlings look green and vibrant. With Reef, the only time you need to w
                                     <constraint firstAttribute="height" constant="45" id="i8r-O5-day"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
-                                <state key="normal" title="Next" backgroundImage="Tan Button">
-                                    <color key="titleColor" red="0.88592988250000004" green="0.81308287379999999" blue="0.70978456739999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Next" backgroundImage="Blue button">
+                                    <color key="titleColor" red="0.59222418070000005" green="0.69099956750000002" blue="0.62352222199999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="mainButtonTapped:" destination="6pS-VM-5mG" eventType="touchUpInside" id="ffg-6X-97G"/>
@@ -627,14 +627,14 @@ Healthy seedlings look green and vibrant. With Reef, the only time you need to w
                                 <rect key="frame" x="59.666666666666657" y="423" width="255.99999999999997" height="37"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
                                 <state key="normal" title="Learn about planting &gt;">
-                                    <color key="titleColor" red="0.88592988250000004" green="0.81308287379999999" blue="0.70978456739999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="0.59222418070000005" green="0.69099956750000002" blue="0.62352222199999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="learnMoreTapped:" destination="6pS-VM-5mG" eventType="touchUpInside" id="9eC-uV-Z3j"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0061122621410000001" green="0.44613313669999999" blue="0.50197434429999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ni6-Wg-NaF" firstAttribute="top" secondItem="vch-ei-9PQ" secondAttribute="bottom" constant="-13" id="0AG-Ma-PIM"/>
                             <constraint firstItem="k6N-gF-pYc" firstAttribute="width" secondItem="Ni6-Wg-NaF" secondAttribute="width" id="3pU-5C-nzZ"/>
@@ -985,19 +985,18 @@ Bio-Filter</string>
         <image name="HomeVC Bottom Backdrop" width="1125" height="234"/>
         <image name="HomeVC Daylight Icon" width="28" height="28"/>
         <image name="HomeVC Plant Height Icon" width="32" height="24"/>
-        <image name="HomeVC Start Grow Image" width="89" height="88"/>
         <image name="HomeVC Top BackDrop" width="375" height="478"/>
         <image name="Menu Icon" width="22" height="12"/>
         <image name="Nutrients Basin Image" width="69" height="98"/>
         <image name="Nutrients Icon" width="20" height="28"/>
         <image name="PH Down Icon" width="13" height="16"/>
         <image name="PH Up Icon" width="11" height="18"/>
+        <image name="Plant" width="55" height="55"/>
         <image name="Reef" width="315" height="477"/>
         <image name="Reef Icon (Tan)" width="55" height="55"/>
         <image name="Refill Button" width="71" height="74"/>
-        <image name="Tan Button" width="221" height="51"/>
         <image name="Up Arrow" width="24" height="11"/>
-        <image name="planting new life" width="97" height="95"/>
+        <image name="start grow" width="89" height="88"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="PyW-UP-Gfj"/>

@@ -58,15 +58,16 @@ class BasinVC: UIViewController {
     
     @objc func displayBasinLevels() {
         // Basin levels stored in brain
-        let basinLevels = [appDeleg.appBrain.getBasinLevels().nutrientLvl, appDeleg.appBrain.getBasinLevels().phDownLvl, appDeleg.appBrain.getBasinLevels().phUpLvl]
+        let brain = appDeleg.appBrain
+        let basinLevels = [brain?.reefSettings.basinLevels["nutrients"], brain?.reefSettings.basinLevels["phDown"], brain?.reefSettings.basinLevels["phUp"]]
         let basinProgressBars = [nutrientsProgress,phDownProgress,phUpProgress]
         let basinPercents = [nutrientsPercent,phDownPercent,phUpPercent]
 
         // Iterate over basin levels and convert into percent text and progress bars
         for basin in 0...2 {
             let basinLvl = basinLevels[basin]
-            basinProgressBars[basin]?.progress = (Float(basinLvl)/70.0)
-            basinPercents[basin]?.text = String(Int((Double(basinLvl)/70.0)*100.0)) + "%"
+            basinProgressBars[basin]?.progress = (Float(basinLvl ?? 0)/70.0)
+            basinPercents[basin]?.text = String(Int((Double(basinLvl ?? 0)/70.0)*100.0)) + "%"
         }
     }
     

@@ -25,7 +25,7 @@ class BasinFillVC: UIViewController {
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
             
             // Set basin levels to full to turn on pumps
-            appDelegate.appBrain.storeBasinLevels(nutrientLevel: 70, PHDownLevel: 70, PHUpLevel: 70)
+            appDelegate.appBrain.setBasinLevels(nutrients: 70, phDown: 70, phUp: 70)
         }
         
         self.performSegue(withIdentifier: "segueToSunrise", sender: self)
