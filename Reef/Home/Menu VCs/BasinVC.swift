@@ -11,22 +11,25 @@ import Foundation
 
 class BasinVC: UIViewController {
 
-    var basin: Int = 0 // Basin is the tracker for the basin view
+  var basin: Int = -1 // Basin is the tracker for the basin view
 
-    let basinImages =    [#imageLiteral(resourceName: "Nutrients Basin Image"),#imageLiteral(resourceName: "PH Down Basin Image"),#imageLiteral(resourceName: "PH Up Basin")]
-    let basinNames = ["Nutrients", "PH Down", "PH Up"]
+  let basinImages =    [#imageLiteral(resourceName: "Nutrients Basin Image"),#imageLiteral(resourceName: "pH Down Basin Image"),#imageLiteral(resourceName: "pH Up Basin")]
+  let basinNames = ["Nutrients", "PH Down", "PH Up"]
     
     // UI ELEMENTS
-    @IBOutlet weak var basinImage: UIImageView!
-    @IBOutlet weak var nutrientsProgress: UIProgressView!
-    @IBOutlet weak var nutrientsPercent: UILabel!
-    @IBOutlet weak var nutrientsTitle: UILabel!
-    @IBOutlet weak var phDownProgress: UIProgressView!
-    @IBOutlet weak var phDownPercent: UILabel!
-    @IBOutlet weak var phDownTitle: UILabel!
-    @IBOutlet weak var phUpProgress: UIProgressView!
-    @IBOutlet weak var phUpPercent: UILabel!
-    @IBOutlet weak var phUpTitle: UILabel!
+  @IBOutlet weak var nutrientButton: UIButton!
+  @IBOutlet weak var phDownButton: UIButton!
+  @IBOutlet weak var phUpButton: UIButton!
+  @IBOutlet weak var basinImage: UIImageView!
+  @IBOutlet weak var nutrientsProgress: UIProgressView!
+  @IBOutlet weak var nutrientsPercent: UILabel!
+  @IBOutlet weak var nutrientsTitle: UILabel!
+  @IBOutlet weak var phDownProgress: UIProgressView!
+  @IBOutlet weak var phDownPercent: UILabel!
+  @IBOutlet weak var phDownTitle: UILabel!
+  @IBOutlet weak var phUpProgress: UIProgressView!
+  @IBOutlet weak var phUpPercent: UILabel!
+  @IBOutlet weak var phUpTitle: UILabel!
     
     var appDeleg: AppDelegate!
     
@@ -41,6 +44,14 @@ class BasinVC: UIViewController {
         // Set notifiers for basin data being read and basins refilled
         NotificationCenter.default.addObserver(self, selector: #selector(self.displayBasinLevels), name: NSNotification.Name(rawValue: "basinsRead"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.refilledBasin), name: NSNotification.Name(rawValue: "refilledBasin"), object: nil)
+      
+        // Set Default button borders
+      for button in [nutrientButton, phDownButton, phUpButton] {
+        button?.layer.borderWidth = 1
+        button?.layer.cornerRadius = 5
+        button?.layer.borderWidth = 1
+        button?.layer.borderColor = UIColor.gray.cgColor
+      }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,23 +82,33 @@ class BasinVC: UIViewController {
     }
     
     @IBAction func selectBasin(_ sender: UIButton) {
-        let basinTitles = [nutrientsTitle, phDownTitle, phUpTitle]
-        basin = sender.tag
-        basinImage.image = basinImages[basin]
-        
-        // Reset fonts of basin titles
-        for basinTitle in basinTitles {
-            basinTitle?.font = UIFont(name: "AvenirNext-Regular", size: 16.0)
-        }
-        // Bold selected title
-        basinTitles[basin]?.font = UIFont(name: "AvenirNext-DemiBold", size: 16.0)
+      let basinTitles = [nutrientsTitle, phDownTitle, phUpTitle]
+      let buttons = [nutrientButton, phDownButton, phUpButton]
+      basin = sender.tag
+      basinImage.image = basinImages[basin]
+      
+      // Reset fonts of basin titles
+      for (index, basinTitle) in basinTitles.enumerated() {
+        basinTitle?.font = UIFont(name: "AvenirNext-Regular", size: 16.0)
+        buttons[index]?.layer.borderWidth = 1
+        buttons[index]?.layer.borderColor = UIColor.gray.cgColor
+      }
+      // Bold selected title
+      basinTitles[basin]?.font = UIFont(name: "AvenirNext-DemiBold", size: 16.0)
+      buttons[basin]?.layer.borderWidth = 2
+      buttons[basin]?.layer.borderColor = UIColor.black.cgColor
     }
     
 
     
     /// ACTION WHEN USER TAPS ON REFILLING CARTRIDGE
     @IBAction func refillCartridge(_ sender: UIButton) {
+      if basin != -1 {
         refillBasinAlert(title: "Refill Basin", message: "Did you refill Reef's " + basinNames[basin] + " basin?")
+      }
+      else {
+        displayAlert(title: "Select Basin", message: "Select a basin to refill from the list")
+      }
     }
 
     // If Basin was refilled, then update the UI to match

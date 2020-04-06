@@ -67,6 +67,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             setupComplete = true
             activateNotifications()
         }
+      
+      setupLocation = 7
         
         // FOR TESTING PURPOSES ONLY
         window?.rootViewController = initialViewController(setupLocation: setupLocation)

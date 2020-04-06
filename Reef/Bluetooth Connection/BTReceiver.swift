@@ -124,11 +124,12 @@ extension AppDelegate {
             sendMessage(message: sentMessage)
         }
         // Else if Reef read the correct command, then tell Reef to Proceed
-        else if !responseMsg.contains("K") && responseMsg == sentMessage  { sendMessage(message: "P")
-        }
+        else if !responseMsg.contains("K") && responseMsg == sentMessage  { sendMessage(message: "P") }
         
-        // Else we've received confirmation of Reef's update and need to update App UI/database accordingly
-        else { reefConfirmedResponseHandler(responseMsg: responseMsg) }
+         //Else we've received confirmation of Reef's update and need to update App UI/database accordingly
+        else {
+          reefConfirmedResponseHandler(responseMsg: responseMsg)
+      }
         
     }
     
