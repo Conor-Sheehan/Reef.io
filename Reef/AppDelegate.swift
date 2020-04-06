@@ -8,11 +8,12 @@
 
 import UIKit
 import Firebase
+import FirebaseMessaging
 import UserNotifications
 import CoreBluetooth
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
     
     // Bluetooth variables and constants
     var connectionController: CBCentralManager!
@@ -45,38 +46,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        FirebaseApp.configure()
-        
-        // Set interval to fetch new data in background
-        application.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalMinimum)
-        
-        
-        // CHECK WHERE USER IS IN SETUP PROCESS (1-8)
-        setupLocation = UserDefaults.standard.integer(forKey: "setupLocation")
-        
-        print("SETUP LOCATION", setupLocation)
-        
-        // If user has already established connection with Reef, then start bluetooth
-        if setupLocation > 1 { startBluetoothConnection() }
-        // Else if user has already signed up with Reef Community
-        if setupLocation > 2 {
-            // Initialize App Brain
-            initializeAppBrain()
-       }
-        if setupLocation == 7 {
-            setupComplete = true
-            activateNotifications()
-        }
+      FirebaseApp.configure()
       
-      setupLocation = 7
+      Messaging.messaging().delegate = self
         
-        // FOR TESTING PURPOSES ONLY
-        window?.rootViewController = initialViewController(setupLocation: setupLocation)
+      // Set interval to fetch new data in background
+      application.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalMinimum)
+      
+      
+      // CHECK WHERE USER IS IN SETUP PROCESS (1-8)
+      setupLocation = UserDefaults.standard.integer(forKey: "setupLocation")
+      
+      print("SETUP LOCATION", setupLocation)
+      
+      // If user has already established connection with Reef, then start bluetooth
+      if setupLocation > 1 { startBluetoothConnection() }
+      // Else if user has already signed up with Reef Community
+      if setupLocation > 2 {
+        // Initialize App Brain
+        initializeAppBrain()
         
-        // Stay connected when app is in foreground
-        stayConnected = true
-        
-        return true
+        // Load FCM Token
+        InstanceID.instanceID().instanceID { (result, error) in
+          if let error = error {
+            print("Error fetching remote instance ID: \(error)")
+          } else if let result = result {
+            print("Remote instance ID token: \(result.token)")
+            self.appBrain.setFCMToken(token: result.token)
+          }
+        }
+     }
+      if setupLocation == 7 {
+          setupComplete = true
+          activateNotifications()
+      }
+    
+      
+      // FOR TESTING PURPOSES ONLY
+      window?.rootViewController = initialViewController(setupLocation: setupLocation)
+      
+      // Stay connected when app is in foreground
+      stayConnected = true
+      
+      return true
     }
     
     func startBluetoothConnection() { connectionController = CBCentralManager(delegate: self, queue: nil) }
@@ -160,6 +172,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+  
+  func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+      print("Firebase registration token: \(fcmToken)")
+
+      let dataDict:[String: String] = ["token": fcmToken]
+      NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+      
+      if let brain = appBrain {
+          // If necessary send token to application server.
+        brain.setFCMToken(token: fcmToken)
+      }
+  }
 
 
 }

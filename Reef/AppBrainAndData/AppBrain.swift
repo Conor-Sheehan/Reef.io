@@ -125,6 +125,10 @@ class AppBrain {
         userSettingsData[3] = firstName
         databaseRef.child(userUID!).child("UserSettings").child("FirstName").setValue(firstName)
     }
+  
+  func setFCMToken(token: String) {
+    databaseRef.child(userUID!).child("UserData").child("FCMtoken").setValue(token)
+  }
     
 
     

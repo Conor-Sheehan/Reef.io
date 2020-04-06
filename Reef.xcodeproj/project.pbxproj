@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		233528B473CB9904F6E2CA3F /* Pods_ReefTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5B62C630F822C7D0C0F995 /* Pods_ReefTests.framework */; };
+		02689DD85EE0E2AE57986773 /* Pods_ReefUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C5CFEC15B6BF12CAE72CEA /* Pods_ReefUITests.framework */; };
+		3904F035380CA86E28FEA176 /* Pods_Reef.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5919C60AF383CF5C891BDC3A /* Pods_Reef.framework */; };
 		46099170235EA6F0000BE2F0 /* MySideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4609916F235EA6F0000BE2F0 /* MySideMenuNavigationController.swift */; };
 		46099173235EB030000BE2F0 /* GrowStageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46099172235EB030000BE2F0 /* GrowStageVC.swift */; };
 		461D530221399539007B6308 /* BasinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461D530121399539007B6308 /* BasinVC.swift */; };
@@ -42,8 +43,7 @@
 		46E69F3D210948A3003C466F /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69F3C210948A3003C466F /* SignUpVC.swift */; };
 		46EE48332357BE7F00222035 /* StartGrowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EE48322357BE7F00222035 /* StartGrowVC.swift */; };
 		46F55639235A2C0B00DBC6E2 /* ConnectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F55638235A2C0B00DBC6E2 /* ConnectionVC.swift */; };
-		915F7F8840D2D045A65B96B5 /* Pods_Reef.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B93B40D23DA014385DD2DD /* Pods_Reef.framework */; };
-		DF49599AFD88760AC459B98B /* Pods_ReefUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C5DD44BDED5C8DFA08F9656 /* Pods_ReefUITests.framework */; };
+		5AEB5AA0A37921F7EF85B816 /* Pods_ReefTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75FFA8E7567A3A9935149DC5 /* Pods_ReefTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,8 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		124534B6E2D51EB28FB71A9C /* Pods-Reef.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reef.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reef/Pods-Reef.debug.xcconfig"; sourceTree = "<group>"; };
-		37FBBFADA05BDA1148E2CB4E /* Pods-ReefUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReefUITests/Pods-ReefUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		35C5CFEC15B6BF12CAE72CEA /* Pods_ReefUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReefUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4609916F235EA6F0000BE2F0 /* MySideMenuNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySideMenuNavigationController.swift; sourceTree = "<group>"; };
 		46099172235EB030000BE2F0 /* GrowStageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowStageVC.swift; sourceTree = "<group>"; };
 		460EE4D5211F59950004A91C /* Reef.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Reef.entitlements; sourceTree = "<group>"; };
@@ -88,6 +87,7 @@
 		46699F78234E8992006EAC89 /* SunriseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunriseVC.swift; sourceTree = "<group>"; };
 		46699F7A2350D19F006EAC89 /* Biysk.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Biysk.ttf; path = ../../../../Downloads/Biysk.ttf; sourceTree = "<group>"; };
 		466AA99D222F5AFE007903C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		46987C4CF2238B30C53A61F5 /* Pods-ReefUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefUITests.debug.xcconfig"; path = "Target Support Files/Pods-ReefUITests/Pods-ReefUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		469E5BD2235C29AE003F8471 /* MenuTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTVC.swift; sourceTree = "<group>"; };
 		469E5BD4235C2A6E003F8471 /* MenuTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTVCell.swift; sourceTree = "<group>"; };
 		46C5917C2123B65A0035F552 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -107,13 +107,13 @@
 		46E69F3C210948A3003C466F /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		46EE48322357BE7F00222035 /* StartGrowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGrowVC.swift; sourceTree = "<group>"; };
 		46F55638235A2C0B00DBC6E2 /* ConnectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionVC.swift; sourceTree = "<group>"; };
-		4C5DD44BDED5C8DFA08F9656 /* Pods_ReefUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReefUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		550C70BAE2C83097457BF2C2 /* Pods-ReefTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReefTests/Pods-ReefTests.release.xcconfig"; sourceTree = "<group>"; };
-		9F5B62C630F822C7D0C0F995 /* Pods_ReefTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReefTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF6398584C0B0FB95BF3E250 /* Pods-ReefUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReefUITests/Pods-ReefUITests.release.xcconfig"; sourceTree = "<group>"; };
-		ED66D2573C9BECFCB6E7CD0B /* Pods-Reef.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reef.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reef/Pods-Reef.release.xcconfig"; sourceTree = "<group>"; };
-		F17FBD7FCBF71920A12508F3 /* Pods-ReefTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReefTests/Pods-ReefTests.debug.xcconfig"; sourceTree = "<group>"; };
-		F8B93B40D23DA014385DD2DD /* Pods_Reef.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reef.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5919C60AF383CF5C891BDC3A /* Pods_Reef.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reef.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6987AA7300121F3D26643120 /* Pods-ReefUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefUITests.release.xcconfig"; path = "Target Support Files/Pods-ReefUITests/Pods-ReefUITests.release.xcconfig"; sourceTree = "<group>"; };
+		75FFA8E7567A3A9935149DC5 /* Pods_ReefTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReefTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A821B8462973238781DF5FBE /* Pods-ReefTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefTests.debug.xcconfig"; path = "Target Support Files/Pods-ReefTests/Pods-ReefTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E5375A240362F88B2EFAEE3A /* Pods-Reef.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reef.release.xcconfig"; path = "Target Support Files/Pods-Reef/Pods-Reef.release.xcconfig"; sourceTree = "<group>"; };
+		ECE57B2C893CA0F62F757503 /* Pods-Reef.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reef.debug.xcconfig"; path = "Target Support Files/Pods-Reef/Pods-Reef.debug.xcconfig"; sourceTree = "<group>"; };
+		EFAC7500E079D840CD40E631 /* Pods-ReefTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefTests.release.xcconfig"; path = "Target Support Files/Pods-ReefTests/Pods-ReefTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				915F7F8840D2D045A65B96B5 /* Pods_Reef.framework in Frameworks */,
+				3904F035380CA86E28FEA176 /* Pods_Reef.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,7 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				233528B473CB9904F6E2CA3F /* Pods_ReefTests.framework in Frameworks */,
+				5AEB5AA0A37921F7EF85B816 /* Pods_ReefTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,26 +137,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF49599AFD88760AC459B98B /* Pods_ReefUITests.framework in Frameworks */,
+				02689DD85EE0E2AE57986773 /* Pods_ReefUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0329C0DBD433EA1932AE03F0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				124534B6E2D51EB28FB71A9C /* Pods-Reef.debug.xcconfig */,
-				ED66D2573C9BECFCB6E7CD0B /* Pods-Reef.release.xcconfig */,
-				F17FBD7FCBF71920A12508F3 /* Pods-ReefTests.debug.xcconfig */,
-				550C70BAE2C83097457BF2C2 /* Pods-ReefTests.release.xcconfig */,
-				37FBBFADA05BDA1148E2CB4E /* Pods-ReefUITests.debug.xcconfig */,
-				BF6398584C0B0FB95BF3E250 /* Pods-ReefUITests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		46099171235EA9C9000BE2F0 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,8 +213,8 @@
 				46E69F2021092CEE003C466F /* ReefTests */,
 				46E69F2B21092CEE003C466F /* ReefUITests */,
 				46E69F0A21092CEB003C466F /* Products */,
-				0329C0DBD433EA1932AE03F0 /* Pods */,
-				CDFE9EFCFFD3E4EDFAA929B8 /* Frameworks */,
+				74E65E3D92B916005D7132C2 /* Pods */,
+				9B04F6C1711CAB63992F9D3E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -294,12 +281,26 @@
 			path = Setup;
 			sourceTree = "<group>";
 		};
-		CDFE9EFCFFD3E4EDFAA929B8 /* Frameworks */ = {
+		74E65E3D92B916005D7132C2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F8B93B40D23DA014385DD2DD /* Pods_Reef.framework */,
-				9F5B62C630F822C7D0C0F995 /* Pods_ReefTests.framework */,
-				4C5DD44BDED5C8DFA08F9656 /* Pods_ReefUITests.framework */,
+				ECE57B2C893CA0F62F757503 /* Pods-Reef.debug.xcconfig */,
+				E5375A240362F88B2EFAEE3A /* Pods-Reef.release.xcconfig */,
+				A821B8462973238781DF5FBE /* Pods-ReefTests.debug.xcconfig */,
+				EFAC7500E079D840CD40E631 /* Pods-ReefTests.release.xcconfig */,
+				46987C4CF2238B30C53A61F5 /* Pods-ReefUITests.debug.xcconfig */,
+				6987AA7300121F3D26643120 /* Pods-ReefUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9B04F6C1711CAB63992F9D3E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5919C60AF383CF5C891BDC3A /* Pods_Reef.framework */,
+				75FFA8E7567A3A9935149DC5 /* Pods_ReefTests.framework */,
+				35C5CFEC15B6BF12CAE72CEA /* Pods_ReefUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -311,11 +312,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46E69F3121092CEE003C466F /* Build configuration list for PBXNativeTarget "Reef" */;
 			buildPhases = (
-				92BD8DE497D691CAEDD532C3 /* [CP] Check Pods Manifest.lock */,
+				6213AECD0B3F27CD31287821 /* [CP] Check Pods Manifest.lock */,
 				46E69F0521092CEB003C466F /* Sources */,
 				46E69F0621092CEB003C466F /* Frameworks */,
 				46E69F0721092CEB003C466F /* Resources */,
-				9B6CE79912E9ADD2201C3162 /* [CP] Embed Pods Frameworks */,
+				2B074749783480665DE99521 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -330,7 +331,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46E69F3421092CEE003C466F /* Build configuration list for PBXNativeTarget "ReefTests" */;
 			buildPhases = (
-				ADF6A299D8FA8638D3CF5B49 /* [CP] Check Pods Manifest.lock */,
+				AC00576A8F7607360696227D /* [CP] Check Pods Manifest.lock */,
 				46E69F1921092CEE003C466F /* Sources */,
 				46E69F1A21092CEE003C466F /* Frameworks */,
 				46E69F1B21092CEE003C466F /* Resources */,
@@ -349,7 +350,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46E69F3721092CEE003C466F /* Build configuration list for PBXNativeTarget "ReefUITests" */;
 			buildPhases = (
-				B2C16D02265AB1AF182F91F1 /* [CP] Check Pods Manifest.lock */,
+				D5D9E654F4DD9573111D07BB /* [CP] Check Pods Manifest.lock */,
 				46E69F2421092CEE003C466F /* Sources */,
 				46E69F2521092CEE003C466F /* Frameworks */,
 				46E69F2621092CEE003C466F /* Resources */,
@@ -446,16 +447,37 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		92BD8DE497D691CAEDD532C3 /* [CP] Check Pods Manifest.lock */ = {
+		2B074749783480665DE99521 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Reef/Pods-Reef-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Reef/Pods-Reef-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Reef/Pods-Reef-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6213AECD0B3F27CD31287821 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Reef-checkManifestLockResult.txt",
 			);
@@ -464,44 +486,20 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9B6CE79912E9ADD2201C3162 /* [CP] Embed Pods Frameworks */ = {
+		AC00576A8F7607360696227D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Reef/Pods-Reef-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/QuickTableViewController/QuickTableViewController.framework",
-				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QuickTableViewController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Reef/Pods-Reef-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ADF6A299D8FA8638D3CF5B49 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-ReefTests-checkManifestLockResult.txt",
 			);
@@ -510,16 +508,20 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B2C16D02265AB1AF182F91F1 /* [CP] Check Pods Manifest.lock */ = {
+		D5D9E654F4DD9573111D07BB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-ReefUITests-checkManifestLockResult.txt",
 			);
@@ -731,7 +733,7 @@
 		};
 		46E69F3221092CEE003C466F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 124534B6E2D51EB28FB71A9C /* Pods-Reef.debug.xcconfig */;
+			baseConfigurationReference = ECE57B2C893CA0F62F757503 /* Pods-Reef.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Reef/Reef.entitlements;
@@ -753,7 +755,7 @@
 		};
 		46E69F3321092CEE003C466F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED66D2573C9BECFCB6E7CD0B /* Pods-Reef.release.xcconfig */;
+			baseConfigurationReference = E5375A240362F88B2EFAEE3A /* Pods-Reef.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Reef/Reef.entitlements;
@@ -775,7 +777,7 @@
 		};
 		46E69F3521092CEE003C466F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F17FBD7FCBF71920A12508F3 /* Pods-ReefTests.debug.xcconfig */;
+			baseConfigurationReference = A821B8462973238781DF5FBE /* Pods-ReefTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -797,7 +799,7 @@
 		};
 		46E69F3621092CEE003C466F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 550C70BAE2C83097457BF2C2 /* Pods-ReefTests.release.xcconfig */;
+			baseConfigurationReference = EFAC7500E079D840CD40E631 /* Pods-ReefTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -819,7 +821,7 @@
 		};
 		46E69F3821092CEE003C466F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37FBBFADA05BDA1148E2CB4E /* Pods-ReefUITests.debug.xcconfig */;
+			baseConfigurationReference = 46987C4CF2238B30C53A61F5 /* Pods-ReefUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -840,7 +842,7 @@
 		};
 		46E69F3921092CEE003C466F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF6398584C0B0FB95BF3E250 /* Pods-ReefUITests.release.xcconfig */;
+			baseConfigurationReference = 6987AA7300121F3D26643120 /* Pods-ReefUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

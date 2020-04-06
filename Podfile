@@ -21,6 +21,7 @@ target 'Reef' do
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'QuickTableViewController'
+  pod 'Firebase/Messaging'
   pod 'SideMenu', '~> 6.0'
 
 end
