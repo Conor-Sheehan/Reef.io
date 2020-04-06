@@ -1,5 +1,4 @@
 const functions = require('firebase-functions');
-
 const admin = require('firebase-admin');
 admin.initializeApp();
 
@@ -11,7 +10,7 @@ exports.sendWifiConnectedMessage = functions.database.ref('/Users/{uid}/WiFiLast
 	// Print out user's ID who is receiving the notification
 	console.log('Send notification to user with UID:', uuid);
 
-	// Get the reference node to retrieevee the users messaging token
+	// Get the reference node to retrieve the users messaging token
 	var ref = admin.database().ref('/Users/' + uuid + '/UserData/FCMtoken');
 
 	// Once the token value has been read, compose the notification and send it to the user's device
@@ -30,6 +29,43 @@ exports.sendWifiConnectedMessage = functions.database.ref('/Users/{uid}/WiFiLast
     });
 
 });
+
+
+exports.sendBasinLowMessage = functions.database.ref('{uid}/BasinLevels/Nutrient').onWrite( (change, context) => {
+	const uuid = context.params.uid;
+
+	return admin.database().ref(uuid + '/BasinLevels/Nutrient').once('value').then( function(snapshot) {
+		const level = snapshot.val();
+		console.log("Nutrient Value updated " + level);
+
+		if (level < 10) {
+
+			console.log("Value is less than 10");
+			// Get the reference node to retrieve the users messaging token
+			var ref = admin.database().ref(uuid + '/UserData/FCMtoken');
+
+			// Once the token value has been read, compose the notification and send it to the user's device
+			return ref.once('value', function(snap) {
+         		const payload = {
+              	notification: {
+                  title: 'Nutrient Level Low',
+                  body: 'Reef nutrients are getting low. Refill soon.'
+              	}
+         	};
+
+         	admin.messaging().sendToDevice(snap.val(), payload)
+
+    		}, function (errorObject) {
+        		console.log("The read failed: " + errorObject.code);
+    		});
+         }
+		return snapshot.val();
+	});
+
+});
+
+	
+
 
 // initializeDatabase stores the initial values for a user's Reef Ecosystem once the user
 // is Authorized by Firebase
