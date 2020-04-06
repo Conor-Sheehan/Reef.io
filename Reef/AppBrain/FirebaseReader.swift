@@ -36,7 +36,7 @@ extension AppBrain {
                 }
                 
                 // Store number of grows with reef
-                self.growsWithReef = growCount
+                //self.growsWithReef = growCount
                 
                 // Store grow date data, if there were dates to read from Firebase
                 if !seedlingDates.isEmpty {

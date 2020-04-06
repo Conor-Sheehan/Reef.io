@@ -136,7 +136,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
         
         if let brain = appBrain {
             // If necessary send token to application server.
-            brain.storeMessagingToken(FCMtoken: fcmToken)
+          brain.setFCMToken(token: fcmToken)
         }
     }
     

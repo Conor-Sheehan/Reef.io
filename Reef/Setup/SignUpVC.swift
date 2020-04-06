@@ -65,9 +65,8 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
                     appDelegate.initializeAppBrain()                    // Initialize App Brain Local Data Storage
                     appDelegate.activateNotifications()
                     appDelegate.activateRemoteNotifications()
-                    appDelegate.appBrain.use
                     appDelegate.appBrain.storeReefID(reefID: reefId)    // Store user's Reef ID in Firebase
-                    appDelegate.appBrain.storeMessagingToken(FCMtoken: appDelegate.FCMtoken) // Store messaging tokeen
+                    appDelegate.appBrain.setFCMToken(token: appDelegate.FCMtoken) // Store messaging tokeen
                 }
                 
                 // Alert user that account was successfully created
