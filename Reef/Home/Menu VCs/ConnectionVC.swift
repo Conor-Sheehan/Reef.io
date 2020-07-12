@@ -48,7 +48,7 @@ class ConnectionVC: UIViewController {
       }
     
     func displayUsersName() {
-        reefName.text = appDeleg.appBrain.getSettings().firstName + "'s Reef"
+        //reefName.text = appDeleg.appBrain.getSettings().firstName + "'s Reef"
     }
     
     @objc func displayReefConnectionState() {
@@ -61,8 +61,8 @@ class ConnectionVC: UIViewController {
     }
     
     func displayGrowsWithReef() {
-        let growsWithReef = appDeleg.appBrain.getGrowData().growsWithReef
-        reefGrows.text = String(growsWithReef)
+        //let growsWithReef = appDeleg.appBrain.getGrowData().growsWithReef
+        //reefGrows.text = String(growsWithReef)
     }
     
     @IBAction func checkIn(_ sender: UIButton) {

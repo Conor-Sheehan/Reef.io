@@ -66,7 +66,7 @@ class StartGrowVC: UIViewController, SFSafariViewControllerDelegate {
         else {
             
             // Set grow started to true
-            appDeleg.appBrain.setGrowStartedState(GrowStarted: true)
+            //appDeleg.appBrain.setGrowStartedState(GrowStarted: true)
             
             // Set day hours to 18 in Firebase
 

@@ -3,7 +3,7 @@
 
 target 'Reef' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
+  #use_frameworks!
 
   # Pods for Reef
 
@@ -22,7 +22,6 @@ target 'Reef' do
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'Firebase/Messaging'
-  pod 'QuickTableViewController'
   pod 'SideMenu', '~> 6.0'
 
 end

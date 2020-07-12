@@ -8,10 +8,7 @@
 
 import UIKit
 import Firebase
-import FirebaseMessaging
-import FirebaseAuth
 import UserNotifications
-import CoreBluetooth
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
@@ -51,8 +48,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
         if setupLocation >= 1 {
             // Initialize App Brain
             initializeAppBrain()
-            activateNotifications()
-            activateRemoteNotifications()
+            activateRemoteNotifications(completion: { granted in
+              print("Access granted")
+            })
        }
         if setupLocation == 2 {
             setupComplete = true
@@ -77,7 +75,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
     private func initialViewController(setupLocation: Int) -> UIViewController {
         switch setupLocation {
         case 0:
-            return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WelcomeVC")
+          initializeAppBrain()
+         return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WifiConnectVC")
+          //return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WelcomeVC")
         case 1:
             return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "setupNavigation")
         case 2:
@@ -89,20 +89,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
     }
     
     
-    func activateNotifications() {
-        UNUserNotificationCenter.current().delegate = self
-        
-        let center = UNUserNotificationCenter.current()
-        
-        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
-            // Enable or disable features based on authorization.
-            if error != nil {
-                print("Request authorization failed.")
-            }
-        }
-    }
-    
-    func activateRemoteNotifications() {
+  func activateRemoteNotifications(completion: @escaping (_ granted: Bool) -> Void) {
+      
+      print("Activating Remote Notifications")
     
         if #available(iOS 10.0, *) {
           // For iOS 10 display notification (sent via APNS)
@@ -111,7 +100,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
           let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
           UNUserNotificationCenter.current().requestAuthorization(
             options: authOptions,
-            completionHandler: {_, _ in })
+            completionHandler: { granted, error in
+              
+              completion(granted)
+          })
+          
         } else {
           let settings: UIUserNotificationSettings =
           UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)

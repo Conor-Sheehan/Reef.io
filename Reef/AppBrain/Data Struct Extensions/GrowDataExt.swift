@@ -39,8 +39,8 @@ extension AppBrain {
         growDataRef?.child("SeedlingStartDates").child(currentDate.convertToString()).setValue("Started")
         
         // if seed planted array has not been populated, then initialize
-        if growData.seedStartef == nil { growData.seedStarted = [currentDate] }
-        else { growData.seedStarted?.append(currentDate) }
+//        if growData.seedStartef == nil { growData.seedStarted = [currentDate] }
+//        else { growData.seedStarted?.append(currentDate) }
     }
     
     func storeEcosystemStartDate() {

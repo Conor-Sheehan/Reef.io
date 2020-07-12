@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,9 +30,6 @@
                                     <constraint firstAttribute="height" constant="48" id="KqC-NP-Ixd"/>
                                     <constraint firstAttribute="width" constant="63" id="N2A-VF-PZb"/>
                                 </constraints>
-                                <connections>
-                                    <segue destination="hGI-Tz-gmM" kind="presentation" id="zzO-OC-9fj"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iH6-jE-BJg" userLabel="Menu Button">
                                 <rect key="frame" x="343" y="98" width="22" height="12"/>
@@ -41,9 +38,6 @@
                                     <constraint firstAttribute="height" constant="12" id="rhc-e2-JoK"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="Menu Icon"/>
-                                <connections>
-                                    <segue destination="hGI-Tz-gmM" kind="show" id="PyW-UP-Gfj"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="83" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nJ-7D-Ulw">
                                 <rect key="frame" x="152.66666666666666" y="229.66666666666663" width="69.666666666666657" height="60"/>
@@ -85,7 +79,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yUL-CE-Mlk">
-                                <rect key="frame" x="26.666666666666657" y="396.66666666666669" width="322" height="54"/>
+                                <rect key="frame" x="107" y="396.66666666666669" width="161" height="27"/>
                                 <state key="normal" image="Grow Stage (1)"/>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="start grow" translatesAutoresizingMaskIntoConstraints="NO" id="Ns1-Zz-dGh">
@@ -302,19 +296,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ConnectionVC Backdrop" translatesAutoresizingMaskIntoConstraints="NO" id="l6e-Mc-aYo">
-                                <rect key="frame" x="0.0" y="253" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="209" width="375" height="603"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nutrients" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMI-sq-UzW">
-                                <rect key="frame" x="124" y="405" width="67" height="30"/>
+                                <rect key="frame" x="104" y="347" width="67" height="30"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Nutrients Icon" translatesAutoresizingMaskIntoConstraints="NO" id="SOu-eD-EPT">
-                                <rect key="frame" x="59" y="392" width="40" height="56"/>
+                                <rect key="frame" x="59" y="348" width="20" height="28"/>
                             </imageView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2dQ-G8-VuP">
-                                <rect key="frame" x="203.66666666666666" y="410" width="92.999999999999972" height="2"/>
+                                <rect key="frame" x="203.66666666666666" y="352" width="92.999999999999972" height="2"/>
                                 <color key="backgroundColor" red="0.83136469130000001" green="0.83136725430000002" blue="0.83137291670000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.16630250220000001" green="0.43830657010000001" blue="0.49413025379999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -322,84 +316,84 @@
                                 </constraints>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J7P-g6-vD5">
-                                <rect key="frame" x="203.66666666666666" y="417" width="92.999999999999972" height="16"/>
+                                <rect key="frame" x="203.66666666666666" y="359" width="92.999999999999972" height="16"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PH Down" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zs-gC-5OF">
-                                <rect key="frame" x="124" y="495" width="68" height="22"/>
+                                <rect key="frame" x="104" y="409" width="68" height="22"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PH Down Icon" translatesAutoresizingMaskIntoConstraints="NO" id="KvV-Po-x7M">
-                                <rect key="frame" x="59" y="478" width="40" height="56"/>
+                                <rect key="frame" x="59" y="406" width="20" height="28"/>
                             </imageView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Rmx-zB-Jsa">
-                                <rect key="frame" x="203.66666666666666" y="500" width="92.999999999999972" height="2"/>
+                                <rect key="frame" x="203.66666666666666" y="414" width="92.999999999999972" height="2"/>
                                 <color key="backgroundColor" red="0.83136469130000001" green="0.83136725430000002" blue="0.83137291670000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.16630250220000001" green="0.43830657010000001" blue="0.49413025379999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rzm-zU-Gr0">
-                                <rect key="frame" x="203.66666666666666" y="507" width="92.999999999999972" height="16"/>
+                                <rect key="frame" x="203.66666666666666" y="421" width="92.999999999999972" height="16"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PH Up" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l80-YU-RsS">
-                                <rect key="frame" x="123.99999999999999" y="581" width="46.333333333333329" height="22"/>
+                                <rect key="frame" x="104" y="467" width="46.333333333333343" height="22"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PH Up Icon" translatesAutoresizingMaskIntoConstraints="NO" id="7C4-qs-sSg">
-                                <rect key="frame" x="59" y="564" width="40" height="56"/>
+                                <rect key="frame" x="59" y="464" width="20" height="28"/>
                             </imageView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CSb-oX-EsY">
-                                <rect key="frame" x="203.66666666666666" y="586" width="92.999999999999972" height="2"/>
+                                <rect key="frame" x="203.66666666666666" y="472" width="92.999999999999972" height="2"/>
                                 <color key="backgroundColor" red="0.83136469130000001" green="0.83136725430000002" blue="0.83137291670000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.16630250220000001" green="0.43830657010000001" blue="0.49413025379999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOE-tx-MNN">
-                                <rect key="frame" x="203.66666666666666" y="593" width="92.999999999999972" height="16"/>
+                                <rect key="frame" x="203.66666666666666" y="479" width="92.999999999999972" height="16"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Basin System" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12d-C5-pyw">
-                                <rect key="frame" x="58.999999999999986" y="323" width="144.66666666666663" height="33"/>
+                                <rect key="frame" x="58.999999999999986" y="279" width="144.66666666666663" height="33"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Nutrients Basin Image" translatesAutoresizingMaskIntoConstraints="NO" id="RZa-Ii-XM6">
-                                <rect key="frame" x="151.66666666666666" y="128" width="72" height="85"/>
+                                <rect key="frame" x="151.66666666666666" y="84" width="72" height="85"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="72" id="FrY-kw-wD9"/>
                                     <constraint firstAttribute="height" constant="85" id="Mz0-ze-gF9"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFN-xB-PbA" userLabel="Nutrients Button">
-                                <rect key="frame" x="58.999999999999986" y="405" width="237.66666666666663" height="30"/>
+                                <rect key="frame" x="58.999999999999986" y="347" width="237.66666666666663" height="30"/>
                                 <connections>
                                     <action selector="selectBasin:" destination="8Ld-RQ-xMK" eventType="touchUpInside" id="Ert-QI-rPX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QsX-EQ-HtB" userLabel="PH Down Button">
-                                <rect key="frame" x="58.999999999999986" y="478" width="237.66666666666663" height="30"/>
+                                <rect key="frame" x="58.999999999999986" y="406" width="237.66666666666663" height="30"/>
                                 <connections>
                                     <action selector="selectBasin:" destination="8Ld-RQ-xMK" eventType="touchUpInside" id="BzD-uu-CWb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dwt-KW-HQf" userLabel="PH Up Button">
-                                <rect key="frame" x="58.999999999999986" y="564" width="237.66666666666663" height="30"/>
+                                <rect key="frame" x="58.999999999999986" y="464" width="237.66666666666663" height="30"/>
                                 <connections>
                                     <action selector="selectBasin:" destination="8Ld-RQ-xMK" eventType="touchUpInside" id="44D-Ll-QoM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BI4-fI-JDK">
-                                <rect key="frame" x="152.66666666666666" y="643" width="70" height="70"/>
+                                <rect key="frame" x="152.66666666666666" y="543" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="GWd-TY-TTc"/>
                                     <constraint firstAttribute="width" constant="70" id="ffq-JB-jBZ"/>
@@ -495,28 +489,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GrowStageVC Seedling Image" translatesAutoresizingMaskIntoConstraints="NO" id="Ae7-nW-6T6">
-                                <rect key="frame" x="0.0" y="88" width="375" height="220"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="2Xu-vd-nGO"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GrowStageVC Background" translatesAutoresizingMaskIntoConstraints="NO" id="A0X-fC-TaR">
-                                <rect key="frame" x="0.0" y="253" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="209" width="375" height="603"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="seedling" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vua-L2-nsO">
-                                <rect key="frame" x="30" y="289.66666666666669" width="285" height="50.333333333333314"/>
+                                <rect key="frame" x="30" y="245.66666666666666" width="285" height="50.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Biysk-Regular" family="Biysk" pointSize="43"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grow Stage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRE-j5-LTh">
-                                <rect key="frame" x="30" y="340" width="285" height="19.666666666666686"/>
+                                <rect key="frame" x="30" y="296" width="285" height="19.666666666666686"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c45-6a-XmX">
-                                <rect key="frame" x="30" y="634" width="257" height="118"/>
+                                <rect key="frame" x="30" y="590" width="257" height="59"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                 <state key="normal" title="Learn More" backgroundImage="GrowStage Button">
                                     <color key="titleColor" red="0.97647863629999998" green="0.98033004999999995" blue="0.98431473970000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -526,7 +520,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NjB-Mt-lE4">
-                                <rect key="frame" x="30" y="390" width="257" height="184"/>
+                                <rect key="frame" x="30" y="346" width="257" height="184"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="184" id="PTO-zT-Ltv"/>
                                     <constraint firstAttribute="width" constant="257" id="q5e-hQ-WHa"/>
@@ -662,126 +656,6 @@ Healthy seedlings look green and vibrant. With Reef, the only time you need to w
             </objects>
             <point key="canvasLocation" x="1868" y="72"/>
         </scene>
-        <!--MenuTVC-->
-        <scene sceneID="wLX-eV-Kz3">
-            <objects>
-                <tableViewController id="Ne0-ZF-XaY" customClass="MenuTVC" customModule="Reef" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fbR-63-whk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.97647863629999998" green="0.98033004999999995" blue="0.98431473970000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuTVCell" rowHeight="63" id="8FJ-gj-pkU" customClass="MenuTVCell" customModule="Reef" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="63"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8FJ-gj-pkU" id="zXI-b9-VtM">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu Option 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d58-PV-3r6">
-                                            <rect key="frame" x="59" y="21" width="113" height="21"/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HomeVC Bluetooth Icon" translatesAutoresizingMaskIntoConstraints="NO" id="7h8-wx-uZn">
-                                            <rect key="frame" x="14" y="21.666666666666668" width="20" height="20.000000000000004"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="20" id="CWx-Tk-GLH"/>
-                                                <constraint firstAttribute="width" secondItem="7h8-wx-uZn" secondAttribute="height" multiplier="16:16" id="LEw-ET-zdW"/>
-                                            </constraints>
-                                        </imageView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="d58-PV-3r6" secondAttribute="bottom" constant="21" id="541-wE-SOX"/>
-                                        <constraint firstItem="7h8-wx-uZn" firstAttribute="leading" secondItem="zXI-b9-VtM" secondAttribute="leading" constant="14" id="6Rb-HO-MtH"/>
-                                        <constraint firstItem="d58-PV-3r6" firstAttribute="leading" secondItem="7h8-wx-uZn" secondAttribute="trailing" constant="25" id="Dbm-X2-fCT"/>
-                                        <constraint firstItem="d58-PV-3r6" firstAttribute="top" secondItem="zXI-b9-VtM" secondAttribute="top" constant="21" id="dAT-7g-Hw8"/>
-                                        <constraint firstItem="7h8-wx-uZn" firstAttribute="centerY" secondItem="zXI-b9-VtM" secondAttribute="centerY" id="vKr-tN-DlT"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="menuOptionImage" destination="7h8-wx-uZn" id="wMS-hv-4ZQ"/>
-                                    <outlet property="menuOptionTitle" destination="d58-PV-3r6" id="SW2-tU-o7B"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Ne0-ZF-XaY" id="ja6-Hh-LQ1"/>
-                            <outlet property="delegate" destination="Ne0-ZF-XaY" id="SyG-IH-m2E"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="lsO-IU-2Ih"/>
-                    <connections>
-                        <segue destination="TV1-kV-x8d" kind="show" identifier="ConnectionVC" id="jb2-5y-wCG"/>
-                        <segue destination="8Ld-RQ-xMK" kind="show" identifier="BasinVC" id="XEN-Hs-5hI"/>
-                        <segue destination="VEq-ih-Mej" kind="show" identifier="SettingsVC" id="IOK-zi-n3d"/>
-                        <segue destination="81i-w4-iTv" kind="show" identifier="GrowStageVC" id="VLi-Ri-cZy"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="L4z-Sf-Y8g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1097" y="-1332"/>
-        </scene>
-        <!--My Side Menu Navigation Controller-->
-        <scene sceneID="fzY-iY-lDU">
-            <objects>
-                <navigationController id="hGI-Tz-gmM" customClass="MySideMenuNavigationController" customModule="Reef" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="cS5-mC-RNZ"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uDT-64-528">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="Ne0-ZF-XaY" kind="relationship" relationship="rootViewController" id="y6Z-Dk-1r3"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="t34-wR-ns7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="311" y="-1332"/>
-        </scene>
-        <!--Reef Settings-->
-        <scene sceneID="yRS-0N-rBb">
-            <objects>
-                <viewController storyboardIdentifier="Settings" id="VEq-ih-Mej" customClass="SettingsVC" customModule="Reef" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Fan-eb-msg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="TkR-YO-fKU">
-                                <rect key="frame" x="0.0" y="567" width="375" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZt-Jk-mj1">
-                                <rect key="frame" x="316" y="567" width="44" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
-                                <state key="normal" title="Done"/>
-                                <connections>
-                                    <action selector="chooseTime:" destination="VEq-ih-Mej" eventType="touchUpInside" id="iS6-kK-NuR"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A7E-r5-Kct">
-                                <rect key="frame" x="0.0" y="567" width="375" height="162"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="IIn-3p-SMr"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Reef Settings" id="vlS-Zp-rGU"/>
-                    <connections>
-                        <outlet property="doneButton" destination="TZt-Jk-mj1" id="b1R-in-ljQ"/>
-                        <outlet property="pickerBackground" destination="A7E-r5-Kct" id="ddo-2z-dwe"/>
-                        <outlet property="timePicker" destination="TkR-YO-fKU" id="OnW-fp-Jmb"/>
-                        <segue destination="9iT-b9-H9l" kind="show" identifier="SettingsNavVC" id="bAR-Tu-HXn"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6D0-0q-Ycd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1097" y="-621"/>
-        </scene>
         <!--Settings NavVC-->
         <scene sceneID="ncw-6i-BKU">
             <objects>
@@ -825,23 +699,23 @@ Healthy seedlings look green and vibrant. With Reef, the only time you need to w
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ConnectionVC Backdrop" translatesAutoresizingMaskIntoConstraints="NO" id="m2U-30-pAJ">
-                                <rect key="frame" x="0.0" y="250" width="375" height="562"/>
+                                <rect key="frame" x="0.0" y="206" width="375" height="606"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Reef" translatesAutoresizingMaskIntoConstraints="NO" id="2Mn-Yv-xTV">
-                                <rect key="frame" x="155" y="109" width="65" height="120"/>
+                                <rect key="frame" x="155" y="65" width="65" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="dff-dJ-0La"/>
                                     <constraint firstAttribute="width" constant="65" id="yXa-b6-lVa"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Andy's Reef" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9v-Jn-3tY">
-                                <rect key="frame" x="98.666666666666686" y="391.66666666666669" width="132" height="19"/>
+                                <rect key="frame" x="98.666666666666686" y="347.66666666666669" width="132" height="19"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reef Ecosystem" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OF9-qv-Zji">
-                                <rect key="frame" x="50.666666666666657" y="320" width="180" height="33"/>
+                                <rect key="frame" x="50.666666666666657" y="276" width="180" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="eSI-ZL-rPB"/>
                                 </constraints>
@@ -850,23 +724,23 @@ Healthy seedlings look green and vibrant. With Reef, the only time you need to w
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="Bluetooth" translatesAutoresizingMaskIntoConstraints="NO" id="Wuf-J2-Lgd">
-                                <rect key="frame" x="50.666666666666657" y="390" width="28" height="22"/>
+                                <rect key="frame" x="50.666666666666657" y="346" width="28" height="22"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reef Grows" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57B-PT-5R6">
-                                <rect key="frame" x="98.666666666666686" y="511" width="132" height="19"/>
+                                <rect key="frame" x="98.666666666666686" y="467" width="132" height="19"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Reef Icon (Tan)" translatesAutoresizingMaskIntoConstraints="NO" id="e2g-OR-49R">
-                                <rect key="frame" x="54.666666666666657" y="509" width="20" height="23"/>
+                                <rect key="frame" x="54.666666666666657" y="465" width="20" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="CC9-rb-tiu"/>
                                     <constraint firstAttribute="height" constant="23" id="wni-hq-SN9"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sc4-7V-FIF">
-                                <rect key="frame" x="98.666666666666686" y="441" width="132" height="38.333333333333314"/>
+                                <rect key="frame" x="98.666666666666686" y="397" width="132" height="38.333333333333314"/>
                                 <string key="text">Ecosystem
 Bio-Filter</string>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
@@ -874,16 +748,16 @@ Bio-Filter</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPJ-Yj-GCO">
-                                <rect key="frame" x="230.66666666666663" y="510" width="93" height="21"/>
+                                <rect key="frame" x="230.66666666666663" y="466" width="93" height="21"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ecosystem Icon" translatesAutoresizingMaskIntoConstraints="NO" id="PUp-bL-MLT">
-                                <rect key="frame" x="50.666666666666657" y="449" width="28" height="22"/>
+                                <rect key="frame" x="50.666666666666657" y="405" width="28" height="22"/>
                             </imageView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4Dw-jh-DeY">
-                                <rect key="frame" x="230.66666666666663" y="451" width="93" height="2"/>
+                                <rect key="frame" x="230.66666666666663" y="407" width="93" height="2"/>
                                 <color key="backgroundColor" red="0.83136469125747681" green="0.83136725425720215" blue="0.83137291669845581" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.16630250220000001" green="0.43830657010000001" blue="0.49413025379999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -891,13 +765,13 @@ Bio-Filter</string>
                                 </constraints>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connected" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQ3-3g-V3e">
-                                <rect key="frame" x="230.66666666666666" y="390.66666666666669" width="76.333333333333343" height="21"/>
+                                <rect key="frame" x="230.66666666666666" y="346.66666666666669" width="76.333333333333343" height="21"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
                                 <color key="textColor" red="0.16630250220000001" green="0.43830657010000001" blue="0.49413025379999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHl-ch-Q4F">
-                                <rect key="frame" x="230.66666666666663" y="459" width="93" height="16"/>
+                                <rect key="frame" x="230.66666666666663" y="415" width="93" height="16"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -998,7 +872,4 @@ Bio-Filter</string>
         <image name="Up Arrow" width="24" height="11"/>
         <image name="start grow" width="89" height="88"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="PyW-UP-Gfj"/>
-    </inferredMetricsTieBreakers>
 </document>

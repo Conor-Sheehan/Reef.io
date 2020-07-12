@@ -32,12 +32,12 @@ extension AppBrain {
         let daysSinceSeedStarted: Int = seedlingStartDate?.daysElapsed() ?? 0
         
         if daysSinceSeedStarted <= 16 {
-            self.growStage = 0
+            //self.growStage = 0
             let daysUntilNextStage = 16 - daysSinceSeedStarted
             self.percentStage = Double((16 - daysUntilNextStage))/16.0
         }
         else if daysSinceSeedStarted > 16 {
-            self.growStage = 1
+            //self.growStage = 1
             let daysUntilNextStage = 60 - (daysSinceSeedStarted - 16)
             self.percentStage = Double((60 - daysUntilNextStage))/60.0
         }

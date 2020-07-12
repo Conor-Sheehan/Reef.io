@@ -7,14 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B75FB875C02F6A67843CF93 /* Pods_ReefTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A91E408E506E249E3FFAF5A /* Pods_ReefTests.framework */; };
-		0FA6D3B1E446C2D7E229ECDD /* Pods_ReefUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF360C812D6FB32BBBB86705 /* Pods_ReefUITests.framework */; };
+		3A97F218293C0F3BD1C8CD3C /* libPods-ReefUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EC6454F4410F1E8BBE0155 /* libPods-ReefUITests.a */; };
 		46099170235EA6F0000BE2F0 /* MySideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4609916F235EA6F0000BE2F0 /* MySideMenuNavigationController.swift */; };
 		46099173235EB030000BE2F0 /* GrowStageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46099172235EB030000BE2F0 /* GrowStageVC.swift */; };
 		461D530221399539007B6308 /* BasinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461D530121399539007B6308 /* BasinVC.swift */; };
 		462159582127354F00F8ADA4 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462159572127354F00F8ADA4 /* HomeVC.swift */; };
-		4621595E2127358400F8ADA4 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621595D2127358400F8ADA4 /* SettingsVC.swift */; };
-		4621596121286B3300F8ADA4 /* SettingsNavVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621596021286B3300F8ADA4 /* SettingsNavVC.swift */; };
 		4621596321286D3B00F8ADA4 /* AppBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621596221286D3B00F8ADA4 /* AppBrain.swift */; };
 		462A0B8C2149950C00D3108B /* AppBrainCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A0B8B2149950C00D3108B /* AppBrainCalculations.swift */; };
 		462A0B8E2149AE7200D3108B /* FirebaseReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A0B8D2149AE7200D3108B /* FirebaseReader.swift */; };
@@ -22,16 +19,20 @@
 		462A428423DF8A2B0086096A /* UserDataExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A428323DF8A2B0086096A /* UserDataExt.swift */; };
 		462A428723DF8C580086096A /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A428623DF8C580086096A /* DateExt.swift */; };
 		462A428923DF9DC00086096A /* GrowDataExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A428823DF9DC00086096A /* GrowDataExt.swift */; };
-		463962DF23C5922300849DD3 /* ConnectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463962DE23C5922300849DD3 /* ConnectVC.swift */; };
-		46699F73234D1555006EAC89 /* AquariumFillVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46699F72234D1555006EAC89 /* AquariumFillVC.swift */; };
-		46699F75234D3200006EAC89 /* BasinFillVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46699F74234D3200006EAC89 /* BasinFillVC.swift */; };
-		46699F77234D4A87006EAC89 /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46699F76234D4A87006EAC89 /* InfoVC.swift */; };
-		46699F79234E8992006EAC89 /* SunriseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46699F78234E8992006EAC89 /* SunriseVC.swift */; };
+		4631823724A699BF0002E8DF /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4631823624A699BF0002E8DF /* ForgotPasswordVC.swift */; };
+		4651EA6024A5899C009BC355 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4651EA5F24A5899C009BC355 /* SignInVC.swift */; };
 		46699F7B2350D1B6006EAC89 /* Biysk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46699F7A2350D19F006EAC89 /* Biysk.ttf */; };
 		466AA99E222F5AFE007903C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 466AA99D222F5AFE007903C3 /* GoogleService-Info.plist */; };
 		469E5BD3235C29AE003F8471 /* MenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469E5BD2235C29AE003F8471 /* MenuTVC.swift */; };
 		469E5BD5235C2A6E003F8471 /* MenuTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469E5BD4235C2A6E003F8471 /* MenuTVCell.swift */; };
+		46AE27B924B4ED20002AEF34 /* SetupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE27B824B4ED20002AEF34 /* SetupVC.swift */; };
 		46C5917D2123B65A0035F552 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C5917C2123B65A0035F552 /* Home.storyboard */; };
+		46E5A6AC24B92A7300140385 /* PlugVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E5A6AB24B92A7300140385 /* PlugVC.swift */; };
+		46E5A6AE24B92B1800140385 /* ValidateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E5A6AD24B92B1800140385 /* ValidateVC.swift */; };
+		46E5A6B024BA5F8B00140385 /* WifiConnectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E5A6AF24BA5F8B00140385 /* WifiConnectVC.swift */; };
+		46E5A6B224BAA43C00140385 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E5A6B124BAA43C00140385 /* NotificationVC.swift */; };
+		46E5A6B424BAB3E500140385 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E5A6B324BAB3E500140385 /* NetworkExtension.framework */; };
+		46E5A6B624BAB55800140385 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E5A6B524BAB55800140385 /* ExternalAccessory.framework */; };
 		46E69F0D21092CEB003C466F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69F0C21092CEB003C466F /* AppDelegate.swift */; };
 		46E69F0F21092CEB003C466F /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69F0E21092CEB003C466F /* WelcomeVC.swift */; };
 		46E69F1221092CEB003C466F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46E69F1021092CEB003C466F /* Main.storyboard */; };
@@ -42,7 +43,8 @@
 		46E69F3D210948A3003C466F /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69F3C210948A3003C466F /* SignUpVC.swift */; };
 		46EE48332357BE7F00222035 /* StartGrowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EE48322357BE7F00222035 /* StartGrowVC.swift */; };
 		46F55639235A2C0B00DBC6E2 /* ConnectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F55638235A2C0B00DBC6E2 /* ConnectionVC.swift */; };
-		800CE2CC326B141FDCCF84F0 /* Pods_Reef.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5CA9B080C8113410E3A117A /* Pods_Reef.framework */; };
+		96538CE235DE223DCA8C10B8 /* libPods-ReefTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4F632BBBBEA9729405650C /* libPods-ReefTests.a */; };
+		BB2776778926D1B8A1C917F7 /* libPods-Reef.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D924829A3F2566C2742177D /* libPods-Reef.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,8 +73,6 @@
 		460EE4D5211F59950004A91C /* Reef.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Reef.entitlements; sourceTree = "<group>"; };
 		461D530121399539007B6308 /* BasinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasinVC.swift; sourceTree = "<group>"; };
 		462159572127354F00F8ADA4 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
-		4621595D2127358400F8ADA4 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
-		4621596021286B3300F8ADA4 /* SettingsNavVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNavVC.swift; sourceTree = "<group>"; };
 		4621596221286D3B00F8ADA4 /* AppBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBrain.swift; sourceTree = "<group>"; };
 		462A0B8B2149950C00D3108B /* AppBrainCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBrainCalculations.swift; sourceTree = "<group>"; };
 		462A0B8D2149AE7200D3108B /* FirebaseReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseReader.swift; sourceTree = "<group>"; };
@@ -80,16 +80,20 @@
 		462A428323DF8A2B0086096A /* UserDataExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataExt.swift; sourceTree = "<group>"; };
 		462A428623DF8C580086096A /* DateExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
 		462A428823DF9DC00086096A /* GrowDataExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowDataExt.swift; sourceTree = "<group>"; };
-		463962DE23C5922300849DD3 /* ConnectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectVC.swift; sourceTree = "<group>"; };
-		46699F72234D1555006EAC89 /* AquariumFillVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AquariumFillVC.swift; sourceTree = "<group>"; };
-		46699F74234D3200006EAC89 /* BasinFillVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasinFillVC.swift; sourceTree = "<group>"; };
-		46699F76234D4A87006EAC89 /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
-		46699F78234E8992006EAC89 /* SunriseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunriseVC.swift; sourceTree = "<group>"; };
+		4631823624A699BF0002E8DF /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		4651EA5F24A5899C009BC355 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		46699F7A2350D19F006EAC89 /* Biysk.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Biysk.ttf; path = ../../../../Downloads/Biysk.ttf; sourceTree = "<group>"; };
 		466AA99D222F5AFE007903C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		469E5BD2235C29AE003F8471 /* MenuTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTVC.swift; sourceTree = "<group>"; };
 		469E5BD4235C2A6E003F8471 /* MenuTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTVCell.swift; sourceTree = "<group>"; };
+		46AE27B824B4ED20002AEF34 /* SetupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupVC.swift; sourceTree = "<group>"; };
 		46C5917C2123B65A0035F552 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		46E5A6AB24B92A7300140385 /* PlugVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlugVC.swift; sourceTree = "<group>"; };
+		46E5A6AD24B92B1800140385 /* ValidateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateVC.swift; sourceTree = "<group>"; };
+		46E5A6AF24BA5F8B00140385 /* WifiConnectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiConnectVC.swift; sourceTree = "<group>"; };
+		46E5A6B124BAA43C00140385 /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
+		46E5A6B324BAB3E500140385 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		46E5A6B524BAB55800140385 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		46E69F0921092CEB003C466F /* Reef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reef.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E69F0C21092CEB003C466F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46E69F0E21092CEB003C466F /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
@@ -107,11 +111,11 @@
 		46EE48322357BE7F00222035 /* StartGrowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGrowVC.swift; sourceTree = "<group>"; };
 		46F55638235A2C0B00DBC6E2 /* ConnectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionVC.swift; sourceTree = "<group>"; };
 		48792FB4BFD2017A182F8C72 /* Pods-ReefUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReefUITests/Pods-ReefUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		6A91E408E506E249E3FFAF5A /* Pods_ReefTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReefTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D924829A3F2566C2742177D /* libPods-Reef.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reef.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B4F632BBBBEA9729405650C /* libPods-ReefTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReefTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		970C819BB7F3A6511AB6E74E /* Pods-ReefUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReefUITests/Pods-ReefUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A6EC6454F4410F1E8BBE0155 /* libPods-ReefUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReefUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD21A1168783ED074CBCF478 /* Pods-ReefTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReefTests/Pods-ReefTests.debug.xcconfig"; sourceTree = "<group>"; };
-		E5CA9B080C8113410E3A117A /* Pods_Reef.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reef.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF360C812D6FB32BBBB86705 /* Pods_ReefUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReefUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +123,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				800CE2CC326B141FDCCF84F0 /* Pods_Reef.framework in Frameworks */,
+				46E5A6B624BAB55800140385 /* ExternalAccessory.framework in Frameworks */,
+				BB2776778926D1B8A1C917F7 /* libPods-Reef.a in Frameworks */,
+				46E5A6B424BAB3E500140385 /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B75FB875C02F6A67843CF93 /* Pods_ReefTests.framework in Frameworks */,
+				96538CE235DE223DCA8C10B8 /* libPods-ReefTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FA6D3B1E446C2D7E229ECDD /* Pods_ReefUITests.framework in Frameworks */,
+				3A97F218293C0F3BD1C8CD3C /* libPods-ReefUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,9 +151,11 @@
 		157533C02C535E7EDB03B72B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E5CA9B080C8113410E3A117A /* Pods_Reef.framework */,
-				6A91E408E506E249E3FFAF5A /* Pods_ReefTests.framework */,
-				FF360C812D6FB32BBBB86705 /* Pods_ReefUITests.framework */,
+				46E5A6B524BAB55800140385 /* ExternalAccessory.framework */,
+				46E5A6B324BAB3E500140385 /* NetworkExtension.framework */,
+				5D924829A3F2566C2742177D /* libPods-Reef.a */,
+				7B4F632BBBBEA9729405650C /* libPods-ReefTests.a */,
+				A6EC6454F4410F1E8BBE0155 /* libPods-ReefUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -176,8 +184,6 @@
 		461D52FB21399499007B6308 /* Settings View */ = {
 			isa = PBXGroup;
 			children = (
-				4621595D2127358400F8ADA4 /* SettingsVC.swift */,
-				4621596021286B3300F8ADA4 /* SettingsNavVC.swift */,
 			);
 			path = "Settings View";
 			sourceTree = "<group>";
@@ -287,11 +293,13 @@
 				46E69F1021092CEB003C466F /* Main.storyboard */,
 				46E69F0E21092CEB003C466F /* WelcomeVC.swift */,
 				46E69F3C210948A3003C466F /* SignUpVC.swift */,
-				463962DE23C5922300849DD3 /* ConnectVC.swift */,
-				46699F72234D1555006EAC89 /* AquariumFillVC.swift */,
-				46699F74234D3200006EAC89 /* BasinFillVC.swift */,
-				46699F78234E8992006EAC89 /* SunriseVC.swift */,
-				46699F76234D4A87006EAC89 /* InfoVC.swift */,
+				4651EA5F24A5899C009BC355 /* SignInVC.swift */,
+				4631823624A699BF0002E8DF /* ForgotPasswordVC.swift */,
+				46AE27B824B4ED20002AEF34 /* SetupVC.swift */,
+				46E5A6AB24B92A7300140385 /* PlugVC.swift */,
+				46E5A6AD24B92B1800140385 /* ValidateVC.swift */,
+				46E5A6B124BAA43C00140385 /* NotificationVC.swift */,
+				46E5A6AF24BA5F8B00140385 /* WifiConnectVC.swift */,
 			);
 			path = Setup;
 			sourceTree = "<group>";
@@ -320,7 +328,6 @@
 				46E69F0521092CEB003C466F /* Sources */,
 				46E69F0621092CEB003C466F /* Frameworks */,
 				46E69F0721092CEB003C466F /* Resources */,
-				3B7177A30FA303420EA56EA5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -451,36 +458,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3B7177A30FA303420EA56EA5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Reef/Pods-Reef-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/QuickTableViewController/QuickTableViewController.framework",
-				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QuickTableViewController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Reef/Pods-Reef-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5EB7E30BD8659DE3ADD82626 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -542,31 +519,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46E5A6B024BA5F8B00140385 /* WifiConnectVC.swift in Sources */,
 				4621596321286D3B00F8ADA4 /* AppBrain.swift in Sources */,
 				46099170235EA6F0000BE2F0 /* MySideMenuNavigationController.swift in Sources */,
+				4651EA6024A5899C009BC355 /* SignInVC.swift in Sources */,
 				462A428923DF9DC00086096A /* GrowDataExt.swift in Sources */,
 				462A428723DF8C580086096A /* DateExt.swift in Sources */,
-				46699F77234D4A87006EAC89 /* InfoVC.swift in Sources */,
+				46E5A6B224BAA43C00140385 /* NotificationVC.swift in Sources */,
 				462A0B8C2149950C00D3108B /* AppBrainCalculations.swift in Sources */,
+				46E5A6AE24B92B1800140385 /* ValidateVC.swift in Sources */,
 				46099173235EB030000BE2F0 /* GrowStageVC.swift in Sources */,
 				46EE48332357BE7F00222035 /* StartGrowVC.swift in Sources */,
 				462159582127354F00F8ADA4 /* HomeVC.swift in Sources */,
-				46699F79234E8992006EAC89 /* SunriseVC.swift in Sources */,
 				469E5BD3235C29AE003F8471 /* MenuTVC.swift in Sources */,
+				46AE27B924B4ED20002AEF34 /* SetupVC.swift in Sources */,
 				46F55639235A2C0B00DBC6E2 /* ConnectionVC.swift in Sources */,
-				463962DF23C5922300849DD3 /* ConnectVC.swift in Sources */,
-				4621596121286B3300F8ADA4 /* SettingsNavVC.swift in Sources */,
+				4631823724A699BF0002E8DF /* ForgotPasswordVC.swift in Sources */,
 				46E69F3D210948A3003C466F /* SignUpVC.swift in Sources */,
-				46699F73234D1555006EAC89 /* AquariumFillVC.swift in Sources */,
 				46E69F0F21092CEB003C466F /* WelcomeVC.swift in Sources */,
-				46699F75234D3200006EAC89 /* BasinFillVC.swift in Sources */,
 				469E5BD5235C2A6E003F8471 /* MenuTVCell.swift in Sources */,
 				462A428223DAB00E0086096A /* ReefSettingsExt.swift in Sources */,
 				461D530221399539007B6308 /* BasinVC.swift in Sources */,
 				46E69F0D21092CEB003C466F /* AppDelegate.swift in Sources */,
 				462A0B8E2149AE7200D3108B /* FirebaseReader.swift in Sources */,
+				46E5A6AC24B92A7300140385 /* PlugVC.swift in Sources */,
 				462A428423DF8A2B0086096A /* UserDataExt.swift in Sources */,
-				4621595E2127358400F8ADA4 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,6 +721,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = KJ66229FXW;
+				ENABLE_TESTABILITY = NO;
 				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = Reef/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

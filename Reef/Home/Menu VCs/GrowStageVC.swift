@@ -30,7 +30,7 @@ class GrowStageVC: UIViewController, SFSafariViewControllerDelegate {
         
         // Load the app delegate to access brain and bluetooth protocol
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-            growStage = appDelegate.appBrain.growStage
+            //growStage = appDelegate.appBrain.growStage
         }
         
         growStageName.text = growStageNames[growStage]

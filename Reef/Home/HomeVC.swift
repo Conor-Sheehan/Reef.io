@@ -137,11 +137,10 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @objc func displayUserName() {
-        reefName.text = appDeleg.appBrain.userData.firstName + "'s Reef"
     }
     
     @objc func displayPHValue() {
-        PH.text = appDeleg.appBrain.getGrowData().currentPH
+       // PH.text = appDeleg.appBrain.getGrowData().currentPH
     }
     
     @objc func displayGrowData() {
@@ -152,18 +151,18 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     
         
         // Check if user's started grow
-        if brain.getSettings().growStarted {
-            
-            for element in growProgressElements { element?.alpha = 1.0 }
-            startGrowButton.alpha = 0.0
-            startGrowImage.alpha = 0.0
-            displayGrowStatus()
-        }
-        else {
-            for element in growProgressElements { element?.alpha = 0.0 }
-            startGrowButton.alpha = 1.0
-            startGrowImage.alpha = 1.0
-        }
+//        if brain.getSettings().growStarted {
+//
+//            for element in growProgressElements { element?.alpha = 1.0 }
+//            startGrowButton.alpha = 0.0
+//            startGrowImage.alpha = 0.0
+//            displayGrowStatus()
+//        }
+//        else {
+//            for element in growProgressElements { element?.alpha = 0.0 }
+//            startGrowButton.alpha = 1.0
+//            startGrowImage.alpha = 1.0
+//        }
 
     }
     
@@ -174,49 +173,49 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func displayDayHours() {
-        let growStage = appDeleg.appBrain.growStage
-        let growStarted = appDeleg.appBrain.getSettings().growStarted
+//        let growStage = appDeleg.appBrain.growStage
+//        let growStarted = appDeleg.appBrain.getSettings().growStarted
         
         // If user has not statrted grow, then set day hours to 0
-        if !growStarted { daylightHours.text = "0 Hours" }
-        // Else if user's grow stage is not flowering then set to 18 hours
-        else if growStage != 2 { daylightHours.text = "18 Hours" }
-        // Else set to 12 Hours
-        else { daylightHours.text = "12 Hours" }
+//        if !growStarted { daylightHours.text = "0 Hours" }
+//        // Else if user's grow stage is not flowering then set to 18 hours
+//        else if growStage != 2 { daylightHours.text = "18 Hours" }
+//        // Else set to 12 Hours
+//        else { daylightHours.text = "12 Hours" }
     }
     
     func displayPlantHeight() {
-        plantHeight.text = String(appDeleg.appBrain.getGrowData().currentPlantHeight)
-            + " in."
+//        plantHeight.text = String(appDeleg.appBrain.getGrowData().currentPlantHeight)
+//            + " in."
     }
     
     func displayGrowStageTracker() {
-        let growStage = appDeleg.appBrain.growStage
-        let imageName = ["Grow Stage (1)","Grow Stage (2)","Grow Stage (3)"]
-        growStageTracker.setImage(UIImage(named: imageName[growStage]), for: .normal)
+//        let growStage = appDeleg.appBrain.growStage
+//        let imageName = ["Grow Stage (1)","Grow Stage (2)","Grow Stage (3)"]
+//        growStageTracker.setImage(UIImage(named: imageName[growStage]), for: .normal)
     }
     
     
     func displayGrowTips() {
         
-        let growStage = appDeleg.appBrain.getGrowData().growStage
-        let growStarted = appDeleg.appBrain.getSettings().growStarted
-        var displayText = ""
-        
-        if !growStarted {
-            displayText = "To get started growing with Reef, tap the button above."
-        }
-        else if growStage == 0 {
-            displayText = "During seedling, water your sprout lightly once per day."
-        }
-        else if growStage == 1 {
-            displayText = "During vegeatative stage you can start training your plant."
-        }
-        else {
-            displayText = "During flowering Reef's tank will need to be refilled more often."
-        }
-        
-        growTips.text = displayText
+//        let growStage = appDeleg.appBrain.getGrowData().growStage
+//        let growStarted = appDeleg.appBrain.getSettings().growStarted
+//        var displayText = ""
+//        
+//        if !growStarted {
+//            displayText = "To get started growing with Reef, tap the button above."
+//        }
+//        else if growStage == 0 {
+//            displayText = "During seedling, water your sprout lightly once per day."
+//        }
+//        else if growStage == 1 {
+//            displayText = "During vegeatative stage you can start training your plant."
+//        }
+//        else {
+//            displayText = "During flowering Reef's tank will need to be refilled more often."
+//        }
+//
+//        growTips.text = displayText
         
     }
     
@@ -230,23 +229,23 @@ extension HomeVC {
     /// Reads in Grow Data from brain
     func displayGrowStatus() {
         // Read data from app brain
-        let currGrowStage = appDeleg.appBrain.growStage
-        let currPercentStage = appDeleg.appBrain.getGrowData().percentStage
-        
-        // If percent of the grow stage has been updated
-        if percentGrowStage != currPercentStage {
-        
-            drawCircles()
-            
-            percentGrowStage = currPercentStage
-            
-            // Read and display current stage of growth
-            growStage.text = self.growStages[currGrowStage]
-            // Animate text counting up
-            countAnimation(counter: 0, total: Int(percentGrowStage*100))
-            // Animate progress circle
-            animateCircle()
-        }
+//        let currGrowStage = appDeleg.appBrain.growStage
+//        let currPercentStage = appDeleg.appBrain.getGrowData().percentStage
+//
+//        // If percent of the grow stage has been updated
+//        if percentGrowStage != currPercentStage {
+//
+//            drawCircles()
+//
+//            percentGrowStage = currPercentStage
+//
+//            // Read and display current stage of growth
+//            growStage.text = self.growStages[currGrowStage]
+//            // Animate text counting up
+//            countAnimation(counter: 0, total: Int(percentGrowStage*100))
+//            // Animate progress circle
+//            animateCircle()
+//        }
     }
     
     
@@ -287,15 +286,15 @@ extension HomeVC {
     }
     
     func animateCircle() {
-        let brain = appDeleg.appBrain!
-        
-        let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        basicAnimation.toValue = brain.getGrowData().percentStage
-        basicAnimation.duration = 1.2
-        basicAnimation.fillMode = CAMediaTimingFillMode.forwards
-        basicAnimation.isRemovedOnCompletion = false
-        
-        shapeLayer.add(basicAnimation, forKey: "Circular")
+//        let brain = appDeleg.appBrain!
+//
+//        let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+//        basicAnimation.toValue = brain.getGrowData().percentStage
+//        basicAnimation.duration = 1.2
+//        basicAnimation.fillMode = CAMediaTimingFillMode.forwards
+//        basicAnimation.isRemovedOnCompletion = false
+//
+//        shapeLayer.add(basicAnimation, forKey: "Circular")
     }
 }
 

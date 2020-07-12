@@ -47,11 +47,11 @@ extension AppBrain {
             
               }
                       
-            databaseRef?.child("Users").child(firebaseUID).child("GrowDates").child("EcosystemStartDate").observeSingleEvent(of: .value){ (snapshot) in
-                  if let ecosystemStartedDate = snapshot.value as? String {
-                      self.ecosystemStartDate = self.convertStringToDate(str: ecosystemStartedDate)
-                  }
-              }
+//            databaseRef?.child("Users").child(firebaseUID).child("GrowDates").child("EcosystemStartDate").observeSingleEvent(of: .value){ (snapshot) in
+//                  if let ecosystemStartedDate = snapshot.value as? String {
+//                      self.ecosystemStartDate = self.convertStringToDate(str: ecosystemStartedDate)
+//                  }
+//              }
         }
     }
     

@@ -140,8 +140,8 @@ extension AppBrain {
        }
         
         reefSettingsRef?.child("growStage").observe(.value) { (snapshot) in
-          if let grwStage = snapshot.value as? String {
-            self.reefSettings.growStage = GrowStage(rawValue: grwStage)
+          if let growStage = snapshot.value as? String {
+           // self.reefSettings.growStage = GrowStage(rawValue: grwStage)
           }
         }
         
