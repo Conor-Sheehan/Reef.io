@@ -30,7 +30,7 @@ extension AppBrain {
                 
                 for child in snapshot.children.allObjects as! [DataSnapshot] {
                     // Get seedling start date
-                    let seedStartDate = self.convertStringToDate(str: child.key)
+                  let seedStartDate = child.key.convertStringToDate()
                     growCount += 1 // Increment grow count
                     seedlingDates.append(seedStartDate)
                 }
@@ -41,17 +41,11 @@ extension AppBrain {
                 // Store grow date data, if there were dates to read from Firebase
                 if !seedlingDates.isEmpty {
                     self.seedlingStartDate = seedlingDates.last
-                    self.findGrowStage()
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "growDataRead"), object: nil)
                 }
             
               }
                       
-//            databaseRef?.child("Users").child(firebaseUID).child("GrowDates").child("EcosystemStartDate").observeSingleEvent(of: .value){ (snapshot) in
-//                  if let ecosystemStartedDate = snapshot.value as? String {
-//                      self.ecosystemStartDate = self.convertStringToDate(str: ecosystemStartedDate)
-//                  }
-//              }
         }
     }
     
@@ -93,7 +87,7 @@ extension AppBrain {
                     self.wifiConnected = true
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "wifiConnected"), object: nil)
                 }
-                else { print("WiFi not yet connected")}
+                else { print("WiFi not yet connected") }
             })
         }
     }

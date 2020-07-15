@@ -60,6 +60,7 @@ class AppBrain {
     }
       
     self.readReefSettings()
+    self.readWiFiConnected()
   }
 
   

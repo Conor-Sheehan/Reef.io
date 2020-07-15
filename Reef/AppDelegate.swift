@@ -75,9 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
     private func initialViewController(setupLocation: Int) -> UIViewController {
         switch setupLocation {
         case 0:
-          initializeAppBrain()
-         return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WifiConnectVC")
-          //return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WelcomeVC")
+          return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WelcomeVC")
         case 1:
             return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "setupNavigation")
         case 2:

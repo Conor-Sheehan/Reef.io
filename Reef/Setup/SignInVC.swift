@@ -125,6 +125,12 @@ class SignInVC: UIViewController, UITextFieldDelegate {
       else {
         self?.generator.notificationOccurred(.success)
         self?.alertUser(title: "Sign In Successful", message: "Welcome back to Reef!")
+        
+        // Initialize App Brain and store first name in firebase
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+          appDelegate.initializeAppBrain()
+        }
+        self?.performSegue(withIdentifier: "segueToSetup", sender: self)
       }
       
     }

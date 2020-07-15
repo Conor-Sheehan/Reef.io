@@ -33,6 +33,7 @@
 		46E5A6B224BAA43C00140385 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E5A6B124BAA43C00140385 /* NotificationVC.swift */; };
 		46E5A6B424BAB3E500140385 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E5A6B324BAB3E500140385 /* NetworkExtension.framework */; };
 		46E5A6B624BAB55800140385 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E5A6B524BAB55800140385 /* ExternalAccessory.framework */; };
+		46E5A6B824BB615100140385 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E5A6B724BB615100140385 /* StringExt.swift */; };
 		46E69F0D21092CEB003C466F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69F0C21092CEB003C466F /* AppDelegate.swift */; };
 		46E69F0F21092CEB003C466F /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69F0E21092CEB003C466F /* WelcomeVC.swift */; };
 		46E69F1221092CEB003C466F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46E69F1021092CEB003C466F /* Main.storyboard */; };
@@ -94,6 +95,7 @@
 		46E5A6B124BAA43C00140385 /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
 		46E5A6B324BAB3E500140385 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		46E5A6B524BAB55800140385 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		46E5A6B724BB615100140385 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		46E69F0921092CEB003C466F /* Reef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reef.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E69F0C21092CEB003C466F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46E69F0E21092CEB003C466F /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				462A428623DF8C580086096A /* DateExt.swift */,
+				46E5A6B724BB615100140385 /* StringExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 				462159582127354F00F8ADA4 /* HomeVC.swift in Sources */,
 				469E5BD3235C29AE003F8471 /* MenuTVC.swift in Sources */,
 				46AE27B924B4ED20002AEF34 /* SetupVC.swift in Sources */,
+				46E5A6B824BB615100140385 /* StringExt.swift in Sources */,
 				46F55639235A2C0B00DBC6E2 /* ConnectionVC.swift in Sources */,
 				4631823724A699BF0002E8DF /* ForgotPasswordVC.swift in Sources */,
 				46E69F3D210948A3003C466F /* SignUpVC.swift in Sources */,
@@ -719,7 +723,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Reef/Reef.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = KJ66229FXW;
 				ENABLE_TESTABILITY = NO;
 				GCC_NO_COMMON_BLOCKS = NO;
@@ -728,7 +732,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.Infinitry.Reef;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -743,7 +747,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Reef/Reef.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = KJ66229FXW;
 				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = Reef/Info.plist;
@@ -751,7 +755,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.Infinitry.Reef;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

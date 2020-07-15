@@ -258,6 +258,7 @@
                                 </state>
                                 <connections>
                                     <action selector="signIn:" destination="JVB-pC-nJE" eventType="touchUpInside" id="IaU-Hz-lkE"/>
+                                    <segue destination="rcw-h2-UOI" kind="presentation" identifier="segueToSetup" modalPresentationStyle="overFullScreen" id="BEa-QK-T24"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" background="TextField" translatesAutoresizingMaskIntoConstraints="NO" id="i8I-fV-Zwz">
@@ -787,6 +788,7 @@
             <objects>
                 <navigationController storyboardIdentifier="SetupProcess" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="rcw-h2-UOI" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="eN0-Ew-9Ih"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jAq-UQ-J2N">
                         <autoresizingMask key="autoresizingMask"/>
@@ -818,7 +820,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="goToSettings:" destination="Azm-o8-LBq" eventType="touchUpInside" id="JcR-4L-0EZ"/>
+                                    <action selector="connectToWifi:" destination="Azm-o8-LBq" eventType="touchUpInside" id="Ncf-bi-e9j"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect to Wi-Fi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVe-XB-5vu">
@@ -842,11 +844,6 @@
                                     <constraint firstAttribute="height" constant="23" id="CAn-7i-iyW"/>
                                     <constraint firstAttribute="width" constant="55" id="cmc-m5-GqV"/>
                                 </constraints>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow.left" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0wv-10-H8Y">
-                                <rect key="frame" x="31" y="60" width="45" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.59222418070000005" green="0.69099956750000002" blue="0.62352222199999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wifi" translatesAutoresizingMaskIntoConstraints="NO" id="JK3-yK-sbK">
                                 <rect key="frame" x="48" y="137" width="43" height="35"/>
@@ -880,6 +877,8 @@
                     <connections>
                         <outlet property="activityIndicator" destination="K5n-IA-dMj" id="0Bm-qF-KWo"/>
                         <outlet property="connectWifiButton" destination="RrH-Sw-76u" id="nnE-St-rWi"/>
+                        <outlet property="headerLabel" destination="nVe-XB-5vu" id="a0o-xv-JGm"/>
+                        <outlet property="subHeaderLabeel" destination="ZCX-BT-s4W" id="fk2-12-qRz"/>
                         <outlet property="wifiImage" destination="JK3-yK-sbK" id="iAY-9F-hHT"/>
                     </connections>
                 </viewController>
@@ -889,8 +888,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="BEa-QK-T24"/>
         <segue reference="JX5-4K-AFx"/>
-        <segue reference="whY-4D-hI1"/>
+        <segue reference="XcV-2r-on9"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="App Icon New Notification" width="105" height="98"/>
