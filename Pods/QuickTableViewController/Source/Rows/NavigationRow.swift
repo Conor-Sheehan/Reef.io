@@ -99,7 +99,7 @@ open class NavigationRow<T: UITableViewCell>: NavigationRowCompatible, Equatable
     return T.reuseIdentifier + (detailText?.style.stringValue ?? "")
   }
 
-  /// Returns the table view cell style for the specified subtitle.
+  /// Returns the table view cell style for the specified detail text.
   public var cellStyle: UITableViewCell.CellStyle {
     return detailText?.style ?? .default
   }
@@ -143,7 +143,7 @@ open class NavigationRow<T: UITableViewCell>: NavigationRowCompatible, Equatable
 }
 
 
-private extension UITableViewCell.CellStyle {
+internal extension UITableViewCell.CellStyle {
 
   var stringValue: String {
     switch self {

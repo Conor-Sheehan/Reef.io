@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -291,7 +291,6 @@
 				46987C4CF2238B30C53A61F5 /* Pods-ReefUITests.debug.xcconfig */,
 				6987AA7300121F3D26643120 /* Pods-ReefUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -738,7 +737,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Reef/Reef.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.22;
+				CURRENT_PROJECT_VERSION = 1.24;
 				DEVELOPMENT_TEAM = KJ66229FXW;
 				INFOPLIST_FILE = Reef/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -760,7 +759,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Reef/Reef.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.22;
+				CURRENT_PROJECT_VERSION = 1.24;
 				DEVELOPMENT_TEAM = KJ66229FXW;
 				INFOPLIST_FILE = Reef/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HomeVC Top BackDrop" translatesAutoresizingMaskIntoConstraints="NO" id="Y40-UZ-gMu">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="392.50000000000011"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="392.5"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h53-Wo-dQI">
                                 <rect key="frame" x="333" y="44" width="63" height="48"/>
@@ -392,7 +392,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Nutrients Basin Image" translatesAutoresizingMaskIntoConstraints="NO" id="RZa-Ii-XM6">
-                                <rect key="frame" x="151.5" y="84" width="72" height="85.000000000000028"/>
+                                <rect key="frame" x="151.5" y="84" width="72" height="85"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="72" id="FrY-kw-wD9"/>
                                     <constraint firstAttribute="height" constant="85" id="Mz0-ze-gF9"/>
@@ -501,7 +501,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GrowStageVC Seedling Image" translatesAutoresizingMaskIntoConstraints="NO" id="Ae7-nW-6T6">
-                                <rect key="frame" x="0.0" y="44" width="375.00000000000006" height="220"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="2Xu-vd-nGO"/>
                                 </constraints>
@@ -510,7 +510,7 @@
                                 <rect key="frame" x="0.0" y="209" width="375" height="492"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="seedling" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vua-L2-nsO">
-                                <rect key="frame" x="30" y="257.5" width="285" height="38.5"/>
+                                <rect key="frame" x="30" y="245.5" width="285" height="50.5"/>
                                 <fontDescription key="fontDescription" name="Biysk-Regular" family="Biysk" pointSize="43"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1092,6 +1092,9 @@ Bio-Filter</string>
             <point key="canvasLocation" x="-410" y="72"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="PyW-UP-Gfj"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Blue button" width="221" height="51"/>
         <image name="Bluetooth" width="12" height="18"/>
@@ -1120,7 +1123,4 @@ Bio-Filter</string>
         <image name="pH Up Icon" width="11" height="18"/>
         <image name="planting new life" width="97" height="95"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="PyW-UP-Gfj"/>
-    </inferredMetricsTieBreakers>
 </document>

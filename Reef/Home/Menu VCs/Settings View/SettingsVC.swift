@@ -87,9 +87,12 @@ class SettingsVC:  QuickTableViewController {
     private func startEndGrow(_ sender: Row) {
        print("Start Grow")
         if growStartedText == "End Grow" {
+            appDeleg.sendMessage(message: "0H0")
             brain.setGrowStartedState(GrowStarted: false)
         }
-        else { brain.setGrowStartedState(GrowStarted: true) }
+        else {
+          appDeleg.sendMessage(message: "0H18")
+          brain.setGrowStartedState(GrowStarted: true) }
         
         self.setTableContents()
     }
