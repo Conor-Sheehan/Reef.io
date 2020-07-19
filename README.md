@@ -11,21 +11,21 @@ Supports: iOS 10.x and above
 
 The project is using cocoapods for managing external libraries and a Gemfile for managing the cocoapods version.
 
-Get HomeBrew
+Get HomeBrew (if not previously installed)
 
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 ```
 
-Install Ruby Environment Manager
+Install Ruby Environment Manager (if not previously installed)
 
 ```
 brew update
 brew install ruby
 ```
 
-Then install the pods
+Then install cocoapods (if not previously installed)
 
 ```
 sudo gem install -n /usr/local/bin cocoapods
