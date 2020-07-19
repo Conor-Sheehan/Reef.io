@@ -13,18 +13,14 @@ class PlugVC: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
   }
-  
+
   deinit {
     NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
     NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
   }
-    
+
   @IBAction func goBack(_ sender: Any) {
     navigationController?.popViewController(animated: true)
   }
-  
-  
-  
 
 }
-

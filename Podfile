@@ -22,6 +22,7 @@ target 'Reef' do
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'Firebase/Messaging'
-  pod 'SideMenu', '~> 6.0'
+  pod 'SwiftLint'
+  pod 'R.swift'
 
 end

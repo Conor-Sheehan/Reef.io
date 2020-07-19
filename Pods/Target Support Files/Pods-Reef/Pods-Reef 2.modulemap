@@ -1,4 +1,4 @@
-framework module Pods_Reef {
+module Pods_Reef {
   umbrella header "Pods-Reef-umbrella.h"
 
   export *

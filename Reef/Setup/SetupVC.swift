@@ -14,6 +14,5 @@ class SetupVC: UIViewController {
         super.viewDidLoad()
 
     }
-    
 
 }

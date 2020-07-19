@@ -8,16 +8,12 @@
 
 import UIKit
 
-
 class WelcomeVC: UIViewController {
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         print("LOADED WELCOME VC")
     }
-    
 
 }
-

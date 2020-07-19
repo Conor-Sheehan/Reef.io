@@ -1,1 +1,0 @@
-../../../../leveldb-library/db/log_format 2.h

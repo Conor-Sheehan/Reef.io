@@ -1,1 +1,0 @@
-../../../../leveldb-library/db/log_format 4.h

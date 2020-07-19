@@ -16,6 +16,9 @@ firebase-debug.log*
 # it commented so all members can deploy to the same project(s) in .firebaserc.
 # .firebaserc
 
+#R.Swift generated file
+*.generated.swift
+
 # Runtime data
 pids
 *.pid

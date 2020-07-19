@@ -1,1 +1,0 @@
-../../../../leveldb-library/db/log_writer 3.h

@@ -14,15 +14,14 @@ class NotificationVC: UIViewController {
       super.viewDidLoad()
 
     }
-    
+
   @IBAction func turnOnNotifiications(_ sender: Any) {
-    
+
     print("Attempting to turn on notifications")
-    
-    
+
     // Request access to turn on notifications
     if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-      
+
       appDelegate.activateRemoteNotifications(completion: { granted in
 
         if granted {
@@ -31,15 +30,12 @@ class NotificationVC: UIViewController {
           DispatchQueue.main.async {
             self.performSegue(withIdentifier: "toWifiConnectVC", sender: self)
           }
-        }
-        else {
+        } else {
           print("Access was not granted")
         }
       })
-       
+
     }
   }
-  
-  
 
 }

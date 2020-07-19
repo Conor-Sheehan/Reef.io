@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A97F218293C0F3BD1C8CD3C /* libPods-ReefUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EC6454F4410F1E8BBE0155 /* libPods-ReefUITests.a */; };
-		46099170235EA6F0000BE2F0 /* MySideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4609916F235EA6F0000BE2F0 /* MySideMenuNavigationController.swift */; };
 		46099173235EB030000BE2F0 /* GrowStageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46099172235EB030000BE2F0 /* GrowStageVC.swift */; };
 		461D530221399539007B6308 /* BasinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461D530121399539007B6308 /* BasinVC.swift */; };
 		462159582127354F00F8ADA4 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462159572127354F00F8ADA4 /* HomeVC.swift */; };
@@ -21,10 +19,9 @@
 		462A428923DF9DC00086096A /* GrowDataExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A428823DF9DC00086096A /* GrowDataExt.swift */; };
 		4631823724A699BF0002E8DF /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4631823624A699BF0002E8DF /* ForgotPasswordVC.swift */; };
 		4651EA6024A5899C009BC355 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4651EA5F24A5899C009BC355 /* SignInVC.swift */; };
+		465C105024C3DBDD0003DF9E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465C104F24C3DBDD0003DF9E /* R.generated.swift */; };
 		46699F7B2350D1B6006EAC89 /* Biysk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46699F7A2350D19F006EAC89 /* Biysk.ttf */; };
 		466AA99E222F5AFE007903C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 466AA99D222F5AFE007903C3 /* GoogleService-Info.plist */; };
-		469E5BD3235C29AE003F8471 /* MenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469E5BD2235C29AE003F8471 /* MenuTVC.swift */; };
-		469E5BD5235C2A6E003F8471 /* MenuTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469E5BD4235C2A6E003F8471 /* MenuTVCell.swift */; };
 		46AE27B924B4ED20002AEF34 /* SetupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE27B824B4ED20002AEF34 /* SetupVC.swift */; };
 		46C5917D2123B65A0035F552 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C5917C2123B65A0035F552 /* Home.storyboard */; };
 		46E5A6AC24B92A7300140385 /* PlugVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E5A6AB24B92A7300140385 /* PlugVC.swift */; };
@@ -44,8 +41,9 @@
 		46E69F3D210948A3003C466F /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69F3C210948A3003C466F /* SignUpVC.swift */; };
 		46EE48332357BE7F00222035 /* StartGrowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EE48322357BE7F00222035 /* StartGrowVC.swift */; };
 		46F55639235A2C0B00DBC6E2 /* ConnectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F55638235A2C0B00DBC6E2 /* ConnectionVC.swift */; };
-		96538CE235DE223DCA8C10B8 /* libPods-ReefTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4F632BBBBEA9729405650C /* libPods-ReefTests.a */; };
-		BB2776778926D1B8A1C917F7 /* libPods-Reef.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D924829A3F2566C2742177D /* libPods-Reef.a */; };
+		A72E9F4603114031B8B54D02 /* libPods-Reef.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F6C904426D9CE327DA24C7C /* libPods-Reef.a */; };
+		AAFA5613502CF3D71A704122 /* libPods-ReefUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 564ABD45A98459F1405AB935 /* libPods-ReefUITests.a */; };
+		C97A647528A3826979D2DDBA /* libPods-ReefTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 303B69180DD64648E878E2D1 /* libPods-ReefTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,10 +64,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1FBE9ACA9A5D53C71FD7EAFA /* Pods-ReefTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReefTests/Pods-ReefTests.release.xcconfig"; sourceTree = "<group>"; };
-		24B908DB06A921B98386ABC7 /* Pods-Reef.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reef.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reef/Pods-Reef.debug.xcconfig"; sourceTree = "<group>"; };
-		308799469D6FECDB2F0CF6D5 /* Pods-Reef.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reef.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reef/Pods-Reef.release.xcconfig"; sourceTree = "<group>"; };
-		4609916F235EA6F0000BE2F0 /* MySideMenuNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySideMenuNavigationController.swift; sourceTree = "<group>"; };
+		03184FD31ED7DB9C7323E20C /* Pods-ReefTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefTests.debug.xcconfig"; path = "Target Support Files/Pods-ReefTests/Pods-ReefTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1D7E7B8033C0290C8D929FA5 /* Pods-Reef.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reef.debug.xcconfig"; path = "Target Support Files/Pods-Reef/Pods-Reef.debug.xcconfig"; sourceTree = "<group>"; };
+		303B69180DD64648E878E2D1 /* libPods-ReefTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReefTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46099172235EB030000BE2F0 /* GrowStageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowStageVC.swift; sourceTree = "<group>"; };
 		460EE4D5211F59950004A91C /* Reef.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Reef.entitlements; sourceTree = "<group>"; };
 		461D530121399539007B6308 /* BasinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasinVC.swift; sourceTree = "<group>"; };
@@ -83,10 +80,9 @@
 		462A428823DF9DC00086096A /* GrowDataExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowDataExt.swift; sourceTree = "<group>"; };
 		4631823624A699BF0002E8DF /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		4651EA5F24A5899C009BC355 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		465C104F24C3DBDD0003DF9E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = Pods/R.generated.swift; sourceTree = SOURCE_ROOT; };
 		46699F7A2350D19F006EAC89 /* Biysk.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Biysk.ttf; path = ../../../../Downloads/Biysk.ttf; sourceTree = "<group>"; };
 		466AA99D222F5AFE007903C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		469E5BD2235C29AE003F8471 /* MenuTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTVC.swift; sourceTree = "<group>"; };
-		469E5BD4235C2A6E003F8471 /* MenuTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTVCell.swift; sourceTree = "<group>"; };
 		46AE27B824B4ED20002AEF34 /* SetupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupVC.swift; sourceTree = "<group>"; };
 		46C5917C2123B65A0035F552 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		46E5A6AB24B92A7300140385 /* PlugVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlugVC.swift; sourceTree = "<group>"; };
@@ -112,12 +108,12 @@
 		46E69F3C210948A3003C466F /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		46EE48322357BE7F00222035 /* StartGrowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGrowVC.swift; sourceTree = "<group>"; };
 		46F55638235A2C0B00DBC6E2 /* ConnectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionVC.swift; sourceTree = "<group>"; };
-		48792FB4BFD2017A182F8C72 /* Pods-ReefUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReefUITests/Pods-ReefUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		5D924829A3F2566C2742177D /* libPods-Reef.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reef.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B4F632BBBBEA9729405650C /* libPods-ReefTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReefTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		970C819BB7F3A6511AB6E74E /* Pods-ReefUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReefUITests/Pods-ReefUITests.release.xcconfig"; sourceTree = "<group>"; };
-		A6EC6454F4410F1E8BBE0155 /* libPods-ReefUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReefUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DD21A1168783ED074CBCF478 /* Pods-ReefTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReefTests/Pods-ReefTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4AE62099EE1099EAF4BF41E9 /* Pods-ReefTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefTests.release.xcconfig"; path = "Target Support Files/Pods-ReefTests/Pods-ReefTests.release.xcconfig"; sourceTree = "<group>"; };
+		50ECC1D3D8A6FFA2F4F06CBF /* Pods-ReefUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefUITests.release.xcconfig"; path = "Target Support Files/Pods-ReefUITests/Pods-ReefUITests.release.xcconfig"; sourceTree = "<group>"; };
+		564ABD45A98459F1405AB935 /* libPods-ReefUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReefUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		588F3C269C458BAAE9D22829 /* Pods-Reef.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reef.release.xcconfig"; path = "Target Support Files/Pods-Reef/Pods-Reef.release.xcconfig"; sourceTree = "<group>"; };
+		5F6C904426D9CE327DA24C7C /* libPods-Reef.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reef.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B258E460AB20B2BF066EE292 /* Pods-ReefUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefUITests.debug.xcconfig"; path = "Target Support Files/Pods-ReefUITests/Pods-ReefUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,8 +122,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				46E5A6B624BAB55800140385 /* ExternalAccessory.framework in Frameworks */,
-				BB2776778926D1B8A1C917F7 /* libPods-Reef.a in Frameworks */,
 				46E5A6B424BAB3E500140385 /* NetworkExtension.framework in Frameworks */,
+				A72E9F4603114031B8B54D02 /* libPods-Reef.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96538CE235DE223DCA8C10B8 /* libPods-ReefTests.a in Frameworks */,
+				C97A647528A3826979D2DDBA /* libPods-ReefTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,7 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A97F218293C0F3BD1C8CD3C /* libPods-ReefUITests.a in Frameworks */,
+				AAFA5613502CF3D71A704122 /* libPods-ReefUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,9 +151,9 @@
 			children = (
 				46E5A6B524BAB55800140385 /* ExternalAccessory.framework */,
 				46E5A6B324BAB3E500140385 /* NetworkExtension.framework */,
-				5D924829A3F2566C2742177D /* libPods-Reef.a */,
-				7B4F632BBBBEA9729405650C /* libPods-ReefTests.a */,
-				A6EC6454F4410F1E8BBE0155 /* libPods-ReefUITests.a */,
+				5F6C904426D9CE327DA24C7C /* libPods-Reef.a */,
+				303B69180DD64648E878E2D1 /* libPods-ReefTests.a */,
+				564ABD45A98459F1405AB935 /* libPods-ReefUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -165,9 +161,6 @@
 		46099171235EA9C9000BE2F0 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				469E5BD2235C29AE003F8471 /* MenuTVC.swift */,
-				469E5BD4235C2A6E003F8471 /* MenuTVCell.swift */,
-				4609916F235EA6F0000BE2F0 /* MySideMenuNavigationController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -239,8 +232,8 @@
 				46E69F2021092CEE003C466F /* ReefTests */,
 				46E69F2B21092CEE003C466F /* ReefUITests */,
 				46E69F0A21092CEB003C466F /* Products */,
-				C82FBA751358F98C9E50B590 /* Pods */,
 				157533C02C535E7EDB03B72B /* Frameworks */,
+				A655C21C5C5E1CF08DEFBBFD /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -263,6 +256,7 @@
 				462A428523DF8C400086096A /* Extensions */,
 				46E69F48210E80C3003C466F /* Setup */,
 				46E69F1321092CEE003C466F /* Assets.xcassets */,
+				465C104F24C3DBDD0003DF9E /* R.generated.swift */,
 				46699F7A2350D19F006EAC89 /* Biysk.ttf */,
 				46E69F1521092CEE003C466F /* LaunchScreen.storyboard */,
 				460EE4D5211F59950004A91C /* Reef.entitlements */,
@@ -307,17 +301,17 @@
 			path = Setup;
 			sourceTree = "<group>";
 		};
-		C82FBA751358F98C9E50B590 /* Pods */ = {
+		A655C21C5C5E1CF08DEFBBFD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				24B908DB06A921B98386ABC7 /* Pods-Reef.debug.xcconfig */,
-				308799469D6FECDB2F0CF6D5 /* Pods-Reef.release.xcconfig */,
-				DD21A1168783ED074CBCF478 /* Pods-ReefTests.debug.xcconfig */,
-				1FBE9ACA9A5D53C71FD7EAFA /* Pods-ReefTests.release.xcconfig */,
-				48792FB4BFD2017A182F8C72 /* Pods-ReefUITests.debug.xcconfig */,
-				970C819BB7F3A6511AB6E74E /* Pods-ReefUITests.release.xcconfig */,
+				1D7E7B8033C0290C8D929FA5 /* Pods-Reef.debug.xcconfig */,
+				588F3C269C458BAAE9D22829 /* Pods-Reef.release.xcconfig */,
+				03184FD31ED7DB9C7323E20C /* Pods-ReefTests.debug.xcconfig */,
+				4AE62099EE1099EAF4BF41E9 /* Pods-ReefTests.release.xcconfig */,
+				B258E460AB20B2BF066EE292 /* Pods-ReefUITests.debug.xcconfig */,
+				50ECC1D3D8A6FFA2F4F06CBF /* Pods-ReefUITests.release.xcconfig */,
 			);
-			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,10 +321,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46E69F3121092CEE003C466F /* Build configuration list for PBXNativeTarget "Reef" */;
 			buildPhases = (
-				89DAE0AFF93B221E46445040 /* [CP] Check Pods Manifest.lock */,
+				8192081A08633E3693A15B1A /* [CP] Check Pods Manifest.lock */,
+				46D9091024C3D16800006A01 /* ShellScript */,
 				46E69F0521092CEB003C466F /* Sources */,
 				46E69F0621092CEB003C466F /* Frameworks */,
 				46E69F0721092CEB003C466F /* Resources */,
+				462EBAD324C3946200A75431 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -345,7 +341,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46E69F3421092CEE003C466F /* Build configuration list for PBXNativeTarget "ReefTests" */;
 			buildPhases = (
-				5EB7E30BD8659DE3ADD82626 /* [CP] Check Pods Manifest.lock */,
+				C20311220283AB5E56E0917E /* [CP] Check Pods Manifest.lock */,
 				46E69F1921092CEE003C466F /* Sources */,
 				46E69F1A21092CEE003C466F /* Frameworks */,
 				46E69F1B21092CEE003C466F /* Resources */,
@@ -364,7 +360,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46E69F3721092CEE003C466F /* Build configuration list for PBXNativeTarget "ReefUITests" */;
 			buildPhases = (
-				BC8BACB76B9CAF36D7426779 /* [CP] Check Pods Manifest.lock */,
+				7F5823E193601AB15AD109CC /* [CP] Check Pods Manifest.lock */,
 				46E69F2421092CEE003C466F /* Sources */,
 				46E69F2521092CEE003C466F /* Frameworks */,
 				46E69F2621092CEE003C466F /* Resources */,
@@ -461,34 +457,78 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5EB7E30BD8659DE3ADD82626 /* [CP] Check Pods Manifest.lock */ = {
+		462EBAD324C3946200A75431 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		46D9091024C3D16800006A01 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
+		7F5823E193601AB15AD109CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ReefTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ReefUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		89DAE0AFF93B221E46445040 /* [CP] Check Pods Manifest.lock */ = {
+		8192081A08633E3693A15B1A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Reef-checkManifestLockResult.txt",
 			);
@@ -497,18 +537,22 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BC8BACB76B9CAF36D7426779 /* [CP] Check Pods Manifest.lock */ = {
+		C20311220283AB5E56E0917E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ReefUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ReefTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -524,7 +568,6 @@
 			files = (
 				46E5A6B024BA5F8B00140385 /* WifiConnectVC.swift in Sources */,
 				4621596321286D3B00F8ADA4 /* AppBrain.swift in Sources */,
-				46099170235EA6F0000BE2F0 /* MySideMenuNavigationController.swift in Sources */,
 				4651EA6024A5899C009BC355 /* SignInVC.swift in Sources */,
 				462A428923DF9DC00086096A /* GrowDataExt.swift in Sources */,
 				462A428723DF8C580086096A /* DateExt.swift in Sources */,
@@ -534,14 +577,13 @@
 				46099173235EB030000BE2F0 /* GrowStageVC.swift in Sources */,
 				46EE48332357BE7F00222035 /* StartGrowVC.swift in Sources */,
 				462159582127354F00F8ADA4 /* HomeVC.swift in Sources */,
-				469E5BD3235C29AE003F8471 /* MenuTVC.swift in Sources */,
+				465C105024C3DBDD0003DF9E /* R.generated.swift in Sources */,
 				46AE27B924B4ED20002AEF34 /* SetupVC.swift in Sources */,
 				46E5A6B824BB615100140385 /* StringExt.swift in Sources */,
 				46F55639235A2C0B00DBC6E2 /* ConnectionVC.swift in Sources */,
 				4631823724A699BF0002E8DF /* ForgotPasswordVC.swift in Sources */,
 				46E69F3D210948A3003C466F /* SignUpVC.swift in Sources */,
 				46E69F0F21092CEB003C466F /* WelcomeVC.swift in Sources */,
-				469E5BD5235C2A6E003F8471 /* MenuTVCell.swift in Sources */,
 				462A428223DAB00E0086096A /* ReefSettingsExt.swift in Sources */,
 				461D530221399539007B6308 /* BasinVC.swift in Sources */,
 				46E69F0D21092CEB003C466F /* AppDelegate.swift in Sources */,
@@ -718,7 +760,7 @@
 		};
 		46E69F3221092CEE003C466F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24B908DB06A921B98386ABC7 /* Pods-Reef.debug.xcconfig */;
+			baseConfigurationReference = 1D7E7B8033C0290C8D929FA5 /* Pods-Reef.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Reef/Reef.entitlements;
@@ -742,7 +784,7 @@
 		};
 		46E69F3321092CEE003C466F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 308799469D6FECDB2F0CF6D5 /* Pods-Reef.release.xcconfig */;
+			baseConfigurationReference = 588F3C269C458BAAE9D22829 /* Pods-Reef.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Reef/Reef.entitlements;
@@ -765,7 +807,7 @@
 		};
 		46E69F3521092CEE003C466F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD21A1168783ED074CBCF478 /* Pods-ReefTests.debug.xcconfig */;
+			baseConfigurationReference = 03184FD31ED7DB9C7323E20C /* Pods-ReefTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -787,7 +829,7 @@
 		};
 		46E69F3621092CEE003C466F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1FBE9ACA9A5D53C71FD7EAFA /* Pods-ReefTests.release.xcconfig */;
+			baseConfigurationReference = 4AE62099EE1099EAF4BF41E9 /* Pods-ReefTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -809,7 +851,7 @@
 		};
 		46E69F3821092CEE003C466F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 48792FB4BFD2017A182F8C72 /* Pods-ReefUITests.debug.xcconfig */;
+			baseConfigurationReference = B258E460AB20B2BF066EE292 /* Pods-ReefUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -830,7 +872,7 @@
 		};
 		46E69F3921092CEE003C466F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 970C819BB7F3A6511AB6E74E /* Pods-ReefUITests.release.xcconfig */;
+			baseConfigurationReference = 50ECC1D3D8A6FFA2F4F06CBF /* Pods-ReefUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
