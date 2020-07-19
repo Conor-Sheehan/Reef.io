@@ -5,7 +5,7 @@ Supports: iOS 10.x and above
 ## Branches:
 
 * master - currently supporting deprecated BlueTooh config for Andy's Reef Unit
-* Wifi_Config - development branch for updated Reef technology
+* develop-Wifi - development branch for updated Reef technology
 
 ## Dependencies:
 
