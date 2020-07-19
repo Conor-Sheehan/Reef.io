@@ -1,4 +1,4 @@
-# Reef Grows App
+# reef iOS App
 
 Supports: iOS 10.x and above
 
