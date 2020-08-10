@@ -29,8 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
 
     var currApplication: UIApplication!
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        FirebaseApp.configure()
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions
+      launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+      
+      FirebaseApp.configure()
 
       Messaging.messaging().delegate = self
 
@@ -110,7 +112,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
     }
 
     private func application(application: UIApplication,
-                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+                             didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         Messaging.messaging().apnsToken = deviceToken as Data
         print("DEVICE TOKEN", deviceToken)
     }
@@ -129,7 +131,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
     }
 
     func application(_ application: UIApplication,
-                shouldSaveSecureApplicationState coder: NSCoder) -> Bool {
+                     shouldSaveSecureApplicationState coder: NSCoder) -> Bool {
        // Save the current app version to the archive.
        coder.encode(11.0, forKey: "MyAppVersion")
 
@@ -138,7 +140,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
     }
 
     func application(_ application: UIApplication,
-                shouldRestoreApplicationState coder: NSCoder) -> Bool {
+                     shouldRestoreApplicationState coder: NSCoder) -> Bool {
        // Restore the state only if the app version matches.
        let version = coder.decodeFloat(forKey: "MyAppVersion")
 
@@ -158,17 +160,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
         print("Entering Background State")
     }
 
-    /// Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    /// Called as part of the transition from the background to the active state;
     func applicationWillEnterForeground(_ application: UIApplication) {
 
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
 }
@@ -188,8 +188,8 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     }
 
     // called if app is running in foreground
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent
-        notification: UNNotification, withCompletionHandler completionHandler:
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler:
         @escaping (UNNotificationPresentationOptions) -> Void) {
 
         // show alert while app is running in foreground

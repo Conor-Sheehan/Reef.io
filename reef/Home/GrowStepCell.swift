@@ -42,16 +42,18 @@ class GrowStepCell: UITableViewCell {
           lineImage.image = R.image.incompleteLine()
           header.font = UIFont(name: "AvenirNext-DemiBold", size: 16)
           header.textColor = .darkGray
-          if data.hasTasks { subHeader.text = String(data.tasksComplete) + "/" + String(data.numberOfTasks) + " Steps Complete" }
-          else { subHeader.text = "Calculate time to completion" }
+          if data.hasTasks { subHeader.text = String(data.tasksComplete) +
+            "/" + String(data.numberOfTasks) + " Steps Complete"
+          } else { subHeader.text = "Calculate time to completion" }
         case .Completed:
           progressImage.image = R.image.completedCircle()
           lineImage.image = R.image.completedLine()
           header.font = UIFont(name: "AvenirNext-Regular", size: 16)
           header.textColor = .darkGray
           subHeader.textColor = UIColor(red: 0.18, green: 0.39, blue: 0.39, alpha: 1.0)
-          if data.hasTasks { subHeader.text = String(data.numberOfTasks) + "/" + String(data.numberOfTasks) + " Steps Complete" }
-          else { subHeader.text = "Completed" }
+          if data.hasTasks { subHeader.text = String(data.numberOfTasks) +
+            "/" + String(data.numberOfTasks) + " Steps Complete"
+          } else { subHeader.text = "Completed" }
         }
         
         header.text = data.stepName

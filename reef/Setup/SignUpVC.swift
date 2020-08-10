@@ -162,7 +162,8 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
     /// Alert user if their sign up attempt was valid or invalid
     func alertUser(title: String, message: String) {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        let action = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (_: UIAlertAction) -> Void in
+        let action = UIAlertAction(title: "OK",
+                                   style: UIAlertAction.Style.default, handler: { (_: UIAlertAction) -> Void in
             if title == "Created Account!" {
                 self.view.endEditing(true)
                 self.performSegue(withIdentifier: "segueToSetup", sender: self)

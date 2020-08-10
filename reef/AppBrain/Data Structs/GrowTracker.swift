@@ -46,26 +46,26 @@ extension AppBrain {
 
     func numberOfTasks() -> Int {
       switch self {
-        case .FirstSetup:
-          return 2
-        case .Germinate:
-          return 3
-        case .Cycle:
-          return 0
-        case .AddFish:
-          return 1
-        case .Seedling:
-          return 0
-        case  .Vegetative:
-          return 0
-        case .Flowering:
-          return 0
-        case .Harvest:
-          return 1
-        case .Drying:
-          return 0
-        case .PrepareNew:
-          return 3
+      case .FirstSetup:
+        return 2
+      case .Germinate:
+        return 3
+      case .Cycle:
+        return 0
+      case .AddFish:
+        return 1
+      case .Seedling:
+        return 0
+      case  .Vegetative:
+        return 0
+      case .Flowering:
+        return 0
+      case .Harvest:
+        return 1
+      case .Drying:
+        return 0
+      case .PrepareNew:
+        return 3
       }
     }
   }

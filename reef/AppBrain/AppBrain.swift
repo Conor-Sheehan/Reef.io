@@ -53,36 +53,6 @@ class AppBrain {
 
     self.readWiFiConnected()
   }
-
-  /// Takes a user's ReefID and validates
-  func validReefID(with reefID: String, completion: @escaping (_ isValid: Bool) -> Void) {
-
-    var validIDs: [String] = []
-
-    databaseRef?.child("ReefID").child("ValidIDs").observeSingleEvent(of: .value) { (snapshot) in
-
-      if let children =  snapshot.children.allObjects as? [DataSnapshot] {
-
-        for child in children {
-          validIDs.append(child.key)
-        }
-        completion(self.containsValidReefID(reefID: reefID, validIDs: validIDs))
-      }
-    }
-  }
-  
-  func containsValidReefID(reefID: String, validIDs: [String]) -> Bool {
-    if validIDs.contains(reefID) {
-       print("Valid ID's contains ReefID!")
-       //  Store key value pairing with user's UID
-       self.databaseRef?.child("ReefID").child(reefID).setValue(self.userUID)
-       return true
-     } else {
-       print("Valid ID's does not contain ReefID :(")
-       return false
-    }
-    
-  }
   
   func readWiFiConnected() {
 
