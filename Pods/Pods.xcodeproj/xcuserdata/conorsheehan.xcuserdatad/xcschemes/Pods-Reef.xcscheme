@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7493E7657D9A4100E561E1493A1F5835"
-               BuildableName = "libPods-Reef.a"
-               BlueprintName = "Pods-Reef"
+               BlueprintIdentifier = "DF74C8E1A3CA75127D331FF868541DD9"
+               BuildableName = "libPods-reef.a"
+               BlueprintName = "Pods-reef"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

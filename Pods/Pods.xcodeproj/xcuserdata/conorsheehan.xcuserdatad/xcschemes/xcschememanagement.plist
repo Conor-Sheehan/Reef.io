@@ -95,21 +95,21 @@
 			<key>orderHint</key>
 			<integer>11</integer>
 		</dict>
-		<key>Pods-Reef.xcscheme</key>
+		<key>Pods-reef.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>15</integer>
 		</dict>
-		<key>Pods-ReefTests.xcscheme</key>
+		<key>Pods-reefTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>16</integer>
 		</dict>
-		<key>Pods-ReefUITests.xcscheme</key>
+		<key>Pods-reefUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

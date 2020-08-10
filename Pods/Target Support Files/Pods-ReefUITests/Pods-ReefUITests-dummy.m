@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-@interface PodsDummy_Pods_ReefUITests : NSObject
+@interface PodsDummy_Pods_reefUITests : NSObject
 @end
-@implementation PodsDummy_Pods_ReefUITests
+@implementation PodsDummy_Pods_reefUITests
 @end

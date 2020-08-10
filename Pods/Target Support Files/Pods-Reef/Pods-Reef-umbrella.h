@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_ReefVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_ReefVersionString[];
+FOUNDATION_EXPORT double Pods_reefVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_reefVersionString[];
 

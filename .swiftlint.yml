@@ -1,3 +1,21 @@
 excluded: # paths to ignore during linting. Takes precedence over `included`.
   - Pods
   - "*.generated.swift"
+  - Source/R.generated.swift
+
+line_length:
+  error: 300
+
+cyclomatic_complexity:
+  error: 30
+
+type_name: warning
+
+type_body_length:
+  - 400 # Warning
+  - 500 # Error
+
+disabled_rules:
+  - type_name
+  - identifier_name
+  - trailing_whitespace
