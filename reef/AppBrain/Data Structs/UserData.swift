@@ -41,7 +41,7 @@ extension AppBrain {
     }
   
   /// Takes a user's ReefID and validates
-  func validReefID(with reefID: String, completion: @escaping (_ isValid: Bool) -> Void) {
+  func validateReefID(with reefID: String, completion: @escaping (_ isValid: Bool) -> Void) {
 
     var validIDs: [String] = []
 

@@ -10,8 +10,8 @@ import UIKit
 
 class DashboardVC: UIViewController {
   
-  fileprivate var sensorData: [SensorData] = []
-  fileprivate var growStepData: [GrowStepData] = []
+  fileprivate var sensorData: [CurrentSensorData] = []
+  fileprivate var growTrackerData: [GrowStepData] = []
   
   @IBOutlet weak var headerLabel: UILabel!
   @IBOutlet weak var subHeaderLabel: UILabel!
@@ -29,10 +29,11 @@ class DashboardVC: UIViewController {
     }
     
     sensorData = appDelegate.appBrain.getCurrentSensorData()
+    growTrackerData = appDelegate.appBrain.getGrowTrackerData()
 
     layoutViews()
     loadSensorData()
-    loadProgressData()
+    loadGrowStepData()
   }
   
   func layoutViews() {
@@ -50,17 +51,26 @@ class DashboardVC: UIViewController {
   func loadSensorData() {
     
     // Read reef Sensor data from Firebase and display on completion
-    appDelegate.appBrain.readReefData(completion: {
+    appDelegate.appBrain.readSensorData(completion: {
       
       self.sensorData = self.appDelegate.appBrain.getCurrentSensorData()
       self.collectionView.reloadData()
     })
   }
   
-  func loadProgressData() {
-    
-    growStepData = appDelegate.appBrain.getGrowStepData()
-    growStepTableView.reloadData()
+  func loadGrowStepData() {
+    appDelegate.appBrain.readGrowTrackerData(completion: {
+      self.growTrackerData = self.appDelegate.appBrain.getGrowTrackerData()
+      self.growStepTableView.reloadData()
+      print("Got grow step data")
+    })
+  }
+  
+  @IBAction func simulateCompleteStep(_ sender: UIButton) {
+//    appDelegate.appBrain.completeGrowStep()
+//    self.growTrackerData = self.appDelegate.appBrain.getGrowTrackerData()
+//    growStepTableView.reloadData()
+    self.performSegue(withIdentifier: "segueToSetup", sender: self)
   }
   
 }
@@ -95,7 +105,7 @@ extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "GrowStepCell", for: indexPath) as? GrowStepCell
-    cell?.data = self.growStepData[indexPath.item]
+    cell?.data = self.growTrackerData[indexPath.item]
     return cell!
   }
   

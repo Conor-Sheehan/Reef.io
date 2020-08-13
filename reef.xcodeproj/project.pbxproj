@@ -10,13 +10,16 @@
 		461730F224DB3AA300945B9B /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461730F124DB3AA300945B9B /* DashboardVC.swift */; };
 		461730F424DB5CCF00945B9B /* SensorDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461730F324DB5CCF00945B9B /* SensorDataCell.swift */; };
 		461730FA24DBB78500945B9B /* GrowStepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461730F924DBB78500945B9B /* GrowStepCell.swift */; };
-		461730FC24DC577000945B9B /* ReefData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461730FB24DC577000945B9B /* ReefData.swift */; };
+		461730FC24DC577000945B9B /* SensorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461730FB24DC577000945B9B /* SensorData.swift */; };
 		461730FE24DCD09D00945B9B /* GrowTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461730FD24DCD09D00945B9B /* GrowTracker.swift */; };
 		4621596321286D3B00F8ADA4 /* AppBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621596221286D3B00F8ADA4 /* AppBrain.swift */; };
 		462A428423DF8A2B0086096A /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A428323DF8A2B0086096A /* UserData.swift */; };
 		462A428723DF8C580086096A /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A428623DF8C580086096A /* DateExt.swift */; };
 		4631823724A699BF0002E8DF /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4631823624A699BF0002E8DF /* ForgotPasswordVC.swift */; };
 		4651EA6024A5899C009BC355 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4651EA5F24A5899C009BC355 /* SignInVC.swift */; };
+		465DE2EC24E4C83800F0BF86 /* SetupReefVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DE2EB24E4C83800F0BF86 /* SetupReefVC.swift */; };
+		465DE2EE24E4CCE300F0BF86 /* AquariumFillVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DE2ED24E4CCE300F0BF86 /* AquariumFillVC.swift */; };
+		465DE2F024E5B50700F0BF86 /* ReefSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DE2EF24E5B50700F0BF86 /* ReefSettings.swift */; };
 		466AA99E222F5AFE007903C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 466AA99D222F5AFE007903C3 /* GoogleService-Info.plist */; };
 		46AE27B924B4ED20002AEF34 /* SetupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE27B824B4ED20002AEF34 /* SetupVC.swift */; };
 		46C2658024D3560600B42D61 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C2657F24D3560600B42D61 /* R.generated.swift */; };
@@ -68,13 +71,16 @@
 		461730F124DB3AA300945B9B /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		461730F324DB5CCF00945B9B /* SensorDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDataCell.swift; sourceTree = "<group>"; };
 		461730F924DBB78500945B9B /* GrowStepCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowStepCell.swift; sourceTree = "<group>"; };
-		461730FB24DC577000945B9B /* ReefData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReefData.swift; sourceTree = "<group>"; };
+		461730FB24DC577000945B9B /* SensorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorData.swift; sourceTree = "<group>"; };
 		461730FD24DCD09D00945B9B /* GrowTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowTracker.swift; sourceTree = "<group>"; };
 		4621596221286D3B00F8ADA4 /* AppBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBrain.swift; sourceTree = "<group>"; };
 		462A428323DF8A2B0086096A /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		462A428623DF8C580086096A /* DateExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
 		4631823624A699BF0002E8DF /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		4651EA5F24A5899C009BC355 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		465DE2EB24E4C83800F0BF86 /* SetupReefVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupReefVC.swift; sourceTree = "<group>"; };
+		465DE2ED24E4CCE300F0BF86 /* AquariumFillVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AquariumFillVC.swift; sourceTree = "<group>"; };
+		465DE2EF24E5B50700F0BF86 /* ReefSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReefSettings.swift; sourceTree = "<group>"; };
 		466AA99D222F5AFE007903C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		46AE27B824B4ED20002AEF34 /* SetupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupVC.swift; sourceTree = "<group>"; };
 		46C2657F24D3560600B42D61 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
@@ -159,8 +165,9 @@
 			children = (
 				46C5917C2123B65A0035F552 /* Home.storyboard */,
 				461730F124DB3AA300945B9B /* DashboardVC.swift */,
-				461730F324DB5CCF00945B9B /* SensorDataCell.swift */,
-				461730F924DBB78500945B9B /* GrowStepCell.swift */,
+				465DE2EB24E4C83800F0BF86 /* SetupReefVC.swift */,
+				465DE2ED24E4CCE300F0BF86 /* AquariumFillVC.swift */,
+				465DE2EA24E4C7E700F0BF86 /* Collection Cells */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -187,10 +194,20 @@
 			isa = PBXGroup;
 			children = (
 				462A428323DF8A2B0086096A /* UserData.swift */,
-				461730FB24DC577000945B9B /* ReefData.swift */,
+				461730FB24DC577000945B9B /* SensorData.swift */,
 				461730FD24DCD09D00945B9B /* GrowTracker.swift */,
+				465DE2EF24E5B50700F0BF86 /* ReefSettings.swift */,
 			);
 			path = "Data Structs";
+			sourceTree = "<group>";
+		};
+		465DE2EA24E4C7E700F0BF86 /* Collection Cells */ = {
+			isa = PBXGroup;
+			children = (
+				461730F324DB5CCF00945B9B /* SensorDataCell.swift */,
+				461730F924DBB78500945B9B /* GrowStepCell.swift */,
+			);
+			path = "Collection Cells";
 			sourceTree = "<group>";
 		};
 		46E69F0021092CEA003C466F = {
@@ -220,7 +237,7 @@
 			children = (
 				46E69F0C21092CEB003C466F /* AppDelegate.swift */,
 				462A0B8F2149AE7A00D3108B /* AppBrain */,
-				46E69F48210E80C3003C466F /* Setup */,
+				46E69F48210E80C3003C466F /* Onboarding */,
 				4621595F2127358B00F8ADA4 /* Home */,
 				462A428523DF8C400086096A /* Extensions */,
 				46E69F1321092CEE003C466F /* Assets.xcassets */,
@@ -251,7 +268,7 @@
 			path = reefUITests;
 			sourceTree = "<group>";
 		};
-		46E69F48210E80C3003C466F /* Setup */ = {
+		46E69F48210E80C3003C466F /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
 				46E69F1021092CEB003C466F /* Main.storyboard */,
@@ -265,7 +282,7 @@
 				46E5A6B124BAA43C00140385 /* NotificationVC.swift */,
 				46E5A6AF24BA5F8B00140385 /* WifiConnectVC.swift */,
 			);
-			path = Setup;
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		A655C21C5C5E1CF08DEFBBFD /* Pods */ = {
@@ -549,13 +566,16 @@
 				461730FA24DBB78500945B9B /* GrowStepCell.swift in Sources */,
 				46C2658024D3560600B42D61 /* R.generated.swift in Sources */,
 				46AE27B924B4ED20002AEF34 /* SetupVC.swift in Sources */,
-				461730FC24DC577000945B9B /* ReefData.swift in Sources */,
+				461730FC24DC577000945B9B /* SensorData.swift in Sources */,
+				465DE2F024E5B50700F0BF86 /* ReefSettings.swift in Sources */,
 				46E5A6B824BB615100140385 /* StringExt.swift in Sources */,
 				4631823724A699BF0002E8DF /* ForgotPasswordVC.swift in Sources */,
 				46E69F3D210948A3003C466F /* SignUpVC.swift in Sources */,
 				46E69F0F21092CEB003C466F /* WelcomeVC.swift in Sources */,
 				46E69F0D21092CEB003C466F /* AppDelegate.swift in Sources */,
 				461730FE24DCD09D00945B9B /* GrowTracker.swift in Sources */,
+				465DE2EE24E4CCE300F0BF86 /* AquariumFillVC.swift in Sources */,
+				465DE2EC24E4C83800F0BF86 /* SetupReefVC.swift in Sources */,
 				46E5A6AC24B92A7300140385 /* PlugVC.swift in Sources */,
 				462A428423DF8A2B0086096A /* UserData.swift in Sources */,
 			);
@@ -663,7 +683,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -717,7 +737,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;

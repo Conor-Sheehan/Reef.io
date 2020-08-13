@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -129,14 +128,13 @@
                                 <rect key="frame" x="25" y="276.66666666666674" width="330" height="312.33333333333326"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grow progress (27%)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nze-ER-vXQ">
-                                        <rect key="frame" x="20" y="15" width="155.66666666666666" height="22"/>
+                                        <rect key="frame" x="20" y="15" width="156" height="22"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d61-cM-IEI">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d61-cM-IEI">
                                         <rect key="frame" x="20" y="55" width="289" height="233"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="GrowStepCell" rowHeight="75" id="F0y-7B-JJm" customClass="GrowStepCell" customModule="reef" customModuleProvider="target">
@@ -193,13 +191,20 @@
                                         <state key="normal" title="Simulate step" backgroundImage="Primary Setup-Btn">
                                             <color key="titleColor" red="0.96861833330000002" green="0.96862131360000003" blue="0.96862787009999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <connections>
+                                            <action selector="simulateCompleteStep:" destination="fV1-G1-JOm" eventType="touchUpInside" id="Ppa-t9-AHh"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96861833330000002" green="0.96862131360000003" blue="0.96862787009999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
+                                    <constraint firstItem="d61-cM-IEI" firstAttribute="leading" secondItem="ede-jN-Kja" secondAttribute="leading" constant="20" id="6Js-3P-svW"/>
+                                    <constraint firstAttribute="bottom" secondItem="d61-cM-IEI" secondAttribute="bottom" constant="24.333333333333258" id="7S1-CQ-AVi"/>
                                     <constraint firstAttribute="bottom" secondItem="ju3-O5-YVR" secondAttribute="bottom" constant="15" id="7jf-9Y-LcQ"/>
                                     <constraint firstItem="nze-ER-vXQ" firstAttribute="top" secondItem="ede-jN-Kja" secondAttribute="top" constant="15" id="NGt-rY-4g4"/>
+                                    <constraint firstItem="d61-cM-IEI" firstAttribute="top" secondItem="ede-jN-Kja" secondAttribute="top" constant="55" id="OrU-m8-1g0"/>
                                     <constraint firstItem="ju3-O5-YVR" firstAttribute="centerX" secondItem="ede-jN-Kja" secondAttribute="centerX" id="X84-CO-yEH"/>
+                                    <constraint firstAttribute="trailing" secondItem="d61-cM-IEI" secondAttribute="trailing" constant="21" id="YOq-Td-d7Z"/>
                                     <constraint firstItem="nze-ER-vXQ" firstAttribute="leading" secondItem="ede-jN-Kja" secondAttribute="leading" constant="20" id="gmE-1O-uEP"/>
                                 </constraints>
                             </view>
@@ -264,11 +269,106 @@
                         <outlet property="headerLabel" destination="v4C-3U-5tz" id="wWE-X1-K3h"/>
                         <outlet property="indicatorView" destination="uaR-PA-lzh" id="psf-f8-j7t"/>
                         <outlet property="subHeaderLabel" destination="KIP-r8-C4t" id="FFL-wu-oVu"/>
+                        <segue destination="yGh-Uc-3jR" kind="show" identifier="segueToSetup" id="J7k-wI-phM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lu9-rm-GSA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1576.8" y="-677.58620689655174"/>
+        </scene>
+        <!--Setup ReefVC-->
+        <scene sceneID="Gca-05-iU7">
+            <objects>
+                <viewController id="yGh-Uc-3jR" customClass="SetupReefVC" customModule="reef" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cbc-z5-c51">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ecosystem Setup" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyF-Xr-Tnw">
+                                <rect key="frame" x="140.33333333333334" y="63.999999999999993" width="94.666666666666657" height="16.666666666666664"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap below when you’re ready to fill reef’s aquarium with water." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBl-kF-JEt">
+                                <rect key="frame" x="31" y="194.66666666666666" width="186" height="57.666666666666657"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Aquarium Fill Image" translatesAutoresizingMaskIntoConstraints="NO" id="grL-NR-GIc">
+                                <rect key="frame" x="80" y="277.33333333333331" width="215" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="jS8-J3-6Mf"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Backsplash" translatesAutoresizingMaskIntoConstraints="NO" id="qvW-g9-7nI">
+                                <rect key="frame" x="0.0" y="501" width="375" height="311"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qvW-g9-7nI" secondAttribute="height" multiplier="375:311" id="IyY-q9-07G"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMO-5s-AzA">
+                                <rect key="frame" x="48" y="705" width="279" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="fRl-DJ-bqk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                <state key="normal" title="Ready!" backgroundImage="Primary Setup-Btn">
+                                    <color key="titleColor" red="0.96861833330000002" green="0.96862131360000003" blue="0.96862787009999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="QoM-pf-y82" kind="show" id="i4E-I7-xle"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's Setup Your Aquarium" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXM-6v-aaj">
+                                <rect key="frame" x="31" y="115.66666666666669" width="200" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="h1D-KV-PWX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="27"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mp-zl-Oqa">
+                                <rect key="frame" x="0.0" y="59" width="75" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="5LQ-om-fGO"/>
+                                </constraints>
+                                <state key="normal" image="backButton"/>
+                                <connections>
+                                    <action selector="backTapped:" destination="yGh-Uc-3jR" eventType="touchUpInside" id="Ce0-i4-2uQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="eyF-Xr-Tnw" firstAttribute="centerX" secondItem="ltr-x3-a7S" secondAttribute="centerX" id="2Ez-6O-Fif"/>
+                            <constraint firstItem="FBl-kF-JEt" firstAttribute="top" secondItem="FXM-6v-aaj" secondAttribute="bottom" constant="5" id="3NC-Bg-H2n"/>
+                            <constraint firstItem="grL-NR-GIc" firstAttribute="leading" secondItem="ltr-x3-a7S" secondAttribute="leading" constant="80" id="5NG-kB-Ozm"/>
+                            <constraint firstItem="qvW-g9-7nI" firstAttribute="bottom" secondItem="cbc-z5-c51" secondAttribute="bottom" id="AMY-aN-eSs"/>
+                            <constraint firstItem="grL-NR-GIc" firstAttribute="top" secondItem="FBl-kF-JEt" secondAttribute="bottom" constant="25" id="Cxz-yG-St0"/>
+                            <constraint firstItem="eyF-Xr-Tnw" firstAttribute="top" secondItem="ltr-x3-a7S" secondAttribute="top" constant="20" id="DrW-70-Esv"/>
+                            <constraint firstItem="9mp-zl-Oqa" firstAttribute="centerY" secondItem="eyF-Xr-Tnw" secondAttribute="centerY" id="T10-5n-PAN"/>
+                            <constraint firstItem="pMO-5s-AzA" firstAttribute="centerX" secondItem="qvW-g9-7nI" secondAttribute="centerX" id="Y9u-Gm-Bk8"/>
+                            <constraint firstItem="FXM-6v-aaj" firstAttribute="leading" secondItem="ltr-x3-a7S" secondAttribute="leading" constant="31" id="Zs2-xr-m9X"/>
+                            <constraint firstItem="FBl-kF-JEt" firstAttribute="width" secondItem="FXM-6v-aaj" secondAttribute="width" multiplier="0.93" id="cZa-Es-MaY"/>
+                            <constraint firstItem="qvW-g9-7nI" firstAttribute="leading" secondItem="ltr-x3-a7S" secondAttribute="leading" id="eh2-IA-8pt"/>
+                            <constraint firstItem="9mp-zl-Oqa" firstAttribute="leading" secondItem="ltr-x3-a7S" secondAttribute="leading" id="ehv-L9-90A"/>
+                            <constraint firstItem="FBl-kF-JEt" firstAttribute="leading" secondItem="FXM-6v-aaj" secondAttribute="leading" id="ib2-rc-cCD"/>
+                            <constraint firstItem="ltr-x3-a7S" firstAttribute="bottom" secondItem="pMO-5s-AzA" secondAttribute="bottom" constant="28" id="q29-O1-wSK"/>
+                            <constraint firstItem="FXM-6v-aaj" firstAttribute="top" secondItem="eyF-Xr-Tnw" secondAttribute="bottom" constant="35" id="re3-5g-3As"/>
+                            <constraint firstItem="ltr-x3-a7S" firstAttribute="trailing" secondItem="grL-NR-GIc" secondAttribute="trailing" constant="80" id="wJj-yr-Kzj"/>
+                            <constraint firstItem="ltr-x3-a7S" firstAttribute="trailing" secondItem="qvW-g9-7nI" secondAttribute="trailing" id="xkr-UK-ELr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ltr-x3-a7S"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5zE-To-xlN"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lY4-so-kjZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2293.5999999999999" y="-672.41379310344826"/>
         </scene>
         <!--Dashboard Navigation-->
         <scene sceneID="eeP-JF-izZ">
@@ -289,15 +389,145 @@
             </objects>
             <point key="canvasLocation" x="842.39999999999998" y="-677.58620689655174"/>
         </scene>
+        <!--Aquarium FillVC-->
+        <scene sceneID="ULh-2n-982">
+            <objects>
+                <viewController id="QoM-pf-y82" customClass="AquariumFillVC" customModule="reef" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dvy-9m-Wk0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step 1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJM-Jo-6Fs">
+                                <rect key="frame" x="169.66666666666666" y="63.999999999999993" width="36" height="16.666666666666664"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fill the tank with water until the water level bar below reaches 100% capacity." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOo-D9-MOV">
+                                <rect key="frame" x="31" y="157.66666666666666" width="186" height="57.666666666666657"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Water Level bar" translatesAutoresizingMaskIntoConstraints="NO" id="sHF-g4-YOV">
+                                <rect key="frame" x="137.66666666666666" y="301" width="100" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="VeD-7F-U2c"/>
+                                    <constraint firstAttribute="width" constant="100" id="dZr-yp-38R"/>
+                                </constraints>
+                            </imageView>
+                            <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FMZ-FP-Whi" userLabel="Water Level">
+                                <rect key="frame" x="69" y="393" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1811777353" green="0.39207607509999998" blue="0.39216160770000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOf-f9-EGT">
+                                <rect key="frame" x="48" y="705" width="279" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="LbZ-Qr-ekA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                <state key="normal" backgroundImage="Primary Setup-Btn">
+                                    <color key="titleColor" red="0.96861833330000002" green="0.96862131360000003" blue="0.96862787009999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fill Your Tank" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ne2-7h-7me">
+                                <rect key="frame" x="31" y="115.66666666666669" width="200" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="eYe-Qb-39o"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="27"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Water Level Overlay" translatesAutoresizingMaskIntoConstraints="NO" id="tbC-jr-8bM">
+                                <rect key="frame" x="67" y="301" width="245" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="245" id="8fY-7O-MU1"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0H-zr-jnC" userLabel="Back Button">
+                                <rect key="frame" x="0.0" y="59" width="75" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="LXL-VX-4Sy"/>
+                                </constraints>
+                                <state key="normal" image="backButton"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="QoM-pf-y82" eventType="touchUpInside" id="0Cs-AN-Muj"/>
+                                    <action selector="backTapped:" destination="yGh-Uc-3jR" eventType="touchUpInside" id="FXk-Kb-bog"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHu-mJ-eJA">
+                                <rect key="frame" x="137.66666666666666" y="485" width="100" height="26"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Water Level Icon Gray" translatesAutoresizingMaskIntoConstraints="NO" id="Vtt-tl-Ykw">
+                                <rect key="frame" x="172.66666666666666" y="311" width="30" height="48"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="o6O-1Q-3b3">
+                                <rect key="frame" x="177.66666666666666" y="717.66666666666663" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="o6O-1Q-3b3" firstAttribute="centerX" secondItem="bOf-f9-EGT" secondAttribute="centerX" id="1dr-Ee-zHC"/>
+                            <constraint firstItem="Vtt-tl-Ykw" firstAttribute="top" secondItem="sHF-g4-YOV" secondAttribute="top" constant="10" id="1et-di-FoY"/>
+                            <constraint firstItem="qOo-D9-MOV" firstAttribute="width" secondItem="ne2-7h-7me" secondAttribute="width" multiplier="0.93" id="2rR-FN-OV3"/>
+                            <constraint firstItem="LJM-Jo-6Fs" firstAttribute="centerX" secondItem="8JR-2f-Qjw" secondAttribute="centerX" id="Bv4-Pe-v53"/>
+                            <constraint firstItem="zHu-mJ-eJA" firstAttribute="trailing" secondItem="sHF-g4-YOV" secondAttribute="trailing" id="DO0-GN-9HG"/>
+                            <constraint firstItem="Vtt-tl-Ykw" firstAttribute="trailing" secondItem="sHF-g4-YOV" secondAttribute="trailing" constant="-35" id="FUi-mc-XK3"/>
+                            <constraint firstItem="8JR-2f-Qjw" firstAttribute="bottom" secondItem="bOf-f9-EGT" secondAttribute="bottom" constant="28" id="NW4-Z2-kuk"/>
+                            <constraint firstItem="LJM-Jo-6Fs" firstAttribute="top" secondItem="8JR-2f-Qjw" secondAttribute="top" constant="20" id="SKa-m7-aPB"/>
+                            <constraint firstItem="o6O-1Q-3b3" firstAttribute="centerY" secondItem="bOf-f9-EGT" secondAttribute="centerY" id="amq-Yb-dKw"/>
+                            <constraint firstItem="ne2-7h-7me" firstAttribute="top" secondItem="LJM-Jo-6Fs" secondAttribute="bottom" constant="35" id="bbM-Gm-YdO"/>
+                            <constraint firstItem="Vtt-tl-Ykw" firstAttribute="leading" secondItem="sHF-g4-YOV" secondAttribute="leading" constant="35" id="c9s-dU-fle"/>
+                            <constraint firstItem="A0H-zr-jnC" firstAttribute="centerY" secondItem="LJM-Jo-6Fs" secondAttribute="centerY" id="daI-OA-TJB"/>
+                            <constraint firstItem="zHu-mJ-eJA" firstAttribute="bottom" secondItem="sHF-g4-YOV" secondAttribute="bottom" constant="-10" id="eCw-cD-pep"/>
+                            <constraint firstItem="zHu-mJ-eJA" firstAttribute="leading" secondItem="sHF-g4-YOV" secondAttribute="leading" id="en8-Fi-nKW"/>
+                            <constraint firstItem="ne2-7h-7me" firstAttribute="leading" secondItem="8JR-2f-Qjw" secondAttribute="leading" constant="31" id="enl-VW-gqm"/>
+                            <constraint firstItem="sHF-g4-YOV" firstAttribute="centerX" secondItem="8JR-2f-Qjw" secondAttribute="centerX" id="fEW-P1-YWM"/>
+                            <constraint firstItem="tbC-jr-8bM" firstAttribute="bottom" secondItem="sHF-g4-YOV" secondAttribute="bottom" id="j4z-b7-XuT"/>
+                            <constraint firstItem="sHF-g4-YOV" firstAttribute="centerY" secondItem="8JR-2f-Qjw" secondAttribute="centerY" id="m8a-6R-fWQ"/>
+                            <constraint firstItem="tbC-jr-8bM" firstAttribute="top" secondItem="sHF-g4-YOV" secondAttribute="top" id="rod-cN-atX"/>
+                            <constraint firstItem="tbC-jr-8bM" firstAttribute="centerX" secondItem="sHF-g4-YOV" secondAttribute="centerX" constant="2" id="sft-Gg-m8I"/>
+                            <constraint firstItem="bOf-f9-EGT" firstAttribute="centerX" secondItem="8JR-2f-Qjw" secondAttribute="centerX" id="uwO-Q5-41a"/>
+                            <constraint firstItem="A0H-zr-jnC" firstAttribute="leading" secondItem="8JR-2f-Qjw" secondAttribute="leading" id="vcU-s0-B90"/>
+                            <constraint firstItem="qOo-D9-MOV" firstAttribute="leading" secondItem="ne2-7h-7me" secondAttribute="leading" id="vrF-5p-qt3"/>
+                            <constraint firstItem="qOo-D9-MOV" firstAttribute="top" secondItem="ne2-7h-7me" secondAttribute="bottom" constant="5" id="w1J-fJ-X1t"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8JR-2f-Qjw"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ytS-0m-Q68"/>
+                    <connections>
+                        <outlet property="nextButton" destination="bOf-f9-EGT" id="cgE-f9-Xfv"/>
+                        <outlet property="percentComplete" destination="zHu-mJ-eJA" id="BD7-mJ-5m3"/>
+                        <outlet property="progressIndicator" destination="o6O-1Q-3b3" id="TMv-rt-KBx"/>
+                        <outlet property="waterLevelBar" destination="sHF-g4-YOV" id="MYb-cW-NYN"/>
+                        <outlet property="waterLevelIcon" destination="Vtt-tl-Ykw" id="NWL-Z6-oir"/>
+                        <outlet property="waterLevelView" destination="FMZ-FP-Whi" id="BNO-S7-BnD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ryV-D5-3H0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3005.5999999999999" y="-672.41379310344826"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Alerts Unselected" width="27" height="31"/>
+        <image name="Aquarium Fill Image" width="306.66665649414062" height="242.66667175292969"/>
+        <image name="Backsplash" width="375" height="311"/>
         <image name="Completed circle" width="23" height="23"/>
         <image name="Home Selected" width="69" height="46"/>
         <image name="Incomplete Line" width="1" height="14"/>
         <image name="Primary Setup-Btn" width="279" height="64"/>
         <image name="Settings Unselected" width="34" height="34"/>
+        <image name="Water Level Icon Gray" width="58.666667938232422" height="48"/>
+        <image name="Water Level Overlay" width="293" height="264"/>
+        <image name="Water Level bar" width="120" height="264"/>
         <image name="analytics Unselected" width="30" height="32"/>
+        <image name="backButton" width="17" height="27"/>
         <image name="warningIcon" width="31" height="29"/>
         <image name="waterLevelIcon" width="25.333333969116211" height="21.333333969116211"/>
     </resources>
