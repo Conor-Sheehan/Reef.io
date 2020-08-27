@@ -1,10 +1,11 @@
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 admin.initializeApp();
+var schedule = require('node-schedule');
 
 // sendWifiConnectedMessage detects when a new user's Reef has successfully connected to Wi-Fi for the
 // first time and sends a notification to their device
-exports.sendWifiConnectedMessage = functions.database.ref('/Users/{uid}/WiFiLastConnected/').onCreate( (snap, context) => {
+exports.sendWifiConnectedMessage = functions.database.ref('/Users/{uid}/Reef/lastConnected/').onCreate( (snap, context) => {
 	const uuid = context.params.uid;
 
 	// Print out user's ID who is receiving the notification
@@ -30,106 +31,56 @@ exports.sendWifiConnectedMessage = functions.database.ref('/Users/{uid}/WiFiLast
 
 });
 
-
-exports.sendNutrientLowMessage = functions.database.ref('{uid}/BasinLevels/Nutrient').onWrite( (change, context) => {
+exports.sendCyclingCompleteMessage = functions.database.ref('/Users/{uid}/Ecosystem/setup').onWrite( (change, context) => {
 	const uuid = context.params.uid;
 
-	return admin.database().ref(uuid + '/BasinLevels/Nutrient').once('value').then( function(snapshot) {
-		const level = snapshot.val();
-		console.log("Nutrient Value updated " + level);
+	return admin.database().ref('/Users/' + uuid + '/Ecosystem/setup').once('value').then( function(snapshot) {
+		const setupDate = snapshot.val().toString();
+		var dateStr = setupDate.split(' ');
+		var dateParts = dateStr[0].split('-');
+		var timeParts = dateStr[1].split(':');
+		var parsedDate = new Date(dateParts[0], dateParts[1] - 1, dateParts[2], timeParts[0], timeParts[1], 0); 
+		var scheduledDate = addDays(parsedDate, 14);
+		console.log("Scheduled complete date: " + scheduledDate);
 
-		if (level < 10) {
+		var j = schedule.scheduleJob(scheduledDate, function(){
+        	console.log('Cycling is complete');
 
-			console.log("Value is less than 10");
-			// Get the reference node to retrieve the users messaging token
-			var ref = admin.database().ref(uuid + '/UserData/FCMtoken');
+			admin.database().ref('/Users/' + uuid + '/Ecosystem/cyclingComplete').set(true);
 
-			// Once the token value has been read, compose the notification and send it to the user's device
-			return ref.once('value', function(snap) {
-         		const payload = {
-              	notification: {
-                  title: 'Nutrient Level Low',
-                  body: 'Reef nutrients are getting low. Refill soon.'
-              	}
-         	};
+        	sendPushNotification(uuid, 'Tank Finished Cycling!', 'reef is now ready for fish.')
 
-         	admin.messaging().sendToDevice(snap.val(), payload)
-
-    		}, function (errorObject) {
-        		console.log("The read failed: " + errorObject.code);
-    		});
-         }
+     	});
 		return snapshot.val();
 	});
 
 });
 
-exports.sendPhDownLowMessage = functions.database.ref('{uid}/BasinLevels/PhDown').onWrite( (change, context) => {
-	const uuid = context.params.uid;
+function addDays(date, days) {
+  var result = new Date(date);
+  result.setDate(result.getDate() + days);
+  return result;
+}
 
-	return admin.database().ref(uuid + '/BasinLevels/PhDown').once('value').then( function(snapshot) {
-		const level = snapshot.val();
-		console.log("PhDown Value updated " + level);
+function sendPushNotification(uuid, title, body) {
+	var ref = admin.database().ref('/Users/' + uuid + '/UserData/fcmToken');
 
-		if (level < 10) {
+	// Create push otification payload
+	return ref.once('value', function(snapshot) {
+ 		const payload = {
+      		notification: {
+          		title: title,
+          		body: body
+      	}
+ 	};
 
-			console.log("Value is less than 10");
-			// Get the reference node to retrieve the users messaging token
-			var ref = admin.database().ref(uuid + '/UserData/FCMtoken');
+ 	// Send notification to device with given value
+ 	admin.messaging().sendToDevice(snapshot.val(), payload)
 
-			// Once the token value has been read, compose the notification and send it to the user's device
-			return ref.once('value', function(snap) {
-         		const payload = {
-              	notification: {
-                  title: 'PH Down Level Low',
-                  body: 'PH Down solution is getting low. Refill soon.'
-              	}
-         	};
-
-         	admin.messaging().sendToDevice(snap.val(), payload)
-
-    		}, function (errorObject) {
-        		console.log("The read failed: " + errorObject.code);
-    		});
-         }
-		return snapshot.val();
+	}, function (errorObject) {
+		console.log("The read failed: " + errorObject.code);
 	});
-
-});
-
-exports.sendPhUpLowMessage = functions.database.ref('{uid}/BasinLevels/PhUp').onWrite( (change, context) => {
-	const uuid = context.params.uid;
-
-	return admin.database().ref(uuid + '/BasinLevels/PhUp').once('value').then( function(snapshot) {
-		const level = snapshot.val();
-		console.log("PhUp Value updated " + level);
-
-		if (level < 10) {
-
-			console.log("Value is less than 10");
-			// Get the reference node to retrieve the users messaging token
-			var ref = admin.database().ref(uuid + '/UserData/FCMtoken');
-
-			// Once the token value has been read, compose the notification and send it to the user's device
-			return ref.once('value', function(snap) {
-         		const payload = {
-              	notification: {
-                  title: 'Ph Up Level Low',
-                  body: 'Reef Ph Up is getting low. Refill soon.'
-              	}
-         	};
-
-         	admin.messaging().sendToDevice(snap.val(), payload)
-
-    		}, function (errorObject) {
-        		console.log("The read failed: " + errorObject.code);
-    		});
-         }
-		return snapshot.val();
-	});
-
-});
-
+}
 	
 
 
@@ -139,19 +90,16 @@ exports.initializeDatabase = functions.auth.user().onCreate((user) => {
 	// Retrieve User's UID from user object
 	const uuid = user.uid;
 
-	// Initialize aquariumFull branch in user's database
-	admin.database().ref('/Users/' + uuid + '/ReefSettings/aquariumFull').set(0);
-	// Initialize dayHours branch in user's database
-	admin.database().ref('/Users/' + uuid + '/ReefSettings/dayHours').set(0);
 	// Initialize sunrise branch in user's database
-	admin.database().ref('/Users/' + uuid + '/ReefSettings/sunrise').set('7:00');
+	admin.database().ref('/Users/' + uuid + '/Reef/Settings/sunrise').set('7:00');
 	// Initialize aquariumRGB branch in user's database
-	admin.database().ref('/Users/' + uuid + '/ReefSettings/aquariumRGB').set('255,255,255');
+	admin.database().ref('/Users/' + uuid + '/Reef/Settings/aquariumRGB').set('255,255,255');
+	admin.database().ref('/Users/' + uuid + '/Reef/Settings/fillingTank').set(false);
+	admin.database().ref('/Users/' + uuid + '/Reef/Settings/growStage').set(0);
+	admin.database().ref('/Users/' + uuid + '/GrowTracker/completedGrows').set(0);
+	admin.database().ref('/Users/' + uuid + '/GrowTracker/currentStep').set(0);
+	admin.database().ref('/Users/' + uuid + '/GrowTracker/tasksComplete').set(0);
 
-	// Initialize Basin Levels branch in user's database
-	admin.database().ref('/Users/' + uuid + '/ReefSettings/BasinLevels/nutrients').set(0);
-	admin.database().ref('/Users/' + uuid + '/ReefSettings/BasinLevels/phUp').set(0);
-	admin.database().ref('/Users/' + uuid + '/ReefSettings/BasinLevels/phDown').set(0);
 
 });
 
@@ -162,6 +110,3 @@ exports.removeAllData = functions.auth.user().onDelete((user) => {
 	// Deletee user's entire data tree
 	admin.database().ref('/Users/' + uuid).remove();
 });
-
-
-
