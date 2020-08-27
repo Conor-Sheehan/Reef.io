@@ -12,7 +12,6 @@ class NotificationVC: UIViewController {
 
     override func viewDidLoad() {
       super.viewDidLoad()
-
     }
 
   @IBAction func turnOnNotifiications(_ sender: Any) {
@@ -28,7 +27,7 @@ class NotificationVC: UIViewController {
           appDelegate.appBrain.setFCMToken(token: appDelegate.FCMtoken) // Store messaging token
           print("Access was granted")
           DispatchQueue.main.async {
-            self.performSegue(withIdentifier: "toWifiConnectVC", sender: self)
+            self.performSegue(withIdentifier: "segueToWifiConnectVC", sender: self)
           }
         } else {
           print("Access was not granted")
@@ -37,5 +36,8 @@ class NotificationVC: UIViewController {
 
     }
   }
-
+  
+  @IBAction func goBack(_ sender: Any) {
+    navigationController?.popViewController(animated: true)
+  }
 }

@@ -17,25 +17,8 @@ extension AppBrain {
   
   // Defines all steps in the reef Grow Proces and their associated (startDates)
   enum GrowStep {
-    case firstSetup, germinate, cycle(Date?), addFish, seedling(Date?),
-    vegetative(Date?), flowering(Date?), harvest, drying(Date?), prepareNew
-    
-    func getDate() -> Date? {
-      switch self {
-      case .cycle(let date):
-        return date
-      case .seedling(let date):
-        return date
-      case .vegetative(let date):
-        return date
-      case .flowering(let date):
-        return date
-      case .drying(let date):
-        return date
-      default:
-        return nil
-      }
-    }
+    case firstSetup, germinate, cycle, addFish, seedling,
+    vegetative, flowering, harvest, drying, prepareNew
     
     func name() -> String {
       switch self {
@@ -65,7 +48,7 @@ extension AppBrain {
     func numberOfTasks() -> Int {
       switch self {
       case .firstSetup:
-        return 2
+        return 3
       case .germinate:
         return 3
       case .cycle:
@@ -105,10 +88,10 @@ extension AppBrain {
       currentStep = 0
       tasksComplete = 0
       completedGrows = 0
-      firstGrowSteps = [.firstSetup, .germinate, .cycle(nil), .addFish, .seedling(nil),
-                        .vegetative(nil), .flowering(nil), .harvest, .drying(nil) ]
-      secondaryGrowSteps = [.prepareNew, .germinate, .seedling(nil), .vegetative(nil),
-                            .flowering(nil), .harvest, .drying(nil)]
+      firstGrowSteps = [.firstSetup, .germinate, .cycle, .addFish, .seedling,
+                        .vegetative, .flowering, .harvest, .drying]
+      secondaryGrowSteps = [.prepareNew, .germinate, .seedling, .vegetative,
+                            .flowering, .harvest, .drying]
     }
     
     // Returns number of steps for the current grow
@@ -134,6 +117,7 @@ extension AppBrain {
       } else { return false }
     }
     
+    func getTasksComplete() -> Int { return tasksComplete }
   }
   
   /// Retrieves the data associated with the users progress in their current grow cycle
@@ -152,9 +136,11 @@ extension AppBrain {
       
       let hasTasks = step.numberOfTasks() != 0 ? true : false
       let stepStatus = getStepStatus(index: index)
+      let daysLeft = getDaysLeft(step: step)
       
       growSteps.append(GrowStepData(stepName: step.name(), tasksComplete: tasksComplete,
-                                  numberOfTasks: step.numberOfTasks(), hasTasks: hasTasks, stepStatus: stepStatus))
+                                    numberOfTasks: step.numberOfTasks(), hasTasks: hasTasks,
+                                    stepStatus: stepStatus, daysLeft: daysLeft))
     }
     
     return growSteps
@@ -168,20 +154,6 @@ extension AppBrain {
     } else if index == currentStep { taskStatus = StepStatus.inProgress
     } else { taskStatus = StepStatus.future }
     return taskStatus
-  }
-  
-  func readGrowTrackerData(completion: @escaping () -> Void) {
-    growTrackerRef?.observeSingleEvent(of: .value) { (snapshot) in
-            
-      if let growTrackerTree =  snapshot.children.allObjects as? [DataSnapshot] {
-        for data in growTrackerTree {
-          if let trackerData = data.value as? Int {
-            self.storeGrowTrackerData(branch: data.key, trackerData: trackerData)
-          }
-        }
-        completion()
-      }
-    }
   }
   
   func storeGrowTrackerData(branch: String, trackerData: Int) {
@@ -199,6 +171,24 @@ extension AppBrain {
     }
   }
   
+  // Returns the estimated number of days left in the current grow stage
+  func getDaysLeft(step: GrowStep) -> Int {
+    switch step {
+    case .cycle:
+      return 14 - (currentGrowData.ecosystemSetup?.daysElapsed() ?? 0)
+    case .seedling:
+      return 14 - (currentGrowData.seedling?.daysElapsed() ?? 0)
+    case .vegetative:
+      return 42 - (currentGrowData.vegetative?.daysElapsed() ?? 0)
+    case .flowering:
+      return 60 - (currentGrowData.flowering?.daysElapsed() ?? 0)
+    case .drying:
+      return 14 - (currentGrowData.drying?.daysElapsed() ?? 0)
+    default:
+      return 0
+    }
+  }
+  
   func completeGrowStep() {
     
     let currentGrowStep = growTracker.getCurrentStep()
@@ -206,13 +196,16 @@ extension AppBrain {
     let allGrowsRef = growTrackerRef?.child(GrowTrackerBranch.allGrows.rawValue).child(completeGrowsStr)
     let firebaseDate = Date().convertToString()
     
+    // Increment current step in grow tracker
     growTracker.currentStep += 1
+    // Reset completed tasks
+    completeTask(tasksComplete: 0)
     
     switch currentGrowStep {
     case .firstSetup:
       ecosystemRef?.child(EcosystemBranch.setup.rawValue).setValue(firebaseDate)
     case .germinate:
-      allGrowsRef?.child(AllGrowsBranch.germinated.rawValue).setValue(firebaseDate)
+      allGrowsRef?.child(AllGrowsBranch.seedling.rawValue).setValue(firebaseDate)
     case .cycle:
       print("Nothing for now")
     case .addFish:
@@ -236,6 +229,11 @@ extension AppBrain {
     
     // Increment current grow step and store in Firebse
     growTrackerRef?.child(GrowTrackerBranch.currentStep.rawValue).setValue(growTracker.currentStep)
+  }
+  
+  func completeTask(tasksComplete: Int) {
+    growTracker.tasksComplete = tasksComplete
+    growTrackerRef?.child(GrowTrackerBranch.tasksComplete.rawValue).setValue(growTracker.tasksComplete)
   }
     
 }

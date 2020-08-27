@@ -19,21 +19,21 @@ class ValidateVC: UIViewController, UITextFieldDelegate {
   let textFieldBackground = UIImage(named: "TextField")
   let invalidTextfieldBackground = UIImage(named: "TextField-Invalid Input")
 
-    override func viewDidLoad() {
-      super.viewDidLoad()
+  override func viewDidLoad() {
+    super.viewDidLoad()
 
-      activityIndicator.isHidden = true
-      invalidTextLabel.isHidden = true
+    activityIndicator.isHidden = true
+    invalidTextLabel.isHidden = true
 
-      reefIDTextField.delegate = self
-      addKeyboardObservers()
-      addGestureRecognizers()
-    }
+    reefIDTextField.delegate = self
+    addKeyboardObservers()
+    addGestureRecognizers()
+  }
 
-    deinit {
-      NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-      NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
+  deinit {
+    NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+    NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+  }
 
   @IBAction func goBack(_ sender: Any) {
     navigationController?.popViewController(animated: true)
@@ -85,7 +85,7 @@ class ValidateVC: UIViewController, UITextFieldDelegate {
           self.showInvalidErrorMessage(message: "Invalid Reef ID. Please try again.")
         } else {
           self.generator.notificationOccurred(.success)
-          self.performSegue(withIdentifier: "toNotificationVC", sender: self)
+          self.performSegue(withIdentifier: "segueToNotificationVC", sender: self)
         }
 
       })
@@ -98,20 +98,11 @@ class ValidateVC: UIViewController, UITextFieldDelegate {
 // Keyboard and Gesture Handling Extension
 extension ValidateVC {
 
-  func textFieldDidBeginEditing(_ textField: UITextField) {
-    textField.text = "Reef-"
-  }
-
   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
                  replacementString string: String) -> Bool {
 
     reefIDTextField.background = UIImage(named: "TextField")
     invalidTextLabel.isHidden = true
-
-    if textField.text?.count ?? 5 == 5 && string.count == 0 {
-      self.reefIDTextField.text = "Reef-"
-      return false
-    }
 
     return true
   }

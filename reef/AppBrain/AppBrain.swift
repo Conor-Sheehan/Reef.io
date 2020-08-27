@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import CSVImporter
 
 class AppBrain {
 
@@ -25,7 +26,8 @@ class AppBrain {
   
   enum EcosystemBranch: String { case setup, addedFish }
   
-  enum AllGrowsBranch: String { case germinated, seedling, vegetative, flowering, harvest, drying, complete }
+  enum AllGrowsBranch: String { case germinated, seedling, vegetative, flowering, harvest, drying, complete,
+                                strainName, strainType, seedType }
   
   enum SensorBranch: String { case airTemp, humidity, plantHeight, waterLevel, waterTemp }
 
@@ -41,9 +43,11 @@ class AppBrain {
   var userData = UserData()
   var sensorData = SensorData()
   var growTracker = GrowTracker()
-
-  // WiFi connected variable
-  var wifiConnected = false
+  var currentGrowData = CurrentGrowData()
+  
+  // Strain library data
+  var strainNames = [String]()
+  var strainDict = [String: String]()
 
   // Initialize() will retrieve all data from storage when app returns from terminated state
   func initialize() {
@@ -56,29 +60,27 @@ class AppBrain {
       ecosystemRef = Database.database().reference().child("Users").child(firebaseID).child("Ecosystem")
       reefSettingsRef = Database.database().reference().child("Users").child(firebaseID).child("Reef").child("Settings")
     }
-
-    self.readWiFiConnected()
+    
+    updateTimezone()
+    loadStrainData()
   }
   
-  func readWiFiConnected() {
-
-    // Check if user has been authorized by firebase
-    if let firebaseID = userUID {
-
-      // Begin reading path
-      databaseRef?.child("Users").child(firebaseID).child("WiFiLastConnected").observe(.value, with: { (snapshot) in
-        if let connectionTime = snapshot.value as? String {
-          print("WiFi connected successfully", connectionTime)
-          self.wifiConnected = true
-          NotificationCenter.default.post(name: NSNotification.Name(rawValue: "wifiConnected"), object: nil)
-        } else { print("WiFi not yet connected") }
-      })
+  func loadStrainData() {
+    
+    // Test load CSV Data
+    let path = Bundle.main.path(forResource: "strains", ofType: "csv")!
+    let importer = CSVImporter<[String]>(path: path)
+    importer.startImportingRecords { $0 }.onFinish { importedRecords in
+        for record in importedRecords {
+          
+          if record[0] == "id" {
+          } else {
+            // record is of type [String] and contains all data in a line
+            self.strainNames.append(record[3])
+            self.strainDict[record[3]] = record[7]
+          }
+        }
     }
   }
-
-    /// Returns whether or not user's Reef has successfully conneected to WiFi
-    func getWifiConnected() -> Bool {
-        return wifiConnected
-    }
-
+  
 }

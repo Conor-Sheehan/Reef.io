@@ -15,6 +15,7 @@ struct GrowStepData {
   var numberOfTasks: Int
   var hasTasks: Bool
   var stepStatus: StepStatus // 0 for future, 1 for current, 2 for complete
+  var daysLeft: Int
 }
 
 enum StepStatus { case completed, inProgress, future }
@@ -44,7 +45,7 @@ class GrowStepCell: UITableViewCell {
           header.textColor = .darkGray
           if data.hasTasks { subHeader.text = String(data.tasksComplete) +
             "/" + String(data.numberOfTasks) + " Steps Complete"
-          } else { subHeader.text = "Calculate time to completion" }
+          } else { subHeader.text = String(data.daysLeft) + " Days Left" }
         case .completed:
           progressImage.image = R.image.completedCircle()
           lineImage.image = R.image.completedLine()
@@ -57,6 +58,7 @@ class GrowStepCell: UITableViewCell {
         }
         
         header.text = data.stepName
+        if data.stepName == "Drying" { lineImage.alpha = 0.0 }
         
       }
   }

@@ -15,17 +15,15 @@ extension AppBrain {
     reefSettingsRef?.child("fillingTank").setValue(isEnabled)
   }
   
-  func readWaterLevel(completion: @escaping (Int) -> Void) {
-    reefSettingsRef?.child("waterLevel").observe(.value, with: { (snapshot) in
-      if let waterLevel = snapshot.value as? Int {
-        completion(waterLevel)
-      }
-    })
-  }
-  
   func finishReadingWaterLevel() {
     reefSettingsRef?.child("waterLevel").removeAllObservers()
     reefSettingsRef?.child("fillingTank").setValue(false)
+  }
+  
+  func finishConnectingWifi() {
+    if let firebaseID = userUID {
+      databaseRef?.child("Users").child(firebaseID).child("Reef").child("WiFiLastConnected").removeAllObservers()
+    }
   }
   
 }

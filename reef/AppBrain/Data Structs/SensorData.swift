@@ -21,28 +21,6 @@ extension AppBrain {
     var currSensorData: [Double] = [0, 0, 0, 0, 0, 0]
   }
   
-  func readSensorData(completion: @escaping () -> Void) {
-    
-     sensorDataRef?.observeSingleEvent(of: .value) { (snapshot) in
-         
-          if let reefDataTree =  snapshot.children.allObjects as? [DataSnapshot] {
-         
-           for sensorNode in reefDataTree {
-             
-             if let sensorValues = sensorNode.children.allObjects as? [DataSnapshot] {
-               for sensorData in sensorValues {
-                 if let sensorValue = sensorData.value as? Double {
-                  let dateAdded = sensorData.key.convertStringToDate()
-                  self.storeSensorData(branch: sensorNode.key, dateAdded: dateAdded, sensorValue: sensorValue)
-                 }
-               }
-             }
-           }
-           completion()
-         }
-       }
-  }
-  
   func storeSensorData(branch: String, dateAdded: Date, sensorValue: Double) {
     switch branch {
     case SensorBranch.waterLevel.rawValue:

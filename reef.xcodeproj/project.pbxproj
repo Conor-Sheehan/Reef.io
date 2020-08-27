@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,17 @@
 		465DE2EE24E4CCE300F0BF86 /* AquariumFillVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DE2ED24E4CCE300F0BF86 /* AquariumFillVC.swift */; };
 		465DE2F024E5B50700F0BF86 /* ReefSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DE2EF24E5B50700F0BF86 /* ReefSettings.swift */; };
 		466AA99E222F5AFE007903C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 466AA99D222F5AFE007903C3 /* GoogleService-Info.plist */; };
+		467A82E824F744D400DF9C95 /* FirebaseReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467A82E724F744D400DF9C95 /* FirebaseReader.swift */; };
+		46A4674D24F58C2E00B75E9C /* NutrientsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A4674C24F58C2E00B75E9C /* NutrientsVC.swift */; };
+		46A4674F24F58C3D00B75E9C /* CyclingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A4674E24F58C3D00B75E9C /* CyclingVC.swift */; };
+		46A4675324F5C26400B75E9C /* strains.csv in Resources */ = {isa = PBXBuildFile; fileRef = 46A4675224F5C26400B75E9C /* strains.csv */; };
+		46A4675624F5C50300B75E9C /* CSVImporter in Frameworks */ = {isa = PBXBuildFile; productRef = 46A4675524F5C50300B75E9C /* CSVImporter */; };
+		46A4675824F5CA0400B75E9C /* CurrentGrowData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A4675724F5CA0400B75E9C /* CurrentGrowData.swift */; };
+		46A4675A24F5D8A600B75E9C /* GerminateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A4675924F5D8A600B75E9C /* GerminateVC.swift */; };
+		46A4675D24F5DA6500B75E9C /* SelectStrainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A4675C24F5DA6500B75E9C /* SelectStrainVC.swift */; };
+		46A4675F24F6086C00B75E9C /* SeedTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A4675E24F6086C00B75E9C /* SeedTypeVC.swift */; };
+		46A4676124F7079A00B75E9C /* PlantSeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A4676024F7079A00B75E9C /* PlantSeedVC.swift */; };
+		46A4676324F70C5500B75E9C /* SeedSproutedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A4676224F70C5500B75E9C /* SeedSproutedVC.swift */; };
 		46AE27B924B4ED20002AEF34 /* SetupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE27B824B4ED20002AEF34 /* SetupVC.swift */; };
 		46C2658024D3560600B42D61 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C2657F24D3560600B42D61 /* R.generated.swift */; };
 		46C5917D2123B65A0035F552 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C5917C2123B65A0035F552 /* Home.storyboard */; };
@@ -82,6 +93,16 @@
 		465DE2ED24E4CCE300F0BF86 /* AquariumFillVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AquariumFillVC.swift; sourceTree = "<group>"; };
 		465DE2EF24E5B50700F0BF86 /* ReefSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReefSettings.swift; sourceTree = "<group>"; };
 		466AA99D222F5AFE007903C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		467A82E724F744D400DF9C95 /* FirebaseReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseReader.swift; sourceTree = "<group>"; };
+		46A4674C24F58C2E00B75E9C /* NutrientsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientsVC.swift; sourceTree = "<group>"; };
+		46A4674E24F58C3D00B75E9C /* CyclingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyclingVC.swift; sourceTree = "<group>"; };
+		46A4675224F5C26400B75E9C /* strains.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = strains.csv; sourceTree = "<group>"; };
+		46A4675724F5CA0400B75E9C /* CurrentGrowData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentGrowData.swift; sourceTree = "<group>"; };
+		46A4675924F5D8A600B75E9C /* GerminateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GerminateVC.swift; sourceTree = "<group>"; };
+		46A4675C24F5DA6500B75E9C /* SelectStrainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStrainVC.swift; sourceTree = "<group>"; };
+		46A4675E24F6086C00B75E9C /* SeedTypeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedTypeVC.swift; sourceTree = "<group>"; };
+		46A4676024F7079A00B75E9C /* PlantSeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantSeedVC.swift; sourceTree = "<group>"; };
+		46A4676224F70C5500B75E9C /* SeedSproutedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedSproutedVC.swift; sourceTree = "<group>"; };
 		46AE27B824B4ED20002AEF34 /* SetupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupVC.swift; sourceTree = "<group>"; };
 		46C2657F24D3560600B42D61 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		46C5917C2123B65A0035F552 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -124,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46E5A6B624BAB55800140385 /* ExternalAccessory.framework in Frameworks */,
+				46A4675624F5C50300B75E9C /* CSVImporter in Frameworks */,
 				46E5A6B424BAB3E500140385 /* NetworkExtension.framework in Frameworks */,
 				9CCB36D12BF1F8ADF315127D /* libPods-reef.a in Frameworks */,
 			);
@@ -165,8 +187,8 @@
 			children = (
 				46C5917C2123B65A0035F552 /* Home.storyboard */,
 				461730F124DB3AA300945B9B /* DashboardVC.swift */,
-				465DE2EB24E4C83800F0BF86 /* SetupReefVC.swift */,
-				465DE2ED24E4CCE300F0BF86 /* AquariumFillVC.swift */,
+				46A4674B24F58C0C00B75E9C /* Ecosystem Setup */,
+				46A4675B24F5DA3400B75E9C /* Germinate */,
 				465DE2EA24E4C7E700F0BF86 /* Collection Cells */,
 			);
 			path = Home;
@@ -197,6 +219,8 @@
 				461730FB24DC577000945B9B /* SensorData.swift */,
 				461730FD24DCD09D00945B9B /* GrowTracker.swift */,
 				465DE2EF24E5B50700F0BF86 /* ReefSettings.swift */,
+				46A4675724F5CA0400B75E9C /* CurrentGrowData.swift */,
+				467A82E724F744D400DF9C95 /* FirebaseReader.swift */,
 			);
 			path = "Data Structs";
 			sourceTree = "<group>";
@@ -208,6 +232,29 @@
 				461730F924DBB78500945B9B /* GrowStepCell.swift */,
 			);
 			path = "Collection Cells";
+			sourceTree = "<group>";
+		};
+		46A4674B24F58C0C00B75E9C /* Ecosystem Setup */ = {
+			isa = PBXGroup;
+			children = (
+				465DE2EB24E4C83800F0BF86 /* SetupReefVC.swift */,
+				465DE2ED24E4CCE300F0BF86 /* AquariumFillVC.swift */,
+				46A4674C24F58C2E00B75E9C /* NutrientsVC.swift */,
+				46A4674E24F58C3D00B75E9C /* CyclingVC.swift */,
+			);
+			path = "Ecosystem Setup";
+			sourceTree = "<group>";
+		};
+		46A4675B24F5DA3400B75E9C /* Germinate */ = {
+			isa = PBXGroup;
+			children = (
+				46A4675924F5D8A600B75E9C /* GerminateVC.swift */,
+				46A4675C24F5DA6500B75E9C /* SelectStrainVC.swift */,
+				46A4675E24F6086C00B75E9C /* SeedTypeVC.swift */,
+				46A4676024F7079A00B75E9C /* PlantSeedVC.swift */,
+				46A4676224F70C5500B75E9C /* SeedSproutedVC.swift */,
+			);
+			path = Germinate;
 			sourceTree = "<group>";
 		};
 		46E69F0021092CEA003C466F = {
@@ -244,6 +291,7 @@
 				46E69F1521092CEE003C466F /* LaunchScreen.storyboard */,
 				460EE4D5211F59950004A91C /* Reef.entitlements */,
 				46C2657F24D3560600B42D61 /* R.generated.swift */,
+				46A4675224F5C26400B75E9C /* strains.csv */,
 				466AA99D222F5AFE007903C3 /* GoogleService-Info.plist */,
 				46E69F1821092CEE003C466F /* Info.plist */,
 			);
@@ -323,6 +371,9 @@
 			dependencies = (
 			);
 			name = reef;
+			packageProductDependencies = (
+				46A4675524F5C50300B75E9C /* CSVImporter */,
+			);
 			productName = Reef;
 			productReference = 46E69F0921092CEB003C466F /* reef.app */;
 			productType = "com.apple.product-type.application";
@@ -405,6 +456,9 @@
 				Base,
 			);
 			mainGroup = 46E69F0021092CEA003C466F;
+			packageReferences = (
+				46A4675424F5C50300B75E9C /* XCRemoteSwiftPackageReference "CSVImporter" */,
+			);
 			productRefGroup = 46E69F0A21092CEB003C466F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -425,6 +479,7 @@
 				46E69F1421092CEE003C466F /* Assets.xcassets in Resources */,
 				46C5917D2123B65A0035F552 /* Home.storyboard in Resources */,
 				46E69F1221092CEB003C466F /* Main.storyboard in Resources */,
+				46A4675324F5C26400B75E9C /* strains.csv in Resources */,
 				466AA99E222F5AFE007903C3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -555,12 +610,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46A4675F24F6086C00B75E9C /* SeedTypeVC.swift in Sources */,
 				461730F424DB5CCF00945B9B /* SensorDataCell.swift in Sources */,
+				46A4674D24F58C2E00B75E9C /* NutrientsVC.swift in Sources */,
+				467A82E824F744D400DF9C95 /* FirebaseReader.swift in Sources */,
 				46E5A6B024BA5F8B00140385 /* WifiConnectVC.swift in Sources */,
 				461730F224DB3AA300945B9B /* DashboardVC.swift in Sources */,
 				4621596321286D3B00F8ADA4 /* AppBrain.swift in Sources */,
 				4651EA6024A5899C009BC355 /* SignInVC.swift in Sources */,
 				462A428723DF8C580086096A /* DateExt.swift in Sources */,
+				46A4676324F70C5500B75E9C /* SeedSproutedVC.swift in Sources */,
+				46A4675A24F5D8A600B75E9C /* GerminateVC.swift in Sources */,
+				46A4676124F7079A00B75E9C /* PlantSeedVC.swift in Sources */,
 				46E5A6B224BAA43C00140385 /* NotificationVC.swift in Sources */,
 				46E5A6AE24B92B1800140385 /* ValidateVC.swift in Sources */,
 				461730FA24DBB78500945B9B /* GrowStepCell.swift in Sources */,
@@ -574,7 +635,10 @@
 				46E69F0F21092CEB003C466F /* WelcomeVC.swift in Sources */,
 				46E69F0D21092CEB003C466F /* AppDelegate.swift in Sources */,
 				461730FE24DCD09D00945B9B /* GrowTracker.swift in Sources */,
+				46A4675D24F5DA6500B75E9C /* SelectStrainVC.swift in Sources */,
+				46A4674F24F58C3D00B75E9C /* CyclingVC.swift in Sources */,
 				465DE2EE24E4CCE300F0BF86 /* AquariumFillVC.swift in Sources */,
+				46A4675824F5CA0400B75E9C /* CurrentGrowData.swift in Sources */,
 				465DE2EC24E4C83800F0BF86 /* SetupReefVC.swift in Sources */,
 				46E5A6AC24B92A7300140385 /* PlugVC.swift in Sources */,
 				462A428423DF8A2B0086096A /* UserData.swift in Sources */,
@@ -919,6 +983,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		46A4675424F5C50300B75E9C /* XCRemoteSwiftPackageReference "CSVImporter" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Flinesoft/CSVImporter";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		46A4675524F5C50300B75E9C /* CSVImporter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 46A4675424F5C50300B75E9C /* XCRemoteSwiftPackageReference "CSVImporter" */;
+			productName = CSVImporter;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 46E69F0121092CEA003C466F /* Project object */;
 }

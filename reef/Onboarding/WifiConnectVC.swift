@@ -14,12 +14,10 @@ import Rswift
 
 class WifiConnectVC: UIViewController {
 
-  @IBOutlet weak var wifiImage: UIImageView!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   @IBOutlet weak var connectWifiButton: UIButton!
   @IBOutlet weak var headerLabel: UILabel!
   @IBOutlet weak var subHeaderLabeel: UILabel!
-  @IBOutlet weak var progressImage: UIImageView!
   
   let reefConnectSSID = "Reef-Connect"
   let generator = UINotificationFeedbackGenerator()
@@ -30,42 +28,21 @@ class WifiConnectVC: UIViewController {
     // Hide activity indicator
     activityIndicator.isHidden  = true
 
-    // Notify VC when re-entering Foreground from Background state
-    NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground),
-                                           name: UIApplication.willEnterForegroundNotification, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(wifiConnected),
-                                           name: NSNotification.Name(rawValue: "wifiConnected"), object: nil)
-  }
-
-  // De-initialize notification observer, when deconstructing class
-  deinit { NotificationCenter.default.removeObserver(self) }
-
-  override func viewDidAppear(_ animated: Bool) {
-    startWifiAnimation()
-  }
-
-  @objc func willEnterForeground() {
-    startWifiAnimation()
+    if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+      appDelegate.appBrain.readWiFiStatus {
+        self.wifiConnected()
+        appDelegate.appBrain.finishConnectingWifi()
+      }
+    }
   }
 
   @objc func wifiConnected() {
 
     print("Wifi was successfully connected")
     NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "wifiConnected"), object: nil)
-    wifiImage.layer.removeAllAnimations()
-    wifiImage.alpha = 1.0
-    progressImage.image = R.image.progressStep4()
     headerLabel.text = "Connected!"
-    subHeaderLabeel.text = "Reef is now successfully connected to your home Wi-Fi network."
+    subHeaderLabeel.text = "Reef is now successfully connected to your Wi-Fi network."
     connectWifiButton.setTitle("Complete setup", for: .normal)
-  }
-
-  func startWifiAnimation() {
-    wifiImage.alpha = 0.15
-
-    UIView.animate(withDuration: 1.0, delay: 0.0, options: [.repeat, .autoreverse, .curveEaseInOut], animations: {
-      self.wifiImage.alpha = 0.75
-    })
   }
 
   func startActivityIndicator() {
@@ -80,9 +57,12 @@ class WifiConnectVC: UIViewController {
     activityIndicator.stopAnimating()
     connectWifiButton.isEnabled = true
     connectWifiButton.setTitle("Connect Wi-Fi", for: .normal)
-
   }
-
+  
+  @IBAction func goBack(_ sender: Any) {
+    navigationController?.popViewController(animated: true)
+  }
+  
   @IBAction func connectToWifi(_ sender: Any) {
 
     if connectWifiButton.title(for: .normal) == "Connect Wi-Fi" {
@@ -102,7 +82,8 @@ class WifiConnectVC: UIViewController {
           self.reefConnectAttemptComplete()
          }
       }
-
+    } else {
+      self.performSegue(withIdentifier: "segueToDashboardVC", sender: self)
     }
   }
 

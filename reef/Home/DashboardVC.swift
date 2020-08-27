@@ -18,6 +18,7 @@ class DashboardVC: UIViewController {
   @IBOutlet weak var indicatorView: UIView!
   @IBOutlet weak var collectionView: UICollectionView!
   @IBOutlet weak var growStepTableView: UITableView!
+  @IBOutlet weak var growTrackerButton: UIButton!
   
   private weak var appDelegate: AppDelegate!
   
@@ -32,8 +33,13 @@ class DashboardVC: UIViewController {
     growTrackerData = appDelegate.appBrain.getGrowTrackerData()
 
     layoutViews()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
     loadSensorData()
     loadGrowStepData()
+    navigationController?.navigationBar.isHidden = true
   }
   
   func layoutViews() {
@@ -43,16 +49,12 @@ class DashboardVC: UIViewController {
     collectionView.dataSource = self
     growStepTableView.separatorStyle = .none
     growStepTableView.rowHeight = 60
-    
-    //let indexPath: IndexPath = IndexPath(row: 4, section: 0)
-    //self.progressTableView.scrollToRow(at: indexPath, at: .none, animated: true)
   }
   
   func loadSensorData() {
     
     // Read reef Sensor data from Firebase and display on completion
     appDelegate.appBrain.readSensorData(completion: {
-      
       self.sensorData = self.appDelegate.appBrain.getCurrentSensorData()
       self.collectionView.reloadData()
     })
@@ -60,17 +62,53 @@ class DashboardVC: UIViewController {
   
   func loadGrowStepData() {
     appDelegate.appBrain.readGrowTrackerData(completion: {
+      
       self.growTrackerData = self.appDelegate.appBrain.getGrowTrackerData()
+      let scrollToStep = self.appDelegate.appBrain.growTracker.currentStep
+      let indexPath: IndexPath = IndexPath(row: scrollToStep, section: 0)
+      self.growStepTableView.scrollToRow(at: indexPath, at: .none, animated: true)
       self.growStepTableView.reloadData()
+      self.growTrackerButton.isEnabled = true
+  
       print("Got grow step data")
     })
   }
   
   @IBAction func simulateCompleteStep(_ sender: UIButton) {
-//    appDelegate.appBrain.completeGrowStep()
-//    self.growTrackerData = self.appDelegate.appBrain.getGrowTrackerData()
-//    growStepTableView.reloadData()
-    self.performSegue(withIdentifier: "segueToSetup", sender: self)
+    let currentGrowStep = appDelegate.appBrain.growTracker.getCurrentStep()
+    let currentTask = appDelegate.appBrain.growTracker.getTasksComplete()
+    
+    switch currentGrowStep {
+    case .firstSetup:
+      segueToSetup(currentTask: currentTask)
+    case .germinate:
+      segueToGerminate(currentTask: currentTask)
+    default:
+      print("I dont know yet..")
+    }
+    
+  }
+  
+  func segueToSetup(currentTask: Int) {
+    switch currentTask {
+    case 1:
+      self.performSegue(withIdentifier: "NutrientsVC", sender: self)
+    case 2:
+      self.performSegue(withIdentifier: "CyclingVC", sender: self)
+    default:
+      self.performSegue(withIdentifier: "SetupReefVC", sender: self)
+    }
+  }
+  
+  func segueToGerminate(currentTask: Int) {
+    switch currentTask {
+    case 1:
+      self.performSegue(withIdentifier: "PlantSeedVC", sender: self)
+    case 2:
+      self.performSegue(withIdentifier: "SeedSproutedVC", sender: self)
+    default:
+      self.performSegue(withIdentifier: "GerminateVC", sender: self)
+    }
   }
   
 }
