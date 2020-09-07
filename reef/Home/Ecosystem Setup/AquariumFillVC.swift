@@ -24,14 +24,14 @@ class AquariumFillVC: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    waterLevelView.frame = CGRect(x: waterLevelBar.frame.minX - 25,
-                                  y: waterLevelBar.frame.maxY,
-                                  width: waterLevelBar.frame.width + 50,
-                                  height: 0)
-    
     if let appDeleg = UIApplication.shared.delegate as? AppDelegate {
       appDelegate = appDeleg
     }
+    
+    waterLevelView.frame = CGRect(x: waterLevelBar.frame.minX - 25,
+    y: waterLevelBar.frame.maxY,
+    width: waterLevelBar.frame.width + 50,
+    height: 0)
     
     addNotificationObservers()
   }
@@ -53,13 +53,15 @@ class AquariumFillVC: UIViewController {
     progressIndicator.stopAnimating()
     progressIndicator.isHidden = true
     nextButton.setTitle("Next", for: .normal)
-    appDelegate.appBrain.completeTask(tasksComplete: 1)
-    appDelegate.appBrain.finishReadingWaterLevel()
     waterLevelIcon.image = R.image.waterLevelIconWhite()
     generator.notificationOccurred(.success)
+    updateDataModel()
   }
   
-
+  func updateDataModel() {
+    appDelegate.appBrain.completeTask(tasksComplete: 1, setupTask: true)
+    appDelegate.appBrain.finishReadingWaterLevel()
+  }
   
   func enableFillingTank(enabled: Bool) {
     appDelegate.appBrain.enableTankFilling(isEnabled: enabled)
@@ -114,7 +116,11 @@ extension AquariumFillVC {
     readWaterLevel()
   }
   @objc func willResignActive() { enableFillingTank(enabled: false); progressIndicator.stopAnimating() }
-  override func viewWillAppear(_ animated: Bool) {
+  override func viewDidAppear(_ animated: Bool) {
+    waterLevelView.frame = CGRect(x: waterLevelBar.frame.minX - 25,
+                                  y: waterLevelBar.frame.maxY,
+                                  width: waterLevelBar.frame.width + 50,
+                                  height: 0)
     progressIndicator.startAnimating()
     enableFillingTank(enabled: true)
     readWaterLevel()

@@ -68,7 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
         case 1:
             return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SetupProcess")
         case 2:
-            return UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "DashboardVC")
+            return UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeVC")
         default:
             return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WelcomeVC")
         }

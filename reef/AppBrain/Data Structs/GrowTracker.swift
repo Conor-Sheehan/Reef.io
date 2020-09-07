@@ -11,229 +11,233 @@ import Firebase
 
 extension AppBrain {
   
-//  enum GrowStages: String {
-//    case Germination, Seedling, Vegetative, Flowering, Harvest, Drying
-//  }
-  
-  // Defines all steps in the reef Grow Proces and their associated (startDates)
-  enum GrowStep {
-    case firstSetup, germinate, cycle, addFish, seedling,
-    vegetative, flowering, harvest, drying, prepareNew
+  enum EcosystemSetupStage: String, CaseIterable { case firstSetup, cycling, introduceFish, newSetup
     
-    func name() -> String {
+    func numberOfTasks() -> Int {
       switch self {
       case .firstSetup:
-        return "Setup reef"
+        return 3
+      case .cycling:
+        return 0
+      case .introduceFish:
+        return 1
+      case .newSetup:
+        return 2
+      }
+    }
+  }
+  
+  // Defines all steps in the reef Grow Proces and their associated (startDates)
+  enum ReefGrowStage: String, CaseIterable {
+    case ecosystemSetup, germinate, seedling, vegetative, flowering, harvest
+    
+    func index() -> Int {
+      switch self {
+      case .ecosystemSetup:
+        return 0
       case .germinate:
-        return "Germinate seed"
-      case .cycle:
-        return "Cycle tank"
-      case .addFish:
-        return "Add fish"
+        return 1
       case .seedling:
-        return "Seedling"
+        return 2
       case  .vegetative:
-        return "Vegetative"
+        return 3
       case .flowering:
-        return "Flowering"
+        return 4
       case .harvest:
-        return "Harvest"
-      case .drying:
-        return "Drying"
-      case .prepareNew:
-        return "Prepare new grow"
+        return 5
       }
     }
 
     func numberOfTasks() -> Int {
       switch self {
-      case .firstSetup:
-        return 3
       case .germinate:
         return 3
-      case .cycle:
-        return 0
-      case .addFish:
-        return 1
-      case .seedling:
-        return 0
-      case .vegetative:
-        return 0
-      case .flowering:
-        return 0
       case .harvest:
         return 1
-      case .drying:
+      default:
         return 0
-      case .prepareNew:
-        return 3
+      }
+    }
+    
+    func daysInStage() -> Int {
+      switch self {
+      case .seedling:
+        return 14
+      case  .vegetative:
+        return 42
+      case .flowering:
+        return 60
+      case .harvest:
+        return 14
+      default:
+        return 0
       }
     }
   }
   
   struct GrowTracker {
     
-    var currentStep: Int
-    var tasksComplete: Int
+    var currentGrowStage: ReefGrowStage
+    var growTasksComplete: Int
+    var currentSetupStage: EcosystemSetupStage
+    var setupTasksComplete: Int
     var completedGrows: Int
-    
-    // Steps involved for first time reef grower
-    var firstGrowSteps: [GrowStep]
-    
-    // Steps involved for all grows after the first
-    var secondaryGrowSteps: [GrowStep]
     
     // Initialize starting values
     init() {
-      currentStep = 0
-      tasksComplete = 0
+      currentGrowStage = .ecosystemSetup
+      currentSetupStage = .firstSetup
+      growTasksComplete = 0
+      setupTasksComplete = 0
       completedGrows = 0
-      firstGrowSteps = [.firstSetup, .germinate, .cycle, .addFish, .seedling,
-                        .vegetative, .flowering, .harvest, .drying]
-      secondaryGrowSteps = [.prepareNew, .germinate, .seedling, .vegetative,
-                            .flowering, .harvest, .drying]
     }
     
     // Returns number of steps for the current grow
-    func getNumberSteps() -> Int {
-      if isFirstGrow() { return firstGrowSteps.count
-      } else { return secondaryGrowSteps.count }
-    }
-    
-    func getStepNames() -> [String] {
-      var stepNames: [String] =  []
-      if isFirstGrow() { for step in firstGrowSteps {  stepNames.append(step.name()) }
-      } else { for step in secondaryGrowSteps { stepNames.append(step.name()) }}
-      return stepNames
-    }
-    
-    func getCurrentStep() -> GrowStep {
-      if isFirstGrow() { return firstGrowSteps[currentStep]
-      } else { return secondaryGrowSteps[currentStep] }
-    }
+    func getNumberGrowStages() -> Int { return ReefGrowStage.allCases.count }
+    func getNumberSetupStages() -> Int { return EcosystemSetupStage.allCases.count }
     
     func isFirstGrow() -> Bool {
       if completedGrows == 0 { return true
       } else { return false }
     }
-    
-    func getTasksComplete() -> Int { return tasksComplete }
   }
   
   /// Retrieves the data associated with the users progress in their current grow cycle
   /// - Returns: Array of GrowStepData for easy access/display on dashboard
-  func getGrowTrackerData() -> [GrowStepData] {
+  func getGrowTrackerData() -> [ProgressData] {
     
-    var growSteps: [GrowStepData] = []
-    let tasksComplete = growTracker.tasksComplete
-    var growStepArr: [GrowStep] = []
+    var progressData = [ProgressData]()
     
-    if growTracker.isFirstGrow() { growStepArr = growTracker.firstGrowSteps
-    } else { growStepArr = growTracker.secondaryGrowSteps }
-    
-    // Iterate over grow step arrary and return the current associated data to display the user's progress
-    for (index, step) in growStepArr.enumerated() {
+    for (index, stage) in ReefGrowStage.allCases.enumerated() {
       
-      let hasTasks = step.numberOfTasks() != 0 ? true : false
-      let stepStatus = getStepStatus(index: index)
-      let daysLeft = getDaysLeft(step: step)
+      switch stage {
+      case .ecosystemSetup:
+        progressData.append(ecosystemSetupData())
+      default:
+        progressData.append(reefGrowData(index: index, stage: stage))
+      }
+    }
+    return progressData
+  }
+  
+  // CALCULATE AND RETURN ALL GROW TRACKER DATA
+    
+  func ecosystemSetupData() -> ProgressData {
+    
+    let currentStage = growTracker.currentSetupStage
+    let tasksInStage = currentStage.numberOfTasks()
+    let tasksComplete = growTracker.setupTasksComplete
+    var status: StageStatus = .inProgress
+    var daysLeft: Int = 0
+    var percentComplete: Float = Float(tasksComplete)/Float(tasksInStage)
+    var dateComplete: Date?
+    
+    // Handle first grow case
+    if growTracker.isFirstGrow() {
       
-      growSteps.append(GrowStepData(stepName: step.name(), tasksComplete: tasksComplete,
-                                    numberOfTasks: step.numberOfTasks(), hasTasks: hasTasks,
-                                    stepStatus: stepStatus, daysLeft: daysLeft))
+      switch currentStage {
+      case .introduceFish:
+        if tasksComplete == 1 { status = .completed }
+        dateComplete = ecosystemData.addedFish
+      case .cycling:
+        daysLeft = 14 - (ecosystemData.ecosystemSetup?.daysElapsed() ?? 0)
+        percentComplete = Float(ecosystemData.ecosystemSetup?.daysElapsed() ?? 0)/Float(14)
+      default:
+        print("Ecosystem setup in progress")
+      }
     }
     
-    return growSteps
+    return ProgressData(index: 0, tasksComplete: tasksComplete, numberOfTasks: tasksInStage,
+                        status: status, daysLeft: daysLeft, percentComplete: percentComplete,
+                        setupStage: currentStage, dateComplete: dateComplete)
   }
   
-  // Returns whether the current Grow Step is Completed, In Progress, Or in the Future
-  func getStepStatus(index: Int) -> StepStatus {
-    var taskStatus: StepStatus
-    let currentStep = growTracker.currentStep
-    if index < currentStep { taskStatus = StepStatus.completed
-    } else if index == currentStep { taskStatus = StepStatus.inProgress
-    } else { taskStatus = StepStatus.future }
-    return taskStatus
+  func reefGrowData(index: Int, stage: ReefGrowStage) -> ProgressData {
+    
+    let stageStatus = getStageStatus(stage: stage)
+    let tasksInStage = stage.numberOfTasks()
+    var tasksComplete = 0
+    let (dateStarted, dateComplete) = getDateData(stage: stage)
+    var (daysLeft, percentComplete) = getDaysLeftInStage(dateStarted: dateStarted, stage: stage)
+
+    switch stageStatus {
+    case .future:
+      tasksComplete = 0
+    case .completed:
+      tasksComplete = tasksInStage
+    case .inProgress:
+      tasksComplete = growTracker.growTasksComplete
+    }
+    
+    if tasksInStage != 0 { percentComplete = Float(tasksComplete)/Float(tasksInStage) }
+    
+    return ProgressData(index: index, tasksComplete: tasksComplete, numberOfTasks: tasksInStage,
+                        status: stageStatus, daysLeft: daysLeft, percentComplete: percentComplete,
+                        setupStage: growTracker.currentSetupStage, dateComplete: dateComplete)
   }
   
-  func storeGrowTrackerData(branch: String, trackerData: Int) {
-    switch branch {
-    case GrowTrackerBranch.currentStep.rawValue:
-      self.growTracker.currentStep = trackerData
-    case GrowTrackerBranch.completedGrows.rawValue:
-      self.growTracker.completedGrows = trackerData
-    case GrowTrackerBranch.tasksComplete.rawValue:
-      self.growTracker.tasksComplete = trackerData
-    case GrowTrackerBranch.completedGrows.rawValue:
-      self.growTracker.completedGrows = trackerData
-    default:
-      return
+  // Returns whether the current stage is complete, in progress, or in the future
+  func getStageStatus(stage: ReefGrowStage) -> StageStatus {
+    let currentGrowStage = growTracker.currentGrowStage
+    
+    if stage.index() < currentGrowStage.index() { return .completed
+    } else if stage.index() == currentGrowStage.index() { return .inProgress
+    } else { return .future }
+  }
+  
+  func getDaysLeftInStage(dateStarted: Date?, stage: ReefGrowStage) -> (daysLeft: Int, percentComplete: Float) {
+    let daysSinceStarted = dateStarted?.daysElapsed() ?? 0
+    let totalDays =  stage.daysInStage()
+    
+    // Calculate days left in current grow stage
+    var daysLeft = totalDays - daysSinceStarted
+    daysLeft = daysLeft > 0 ? daysLeft : 0
+    
+    // Calculate percent of stage completed
+    var percentComplete = Float(daysSinceStarted) / Float(totalDays)
+    percentComplete = percentComplete < 100.0 ? percentComplete : 100.0
+    
+    return (daysLeft, percentComplete)
+  }
+  
+  // HANDLE TASK AND GROW STAGE COMPLETIONS
+
+  func completeTask(tasksComplete: Int, setupTask: Bool) {
+    if setupTask {
+      if growTracker.currentSetupStage == .introduceFish {
+        ecosystemRef?.child(EcosystemBranch.addedFish.rawValue).setValue(Date().convertToString())
+      }
+      growTracker.setupTasksComplete = tasksComplete
+      growTrackerRef?.child(GrowTrackerBranch.setupTasksComplete.rawValue).setValue(growTracker.setupTasksComplete)
+    } else {
+      growTracker.growTasksComplete = tasksComplete
+      growTrackerRef?.child(GrowTrackerBranch.growTasksComplete.rawValue).setValue(growTracker.growTasksComplete)
     }
   }
   
-  // Returns the estimated number of days left in the current grow stage
-  func getDaysLeft(step: GrowStep) -> Int {
-    switch step {
-    case .cycle:
-      return 14 - (currentGrowData.ecosystemSetup?.daysElapsed() ?? 0)
-    case .seedling:
-      return 14 - (currentGrowData.seedling?.daysElapsed() ?? 0)
-    case .vegetative:
-      return 42 - (currentGrowData.vegetative?.daysElapsed() ?? 0)
-    case .flowering:
-      return 60 - (currentGrowData.flowering?.daysElapsed() ?? 0)
-    case .drying:
-      return 14 - (currentGrowData.drying?.daysElapsed() ?? 0)
-    default:
-      return 0
-    }
+  func completeFirstSetup() {
+    completeTask(tasksComplete: 0, setupTask: true)
+    growTracker.currentSetupStage = .cycling
+    growTracker.currentGrowStage = .germinate
+    growTrackerRef?.child(GrowTrackerBranch.currentSetupStage.rawValue).setValue(growTracker.currentSetupStage.rawValue)
+    growTrackerRef?.child(GrowTrackerBranch.currentGrowStage.rawValue).setValue(growTracker.currentGrowStage.rawValue)
+    ecosystemRef?.child(EcosystemBranch.setup.rawValue).setValue(Date().convertToString())
   }
   
-  func completeGrowStep() {
-    
-    let currentGrowStep = growTracker.getCurrentStep()
-    let completeGrowsStr = String(growTracker.completedGrows)
-    let allGrowsRef = growTrackerRef?.child(GrowTrackerBranch.allGrows.rawValue).child(completeGrowsStr)
-    let firebaseDate = Date().convertToString()
-    
-    // Increment current step in grow tracker
-    growTracker.currentStep += 1
-    // Reset completed tasks
-    completeTask(tasksComplete: 0)
-    
-    switch currentGrowStep {
-    case .firstSetup:
-      ecosystemRef?.child(EcosystemBranch.setup.rawValue).setValue(firebaseDate)
-    case .germinate:
-      allGrowsRef?.child(AllGrowsBranch.seedling.rawValue).setValue(firebaseDate)
-    case .cycle:
-      print("Nothing for now")
-    case .addFish:
-      ecosystemRef?.child(EcosystemBranch.addedFish.rawValue).setValue(firebaseDate)
-    case .seedling:
-      allGrowsRef?.child(AllGrowsBranch.vegetative.rawValue).setValue(firebaseDate)
-    case  .vegetative:
-      allGrowsRef?.child(AllGrowsBranch.flowering.rawValue).setValue(firebaseDate)
-    case .flowering:
-       allGrowsRef?.child(AllGrowsBranch.harvest.rawValue).setValue(firebaseDate)
-    case .harvest:
-       allGrowsRef?.child(AllGrowsBranch.drying.rawValue).setValue(firebaseDate)
-    case .drying:
-      allGrowsRef?.child(AllGrowsBranch.complete.rawValue).setValue(true)
-      growTracker.completedGrows += 1
-      growTrackerRef?.child(GrowTrackerBranch.completedGrows.rawValue).setValue(growTracker.completedGrows)
-      growTracker.currentStep = 0
-    case .prepareNew:
-      print("Nothing for now")
-    }
-    
-    // Increment current grow step and store in Firebse
-    growTrackerRef?.child(GrowTrackerBranch.currentStep.rawValue).setValue(growTracker.currentStep)
+  func completeGermination() {
+    completeTask(tasksComplete: 0, setupTask: false)
+    growTracker.currentGrowStage = .seedling
+    growTrackerRef?.child(GrowTrackerBranch.currentGrowStage.rawValue).setValue(growTracker.currentGrowStage.rawValue)
+    let currGrowsRef = allGrowsRef?.child(String(growTracker.completedGrows))
+    currGrowsRef?.child(AllGrowsBranch.seedling.rawValue).setValue(Date().convertToString())
+    growTrackerRef?.child(GrowTrackerBranch.currentGrowStage.rawValue).setValue(growTracker.currentGrowStage.rawValue)
   }
-  
-  func completeTask(tasksComplete: Int) {
-    growTracker.tasksComplete = tasksComplete
-    growTrackerRef?.child(GrowTrackerBranch.tasksComplete.rawValue).setValue(growTracker.tasksComplete)
-  }
+//
+//  func completeGrow(allGrowsRef: DatabaseReference?) {
+//    allGrowsRef?.child(AllGrowsBranch.complete.rawValue).setValue(true)
+//    growTracker.completedGrows += 1
+//    growTrackerRef?.child(GrowTrackerBranch.completedGrows.rawValue).setValue(growTracker.completedGrows)
+//    growTracker.currentStage = 0
+//  }
     
 }

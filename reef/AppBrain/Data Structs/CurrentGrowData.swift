@@ -19,12 +19,12 @@ extension AppBrain {
     var strainType = String()
     var seedType: SeedType = .regular
     
-    var ecosystemSetup: Date?
     var germinated: Date?
     var seedling: Date?
     var vegetative: Date?
     var flowering: Date?
-    var drying: Date?
+    var harvest: Date?
+    var growComplete: Date?
   }
   
   func selectStrain(name: String) {
@@ -61,9 +61,40 @@ extension AppBrain {
       currentGrowData.seedling = data.convertStringToDate()
     case AllGrowsBranch.germinated.rawValue:
       currentGrowData.germinated = data.convertStringToDate()
+    case AllGrowsBranch.vegetative.rawValue:
+      currentGrowData.vegetative = data.convertStringToDate()
     default:
       print("Not storing this data yet:", branch)
     }
+  }
+  
+  // Returns the date that each grow stage started and completed
+  func getDateData(stage: ReefGrowStage) -> (dateStarted: Date?, dateComplete: Date?) {
+    var dateComplete: Date?
+    var dateStarted: Date?
+    
+    // Get date that each stage started/completed
+    switch stage {
+    case .germinate:
+      dateComplete = currentGrowData.seedling
+      dateStarted = currentGrowData.germinated
+    case .seedling:
+      dateComplete = currentGrowData.vegetative
+      dateStarted = currentGrowData.seedling
+    case .vegetative:
+      dateComplete = currentGrowData.flowering
+      dateStarted = currentGrowData.vegetative
+    case .flowering:
+      dateComplete = currentGrowData.harvest
+      dateStarted = currentGrowData.flowering
+    case .harvest:
+      dateComplete = currentGrowData.growComplete
+      dateStarted = currentGrowData.harvest
+    default:
+      return (nil, nil)
+    }
+    
+    return(dateStarted, dateComplete)
   }
 
 }

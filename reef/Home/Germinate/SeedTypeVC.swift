@@ -61,7 +61,7 @@ class SeedTypeVC: UIViewController {
   
   @IBAction func selectSeedType(_ sender: UIButton) {
     appDelegate.appBrain.selectSeedType(type: seedType)
-    appDelegate.appBrain.completeTask(tasksComplete: 1)
+    appDelegate.appBrain.completeTask(tasksComplete: 1, setupTask: false)
     self.performSegue(withIdentifier: "PlantSeedVC", sender: self)
   }
   

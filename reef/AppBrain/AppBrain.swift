@@ -22,14 +22,14 @@ class AppBrain {
   // Firebase ACcess
   var userUID = Auth.auth().currentUser?.uid // User's firebase Unique Identifier
   
-  enum GrowTrackerBranch: String { case currentStep, tasksComplete, allGrows = "AllGrows", completedGrows }
-  
-  enum EcosystemBranch: String { case setup, addedFish }
-  
+  enum GrowTrackerBranch: String { case currentGrowStage, growTasksComplete, allGrows = "AllGrows", completedGrows,
+                                    currentSetupStage, setupTasksComplete }
+  enum EcosystemBranch: String { case setup, addedFish, cyclingComplete }
   enum AllGrowsBranch: String { case germinated, seedling, vegetative, flowering, harvest, drying, complete,
                                 strainName, strainType, seedType }
-  
   enum SensorBranch: String { case airTemp, humidity, plantHeight, waterLevel, waterTemp }
+  enum ReefSettingsBranch: String { case growStage, lastConnected, ssid, sunrise }
+  enum ReefScriptsBranch: String { case waterLevel, fillingTank, testSensors}
 
   // Firebase Database References for quick access to database structures
   var databaseRef: DatabaseReference?
@@ -38,12 +38,16 @@ class AppBrain {
   var sensorDataRef: DatabaseReference?
   var ecosystemRef: DatabaseReference?
   var reefSettingsRef: DatabaseReference?
+  var allGrowsRef: DatabaseReference?
+  var reefScriptsRef: DatabaseReference?
 
   /// REEF DATA STRUCTS
   var userData = UserData()
   var sensorData = SensorData()
   var growTracker = GrowTracker()
   var currentGrowData = CurrentGrowData()
+  var ecosystemData = EcosystemData()
+  var reefSettings = ReefSettings()
   
   // Strain library data
   var strainNames = [String]()
@@ -54,12 +58,25 @@ class AppBrain {
 
     if let firebaseID = userUID {
       databaseRef = Database.database().reference()
-      userDataRef = Database.database().reference().child("Users").child(firebaseID).child("UserData")
-      sensorDataRef = Database.database().reference().child("Users").child(firebaseID).child("Reef").child("Data")
-      growTrackerRef = Database.database().reference().child("Users").child(firebaseID).child("GrowTracker")
-      ecosystemRef = Database.database().reference().child("Users").child(firebaseID).child("Ecosystem")
-      reefSettingsRef = Database.database().reference().child("Users").child(firebaseID).child("Reef").child("Settings")
+      
+      let userRef = databaseRef?.child("Users").child(firebaseID)
+      userDataRef = userRef?.child("UserData")
+      sensorDataRef = userRef?.child("Reef").child("Data")
+      growTrackerRef = userRef?.child("GrowTracker")
+      ecosystemRef = userRef?.child("Ecosystem")
+      reefSettingsRef = userRef?.child("Reef").child("Settings")
+      allGrowsRef = userRef?.child("GrowTracker").child("AllGrows")
+      reefScriptsRef = userRef?.child("Reef").child("Scripts")
     }
+    
+    readGrowTrackerData(completion: {
+      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "readGrowTrackerData"), object: nil)
+    })
+    
+    observeReefSettings(completion: {
+      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updatedSettingsData"), object: nil)
+    })
+    
     
     updateTimezone()
     loadStrainData()

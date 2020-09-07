@@ -32,5 +32,13 @@ extension String {
       }
     }
   }
+  
+  func converStringToTime() -> String {
+    var timeString = self
+    let hour = Int(self.split(separator: ":")[0]) ?? 6
+    if hour <= 12 { timeString += " AM"
+    } else { timeString = String(hour-12) + ":" + self.split(separator: ":")[1] + " PM" }
+    return timeString
+  }
 
 }

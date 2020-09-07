@@ -18,7 +18,7 @@ class CyclingVC: UIViewController {
     
   @IBAction func completeSetup(_ sender: Any) {
     if let appDeleg = UIApplication.shared.delegate as? AppDelegate {
-      appDeleg.appBrain.completeGrowStep()
+      appDeleg.appBrain.completeFirstSetup()
     }
     self.navigationController?.popToRootViewController(animated: true)
   }

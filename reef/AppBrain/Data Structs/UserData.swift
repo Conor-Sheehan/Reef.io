@@ -11,34 +11,36 @@ import Firebase
 
 extension AppBrain {
 
-    struct UserData {
+  struct UserData {
 
-      // Value of user's first name (stored when user registered)
-      var firstName: String?
+    // Value of user's first name (stored when user registered)
+    var firstName: String?
 
-      // Value of user's Firebase Cloud Messaging Token (used for push notifications)
-      var fcmToken: String?
+    // Value of user's Firebase Cloud Messaging Token (used for push notifications)
+    var fcmToken: String?
+    
+    var email = Auth.auth().currentUser?.email
+  }
+
+  /// Stores user's first name in the database for future reference and personalization of profile
+  func setFirstName(name: String) {
+    userData.firstName = name
+    userDataRef?.child("firstName").setValue(name)
+  }
+
+  /// Stores user's Firebase Cloud Messaging Token, which is used  to send push notifications to user's device
+  func setFCMToken(token: String) {
+    userData.fcmToken = token
+    userDataRef?.child("fcmToken").setValue(token)
+  }
+
+  /// Stores user's unique Reef Ecosystem ID in the Firebase (Used to sync Reef's Hardware to user's database)
+  /// - Parameter reefID: User's unique Reef Ecosystem ID (engraved on Reef Ecosystem)
+  func storeReefID(reefID: String) {
+    if let firebaseID = userUID {
+      databaseRef?.child("ReefID").child(reefID).setValue(firebaseID)
     }
-
-    /// Stores user's first name in the database for future reference and personalization of profile
-    func setFirstName(name: String) {
-      userData.firstName = name
-      userDataRef?.child("firstName").setValue(name)
-    }
-
-    /// Stores user's Firebase Cloud Messaging Token, which is used  to send push notifications to user's device
-    func setFCMToken(token: String) {
-      userData.fcmToken = token
-      userDataRef?.child("fcmToken").setValue(token)
-    }
-
-    /// Stores user's unique Reef Ecosystem ID in the Firebase (Used to sync Reef's Hardware to user's database)
-    /// - Parameter reefID: User's unique Reef Ecosystem ID (engraved on Reef Ecosystem)
-    func storeReefID(reefID: String) {
-      if let firebaseID = userUID {
-        databaseRef?.child("ReefID").child(reefID).setValue(firebaseID)
-      }
-    }
+  }
   
   func updateTimezone() {
     var secondsFromGMT: Int { return TimeZone.current.secondsFromGMT() }
@@ -57,7 +59,6 @@ extension AppBrain {
        print("Valid ID's does not contain ReefID :(")
        return false
     }
-    
   }
 
 }

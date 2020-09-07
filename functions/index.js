@@ -10,51 +10,74 @@ exports.sendWifiConnectedMessage = functions.database.ref('/Users/{uid}/Reef/las
 
 	// Print out user's ID who is receiving the notification
 	console.log('Send notification to user with UID:', uuid);
-
-	// Get the reference node to retrieve the users messaging token
-	var ref = admin.database().ref('/Users/' + uuid + '/UserData/fcmToken');
-
-	// Once the token value has been read, compose the notification and send it to the user's device
-	return ref.once('value', function(snapshot) {
-         const payload = {
-              notification: {
-                  title: 'Wi-Fi successfully connected!',
-                  body: 'Reef is now connected to your local Wi-Fi.'
-              }
-         };
-
-         admin.messaging().sendToDevice(snapshot.val(), payload)
-
-    }, function (errorObject) {
-        console.log("The read failed: " + errorObject.code);
-    });
-
+	sendPushNotification(uuid, 'Wi-Fi successfully connected!', 'Reef is now connected to your local Wi-Fi.');
 });
 
 exports.sendCyclingCompleteMessage = functions.database.ref('/Users/{uid}/Ecosystem/setup').onWrite( (change, context) => {
 	const uuid = context.params.uid;
 
-	return admin.database().ref('/Users/' + uuid + '/Ecosystem/setup').once('value').then( function(snapshot) {
+	return admin.database().ref('/Users/' + uuid + '/Ecosystem/setup').once('value').then( (snapshot) => {
 		const setupDate = snapshot.val().toString();
-		var dateStr = setupDate.split(' ');
-		var dateParts = dateStr[0].split('-');
-		var timeParts = dateStr[1].split(':');
-		var parsedDate = new Date(dateParts[0], dateParts[1] - 1, dateParts[2], timeParts[0], timeParts[1], 0); 
+		var parsedDate = parseDate(setupDate);
 		var scheduledDate = addDays(parsedDate, 14);
 		console.log("Scheduled complete date: " + scheduledDate);
 
-		var j = schedule.scheduleJob(scheduledDate, function(){
+		schedule.scheduleJob(scheduledDate, function() {
         	console.log('Cycling is complete');
 
-			admin.database().ref('/Users/' + uuid + '/Ecosystem/cyclingComplete').set(true);
+			// Update reef's grow stage to seedling once cyling is complete
+			admin.database().ref('/Users/' + uuid + '/Reef/Settings/growStage').set(2);
+			// Change eecosystem setup stage to let user know they can introduce fish
+			admin.database().ref('/Users/' + uuid + '/GrowTracker/currentSetupStage').set("introduceFish");
 
-        	sendPushNotification(uuid, 'Tank Finished Cycling!', 'reef is now ready for fish.')
-
+        	sendPushNotification(uuid, 'Tank Finished Cycling!', 'reef is now ready for fish.');
      	});
 		return snapshot.val();
 	});
-
 });
+
+exports.sendSeedlingCompleteMessage = functions.database.ref('/Users/{uid}/GrowTracker/AllGrows/{growNumber}/seedling').onWrite( (change, context) => {
+	const uuid = context.params.uid;
+	const growNum = context.params.growNumber;
+	console.log("Grow number: " + growNum);
+
+	 return admin.database().ref('/Users/' + uuid + '/GrowTracker/AllGrows/'+ growNum + '/seedling').once('value').then( (snapshot) => {
+	 	const seedlingDate = snapshot.val().toString();
+		var parsedDate = parseDate(seedlingDate);
+		var scheduledDate = addDays(parsedDate, 14);
+		console.log("Scheduled seedling complete date: " + scheduledDate);
+
+		// Schedule push notification and update database
+		schedule.scheduleJob(scheduledDate, function() {
+			console.log('Seedling is complete');
+			// Send user notification
+			sendPushNotification(uuid, 'Seedling Stage Complete!', 'Your plant is now in vegetative stage');
+			// Update reef's grow stage to veg
+			admin.database().ref('/Users/' + uuid + '/Reef/Settings/growStage').set(3);
+			// Update user facing current grow stage
+			admin.database().ref('/Users/' + uuid + '/GrowTracker/currentGrowStage').set("vegetative");
+			// Update vegetative date
+			admin.database().ref('/Users/' + uuid + '/GrowTracker/AllGrows/' + growNum + '/vegetative').set(formatDate(new Date()));
+		});
+		return snapshot.val();
+	 });
+});
+
+function formatDate(date) {
+	var month = date.getMonth() + 1;
+    var day = date.getDate();
+    var hour =  date.getHours();
+    var minutes = date.getMinutes();
+    var year = date.getFullYear();
+    return year + "-" + month + "-" + day + " " + hour + ":" + minutes;
+}
+
+function parseDate(date) {
+	var dateStr = date.split(' ');
+	var dateParts = dateStr[0].split('-');
+	var timeParts = dateStr[1].split(':');
+	return new Date(dateParts[0], dateParts[1] - 1, dateParts[2], timeParts[0], timeParts[1], 0); 
+}
 
 function addDays(date, days) {
   var result = new Date(date);
@@ -66,7 +89,7 @@ function sendPushNotification(uuid, title, body) {
 	var ref = admin.database().ref('/Users/' + uuid + '/UserData/fcmToken');
 
 	// Create push otification payload
-	return ref.once('value', function(snapshot) {
+	return ref.once('value', (snapshot) => {
  		const payload = {
       		notification: {
           		title: title,
@@ -77,7 +100,7 @@ function sendPushNotification(uuid, title, body) {
  	// Send notification to device with given value
  	admin.messaging().sendToDevice(snapshot.val(), payload)
 
-	}, function (errorObject) {
+	}, (errorObject) => {
 		console.log("The read failed: " + errorObject.code);
 	});
 }
@@ -92,14 +115,12 @@ exports.initializeDatabase = functions.auth.user().onCreate((user) => {
 
 	// Initialize sunrise branch in user's database
 	admin.database().ref('/Users/' + uuid + '/Reef/Settings/sunrise').set('7:00');
-	// Initialize aquariumRGB branch in user's database
 	admin.database().ref('/Users/' + uuid + '/Reef/Settings/aquariumRGB').set('255,255,255');
 	admin.database().ref('/Users/' + uuid + '/Reef/Settings/fillingTank').set(false);
 	admin.database().ref('/Users/' + uuid + '/Reef/Settings/growStage').set(0);
 	admin.database().ref('/Users/' + uuid + '/GrowTracker/completedGrows').set(0);
-	admin.database().ref('/Users/' + uuid + '/GrowTracker/currentStep').set(0);
+	admin.database().ref('/Users/' + uuid + '/GrowTracker/currentStage').set(0);
 	admin.database().ref('/Users/' + uuid + '/GrowTracker/tasksComplete').set(0);
-
 
 });
 

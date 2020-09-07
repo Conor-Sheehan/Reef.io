@@ -23,7 +23,7 @@ class PlantSeedVC: UIViewController {
   @IBAction func plantedSeed(_ sender: UIButton) {
     if let appDeleg = UIApplication.shared.delegate as? AppDelegate {
       appDeleg.appBrain.germinateSeed()
-      appDeleg.appBrain.completeTask(tasksComplete: 2)
+      appDeleg.appBrain.completeTask(tasksComplete: 2, setupTask: false)
       self.performSegue(withIdentifier: "SeedSproutedVC", sender: self)
     }
   }

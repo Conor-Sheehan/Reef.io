@@ -30,12 +30,12 @@ class SeedSproutedVC: UIViewController {
      let alert = UIAlertController(title: "Did you seed sprout?", message: "", preferredStyle: .alert)
 
      alert.addAction(UIAlertAction(title: "Sprouted!", style: .default, handler: { (_) in
-      self.appDelegate.appBrain.completeGrowStep()
+      self.appDelegate.appBrain.completeGermination()
       self.navigationController?.popToRootViewController(animated: true)
      }))
     
     alert.addAction(UIAlertAction(title: "Seed never sprouted.", style: .destructive, handler: { (_) in
-     self.appDelegate.appBrain.completeTask(tasksComplete: 0)
+      self.appDelegate.appBrain.completeTask(tasksComplete: 0, setupTask: false)
      self.navigationController?.popToRootViewController(animated: true)
     }))
 

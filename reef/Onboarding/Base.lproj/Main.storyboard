@@ -547,10 +547,10 @@
             </objects>
             <point key="canvasLocation" x="597.60000000000002" y="-904.43349753694588"/>
         </scene>
-        <!--DashboardVC-->
+        <!--HomeVC-->
         <scene sceneID="PZF-Am-4lG">
             <objects>
-                <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="DashboardVC" id="umu-1D-BeC" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="HomeVC" id="umu-1D-BeC" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="3wf-9r-rx6"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YzX-t2-io4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

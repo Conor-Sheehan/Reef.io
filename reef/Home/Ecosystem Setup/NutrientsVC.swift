@@ -17,7 +17,7 @@ class NutrientsVC: UIViewController {
   
   @IBAction func completedStep(_ sender: UIButton) {
     if let appDeleg = UIApplication.shared.delegate as? AppDelegate {
-      appDeleg.appBrain.completeTask(tasksComplete: 2)
+      appDeleg.appBrain.completeTask(tasksComplete: 2, setupTask: true)
     }
     self.performSegue(withIdentifier: "CyclingVC", sender: self)
   }
