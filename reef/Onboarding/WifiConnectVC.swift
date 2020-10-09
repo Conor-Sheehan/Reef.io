@@ -20,7 +20,6 @@ class WifiConnectVC: UIViewController {
   @IBOutlet weak var subHeaderLabeel: UILabel!
   
   let reefConnectSSID = "Reef-Connect"
-  let generator = UINotificationFeedbackGenerator()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -90,11 +89,9 @@ class WifiConnectVC: UIViewController {
   func reefConnectFailed(withError connectionError: Error) {
 
     if connectionError.localizedDescription == "already associated." {
-      hapticFeedback(success: true)
       self.connectToAccessPoint()
       print("Already associated")
     } else {
-      hapticFeedback(success: false)
       print("Error = ", connectionError.localizedDescription)
     }
   }
@@ -103,24 +100,11 @@ class WifiConnectVC: UIViewController {
 
     if self.currentSSIDs().first == reefConnectSSID {
       // Real success
-      hapticFeedback(success: true)
       connectToAccessPoint()
       print("Success!")
-    } else {
-      // Failure
-      hapticFeedback(success: false)
-      print("Failed to connect")
-    }
+    } else { print("Failed to connect") }
   }
 
-  // NOT WORKING CURRENTLY
-  func hapticFeedback(success: Bool) {
-//    DispatchQueue.main.async {
-//      self.generator.prepare()
-//      if success { self.generator.notificationOccurred(.success) }
-//      else { self.generator.notificationOccurred(.error )}
-//    }
-  }
 
   func connectToAccessPoint() {
     guard let reefConnectURL = URL(string: "http://192.168.4.1") else { return }

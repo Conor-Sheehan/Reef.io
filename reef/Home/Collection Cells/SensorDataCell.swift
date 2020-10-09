@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Rswift
 
 struct CurrentSensorData {
   var value: String

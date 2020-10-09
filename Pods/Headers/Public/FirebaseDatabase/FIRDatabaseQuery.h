@@ -1,1 +1,1 @@
-../../../FirebaseDatabase/FirebaseDatabase/Sources/Public/FIRDatabaseQuery.h
+../../../FirebaseDatabase/FirebaseDatabase/Sources/Public/FirebaseDatabase/FIRDatabaseQuery.h

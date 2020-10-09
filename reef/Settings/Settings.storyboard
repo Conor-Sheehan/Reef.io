@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,7 +21,7 @@
                                 <rect key="frame" x="37" y="812" width="30" height="30"/>
                                 <state key="normal" image="Home Unselected"/>
                                 <connections>
-                                    <segue destination="7u4-QY-3QY" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="vkh-i5-a1q"/>
+                                    <segue destination="7u4-QY-3QY" kind="presentation" animates="NO" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="vkh-i5-a1q"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQb-we-bKN" userLabel="Analytics Tab">
@@ -34,7 +36,10 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="3Xe-Ec-ehH"/>
                                 </constraints>
-                                <state key="normal" image="Alerts Unselected"/>
+                                <state key="normal" image="Notifications Unselected"/>
+                                <connections>
+                                    <segue destination="OC1-ZS-SjE" kind="presentation" animates="NO" modalPresentationStyle="overFullScreen" id="Z68-g9-7SA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOc-at-ydM" userLabel="Settings Tab">
                                 <rect key="frame" x="325" y="802" width="75" height="50"/>
@@ -52,7 +57,7 @@
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="qbs-nS-E4D">
                                 <rect key="frame" x="0.0" y="156" width="414" height="623"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsCell" rowHeight="53" id="HVH-i0-5RY" customClass="SettingsCell" customModule="reef" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="53"/>
@@ -68,7 +73,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Testing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6u-Mk-PSo">
-                                                    <rect key="frame" x="338" y="15" width="56" height="24"/>
+                                                    <rect key="frame" x="338" y="14.5" width="56" height="24"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -93,7 +98,8 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="aME-jr-zeu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dOc-at-ydM" firstAttribute="centerX" secondItem="aME-jr-zeu" secondAttribute="centerX" multiplier="1.75" id="1U1-Lj-Ppx"/>
                             <constraint firstItem="lQb-we-bKN" firstAttribute="centerX" secondItem="aME-jr-zeu" secondAttribute="centerX" multiplier="0.75" id="4ZW-js-jX4"/>
@@ -110,16 +116,17 @@
                             <constraint firstItem="CvD-He-u4b" firstAttribute="centerX" secondItem="aME-jr-zeu" secondAttribute="centerX" multiplier="1.25" id="fyc-pp-RVf"/>
                             <constraint firstItem="Yvt-ke-x81" firstAttribute="leading" secondItem="aME-jr-zeu" secondAttribute="leading" constant="20" id="uoO-te-Rrp"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="aME-jr-zeu"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ige-xh-5Ts"/>
                     <connections>
+                        <outlet property="notificationsIcon" destination="CvD-He-u4b" id="H0H-c1-IfQ"/>
                         <outlet property="tableView" destination="qbs-nS-E4D" id="zkC-of-zQw"/>
+                        <segue destination="D9o-nf-bcR" kind="show" identifier="ResetWiFiVC" id="fAJ-7z-lhn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ae-Xi-oBj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1011.5942028985507" y="93.75"/>
+            <point key="canvasLocation" x="896" y="94"/>
         </scene>
         <!--HomeVC-->
         <scene sceneID="PRX-7K-5nM">
@@ -129,7 +136,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OGm-oT-ipS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1011" y="531"/>
+            <point key="canvasLocation" x="671" y="461"/>
+        </scene>
+        <!--NotificationsVC-->
+        <scene sceneID="Kkz-cD-dob">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Notifications" referencedIdentifier="NotificationsVC" id="OC1-ZS-SjE" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="i12-GQ-Rf2"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G3j-Lh-4v3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1105" y="461"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rd4-08-J5V">
@@ -149,11 +166,123 @@
             </objects>
             <point key="canvasLocation" x="231.8840579710145" y="94.419642857142847"/>
         </scene>
+        <!--Reset Wi FiVC-->
+        <scene sceneID="MA9-CN-sn3">
+            <objects>
+                <viewController id="D9o-nf-bcR" customClass="ResetWiFiVC" customModule="reef" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QWD-sG-1RJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset Wi-Fi" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onN-b2-qaz">
+                                <rect key="frame" x="176" y="64" width="62.5" height="16.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press the reef Wi-Fi Reset Button and then tap below to sync reef with your Wi-Fi." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUy-O5-lyM">
+                                <rect key="frame" x="31" y="194.5" width="186" height="57.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WiFi Connect Design" translatesAutoresizingMaskIntoConstraints="NO" id="vC3-bU-jFt">
+                                <rect key="frame" x="80" y="277" width="254" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="T5H-eA-wRr"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Water Design - 2" translatesAutoresizingMaskIntoConstraints="NO" id="YSk-Ee-F9M">
+                                <rect key="frame" x="0.0" y="647.5" width="414" height="248.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="YSk-Ee-F9M" secondAttribute="height" multiplier="375:225" id="F6O-AY-Sc2"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Mm-JV-Bg3">
+                                <rect key="frame" x="67.5" y="789" width="279" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="SWj-Es-XVY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                <state key="normal" title="Connect Wi-Fi" backgroundImage="Primary Setup-Btn">
+                                    <color key="titleColor" red="0.96861833330000002" green="0.96862131360000003" blue="0.96862787009999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="connectToWifi:" destination="D9o-nf-bcR" eventType="touchUpInside" id="A5n-f4-cPl"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset reef's Wi-Fi" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHC-iG-Njd">
+                                <rect key="frame" x="31" y="115.5" width="200" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="2TO-sB-rmI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="27"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ewf-d1-9Qe" userLabel="Back Button">
+                                <rect key="frame" x="0.0" y="59" width="75" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="k3m-mw-DYn"/>
+                                </constraints>
+                                <state key="normal" image="backButton"/>
+                                <connections>
+                                    <action selector="goBack:" destination="D9o-nf-bcR" eventType="touchUpInside" id="555-Nh-ySE"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="H2y-0j-QNh">
+                                <rect key="frame" x="197" y="801.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bLy-WG-JnY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vC3-bU-jFt" firstAttribute="leading" secondItem="bLy-WG-JnY" secondAttribute="leading" constant="80" id="0pg-IE-cTq"/>
+                            <constraint firstItem="H2y-0j-QNh" firstAttribute="centerY" secondItem="2Mm-JV-Bg3" secondAttribute="centerY" id="8lD-xD-ggw"/>
+                            <constraint firstItem="hUy-O5-lyM" firstAttribute="width" secondItem="YHC-iG-Njd" secondAttribute="width" multiplier="0.93" id="ARd-PV-u5K"/>
+                            <constraint firstItem="YHC-iG-Njd" firstAttribute="leading" secondItem="bLy-WG-JnY" secondAttribute="leading" constant="31" id="QGK-32-etH"/>
+                            <constraint firstItem="H2y-0j-QNh" firstAttribute="centerX" secondItem="2Mm-JV-Bg3" secondAttribute="centerX" id="Qnf-8U-gGc"/>
+                            <constraint firstItem="hUy-O5-lyM" firstAttribute="top" secondItem="YHC-iG-Njd" secondAttribute="bottom" constant="5" id="Sy6-PL-ks4"/>
+                            <constraint firstItem="bLy-WG-JnY" firstAttribute="trailing" secondItem="vC3-bU-jFt" secondAttribute="trailing" constant="80" id="T39-pU-EQ8"/>
+                            <constraint firstItem="bLy-WG-JnY" firstAttribute="trailing" secondItem="YSk-Ee-F9M" secondAttribute="trailing" id="Yij-dH-RQ8"/>
+                            <constraint firstItem="YSk-Ee-F9M" firstAttribute="bottom" secondItem="QWD-sG-1RJ" secondAttribute="bottom" id="eZl-2V-ijh"/>
+                            <constraint firstItem="Ewf-d1-9Qe" firstAttribute="leading" secondItem="bLy-WG-JnY" secondAttribute="leading" id="fAx-hd-LG5"/>
+                            <constraint firstItem="YHC-iG-Njd" firstAttribute="top" secondItem="onN-b2-qaz" secondAttribute="bottom" constant="35" id="lSt-ZY-kcj"/>
+                            <constraint firstItem="YSk-Ee-F9M" firstAttribute="leading" secondItem="bLy-WG-JnY" secondAttribute="leading" id="n6e-jQ-KCC"/>
+                            <constraint firstItem="hUy-O5-lyM" firstAttribute="leading" secondItem="YHC-iG-Njd" secondAttribute="leading" id="oCS-Rn-aTm"/>
+                            <constraint firstItem="Ewf-d1-9Qe" firstAttribute="centerY" secondItem="onN-b2-qaz" secondAttribute="centerY" id="opB-or-nwy"/>
+                            <constraint firstItem="onN-b2-qaz" firstAttribute="centerX" secondItem="bLy-WG-JnY" secondAttribute="centerX" id="rnH-Nq-U60"/>
+                            <constraint firstItem="2Mm-JV-Bg3" firstAttribute="centerX" secondItem="YSk-Ee-F9M" secondAttribute="centerX" id="tVm-fy-ib6"/>
+                            <constraint firstItem="onN-b2-qaz" firstAttribute="top" secondItem="bLy-WG-JnY" secondAttribute="top" constant="20" id="ubv-kn-KHm"/>
+                            <constraint firstItem="vC3-bU-jFt" firstAttribute="top" secondItem="hUy-O5-lyM" secondAttribute="bottom" constant="25" id="vDR-tB-ZS5"/>
+                            <constraint firstItem="bLy-WG-JnY" firstAttribute="bottom" secondItem="2Mm-JV-Bg3" secondAttribute="bottom" constant="28" id="wmc-dj-z65"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="n46-Rc-BHA"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="H2y-0j-QNh" id="Q78-AW-WmE"/>
+                        <outlet property="connectWifiButton" destination="2Mm-JV-Bg3" id="CaX-GW-2qe"/>
+                        <outlet property="headerLabel" destination="YHC-iG-Njd" id="CWm-tM-Iix"/>
+                        <outlet property="subHeaderLabeel" destination="hUy-O5-lyM" id="AM7-KP-aki"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="98i-mk-gCa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1649" y="-161"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="Alerts Unselected" width="27" height="31"/>
         <image name="Home Unselected" width="30" height="30"/>
+        <image name="Notifications Unselected" width="27" height="31"/>
+        <image name="Primary Setup-Btn" width="279" height="64"/>
         <image name="Settings selected" width="69" height="46"/>
+        <image name="Water Design - 2" width="375" height="261"/>
+        <image name="WiFi Connect Design" width="228" height="216"/>
         <image name="analytics Unselected" width="30" height="32"/>
+        <image name="backButton" width="17" height="27"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

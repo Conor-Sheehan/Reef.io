@@ -2,6 +2,7 @@ const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 admin.initializeApp();
 var schedule = require('node-schedule');
+var dateFormat = require('dateformat');
 
 // sendWifiConnectedMessage detects when a new user's Reef has successfully connected to Wi-Fi for the
 // first time and sends a notification to their device
@@ -29,6 +30,8 @@ exports.sendCyclingCompleteMessage = functions.database.ref('/Users/{uid}/Ecosys
 			admin.database().ref('/Users/' + uuid + '/Reef/Settings/growStage').set(2);
 			// Change eecosystem setup stage to let user know they can introduce fish
 			admin.database().ref('/Users/' + uuid + '/GrowTracker/currentSetupStage').set("introduceFish");
+			// Store notification data in users database
+			admin.database().ref('/Users/' + uuid + '/Notifications/' + formatDate(new Date())).set('cyclingComplete');
 
         	sendPushNotification(uuid, 'Tank Finished Cycling!', 'reef is now ready for fish.');
      	});
@@ -58,6 +61,8 @@ exports.sendSeedlingCompleteMessage = functions.database.ref('/Users/{uid}/GrowT
 			admin.database().ref('/Users/' + uuid + '/GrowTracker/currentGrowStage').set("vegetative");
 			// Update vegetative date
 			admin.database().ref('/Users/' + uuid + '/GrowTracker/AllGrows/' + growNum + '/vegetative').set(formatDate(new Date()));
+			// Store notification data in users database
+			admin.database().ref('/Users/' + uuid + '/Notifications/' + formatDate(new Date())).set('seedlingComplete');
 		});
 		return snapshot.val();
 	 });
@@ -69,7 +74,15 @@ function formatDate(date) {
     var hour =  date.getHours();
     var minutes = date.getMinutes();
     var year = date.getFullYear();
-    return year + "-" + month + "-" + day + " " + hour + ":" + minutes;
+
+    return dateFormat(date, "yyyy-mm-dd HH:MM");
+
+    // if (day < 10) {
+    // 	return year + "-" + month + "-0" + day + " " + hour + ":" + minutes;
+    // } else {
+    // 	return year + "-" + month + "-" + day + " " + hour + ":" + minutes;
+    // }
+    
 }
 
 function parseDate(date) {
@@ -93,7 +106,8 @@ function sendPushNotification(uuid, title, body) {
  		const payload = {
       		notification: {
           		title: title,
-          		body: body
+          		body: body,
+          		badge: '1'
       	}
  	};
 

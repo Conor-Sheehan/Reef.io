@@ -1,1 +1,1 @@
-../../../FirebaseDatabase/FirebaseDatabase/Sources/Public/FIRDataSnapshot.h
+../../../FirebaseDatabase/FirebaseDatabase/Sources/Public/FirebaseDatabase/FIRDataSnapshot.h

@@ -133,6 +133,24 @@ extension AppBrain {
     })
   }
   
+  func readNotifications() {
+    
+    notificationsRef?.observe(.value, with: { (snapshot) in
+      if let notifications = snapshot.children.allObjects as? [DataSnapshot] {
+        self.notificationData.currNotifications = []
+        for data in notifications {
+          let notiDate = data.key.convertStringToDate()
+          print("Data.key", data.key, "Date notification stored", notiDate)
+          if let notificationType = data.value as? String {
+            if let notiType = NotificationType(rawValue: notificationType) {
+              self.notificationData.currNotifications.insert((notiDate, notiType), at: 0)
+            }
+          }
+        }
+      }
+    })
+  }
+  
   func storeReefSettings(branch: String, data: Any?) {
     switch branch {
     case ReefSettingsBranch.lastConnected.rawValue:
@@ -147,19 +165,18 @@ extension AppBrain {
     default:
       print("Nothing for now")
     }
-    //print(branch, data)
   }
   
   func readWiFiStatus(completion: @escaping () -> Void) {
 
-  // Check if user has been authorized by firebase
-  let wifiPathRef = reefSettingsRef?.child(ReefSettingsBranch.lastConnected.rawValue)
-    // Begin reading path
-    wifiPathRef?.observe(.value, with: { (snapshot) in
-      if let lastConnected = snapshot.value as? String {
-        self.reefSettings.lastConnected = lastConnected.convertStringToDate()
-        completion()
-      } else { print("WiFi not yet connected") }
+    // Check if user has been authorized by firebase
+    let wifiPathRef = reefSettingsRef?.child(ReefSettingsBranch.lastConnected.rawValue)
+      // Begin reading path
+      wifiPathRef?.observe(.value, with: { (snapshot) in
+        if let lastConnected = snapshot.value as? String {
+          self.reefSettings.lastConnected = lastConnected.convertStringToDate()
+          completion()
+        } else { print("WiFi not yet connected") }
     })
   }
   

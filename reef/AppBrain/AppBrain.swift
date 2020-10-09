@@ -40,6 +40,7 @@ class AppBrain {
   var reefSettingsRef: DatabaseReference?
   var allGrowsRef: DatabaseReference?
   var reefScriptsRef: DatabaseReference?
+  var notificationsRef: DatabaseReference?
 
   /// REEF DATA STRUCTS
   var userData = UserData()
@@ -48,6 +49,7 @@ class AppBrain {
   var currentGrowData = CurrentGrowData()
   var ecosystemData = EcosystemData()
   var reefSettings = ReefSettings()
+  var notificationData = Notifications()
   
   // Strain library data
   var strainNames = [String]()
@@ -67,6 +69,7 @@ class AppBrain {
       reefSettingsRef = userRef?.child("Reef").child("Settings")
       allGrowsRef = userRef?.child("GrowTracker").child("AllGrows")
       reefScriptsRef = userRef?.child("Reef").child("Scripts")
+      notificationsRef = userRef?.child("Notifications")
     }
     
     readGrowTrackerData(completion: {
@@ -77,7 +80,7 @@ class AppBrain {
       NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updatedSettingsData"), object: nil)
     })
     
-    
+    readNotifications()
     updateTimezone()
     loadStrainData()
   }

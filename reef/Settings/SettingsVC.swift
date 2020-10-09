@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Rswift
 
 class SettingsVC: UIViewController {
   
@@ -22,19 +23,28 @@ class SettingsVC: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
   weak var appDelegate: AppDelegate!
+  @IBOutlet weak var notificationsIcon: UIButton!
   
-    override func viewDidLoad() {
-      super.viewDidLoad()
+  override func viewDidLoad() {
+    super.viewDidLoad()
 
-      if let appDeleg = UIApplication.shared.delegate as? AppDelegate {
-        appDelegate = appDeleg
-      }
-      
-      updateSettingsData()
-      
-      NotificationCenter.default.addObserver(self, selector: #selector(self.updateSettingsData),
-      name: NSNotification.Name(rawValue: "updatedSettingsData"), object: nil)
+    if let appDeleg = UIApplication.shared.delegate as? AppDelegate {
+      appDelegate = appDeleg
     }
+    
+    updateSettingsData()
+    
+    NotificationCenter.default.addObserver(self, selector: #selector(self.updateSettingsData),
+    name: NSNotification.Name(rawValue: "updatedSettingsData"), object: nil)
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    if UIApplication.shared.applicationIconBadgeNumber != 0 {
+      notificationsIcon.setImage(R.image.notificationsAlert(), for: .normal)
+    } else {
+      notificationsIcon.setImage(R.image.notificationsUnselected(), for: .normal)
+    }
+  }
   
   @objc func updateSettingsData() {
     let lastConnected = appDelegate.appBrain.reefSettings.lastConnected?.getLastConnectedString()
@@ -50,9 +60,18 @@ class SettingsVC: UIViewController {
     
 }
 
+// TABLEVIEW EXTENSION handling delegatee and datasource functions
 extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
+  
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return rowsPerSection[section]
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    print("User selected", indexPath.section, indexPath.row)
+    if indexPath.section == 0 && indexPath.row == 2 {
+      self.performSegue(withIdentifier: "ResetWiFiVC", sender: self)
+    }
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -71,9 +90,7 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
     
   }
   
-  func numberOfSections(in tableView: UITableView) -> Int {
-    return 3
-  }
+  func numberOfSections(in tableView: UITableView) -> Int { return 3 }
   
   func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
     return 25

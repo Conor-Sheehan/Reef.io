@@ -35,8 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
 
       currApplication = application
 
-      UIApplication.shared.applicationIconBadgeNumber = 0
-
       // CHECK WHERE USER IS IN SETUP PROCESS (1-8)
       setupLocation = UserDefaults.standard.integer(forKey: "setupLocation")
       setupLocation = 2
@@ -113,7 +111,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
       
       appBrain?.setFCMToken(token: fcmToken)
     }
-
 
     func applicationWillResignActive(_ application: UIApplication) {
     }

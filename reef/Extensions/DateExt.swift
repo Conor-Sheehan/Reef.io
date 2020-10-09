@@ -27,7 +27,14 @@ extension Date {
   func daysElapsed() -> Int {
      let currentDate = Calendar.current.startOfDay(for: Date())
      let firstDate = Calendar.current.startOfDay(for: self)
-     return Calendar.current.dateComponents([.day], from: firstDate, to: currentDate).day!
+    return Calendar.current.dateComponents([.day], from: firstDate, to: currentDate).day!
+   }
+  
+  /// Number of days elapsed since the input Date
+  func weeksElapsed() -> Int {
+     let currentDate = Calendar.current.startOfDay(for: Date())
+     let firstDate = Calendar.current.startOfDay(for: self)
+     return Calendar.current.dateComponents([.weekOfYear], from: firstDate, to: currentDate).weekOfYear!
    }
   
   func getFutureDate(numberOfDays: Int) -> Date {

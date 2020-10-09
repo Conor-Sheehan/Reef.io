@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Rswift
 
 class HomeVC: UIViewController {
   
   fileprivate var growTrackerData: [ProgressData] = []
   private weak var appDelegate: AppDelegate!
   @IBOutlet weak var collectionView: UICollectionView!
+  @IBOutlet weak var notificationIcon: UIButton!
   
   private var homeSegues = R.segue.homeVC.self
   
@@ -31,15 +33,22 @@ class HomeVC: UIViewController {
     loadGrowTrackerData()
     NotificationCenter.default.addObserver(self, selector: #selector(self.loadGrowTrackerData),
                                            name: NSNotification.Name(rawValue: "readGrowTrackerData"), object: nil)
-  }
-  
-  deinit {
-    NotificationCenter.default.removeObserver(self)
+    NotificationCenter.default.addObserver(self, selector: #selector(self.checkNotificationStatus),
+                                           name: UIApplication.didBecomeActiveNotification, object: nil)
   }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(true)
     loadGrowTrackerData()
+    checkNotificationStatus()
+  }
+  
+  @objc func checkNotificationStatus() {
+    if UIApplication.shared.applicationIconBadgeNumber != 0 {
+      notificationIcon.setImage(R.image.notificationsAlert(), for: .normal)
+    } else {
+      notificationIcon.setImage(R.image.notificationsUnselected(), for: .normal)
+    }
   }
   
   @objc func loadGrowTrackerData() {
