@@ -19,6 +19,7 @@
 		462A428423DF8A2B0086096A /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A428323DF8A2B0086096A /* UserData.swift */; };
 		462A428723DF8C580086096A /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462A428623DF8C580086096A /* DateExt.swift */; };
 		4631823724A699BF0002E8DF /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4631823624A699BF0002E8DF /* ForgotPasswordVC.swift */; };
+		46329646253F7B2E003D128D /* Analytics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46329645253F7B2E003D128D /* Analytics.storyboard */; };
 		46454D42250D9B7A000FC981 /* ResetWiFiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46454D41250D9B7A000FC981 /* ResetWiFiVC.swift */; };
 		4651EA6024A5899C009BC355 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4651EA5F24A5899C009BC355 /* SignInVC.swift */; };
 		4656EEE325031606006822B7 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4656EEE225031606006822B7 /* Settings.storyboard */; };
@@ -29,6 +30,7 @@
 		465DE2F024E5B50700F0BF86 /* ReefSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DE2EF24E5B50700F0BF86 /* ReefSettings.swift */; };
 		466AA99E222F5AFE007903C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 466AA99D222F5AFE007903C3 /* GoogleService-Info.plist */; };
 		467A82E824F744D400DF9C95 /* FirebaseReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467A82E724F744D400DF9C95 /* FirebaseReader.swift */; };
+		46969B29253F9FC500364B42 /* AnalyticsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46969B28253F9FC500364B42 /* AnalyticsVC.swift */; };
 		469BA9D324F9670D0017D1FA /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469BA9D224F9670D0017D1FA /* HomeVC.swift */; };
 		469BA9D724F96C280017D1FA /* ProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469BA9D624F96C280017D1FA /* ProgressCell.swift */; };
 		469BA9DB24FCB59F0017D1FA /* GerminationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469BA9DA24FCB59F0017D1FA /* GerminationVC.swift */; };
@@ -66,6 +68,7 @@
 		46E69F2221092CEE003C466F /* ReefTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69F2121092CEE003C466F /* ReefTests.swift */; };
 		46E69F2D21092CEE003C466F /* ReefUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69F2C21092CEE003C466F /* ReefUITests.swift */; };
 		46E69F3D210948A3003C466F /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69F3C210948A3003C466F /* SignUpVC.swift */; };
+		46ECC0CB254117330067C973 /* StrainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ECC0CA254117330067C973 /* StrainCell.swift */; };
 		75332808538C39C835E7D1D7 /* libPods-reefUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC35B0E7C41AC99C78D1E48 /* libPods-reefUITests.a */; };
 		758A140392A0039C7130E6DF /* libPods-reefTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A93E8BA89F542396F77A0D5F /* libPods-reefTests.a */; };
 		9CCB36D12BF1F8ADF315127D /* libPods-reef.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 026894B81D5E786B3F405ED8 /* libPods-reef.a */; };
@@ -107,6 +110,7 @@
 		462A428323DF8A2B0086096A /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		462A428623DF8C580086096A /* DateExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
 		4631823624A699BF0002E8DF /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		46329645253F7B2E003D128D /* Analytics.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Analytics.storyboard; sourceTree = "<group>"; };
 		46454D41250D9B7A000FC981 /* ResetWiFiVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetWiFiVC.swift; sourceTree = "<group>"; };
 		4651EA5F24A5899C009BC355 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		4656EEE225031606006822B7 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 		465DE2EF24E5B50700F0BF86 /* ReefSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReefSettings.swift; sourceTree = "<group>"; };
 		466AA99D222F5AFE007903C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		467A82E724F744D400DF9C95 /* FirebaseReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseReader.swift; sourceTree = "<group>"; };
+		46969B28253F9FC500364B42 /* AnalyticsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsVC.swift; sourceTree = "<group>"; };
 		469BA9D224F9670D0017D1FA /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		469BA9D624F96C280017D1FA /* ProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCell.swift; sourceTree = "<group>"; };
 		469BA9DA24FCB59F0017D1FA /* GerminationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GerminationVC.swift; sourceTree = "<group>"; };
@@ -159,6 +164,7 @@
 		46E69F2C21092CEE003C466F /* ReefUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReefUITests.swift; sourceTree = "<group>"; };
 		46E69F2E21092CEE003C466F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46E69F3C210948A3003C466F /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		46ECC0CA254117330067C973 /* StrainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrainCell.swift; sourceTree = "<group>"; };
 		4AE62099EE1099EAF4BF41E9 /* Pods-ReefTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefTests.release.xcconfig"; path = "Target Support Files/Pods-ReefTests/Pods-ReefTests.release.xcconfig"; sourceTree = "<group>"; };
 		50ECC1D3D8A6FFA2F4F06CBF /* Pods-ReefUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefUITests.release.xcconfig"; path = "Target Support Files/Pods-ReefUITests/Pods-ReefUITests.release.xcconfig"; sourceTree = "<group>"; };
 		541C5BC0E0430FAAB20FD345 /* Pods-reef.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reef.debug.xcconfig"; path = "Target Support Files/Pods-reef/Pods-reef.debug.xcconfig"; sourceTree = "<group>"; };
@@ -272,6 +278,16 @@
 			path = "Data Structs";
 			sourceTree = "<group>";
 		};
+		46329638253F7B11003D128D /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				46329645253F7B2E003D128D /* Analytics.storyboard */,
+				46969B28253F9FC500364B42 /* AnalyticsVC.swift */,
+				46ECC0CA254117330067C973 /* StrainCell.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
 		4656EEE1250315F2006822B7 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,6 +363,7 @@
 				462A0B8F2149AE7A00D3108B /* AppBrain */,
 				46E69F48210E80C3003C466F /* Onboarding */,
 				4621595F2127358B00F8ADA4 /* Home */,
+				46329638253F7B11003D128D /* Analytics */,
 				4619F64B251D611E008B90E9 /* Notifications */,
 				4656EEE1250315F2006822B7 /* Settings */,
 				462A428523DF8C400086096A /* Extensions */,
@@ -540,6 +557,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46E69F1721092CEE003C466F /* LaunchScreen.storyboard in Resources */,
+				46329646253F7B2E003D128D /* Analytics.storyboard in Resources */,
 				4619F64D251D613B008B90E9 /* Notifications.storyboard in Resources */,
 				46E69F1421092CEE003C466F /* Assets.xcassets in Resources */,
 				46C5917D2123B65A0035F552 /* Home.storyboard in Resources */,
@@ -716,9 +734,11 @@
 				469BA9DD24FCB8ED0017D1FA /* SeedlingVC.swift in Sources */,
 				46A4675D24F5DA6500B75E9C /* SelectStrainVC.swift in Sources */,
 				46A85ABE24FFE3D000B9D168 /* EcosystemVC.swift in Sources */,
+				46969B29253F9FC500364B42 /* AnalyticsVC.swift in Sources */,
 				46A4674F24F58C3D00B75E9C /* CyclingVC.swift in Sources */,
 				465DE2EE24E4CCE300F0BF86 /* AquariumFillVC.swift in Sources */,
 				46A4675824F5CA0400B75E9C /* CurrentGrowData.swift in Sources */,
+				46ECC0CB254117330067C973 /* StrainCell.swift in Sources */,
 				465DE2EC24E4C83800F0BF86 /* SetupReefVC.swift in Sources */,
 				46E5A6AC24B92A7300140385 /* PlugVC.swift in Sources */,
 				462A428423DF8A2B0086096A /* UserData.swift in Sources */,
@@ -898,8 +918,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Reef/Reef.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.05;
+				CURRENT_PROJECT_VERSION = 1.06;
 				DEVELOPMENT_TEAM = KJ66229FXW;
 				ENABLE_TESTABILITY = NO;
 				GCC_NO_COMMON_BLOCKS = NO;
@@ -911,6 +932,7 @@
 				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.Infinitry.Reef;
 				PRODUCT_NAME = reef;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -922,8 +944,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Reef/Reef.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.05;
+				CURRENT_PROJECT_VERSION = 1.06;
 				DEVELOPMENT_TEAM = KJ66229FXW;
 				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = Reef/Info.plist;
@@ -934,6 +957,7 @@
 				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.Infinitry.Reef;
 				PRODUCT_NAME = reef;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

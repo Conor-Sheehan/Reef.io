@@ -30,6 +30,9 @@
                                     <constraint firstAttribute="width" constant="50" id="ewI-B2-8If"/>
                                 </constraints>
                                 <state key="normal" image="analytics Unselected"/>
+                                <connections>
+                                    <segue destination="3yx-Dq-UqB" kind="presentation" animates="NO" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="Rd6-el-lNB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CvD-He-u4b" userLabel="Alerts Tab">
                                 <rect key="frame" x="234" y="811.5" width="50" height="31"/>
@@ -138,6 +141,14 @@
             </objects>
             <point key="canvasLocation" x="671" y="461"/>
         </scene>
+        <!--AnalyticsVC-->
+        <scene sceneID="Mgr-Qn-XgO">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Analytics" referencedIdentifier="AnalyticsVC" id="3yx-Dq-UqB" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xgh-BB-oIl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="888" y="461"/>
+        </scene>
         <!--NotificationsVC-->
         <scene sceneID="Kkz-cD-dob">
             <objects>
@@ -146,7 +157,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G3j-Lh-4v3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1105" y="461"/>
+            <point key="canvasLocation" x="1134" y="461"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rd4-08-J5V">

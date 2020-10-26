@@ -15,8 +15,10 @@ class HomeVC: UIViewController {
   private weak var appDelegate: AppDelegate!
   @IBOutlet weak var collectionView: UICollectionView!
   @IBOutlet weak var notificationIcon: UIButton!
+  @IBOutlet weak var strainLabel: UILabel!
   
   private var homeSegues = R.segue.homeVC.self
+  private var currentIndex = 0
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -25,21 +27,24 @@ class HomeVC: UIViewController {
       appDelegate = appDeleg
     }
     
-    //navigationController?.navigationBar.isHidden = true
     collectionView.backgroundColor = .clear
     collectionView.delegate = self
     collectionView.dataSource = self
     
-    loadGrowTrackerData()
-    NotificationCenter.default.addObserver(self, selector: #selector(self.loadGrowTrackerData),
+    currentIndex = appDelegate.appBrain.growTracker.getCurrentStageIndex()
+    
+    //loadGrowTrackerData()
+    NotificationCenter.default.addObserver(self, selector: #selector(self.loadGrowData),
                                            name: NSNotification.Name(rawValue: "readGrowTrackerData"), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(self.checkNotificationStatus),
                                            name: UIApplication.didBecomeActiveNotification, object: nil)
+    
+    UserDefaults.standard.setValue(2, forKey: "setupLocation")
   }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(true)
-    loadGrowTrackerData()
+    loadGrowData()
     checkNotificationStatus()
   }
   
@@ -51,9 +56,30 @@ class HomeVC: UIViewController {
     }
   }
   
-  @objc func loadGrowTrackerData() {
-    growTrackerData = appDelegate.appBrain.getGrowTrackerData()
+  @objc func loadGrowData() {
+    let brain = appDelegate.appBrain
+    
+    // Update the collectionView data
+    growTrackerData = brain?.getGrowTrackerData() ?? []
     self.collectionView.reloadData()
+    
+    // Check if user has already set current strain
+    if brain?.currentGrowData.strainName != "" {
+      strainLabel.text = brain?.currentGrowData.strainName ?? "" + " - " +
+        (brain?.currentGrowData.strainType ?? "")
+    } else { strainLabel.text = "" }
+    
+    // Scroll to index of current grow stage
+    if brain?.growTracker.getCurrentStageIndex() != currentIndex {
+      currentIndex = brain?.growTracker.getCurrentStageIndex() ?? 0
+      // Scroll to current collectionview Cell
+      let index = IndexPath(item: currentIndex, section: 0)
+      collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+    } else {
+      let index = IndexPath(item: currentIndex, section: 0)
+      collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: false)
+    }
+    
   }
   
   func handleCellSelect(index: Int) {

@@ -30,6 +30,9 @@
                                     <constraint firstAttribute="width" constant="50" id="Lf0-2F-d4f"/>
                                 </constraints>
                                 <state key="normal" image="analytics Unselected"/>
+                                <connections>
+                                    <segue destination="dO5-Ev-WAn" kind="presentation" animates="NO" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="6QF-kM-NA3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHT-ql-XyG" userLabel="Alerts Tab">
                                 <rect key="frame" x="221.5" y="802" width="75" height="50"/>
@@ -192,7 +195,15 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6FG-09-1kr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1429" y="465"/>
+            <point key="canvasLocation" x="1429" y="467"/>
+        </scene>
+        <!--AnalyticsVC-->
+        <scene sceneID="g9V-1V-gHV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Analytics" referencedIdentifier="AnalyticsVC" id="dO5-Ev-WAn" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ML2-Hc-9bi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1646" y="467"/>
         </scene>
         <!--SettingsVC-->
         <scene sceneID="4Rg-bl-7RA">

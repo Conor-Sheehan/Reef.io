@@ -11,8 +11,8 @@ import UIKit
 class SetupVC: UIViewController {
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-
+      super.viewDidLoad()
+      UserDefaults.standard.setValue(1, forKey: "setupLocation")
     }
 
 }

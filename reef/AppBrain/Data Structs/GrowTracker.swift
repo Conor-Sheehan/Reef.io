@@ -96,6 +96,8 @@ extension AppBrain {
     func getNumberGrowStages() -> Int { return ReefGrowStage.allCases.count }
     func getNumberSetupStages() -> Int { return EcosystemSetupStage.allCases.count }
     
+    func getCurrentStageIndex() -> Int { return currentGrowStage.index() }
+    
     func isFirstGrow() -> Bool {
       if completedGrows == 0 { return true
       } else { return false }
@@ -195,7 +197,7 @@ extension AppBrain {
     
     // Calculate percent of stage completed
     var percentComplete = Float(daysSinceStarted) / Float(totalDays)
-    percentComplete = percentComplete < 100.0 ? percentComplete : 100.0
+    percentComplete = percentComplete < 1.0 ? percentComplete : 1.0
     
     return (daysLeft, percentComplete)
   }

@@ -37,7 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
 
       // CHECK WHERE USER IS IN SETUP PROCESS (1-8)
       setupLocation = UserDefaults.standard.integer(forKey: "setupLocation")
-      setupLocation = 2
 
       // Else if user has already signed up with Reef Community
       if setupLocation >= 1 {

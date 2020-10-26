@@ -3,7 +3,7 @@
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -1147,6 +1147,16 @@
             </objects>
             <point key="canvasLocation" x="5974" y="-1074"/>
         </scene>
+        <!--AnalyticsVC-->
+        <scene sceneID="gcy-WW-8hg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Analytics" referencedIdentifier="AnalyticsVC" id="rWi-7A-rKq" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="9mc-Q6-Ey0"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6a6-wE-cuG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="893" y="-1128"/>
+        </scene>
         <!--NotificationsVC-->
         <scene sceneID="MXa-XH-lhD">
             <objects>
@@ -1155,7 +1165,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9k0-02-eUu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1084" y="-1125"/>
+            <point key="canvasLocation" x="1274" y="-1125"/>
         </scene>
         <!--SettingsVC-->
         <scene sceneID="bee-ns-K4O">
@@ -1165,7 +1175,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4rw-E4-kC5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1432" y="-1129"/>
+            <point key="canvasLocation" x="1634" y="-1125"/>
         </scene>
         <!--HomeVC-->
         <scene sceneID="3JG-uZ-nnW">
@@ -1341,6 +1351,9 @@
                                     <constraint firstAttribute="width" constant="50" id="QVQ-ac-BMx"/>
                                 </constraints>
                                 <state key="normal" image="analytics Unselected"/>
+                                <connections>
+                                    <segue destination="rWi-7A-rKq" kind="presentation" animates="NO" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="AtI-4c-XFm"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wlb-Je-OJa" userLabel="Alerts Tab">
                                 <rect key="frame" x="209.33333333333334" y="727.66666666666663" width="50.000000000000028" height="31"/>
@@ -1392,6 +1405,7 @@
                     <connections>
                         <outlet property="collectionView" destination="JXc-F6-txw" id="pLz-Pu-mdN"/>
                         <outlet property="notificationIcon" destination="wlb-Je-OJa" id="nVC-yt-Vwi"/>
+                        <outlet property="strainLabel" destination="nEz-9A-hcB" id="Blv-Zh-zQ2"/>
                         <segue destination="yio-Gs-dEJ" kind="show" identifier="GerminationVC" id="MYB-Al-3vE"/>
                         <segue destination="6mr-8N-xm2" kind="show" identifier="SeedlingVC" id="Qmp-Fl-aoq"/>
                         <segue destination="w8D-wo-yqS" kind="show" identifier="VegetativeVC" id="OD1-Rd-aqe"/>
@@ -1626,7 +1640,7 @@ A healthy seedling will be vibrant and green. Seedlings are sensitive and don’
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vegetative" translatesAutoresizingMaskIntoConstraints="NO" id="nj0-3k-cto">
-                                <rect key="frame" x="289.66666666666669" y="53.999999999999986" width="171" height="170.66666666666663"/>
+                                <rect key="frame" x="289.66666666666669" y="54" width="171" height="171"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOd-xj-bzT">
                                 <rect key="frame" x="0.0" y="54" width="100" height="27"/>
@@ -1757,7 +1771,7 @@ You will be prompted to refill your tank with water when necessary and trim your
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vegetative" translatesAutoresizingMaskIntoConstraints="NO" id="BO7-fN-kUq">
-                                <rect key="frame" x="289.66666666666669" y="53.999999999999986" width="171" height="170.66666666666663"/>
+                                <rect key="frame" x="289.66666666666669" y="54" width="171" height="171"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBA-cC-bm9">
                                 <rect key="frame" x="0.0" y="54" width="100" height="27"/>
@@ -1889,7 +1903,7 @@ Once the buds are fully formed, it’s time to harvest.</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cannabis leaf" translatesAutoresizingMaskIntoConstraints="NO" id="GSO-ir-86s">
-                                <rect key="frame" x="280" y="53.999999999999986" width="171" height="170.66666666666663"/>
+                                <rect key="frame" x="280" y="54" width="171" height="171"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCe-ib-oNZ">
                                 <rect key="frame" x="0.0" y="54" width="100" height="27"/>
