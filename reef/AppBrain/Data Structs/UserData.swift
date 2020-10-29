@@ -12,14 +12,10 @@ import Firebase
 extension AppBrain {
 
   struct UserData {
-
-    // Value of user's first name (stored when user registered)
-    var firstName: String?
-
-    // Value of user's Firebase Cloud Messaging Token (used for push notifications)
-    var fcmToken: String?
-    
+    var firstName: String? // Value of user's first name (stored when user registered)
+    var fcmToken: String? // Value of user's Firebase Cloud Messaging Token (used for push notifications)
     var email = Auth.auth().currentUser?.email
+    var reefID: String?
   }
 
   /// Stores user's first name in the database for future reference and personalization of profile
@@ -60,5 +56,26 @@ extension AppBrain {
        return false
     }
   }
+}
 
+// Firebase reader
+extension AppBrain {
+  
+  // Takes a user's ReefID and returns if it is a valid reef ID
+  func validateReefID(with reefID: String, completion: @escaping (_ isValid: Bool) -> Void) {
+
+    var validIDs: [String] = []
+
+    databaseRef?.child("ReefID").child("ValidIDs").observeSingleEvent(of: .value) { (snapshot) in
+
+      if let children =  snapshot.children.allObjects as? [DataSnapshot] {
+        
+        // Iterate over reefID tree and add all of the valid reefIDs to the local array
+        for child in children { validIDs.append(child.key) }
+        
+        completion(self.containsValidReefID(reefID: reefID, validIDs: validIDs))
+      }
+    }
+  }
+  
 }

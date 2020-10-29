@@ -24,5 +24,6 @@ target 'reef' do
   pod 'Firebase/Messaging'
   pod 'SwiftLint'
   pod 'R.swift'
+  pod 'NVActivityIndicatorView'
 
 end

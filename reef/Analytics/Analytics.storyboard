@@ -3,7 +3,7 @@
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -42,10 +42,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1v-Z4-1sp">
-                                <rect key="frame" x="0.0" y="127" width="375" height="651"/>
+                                <rect key="frame" x="0.0" y="127" width="375" height="583"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OYn-Ap-q0N" userLabel="Scroll Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z3O-N8-5TF" userLabel="Grow Progress View">
                                                 <rect key="frame" x="8" y="8" width="359" height="85"/>
@@ -278,7 +278,7 @@
                                             <constraint firstAttribute="trailing" secondItem="Z3O-N8-5TF" secondAttribute="trailing" constant="8" id="HyV-0F-2TC"/>
                                             <constraint firstItem="PK2-Zm-1mx" firstAttribute="trailing" secondItem="Z3O-N8-5TF" secondAttribute="trailing" id="KBe-h6-zof"/>
                                             <constraint firstItem="IpM-za-69z" firstAttribute="height" secondItem="PK2-Zm-1mx" secondAttribute="height" id="LnT-AK-nSw"/>
-                                            <constraint firstAttribute="height" constant="800" id="Sek-7p-nuJ"/>
+                                            <constraint firstAttribute="height" constant="750" id="Sek-7p-nuJ"/>
                                             <constraint firstItem="ynp-BS-WyO" firstAttribute="leading" secondItem="krq-fN-6o2" secondAttribute="trailing" constant="22" id="X96-HI-A0k"/>
                                             <constraint firstItem="IpM-za-69z" firstAttribute="leading" secondItem="PK2-Zm-1mx" secondAttribute="leading" id="cXM-jW-brV"/>
                                             <constraint firstItem="PK2-Zm-1mx" firstAttribute="leading" secondItem="Z3O-N8-5TF" secondAttribute="leading" id="dCo-Ib-ZKY"/>
@@ -295,7 +295,7 @@
                                     <constraint firstItem="OYn-Ap-q0N" firstAttribute="centerX" secondItem="b1v-Z4-1sp" secondAttribute="centerX" id="92I-RP-OAe"/>
                                     <constraint firstItem="OYn-Ap-q0N" firstAttribute="top" secondItem="b1v-Z4-1sp" secondAttribute="top" id="Q0G-eS-uRC"/>
                                     <constraint firstAttribute="trailing" secondItem="OYn-Ap-q0N" secondAttribute="trailing" id="dpR-Eu-nSO"/>
-                                    <constraint firstAttribute="bottom" secondItem="OYn-Ap-q0N" secondAttribute="bottom" priority="250" id="uva-tl-l2m"/>
+                                    <constraint firstAttribute="bottom" secondItem="OYn-Ap-q0N" secondAttribute="bottom" priority="250" id="tkr-iC-QzH"/>
                                     <constraint firstItem="OYn-Ap-q0N" firstAttribute="leading" secondItem="b1v-Z4-1sp" secondAttribute="leading" id="vg3-cQ-mhG"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="qrn-9k-xZn"/>
@@ -360,21 +360,23 @@
                             <constraint firstItem="LJW-x1-e7d" firstAttribute="top" secondItem="1jG-fH-KXw" secondAttribute="top" constant="29" id="fwZ-Ad-qJK"/>
                             <constraint firstItem="1jG-fH-KXw" firstAttribute="trailing" secondItem="b1v-Z4-1sp" secondAttribute="trailing" id="h3x-wf-9s3"/>
                             <constraint firstItem="RId-aW-EvA" firstAttribute="centerY" secondItem="DkR-t4-itg" secondAttribute="centerY" id="iDe-a6-b0p"/>
-                            <constraint firstItem="1jG-fH-KXw" firstAttribute="bottom" secondItem="b1v-Z4-1sp" secondAttribute="bottom" id="ixC-cM-hfo"/>
                             <constraint firstItem="Cbg-Z1-Euw" firstAttribute="centerX" secondItem="1jG-fH-KXw" secondAttribute="centerX" multiplier="0.25" id="mgR-AK-bc4"/>
                             <constraint firstItem="LJW-x1-e7d" firstAttribute="leading" secondItem="1jG-fH-KXw" secondAttribute="leading" constant="20" id="qkD-rg-0BG"/>
                             <constraint firstItem="RId-aW-EvA" firstAttribute="centerX" secondItem="1jG-fH-KXw" secondAttribute="centerX" multiplier="1.75" id="vpt-jE-1c3"/>
+                            <constraint firstItem="gin-LT-BCD" firstAttribute="top" secondItem="b1v-Z4-1sp" secondAttribute="bottom" constant="5.6666666666666288" id="wyF-p6-291"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tRV-Ds-Fqb"/>
                     <connections>
                         <outlet property="chartsView" destination="IpM-za-69z" id="FDw-H7-el4"/>
+                        <outlet property="ecosystemLifeLabel" destination="hon-Dn-4p3" id="Unx-aU-Ejb"/>
                         <outlet property="ecosytemLifeView" destination="krq-fN-6o2" id="W7q-KQ-vbh"/>
                         <outlet property="growHistoryView" destination="PK2-Zm-1mx" id="gph-9h-qT3"/>
                         <outlet property="progressBar" destination="OM6-Lj-Hgq" id="JxI-3A-ZTh"/>
                         <outlet property="progressBarBackground" destination="YaJ-FW-8iV" id="1HW-tV-pCY"/>
                         <outlet property="progressLabel" destination="4hn-yH-LtE" id="XsD-dB-gMs"/>
                         <outlet property="progressView" destination="Z3O-N8-5TF" id="TQ9-bp-DtX"/>
+                        <outlet property="reefGrowsLabel" destination="gcw-uV-wQr" id="zxF-En-HU7"/>
                         <outlet property="reefGrowsView" destination="ynp-BS-WyO" id="RF2-Vi-JYh"/>
                         <outlet property="tableView" destination="XQP-ns-Ihe" id="7Dx-HA-gxA"/>
                     </connections>

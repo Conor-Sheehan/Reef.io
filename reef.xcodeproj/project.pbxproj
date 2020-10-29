@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4609E791252E149E00EE3E64 /* NotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4609E790252E149E00EE3E64 /* NotificationData.swift */; };
-		461730F224DB3AA300945B9B /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461730F124DB3AA300945B9B /* DashboardVC.swift */; };
-		461730F424DB5CCF00945B9B /* SensorDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461730F324DB5CCF00945B9B /* SensorDataCell.swift */; };
 		461730FC24DC577000945B9B /* SensorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461730FB24DC577000945B9B /* SensorData.swift */; };
 		461730FE24DCD09D00945B9B /* GrowTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461730FD24DCD09D00945B9B /* GrowTracker.swift */; };
 		4619F64D251D613B008B90E9 /* Notifications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4619F64C251D613B008B90E9 /* Notifications.storyboard */; };
@@ -29,7 +27,6 @@
 		465DE2EE24E4CCE300F0BF86 /* AquariumFillVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DE2ED24E4CCE300F0BF86 /* AquariumFillVC.swift */; };
 		465DE2F024E5B50700F0BF86 /* ReefSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465DE2EF24E5B50700F0BF86 /* ReefSettings.swift */; };
 		466AA99E222F5AFE007903C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 466AA99D222F5AFE007903C3 /* GoogleService-Info.plist */; };
-		467A82E824F744D400DF9C95 /* FirebaseReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467A82E724F744D400DF9C95 /* FirebaseReader.swift */; };
 		46969B29253F9FC500364B42 /* AnalyticsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46969B28253F9FC500364B42 /* AnalyticsVC.swift */; };
 		469BA9D324F9670D0017D1FA /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469BA9D224F9670D0017D1FA /* HomeVC.swift */; };
 		469BA9D724F96C280017D1FA /* ProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469BA9D624F96C280017D1FA /* ProgressCell.swift */; };
@@ -40,7 +37,7 @@
 		46A4674F24F58C3D00B75E9C /* CyclingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A4674E24F58C3D00B75E9C /* CyclingVC.swift */; };
 		46A4675324F5C26400B75E9C /* strains.csv in Resources */ = {isa = PBXBuildFile; fileRef = 46A4675224F5C26400B75E9C /* strains.csv */; };
 		46A4675624F5C50300B75E9C /* CSVImporter in Frameworks */ = {isa = PBXBuildFile; productRef = 46A4675524F5C50300B75E9C /* CSVImporter */; };
-		46A4675824F5CA0400B75E9C /* CurrentGrowData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A4675724F5CA0400B75E9C /* CurrentGrowData.swift */; };
+		46A4675824F5CA0400B75E9C /* GrowHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A4675724F5CA0400B75E9C /* GrowHistory.swift */; };
 		46A4675A24F5D8A600B75E9C /* ChooseYourGrowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A4675924F5D8A600B75E9C /* ChooseYourGrowVC.swift */; };
 		46A4675D24F5DA6500B75E9C /* SelectStrainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A4675C24F5DA6500B75E9C /* SelectStrainVC.swift */; };
 		46A4675F24F6086C00B75E9C /* SeedTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A4675E24F6086C00B75E9C /* SeedTypeVC.swift */; };
@@ -69,9 +66,9 @@
 		46E69F2D21092CEE003C466F /* ReefUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69F2C21092CEE003C466F /* ReefUITests.swift */; };
 		46E69F3D210948A3003C466F /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69F3C210948A3003C466F /* SignUpVC.swift */; };
 		46ECC0CB254117330067C973 /* StrainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ECC0CA254117330067C973 /* StrainCell.swift */; };
-		75332808538C39C835E7D1D7 /* libPods-reefUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC35B0E7C41AC99C78D1E48 /* libPods-reefUITests.a */; };
-		758A140392A0039C7130E6DF /* libPods-reefTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A93E8BA89F542396F77A0D5F /* libPods-reefTests.a */; };
-		9CCB36D12BF1F8ADF315127D /* libPods-reef.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 026894B81D5E786B3F405ED8 /* libPods-reef.a */; };
+		827F865349C6AF57E04FC2A1 /* libPods-reefTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E437EA3896C04C23D2342B2 /* libPods-reefTests.a */; };
+		BA54A33D1AC722756604B86D /* libPods-reefUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE258E866F9258BEDCDA569 /* libPods-reefUITests.a */; };
+		E70449B6A5C1D2C5D3B7BE1B /* libPods-reef.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9B2280DD754D1896F28A57 /* libPods-reef.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,15 +89,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		017B9D10382D155641D12020 /* Pods-reefTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reefTests.release.xcconfig"; path = "Target Support Files/Pods-reefTests/Pods-reefTests.release.xcconfig"; sourceTree = "<group>"; };
-		026894B81D5E786B3F405ED8 /* libPods-reef.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-reef.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		03184FD31ED7DB9C7323E20C /* Pods-ReefTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefTests.debug.xcconfig"; path = "Target Support Files/Pods-ReefTests/Pods-ReefTests.debug.xcconfig"; sourceTree = "<group>"; };
-		19005B42CA66DF281EB579E7 /* Pods-reef.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reef.release.xcconfig"; path = "Target Support Files/Pods-reef/Pods-reef.release.xcconfig"; sourceTree = "<group>"; };
-		1D7E7B8033C0290C8D929FA5 /* Pods-Reef.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reef.debug.xcconfig"; path = "Target Support Files/Pods-Reef/Pods-Reef.debug.xcconfig"; sourceTree = "<group>"; };
+		0EE258E866F9258BEDCDA569 /* libPods-reefUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-reefUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		165DD885F65EBD4B6DCB7E14 /* Pods-reefUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reefUITests.debug.xcconfig"; path = "Target Support Files/Pods-reefUITests/Pods-reefUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4609E790252E149E00EE3E64 /* NotificationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationData.swift; sourceTree = "<group>"; };
 		460EE4D5211F59950004A91C /* Reef.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Reef.entitlements; sourceTree = "<group>"; };
-		461730F124DB3AA300945B9B /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
-		461730F324DB5CCF00945B9B /* SensorDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDataCell.swift; sourceTree = "<group>"; };
 		461730FB24DC577000945B9B /* SensorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorData.swift; sourceTree = "<group>"; };
 		461730FD24DCD09D00945B9B /* GrowTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowTracker.swift; sourceTree = "<group>"; };
 		4619F64C251D613B008B90E9 /* Notifications.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notifications.storyboard; sourceTree = "<group>"; };
@@ -120,7 +112,6 @@
 		465DE2ED24E4CCE300F0BF86 /* AquariumFillVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AquariumFillVC.swift; sourceTree = "<group>"; };
 		465DE2EF24E5B50700F0BF86 /* ReefSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReefSettings.swift; sourceTree = "<group>"; };
 		466AA99D222F5AFE007903C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		467A82E724F744D400DF9C95 /* FirebaseReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseReader.swift; sourceTree = "<group>"; };
 		46969B28253F9FC500364B42 /* AnalyticsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsVC.swift; sourceTree = "<group>"; };
 		469BA9D224F9670D0017D1FA /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		469BA9D624F96C280017D1FA /* ProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCell.swift; sourceTree = "<group>"; };
@@ -130,7 +121,7 @@
 		46A4674C24F58C2E00B75E9C /* NutrientsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientsVC.swift; sourceTree = "<group>"; };
 		46A4674E24F58C3D00B75E9C /* CyclingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyclingVC.swift; sourceTree = "<group>"; };
 		46A4675224F5C26400B75E9C /* strains.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = strains.csv; sourceTree = "<group>"; };
-		46A4675724F5CA0400B75E9C /* CurrentGrowData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentGrowData.swift; sourceTree = "<group>"; };
+		46A4675724F5CA0400B75E9C /* GrowHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowHistory.swift; sourceTree = "<group>"; };
 		46A4675924F5D8A600B75E9C /* ChooseYourGrowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseYourGrowVC.swift; sourceTree = "<group>"; };
 		46A4675C24F5DA6500B75E9C /* SelectStrainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStrainVC.swift; sourceTree = "<group>"; };
 		46A4675E24F6086C00B75E9C /* SeedTypeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedTypeVC.swift; sourceTree = "<group>"; };
@@ -165,16 +156,13 @@
 		46E69F2E21092CEE003C466F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46E69F3C210948A3003C466F /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		46ECC0CA254117330067C973 /* StrainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrainCell.swift; sourceTree = "<group>"; };
-		4AE62099EE1099EAF4BF41E9 /* Pods-ReefTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefTests.release.xcconfig"; path = "Target Support Files/Pods-ReefTests/Pods-ReefTests.release.xcconfig"; sourceTree = "<group>"; };
-		50ECC1D3D8A6FFA2F4F06CBF /* Pods-ReefUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefUITests.release.xcconfig"; path = "Target Support Files/Pods-ReefUITests/Pods-ReefUITests.release.xcconfig"; sourceTree = "<group>"; };
-		541C5BC0E0430FAAB20FD345 /* Pods-reef.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reef.debug.xcconfig"; path = "Target Support Files/Pods-reef/Pods-reef.debug.xcconfig"; sourceTree = "<group>"; };
-		588F3C269C458BAAE9D22829 /* Pods-Reef.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reef.release.xcconfig"; path = "Target Support Files/Pods-Reef/Pods-Reef.release.xcconfig"; sourceTree = "<group>"; };
-		7BC35B0E7C41AC99C78D1E48 /* libPods-reefUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-reefUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		84199142BAA50A1563D81E40 /* Pods-reefTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reefTests.debug.xcconfig"; path = "Target Support Files/Pods-reefTests/Pods-reefTests.debug.xcconfig"; sourceTree = "<group>"; };
-		A2B6ADD03AF991160DBC5A9F /* Pods-reefUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reefUITests.debug.xcconfig"; path = "Target Support Files/Pods-reefUITests/Pods-reefUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		A93E8BA89F542396F77A0D5F /* libPods-reefTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-reefTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B258E460AB20B2BF066EE292 /* Pods-ReefUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReefUITests.debug.xcconfig"; path = "Target Support Files/Pods-ReefUITests/Pods-ReefUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		C993A19743C1379B028EA061 /* Pods-reefUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reefUITests.release.xcconfig"; path = "Target Support Files/Pods-reefUITests/Pods-reefUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8E437EA3896C04C23D2342B2 /* libPods-reefTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-reefTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9917DA74490CA68B1FE7633F /* Pods-reef.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reef.debug.xcconfig"; path = "Target Support Files/Pods-reef/Pods-reef.debug.xcconfig"; sourceTree = "<group>"; };
+		9989E053C3B0D50414DB10B0 /* Pods-reefUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reefUITests.release.xcconfig"; path = "Target Support Files/Pods-reefUITests/Pods-reefUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BA9B2280DD754D1896F28A57 /* libPods-reef.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-reef.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFA55C1D1C67F9D4860B5FA2 /* Pods-reefTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reefTests.debug.xcconfig"; path = "Target Support Files/Pods-reefTests/Pods-reefTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FBD96A51C7A6D3DA56237A60 /* Pods-reef.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reef.release.xcconfig"; path = "Target Support Files/Pods-reef/Pods-reef.release.xcconfig"; sourceTree = "<group>"; };
+		FF0E1FEE1ACAEB6E8B3B4766 /* Pods-reefTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reefTests.release.xcconfig"; path = "Target Support Files/Pods-reefTests/Pods-reefTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,7 +173,7 @@
 				46E5A6B624BAB55800140385 /* ExternalAccessory.framework in Frameworks */,
 				46A4675624F5C50300B75E9C /* CSVImporter in Frameworks */,
 				46E5A6B424BAB3E500140385 /* NetworkExtension.framework in Frameworks */,
-				9CCB36D12BF1F8ADF315127D /* libPods-reef.a in Frameworks */,
+				E70449B6A5C1D2C5D3B7BE1B /* libPods-reef.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,7 +181,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				758A140392A0039C7130E6DF /* libPods-reefTests.a in Frameworks */,
+				827F865349C6AF57E04FC2A1 /* libPods-reefTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +189,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75332808538C39C835E7D1D7 /* libPods-reefUITests.a in Frameworks */,
+				BA54A33D1AC722756604B86D /* libPods-reefUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,9 +201,9 @@
 			children = (
 				46E5A6B524BAB55800140385 /* ExternalAccessory.framework */,
 				46E5A6B324BAB3E500140385 /* NetworkExtension.framework */,
-				026894B81D5E786B3F405ED8 /* libPods-reef.a */,
-				A93E8BA89F542396F77A0D5F /* libPods-reefTests.a */,
-				7BC35B0E7C41AC99C78D1E48 /* libPods-reefUITests.a */,
+				BA9B2280DD754D1896F28A57 /* libPods-reef.a */,
+				8E437EA3896C04C23D2342B2 /* libPods-reefTests.a */,
+				0EE258E866F9258BEDCDA569 /* libPods-reefUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -235,11 +223,11 @@
 			children = (
 				46C5917C2123B65A0035F552 /* Home.storyboard */,
 				469BA9D224F9670D0017D1FA /* HomeVC.swift */,
-				469BA9DC24FCB8ED0017D1FA /* SeedlingVC.swift */,
-				469BA9DE24FD51680017D1FA /* VegetativeVC.swift */,
-				46A85ABB24FD84D800B9D168 /* FloweringVC.swift */,
 				46A4674B24F58C0C00B75E9C /* Ecosystem Setup */,
 				46A4675B24F5DA3400B75E9C /* Germinate */,
+				469BA9DE24FD51680017D1FA /* VegetativeVC.swift */,
+				46A85ABB24FD84D800B9D168 /* FloweringVC.swift */,
+				469BA9DA24FCB59F0017D1FA /* GerminationVC.swift */,
 				465DE2EA24E4C7E700F0BF86 /* Collection Cells */,
 			);
 			path = Home;
@@ -249,7 +237,6 @@
 			isa = PBXGroup;
 			children = (
 				4621596221286D3B00F8ADA4 /* AppBrain.swift */,
-				467A82E724F744D400DF9C95 /* FirebaseReader.swift */,
 				462A428A23DF9DC50086096A /* Data Structs */,
 			);
 			path = AppBrain;
@@ -268,7 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				461730FD24DCD09D00945B9B /* GrowTracker.swift */,
-				46A4675724F5CA0400B75E9C /* CurrentGrowData.swift */,
+				46A4675724F5CA0400B75E9C /* GrowHistory.swift */,
 				46DE434924F82A0C009D7FB3 /* EcosystemData.swift */,
 				461730FB24DC577000945B9B /* SensorData.swift */,
 				465DE2EF24E5B50700F0BF86 /* ReefSettings.swift */,
@@ -302,7 +289,6 @@
 		465DE2EA24E4C7E700F0BF86 /* Collection Cells */ = {
 			isa = PBXGroup;
 			children = (
-				461730F324DB5CCF00945B9B /* SensorDataCell.swift */,
 				469BA9D624F96C280017D1FA /* ProgressCell.swift */,
 			);
 			path = "Collection Cells";
@@ -324,7 +310,7 @@
 		46A4675B24F5DA3400B75E9C /* Germinate */ = {
 			isa = PBXGroup;
 			children = (
-				469BA9DA24FCB59F0017D1FA /* GerminationVC.swift */,
+				469BA9DC24FCB8ED0017D1FA /* SeedlingVC.swift */,
 				46A4675924F5D8A600B75E9C /* ChooseYourGrowVC.swift */,
 				46A4675C24F5DA6500B75E9C /* SelectStrainVC.swift */,
 				46A4675E24F6086C00B75E9C /* SeedTypeVC.swift */,
@@ -369,7 +355,6 @@
 				462A428523DF8C400086096A /* Extensions */,
 				46E69F1321092CEE003C466F /* Assets.xcassets */,
 				46E69F1521092CEE003C466F /* LaunchScreen.storyboard */,
-				461730F124DB3AA300945B9B /* DashboardVC.swift */,
 				460EE4D5211F59950004A91C /* Reef.entitlements */,
 				46A7B345252E2EF100503515 /* R.generated.swift */,
 				46A4675224F5C26400B75E9C /* strains.csv */,
@@ -417,18 +402,12 @@
 		A655C21C5C5E1CF08DEFBBFD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1D7E7B8033C0290C8D929FA5 /* Pods-Reef.debug.xcconfig */,
-				588F3C269C458BAAE9D22829 /* Pods-Reef.release.xcconfig */,
-				03184FD31ED7DB9C7323E20C /* Pods-ReefTests.debug.xcconfig */,
-				4AE62099EE1099EAF4BF41E9 /* Pods-ReefTests.release.xcconfig */,
-				B258E460AB20B2BF066EE292 /* Pods-ReefUITests.debug.xcconfig */,
-				50ECC1D3D8A6FFA2F4F06CBF /* Pods-ReefUITests.release.xcconfig */,
-				541C5BC0E0430FAAB20FD345 /* Pods-reef.debug.xcconfig */,
-				19005B42CA66DF281EB579E7 /* Pods-reef.release.xcconfig */,
-				84199142BAA50A1563D81E40 /* Pods-reefTests.debug.xcconfig */,
-				017B9D10382D155641D12020 /* Pods-reefTests.release.xcconfig */,
-				A2B6ADD03AF991160DBC5A9F /* Pods-reefUITests.debug.xcconfig */,
-				C993A19743C1379B028EA061 /* Pods-reefUITests.release.xcconfig */,
+				9917DA74490CA68B1FE7633F /* Pods-reef.debug.xcconfig */,
+				FBD96A51C7A6D3DA56237A60 /* Pods-reef.release.xcconfig */,
+				CFA55C1D1C67F9D4860B5FA2 /* Pods-reefTests.debug.xcconfig */,
+				FF0E1FEE1ACAEB6E8B3B4766 /* Pods-reefTests.release.xcconfig */,
+				165DD885F65EBD4B6DCB7E14 /* Pods-reefUITests.debug.xcconfig */,
+				9989E053C3B0D50414DB10B0 /* Pods-reefUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -440,7 +419,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46E69F3121092CEE003C466F /* Build configuration list for PBXNativeTarget "reef" */;
 			buildPhases = (
-				8192081A08633E3693A15B1A /* [CP] Check Pods Manifest.lock */,
+				5601CF9AF0ABBDA67D534E56 /* [CP] Check Pods Manifest.lock */,
 				46D9091024C3D16800006A01 /* ShellScript */,
 				46E69F0521092CEB003C466F /* Sources */,
 				46E69F0621092CEB003C466F /* Frameworks */,
@@ -463,7 +442,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46E69F3421092CEE003C466F /* Build configuration list for PBXNativeTarget "reefTests" */;
 			buildPhases = (
-				C20311220283AB5E56E0917E /* [CP] Check Pods Manifest.lock */,
+				1A57988A013C25DFE2ACF2EB /* [CP] Check Pods Manifest.lock */,
 				46E69F1921092CEE003C466F /* Sources */,
 				46E69F1A21092CEE003C466F /* Frameworks */,
 				46E69F1B21092CEE003C466F /* Resources */,
@@ -482,7 +461,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46E69F3721092CEE003C466F /* Build configuration list for PBXNativeTarget "reefUITests" */;
 			buildPhases = (
-				7F5823E193601AB15AD109CC /* [CP] Check Pods Manifest.lock */,
+				811B926D0D8EA173E093C51C /* [CP] Check Pods Manifest.lock */,
 				46E69F2421092CEE003C466F /* Sources */,
 				46E69F2521092CEE003C466F /* Frameworks */,
 				46E69F2621092CEE003C466F /* Resources */,
@@ -585,6 +564,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1A57988A013C25DFE2ACF2EB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-reefTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		462EBAD324C3946200A75431 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -621,29 +622,7 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
 		};
-		7F5823E193601AB15AD109CC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-reefUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8192081A08633E3693A15B1A /* [CP] Check Pods Manifest.lock */ = {
+		5601CF9AF0ABBDA67D534E56 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -665,7 +644,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C20311220283AB5E56E0917E /* [CP] Check Pods Manifest.lock */ = {
+		811B926D0D8EA173E093C51C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -680,7 +659,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-reefTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-reefUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -697,13 +676,10 @@
 				46A85ABC24FD84D800B9D168 /* FloweringVC.swift in Sources */,
 				46A4675F24F6086C00B75E9C /* SeedTypeVC.swift in Sources */,
 				469BA9D324F9670D0017D1FA /* HomeVC.swift in Sources */,
-				461730F424DB5CCF00945B9B /* SensorDataCell.swift in Sources */,
 				46DE434C24F8694C009D7FB3 /* IntroduceFishVC.swift in Sources */,
 				46A4674D24F58C2E00B75E9C /* NutrientsVC.swift in Sources */,
-				467A82E824F744D400DF9C95 /* FirebaseReader.swift in Sources */,
 				46E5A6B024BA5F8B00140385 /* WifiConnectVC.swift in Sources */,
 				46DE434A24F82A0C009D7FB3 /* EcosystemData.swift in Sources */,
-				461730F224DB3AA300945B9B /* DashboardVC.swift in Sources */,
 				4621596321286D3B00F8ADA4 /* AppBrain.swift in Sources */,
 				46454D42250D9B7A000FC981 /* ResetWiFiVC.swift in Sources */,
 				469BA9DF24FD51680017D1FA /* VegetativeVC.swift in Sources */,
@@ -737,7 +713,7 @@
 				46969B29253F9FC500364B42 /* AnalyticsVC.swift in Sources */,
 				46A4674F24F58C3D00B75E9C /* CyclingVC.swift in Sources */,
 				465DE2EE24E4CCE300F0BF86 /* AquariumFillVC.swift in Sources */,
-				46A4675824F5CA0400B75E9C /* CurrentGrowData.swift in Sources */,
+				46A4675824F5CA0400B75E9C /* GrowHistory.swift in Sources */,
 				46ECC0CB254117330067C973 /* StrainCell.swift in Sources */,
 				465DE2EC24E4C83800F0BF86 /* SetupReefVC.swift in Sources */,
 				46E5A6AC24B92A7300140385 /* PlugVC.swift in Sources */,
@@ -914,13 +890,13 @@
 		};
 		46E69F3221092CEE003C466F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 541C5BC0E0430FAAB20FD345 /* Pods-reef.debug.xcconfig */;
+			baseConfigurationReference = 9917DA74490CA68B1FE7633F /* Pods-reef.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Reef/Reef.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.06;
+				CURRENT_PROJECT_VERSION = 1.07;
 				DEVELOPMENT_TEAM = KJ66229FXW;
 				ENABLE_TESTABILITY = NO;
 				GCC_NO_COMMON_BLOCKS = NO;
@@ -940,13 +916,13 @@
 		};
 		46E69F3321092CEE003C466F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 19005B42CA66DF281EB579E7 /* Pods-reef.release.xcconfig */;
+			baseConfigurationReference = FBD96A51C7A6D3DA56237A60 /* Pods-reef.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Reef/Reef.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.06;
+				CURRENT_PROJECT_VERSION = 1.07;
 				DEVELOPMENT_TEAM = KJ66229FXW;
 				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = Reef/Info.plist;
@@ -965,7 +941,7 @@
 		};
 		46E69F3521092CEE003C466F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84199142BAA50A1563D81E40 /* Pods-reefTests.debug.xcconfig */;
+			baseConfigurationReference = CFA55C1D1C67F9D4860B5FA2 /* Pods-reefTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -987,7 +963,7 @@
 		};
 		46E69F3621092CEE003C466F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 017B9D10382D155641D12020 /* Pods-reefTests.release.xcconfig */;
+			baseConfigurationReference = FF0E1FEE1ACAEB6E8B3B4766 /* Pods-reefTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1009,7 +985,7 @@
 		};
 		46E69F3821092CEE003C466F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A2B6ADD03AF991160DBC5A9F /* Pods-reefUITests.debug.xcconfig */;
+			baseConfigurationReference = 165DD885F65EBD4B6DCB7E14 /* Pods-reefUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1030,7 +1006,7 @@
 		};
 		46E69F3921092CEE003C466F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C993A19743C1379B028EA061 /* Pods-reefUITests.release.xcconfig */;
+			baseConfigurationReference = 9989E053C3B0D50414DB10B0 /* Pods-reefUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

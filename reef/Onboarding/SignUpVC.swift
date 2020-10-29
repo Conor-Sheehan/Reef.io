@@ -47,11 +47,6 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
       addGestureRecognizers()
     }
 
-  deinit {
-    NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-    NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-  }
-
   func showInvalidErrorMessage(textField: UITextField, invalidLabel: UILabel, message: String) {
     textField.background = invalidTextfieldBackground
     invalidLabel.isHidden = false

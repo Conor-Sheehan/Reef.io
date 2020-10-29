@@ -76,12 +76,6 @@ function formatDate(date) {
     var year = date.getFullYear();
 
     return dateFormat(date, "yyyy-mm-dd HH:MM");
-
-    // if (day < 10) {
-    // 	return year + "-" + month + "-0" + day + " " + hour + ":" + minutes;
-    // } else {
-    // 	return year + "-" + month + "-" + day + " " + hour + ":" + minutes;
-    // }
     
 }
 
@@ -133,8 +127,6 @@ exports.initializeDatabase = functions.auth.user().onCreate((user) => {
 	admin.database().ref('/Users/' + uuid + '/Reef/Settings/fillingTank').set(false);
 	admin.database().ref('/Users/' + uuid + '/Reef/Settings/growStage').set(0);
 	admin.database().ref('/Users/' + uuid + '/GrowTracker/completedGrows').set(0);
-	admin.database().ref('/Users/' + uuid + '/GrowTracker/currentStage').set(0);
-	admin.database().ref('/Users/' + uuid + '/GrowTracker/tasksComplete').set(0);
 
 });
 

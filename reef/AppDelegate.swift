@@ -102,13 +102,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
         Messaging.messaging().apnsToken = deviceToken as Data
     }
 
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-
-      let dataDict: [String: String] = ["token": fcmToken]
-      NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
-      FCMtoken = fcmToken
+  func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+      if let fcm = fcmToken {
+        let dataDict: [String: String] = ["token": fcm]
+        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+        FCMtoken = fcm
       
-      appBrain?.setFCMToken(token: fcmToken)
+      appBrain?.setFCMToken(token: fcm)
+      }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

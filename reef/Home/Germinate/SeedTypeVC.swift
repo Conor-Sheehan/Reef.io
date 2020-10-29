@@ -15,6 +15,7 @@ class SeedTypeVC: UIViewController {
   @IBOutlet weak var regularButton: UIButton!
   @IBOutlet weak var feminizedButton: UIButton!
   @IBOutlet weak var autoFlowerButton: UIButton!
+  @IBOutlet weak var cloneButton: UIButton!
   weak var appDelegate: AppDelegate!
   
   let selectedButton = R.image.selectedSeedButton()
@@ -23,15 +24,15 @@ class SeedTypeVC: UIViewController {
   var seedType: SeedType = .regular
   
   override func viewDidLoad() {
-      super.viewDidLoad()
-      var strainName = ""
-      var strainType = ""
+    super.viewDidLoad()
+    var strainName = ""
+    var strainType = ""
 
-     if let appDeleg = UIApplication.shared.delegate as? AppDelegate {
-        appDelegate = appDeleg
-        strainName = appDeleg.appBrain.currentGrowData.strainName
-        strainType = appDeleg.appBrain.currentGrowData.strainType
-      }
+    if let appDeleg = UIApplication.shared.delegate as? AppDelegate {
+      appDelegate = appDeleg
+      strainName = appDeleg.appBrain.currentGrowData.strainName ?? ""
+      strainType = appDeleg.appBrain.currentGrowData.strainType ?? ""
+    }
     
       seedTypeLabel.text = strainName + "- " + strainType
     }
@@ -53,11 +54,17 @@ class SeedTypeVC: UIViewController {
     autoFlowerButton.setBackgroundImage(selectedButton, for: .normal)
     seedType = .autoFlower
   }
+  @IBAction func selectedClone(_ sender: UIButton) {
+    resetButtonBackgrounds()
+    cloneButton.setBackgroundImage(selectedButton, for: .normal)
+    seedType = .clone
+  }
   
   func resetButtonBackgrounds() {
     regularButton.setBackgroundImage(unSelectedButton, for: .normal)
     feminizedButton.setBackgroundImage(unSelectedButton, for: .normal)
     autoFlowerButton.setBackgroundImage(unSelectedButton, for: .normal)
+    cloneButton.setBackgroundImage(unSelectedButton, for: .normal)
   }
   
   @IBAction func selectSeedType(_ sender: UIButton) {

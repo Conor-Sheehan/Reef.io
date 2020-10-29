@@ -25,7 +25,7 @@ class AppBrain {
   enum GrowTrackerBranch: String { case currentGrowStage, growTasksComplete, allGrows = "AllGrows", completedGrows,
                                     currentSetupStage, setupTasksComplete }
   enum EcosystemBranch: String { case setup, addedFish, cyclingComplete }
-  enum AllGrowsBranch: String { case germinated, seedling, vegetative, flowering, harvest, drying, complete,
+  enum GrowHistoryBranch: String { case germinated, seedling, vegetative, flowering, harvest, drying, complete,
                                 strainName, strainType, seedType }
   enum SensorBranch: String { case airTemp, humidity, plantHeight, waterLevel, waterTemp }
   enum ReefSettingsBranch: String { case growStage, lastConnected, ssid, sunrise }
@@ -35,6 +35,7 @@ class AppBrain {
   var databaseRef: DatabaseReference?
   var userDataRef: DatabaseReference?
   var growTrackerRef: DatabaseReference?
+  var growHistoryRef: DatabaseReference?
   var sensorDataRef: DatabaseReference?
   var ecosystemRef: DatabaseReference?
   var reefSettingsRef: DatabaseReference?
@@ -46,6 +47,7 @@ class AppBrain {
   var userData = UserData()
   var sensorData = SensorData()
   var growTracker = GrowTracker()
+  var growHistory = GrowHistory()
   var currentGrowData = CurrentGrowData()
   var ecosystemData = EcosystemData()
   var reefSettings = ReefSettings()
@@ -54,6 +56,8 @@ class AppBrain {
   // Strain library data
   var strainNames = [String]()
   var strainDict = [String: String]()
+  
+  private var firstLoad = true
 
   // Initialize() will retrieve all data from storage when app returns from terminated state
   func initialize() {
@@ -65,6 +69,7 @@ class AppBrain {
       userDataRef = userRef?.child("UserData")
       sensorDataRef = userRef?.child("Reef").child("Data")
       growTrackerRef = userRef?.child("GrowTracker")
+      growHistoryRef = userRef?.child("GrowHistory")
       ecosystemRef = userRef?.child("Ecosystem")
       reefSettingsRef = userRef?.child("Reef").child("Settings")
       allGrowsRef = userRef?.child("GrowTracker").child("AllGrows")
@@ -72,8 +77,22 @@ class AppBrain {
       notificationsRef = userRef?.child("Notifications")
     }
     
-    readGrowTrackerData(completion: {
-      NotificationCenter.default.post(name: NSNotification.Name(rawValue: "readGrowTrackerData"), object: nil)
+    observeGrowHistoryTree(completion: {
+      print("Finished reading grow history. Current grow dat:", self.currentGrowData)
+      
+      // if this is the first load of the firebase data, then setup observer on Ecosystem Tree
+      if self.firstLoad { self.observeEcosystemTree(completion: {
+        
+        // if first load of firebase data, then setup observer on grow Tracker Tree
+        if self.firstLoad { self.observeGrowTrackerTree(completion: {
+          
+          // Notify HomeVC that data has finished
+          self.notifyOfNewData()
+          self.firstLoad = false
+        })
+        } else { self.notifyOfNewData() }
+      })
+      } else { self.notifyOfNewData() }
     })
     
     observeReefSettings(completion: {
@@ -85,21 +104,25 @@ class AppBrain {
     loadStrainData()
   }
   
+  func notifyOfNewData() {
+    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updatedGrowData"), object: nil)
+  }
+  
   func loadStrainData() {
     
     // Test load CSV Data
     let path = Bundle.main.path(forResource: "strains", ofType: "csv")!
     let importer = CSVImporter<[String]>(path: path)
     importer.startImportingRecords { $0 }.onFinish { importedRecords in
-        for record in importedRecords {
-          
-          if record[0] == "id" {
-          } else {
-            // record is of type [String] and contains all data in a line
-            self.strainNames.append(record[3])
-            self.strainDict[record[3]] = record[7]
-          }
+      for record in importedRecords {
+        
+        if record[0] == "id" {
+        } else {
+          // record is of type [String] and contains all data in a line
+          self.strainNames.append(record[3])
+          self.strainDict[record[3]] = record[7]
         }
+      }
     }
   }
   

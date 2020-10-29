@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 extension AppBrain {
   
@@ -16,18 +17,39 @@ extension AppBrain {
     var addedFish: Date?
   }
   
-  func storeEcosystemData(branch: String, data: String, bool: Bool) {
+  func observeEcosystemTree(completion: @escaping () -> Void) {
+    
+    ecosystemRef?.observe(.value, with: { (snapshot) in
+      if let ecosystemTree = snapshot.children.allObjects as? [DataSnapshot] {
+        for data in ecosystemTree {
+          self.storeEcosystemData(branch: data.key, data: data.value)
+        }
+        print("Ecosystem data read and stored:", self.ecosystemData)
+        completion()
+      }
+    })
+  }
   
+  func storeEcosystemData(branch: String, data: Any?) {
+    
+    var date = ""
+    var bool = false
+    
+    // Unwrap the optional data packet to a date or string before storing in struct
+    if let dateStr = data as? String { date = dateStr
+    } else if let boolean = data as? Bool { bool = boolean
+    } else { print("storeEcosystemData function received invalid data packet"); return }
+  
+    // Store data in proper branch
     switch branch {
     case EcosystemBranch.setup.rawValue:
-      ecosystemData.ecosystemSetup = data.convertStringToDate()
+      ecosystemData.ecosystemSetup = date.convertStringToDate()
     case EcosystemBranch.addedFish.rawValue:
-      ecosystemData.addedFish = data.convertStringToDate()
+      ecosystemData.addedFish = date.convertStringToDate()
     case EcosystemBranch.cyclingComplete.rawValue:
       ecosystemData.cyclingComplete = bool
-      print("Cycling complete:", bool)
     default:
-      print("Other data:", branch, data)
+      print("ERROR READING ECOSYSTEM TREE Other data:", branch)
     }
   }
   

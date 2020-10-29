@@ -36,8 +36,6 @@ class AquariumFillVC: UIViewController {
     addNotificationObservers()
   }
   
-  deinit { NotificationCenter.default.removeObserver(self) }
-  
   func readWaterLevel() {
     
     appDelegate.appBrain.readWaterLevel(completion: { waterLevel in

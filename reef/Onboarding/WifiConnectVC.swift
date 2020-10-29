@@ -105,7 +105,6 @@ class WifiConnectVC: UIViewController {
     } else { print("Failed to connect") }
   }
 
-
   func connectToAccessPoint() {
     guard let reefConnectURL = URL(string: "http://192.168.4.1") else { return }
     let svc = SFSafariViewController(url: reefConnectURL)

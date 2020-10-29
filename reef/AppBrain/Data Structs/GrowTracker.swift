@@ -77,25 +77,16 @@ extension AppBrain {
   
   struct GrowTracker {
     
-    var currentGrowStage: ReefGrowStage
-    var growTasksComplete: Int
-    var currentSetupStage: EcosystemSetupStage
-    var setupTasksComplete: Int
-    var completedGrows: Int
-    
-    // Initialize starting values
-    init() {
-      currentGrowStage = .ecosystemSetup
-      currentSetupStage = .firstSetup
-      growTasksComplete = 0
-      setupTasksComplete = 0
-      completedGrows = 0
-    }
+    var currentGrowStage: ReefGrowStage = .ecosystemSetup
+    var growTasksComplete: Int = 0
+    var currentSetupStage: EcosystemSetupStage = .firstSetup
+    var setupTasksComplete: Int = 0
+    var completedGrows: Int = 0
+    var isDataLoaded = false
     
     // Returns number of steps for the current grow
     func getNumberGrowStages() -> Int { return ReefGrowStage.allCases.count }
     func getNumberSetupStages() -> Int { return EcosystemSetupStage.allCases.count }
-    
     func getCurrentStageIndex() -> Int { return currentGrowStage.index() }
     
     func isFirstGrow() -> Bool {
@@ -110,13 +101,15 @@ extension AppBrain {
     
     var progressData = [ProgressData]()
     
+    // Iterate over every stage in the reef cycle
     for (index, stage) in ReefGrowStage.allCases.enumerated() {
       
       switch stage {
+      // If stage is setting up ecosystem
       case .ecosystemSetup:
         progressData.append(ecosystemSetupData())
       default:
-        progressData.append(reefGrowData(index: index, stage: stage))
+        progressData.append(growStageData(index: index, stage: stage))
       }
     }
     return progressData
@@ -154,28 +147,31 @@ extension AppBrain {
                         setupStage: currentStage, dateComplete: dateComplete)
   }
   
-  func reefGrowData(index: Int, stage: ReefGrowStage) -> ProgressData {
-    
+  func growStageData(index: Int, stage: ReefGrowStage) -> ProgressData {
+      
+    // Get current status of stage (complete, in progress, future stage)
     let stageStatus = getStageStatus(stage: stage)
     let tasksInStage = stage.numberOfTasks()
     var tasksComplete = 0
-    let (dateStarted, dateComplete) = getDateData(stage: stage)
-    var (daysLeft, percentComplete) = getDaysLeftInStage(dateStarted: dateStarted, stage: stage)
+    
+    // Get dates 
+    let (stageStarted, stageComplete) = getCurrentGrowDates(stage: stage)
+    var (daysLeftInStage, percentOfStageComplete) = getDaysLeftInStage(dateStarted: stageStarted, stage: stage)
 
     switch stageStatus {
-    case .future:
-      tasksComplete = 0
     case .completed:
       tasksComplete = tasksInStage
     case .inProgress:
       tasksComplete = growTracker.growTasksComplete
+    case .future:
+      tasksComplete = 0
     }
     
-    if tasksInStage != 0 { percentComplete = Float(tasksComplete)/Float(tasksInStage) }
+    if tasksInStage != 0 { percentOfStageComplete = Float(tasksComplete)/Float(tasksInStage) }
     
     return ProgressData(index: index, tasksComplete: tasksComplete, numberOfTasks: tasksInStage,
-                        status: stageStatus, daysLeft: daysLeft, percentComplete: percentComplete,
-                        setupStage: growTracker.currentSetupStage, dateComplete: dateComplete)
+                        status: stageStatus, daysLeft: daysLeftInStage, percentComplete: percentOfStageComplete,
+                        setupStage: growTracker.currentSetupStage, dateComplete: stageComplete)
   }
   
   // Returns whether the current stage is complete, in progress, or in the future
@@ -224,16 +220,9 @@ extension AppBrain {
     growTrackerRef?.child(GrowTrackerBranch.currentSetupStage.rawValue).setValue(growTracker.currentSetupStage.rawValue)
     growTrackerRef?.child(GrowTrackerBranch.currentGrowStage.rawValue).setValue(growTracker.currentGrowStage.rawValue)
     ecosystemRef?.child(EcosystemBranch.setup.rawValue).setValue(Date().convertToString())
+    reefSettingsRef?.child(ReefSettingsBranch.growStage.rawValue).setValue(1)
   }
   
-  func completeGermination() {
-    completeTask(tasksComplete: 0, setupTask: false)
-    growTracker.currentGrowStage = .seedling
-    growTrackerRef?.child(GrowTrackerBranch.currentGrowStage.rawValue).setValue(growTracker.currentGrowStage.rawValue)
-    let currGrowsRef = allGrowsRef?.child(String(growTracker.completedGrows))
-    currGrowsRef?.child(AllGrowsBranch.seedling.rawValue).setValue(Date().convertToString())
-    growTrackerRef?.child(GrowTrackerBranch.currentGrowStage.rawValue).setValue(growTracker.currentGrowStage.rawValue)
-  }
 //
 //  func completeGrow(allGrowsRef: DatabaseReference?) {
 //    allGrowsRef?.child(AllGrowsBranch.complete.rawValue).setValue(true)
@@ -242,4 +231,42 @@ extension AppBrain {
 //    growTracker.currentStage = 0
 //  }
     
+}
+
+// Firebase reader extension
+extension AppBrain {
+  
+  // Reads Grow Tracker data from firebase
+  func observeGrowTrackerTree(completion: @escaping () -> Void) {
+
+      self.growTrackerRef?.observe(.value, with: { (snapshot) in
+
+        if let growTrackerTree =  snapshot.children.allObjects as? [DataSnapshot] {
+          for data in growTrackerTree {
+            self.storeGrowTrackerData(branch: data.key, data: data.value)
+          }
+          
+        self.growTracker.isDataLoaded = true
+        completion()
+      }
+    })
+  }
+  
+  func storeGrowTrackerData(branch: String, data: Any?) {
+    
+    switch branch {
+    case GrowTrackerBranch.currentGrowStage.rawValue:
+      self.growTracker.currentGrowStage = ReefGrowStage(rawValue: data as? String ?? "ecosystemSetup") ?? .ecosystemSetup
+    case GrowTrackerBranch.completedGrows.rawValue:
+      self.growTracker.completedGrows = data as? Int ?? 0
+    case GrowTrackerBranch.growTasksComplete.rawValue:
+      self.growTracker.growTasksComplete = data as? Int ?? 0
+    case GrowTrackerBranch.currentSetupStage.rawValue:
+      self.growTracker.currentSetupStage = EcosystemSetupStage(rawValue: data as? String ?? "firstSetup") ?? .firstSetup
+    case GrowTrackerBranch.setupTasksComplete.rawValue:
+      self.growTracker.setupTasksComplete = data as? Int ?? 0
+    default:
+      return
+    }
+  }
 }

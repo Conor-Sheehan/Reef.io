@@ -15,7 +15,6 @@ class StrainCell: UITableViewCell {
   @IBOutlet weak var growDuration: UILabel!
   @IBOutlet weak var yield: UILabel!
   
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

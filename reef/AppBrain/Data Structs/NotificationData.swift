@@ -46,11 +46,7 @@ extension AppBrain {
   }
     
     struct Notifications {
-      var currNotifications: [(Date, NotificationType)]
-      
-      init() {
-        currNotifications = []
-      }
+      var currNotifications: [(Date, NotificationType)] = []
       
       func getData() -> [NotificationData] {
         var notificationData: [NotificationData] = []
@@ -72,6 +68,27 @@ extension AppBrain {
     notificationsRef?.child(notificationDateString).removeValue()
     // Delete notification locally
     notificationData.currNotifications.remove(at: index)
+  }
+}
+
+// Firebase reader
+extension AppBrain {
+  
+  func readNotifications() {
+    
+    notificationsRef?.observe(.value, with: { (snapshot) in
+      if let notifications = snapshot.children.allObjects as? [DataSnapshot] {
+        self.notificationData.currNotifications = []
+        for data in notifications {
+          let notiDate = data.key.convertStringToDate()
+          if let notificationType = data.value as? String {
+            if let notiType = NotificationType(rawValue: notificationType) {
+              self.notificationData.currNotifications.insert((notiDate, notiType), at: 0)
+            }
+          }
+        }
+      }
+    })
   }
   
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
@@ -15,32 +15,32 @@
             <objects>
                 <viewController id="yGh-Uc-3jR" customClass="SetupReefVC" customModule="reef" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cbc-z5-c51">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ecosystem Setup" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyF-Xr-Tnw">
-                                <rect key="frame" x="140.33333333333334" y="63.999999999999993" width="94.666666666666657" height="16.666666666666664"/>
+                                <rect key="frame" x="160" y="64" width="94.5" height="16.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap below when you’re ready to fill reef’s aquarium with water." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBl-kF-JEt">
-                                <rect key="frame" x="31" y="194.66666666666666" width="186" height="57.666666666666657"/>
+                                <rect key="frame" x="31" y="194.5" width="186" height="57.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Aquarium Fill Image" translatesAutoresizingMaskIntoConstraints="NO" id="grL-NR-GIc">
-                                <rect key="frame" x="80" y="326" width="215" height="170"/>
+                                <rect key="frame" x="80" y="368" width="254" height="170"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="170" id="jS8-J3-6Mf"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Water Design-1" translatesAutoresizingMaskIntoConstraints="NO" id="qvW-g9-7nI">
-                                <rect key="frame" x="0.0" y="571" width="375" height="241"/>
+                                <rect key="frame" x="0.0" y="613" width="414" height="283"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMO-5s-AzA">
-                                <rect key="frame" x="48" y="705" width="279" height="45"/>
+                                <rect key="frame" x="67.5" y="789" width="279" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="fRl-DJ-bqk"/>
                                 </constraints>
@@ -53,7 +53,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's Setup Your Aquarium" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXM-6v-aaj">
-                                <rect key="frame" x="31" y="115.66666666666669" width="200" height="74"/>
+                                <rect key="frame" x="31" y="115.5" width="200" height="74"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="h1D-KV-PWX"/>
                                 </constraints>
@@ -107,23 +107,23 @@
             <objects>
                 <viewController id="QoM-pf-y82" customClass="AquariumFillVC" customModule="reef" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dvy-9m-Wk0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step 1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJM-Jo-6Fs">
-                                <rect key="frame" x="169.66666666666666" y="63.999999999999993" width="36" height="16.666666666666664"/>
+                                <rect key="frame" x="189" y="64" width="36" height="16.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fill the tank with water until the water level bar below reaches 100% capacity." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOo-D9-MOV">
-                                <rect key="frame" x="31" y="157.66666666666666" width="186" height="57.666666666666657"/>
+                                <rect key="frame" x="31" y="157.5" width="186" height="57.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Water Level bar" translatesAutoresizingMaskIntoConstraints="NO" id="sHF-g4-YOV">
-                                <rect key="frame" x="137.66666666666666" y="301" width="100" height="220"/>
+                                <rect key="frame" x="157" y="343" width="100" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="VeD-7F-U2c"/>
                                     <constraint firstAttribute="width" constant="100" id="dZr-yp-38R"/>
@@ -135,7 +135,7 @@
                                 <color key="backgroundColor" red="0.1811777353" green="0.39207607509999998" blue="0.39216160770000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOf-f9-EGT">
-                                <rect key="frame" x="48" y="705" width="279" height="45"/>
+                                <rect key="frame" x="67.5" y="789" width="279" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="LbZ-Qr-ekA"/>
                                 </constraints>
@@ -148,7 +148,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fill Your Tank" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ne2-7h-7me">
-                                <rect key="frame" x="31" y="115.66666666666669" width="200" height="37"/>
+                                <rect key="frame" x="31" y="115.5" width="200" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="eYe-Qb-39o"/>
                                 </constraints>
@@ -157,7 +157,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Water Level Overlay" translatesAutoresizingMaskIntoConstraints="NO" id="tbC-jr-8bM">
-                                <rect key="frame" x="67" y="301" width="245" height="220"/>
+                                <rect key="frame" x="86.5" y="343" width="245" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="245" id="8fY-7O-MU1"/>
                                 </constraints>
@@ -174,19 +174,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHu-mJ-eJA">
-                                <rect key="frame" x="137.66666666666666" y="485" width="100" height="26"/>
+                                <rect key="frame" x="157" y="527" width="100" height="26"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Water Level Icon Gray" translatesAutoresizingMaskIntoConstraints="NO" id="Vtt-tl-Ykw">
-                                <rect key="frame" x="172.66666666666666" y="311" width="30" height="48"/>
+                                <rect key="frame" x="192" y="353" width="30" height="48"/>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="o6O-1Q-3b3">
-                                <rect key="frame" x="177.66666666666666" y="717.66666666666663" width="20" height="20"/>
+                                <rect key="frame" x="197" y="801.5" width="20" height="20"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PyF-ES-bQR">
-                                <rect key="frame" x="48" y="750" width="279" height="28"/>
+                                <rect key="frame" x="67.5" y="834" width="279" height="28"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                 <state key="normal" title="Setup later">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -250,17 +250,17 @@
             <objects>
                 <viewController id="RJY-bF-7Wd" customClass="NutrientsVC" customModule="reef" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y6A-Xy-cch">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step 2" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5j6-AJ-Nx9">
-                                <rect key="frame" x="169.66666666666666" y="63.999999999999993" width="36" height="16.666666666666664"/>
+                                <rect key="frame" x="189" y="64" width="36" height="16.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tb-tu-vGe">
-                                <rect key="frame" x="31.000000000000014" y="194.66666666666666" width="223.33333333333337" height="57.666666666666657"/>
+                                <rect key="frame" x="31" y="194.5" width="223" height="57.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Look at the back side of your reef and connect your ">
                                         <attributes>
@@ -284,16 +284,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Nutrient Solution Diagram" translatesAutoresizingMaskIntoConstraints="NO" id="nat-Im-NzS">
-                                <rect key="frame" x="80" y="326" width="215" height="170"/>
+                                <rect key="frame" x="80" y="368" width="254" height="170"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="170" id="U82-KY-TGr"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Water Design-1" translatesAutoresizingMaskIntoConstraints="NO" id="a86-VD-qNr">
-                                <rect key="frame" x="0.0" y="571" width="375" height="241"/>
+                                <rect key="frame" x="0.0" y="613" width="414" height="283"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxu-4O-V3k">
-                                <rect key="frame" x="48" y="705" width="279" height="45"/>
+                                <rect key="frame" x="67.5" y="789" width="279" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="qXZ-ZC-VNW"/>
                                 </constraints>
@@ -306,7 +306,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Install Your reef Solutions" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2t-VR-jLR">
-                                <rect key="frame" x="31" y="115.66666666666669" width="240" height="74"/>
+                                <rect key="frame" x="31" y="115.5" width="240" height="74"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="dxA-Kh-t5r"/>
                                 </constraints>
@@ -325,7 +325,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IuI-oh-sjC">
-                                <rect key="frame" x="48" y="750" width="279" height="28"/>
+                                <rect key="frame" x="67.5" y="834" width="279" height="28"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                 <state key="normal" title="Setup later">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -378,17 +378,17 @@
             <objects>
                 <viewController id="Ner-ip-0eE" customClass="CyclingVC" customModule="reef" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oB8-v5-tYZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step 3" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szi-Np-83c">
-                                <rect key="frame" x="169.66666666666666" y="63.999999999999993" width="36" height="16.666666666666664"/>
+                                <rect key="frame" x="189" y="64" width="36" height="16.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7j-c6-Xdz">
-                                <rect key="frame" x="31.000000000000014" y="194.66666666666666" width="223.33333333333337" height="57.666666666666657"/>
+                                <rect key="frame" x="31" y="194.5" width="223" height="57.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Look at the back side of your reef and connect your ">
                                         <attributes>
@@ -412,21 +412,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cycling Solution Diagram" translatesAutoresizingMaskIntoConstraints="NO" id="Ja6-yp-gRr">
-                                <rect key="frame" x="80" y="326" width="215" height="170"/>
+                                <rect key="frame" x="80" y="368" width="254" height="170"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="170" id="nQx-EP-8v6"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Water Design-1" translatesAutoresizingMaskIntoConstraints="NO" id="SbV-Lt-ZiW">
-                                <rect key="frame" x="0.0" y="571" width="375" height="241"/>
+                                <rect key="frame" x="0.0" y="613" width="414" height="283"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAi-cu-LcI">
-                                <rect key="frame" x="48" y="705" width="279" height="45"/>
+                                <rect key="frame" x="67.5" y="789" width="279" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="kbO-d9-Ynf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
-                                <state key="normal" title="Complete setup!" backgroundImage="Primary Setup-Btn">
+                                <state key="normal" title="Complete" backgroundImage="Primary Setup-Btn">
                                     <color key="titleColor" red="0.96861833330000002" green="0.96862131360000003" blue="0.96862787009999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
@@ -434,7 +434,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Install Your reef Solutions" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EfM-7U-wPe">
-                                <rect key="frame" x="31" y="115.66666666666669" width="240" height="74"/>
+                                <rect key="frame" x="31" y="115.5" width="240" height="74"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="gPQ-WN-XGK"/>
                                 </constraints>
@@ -453,7 +453,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9e-Ly-Zrx">
-                                <rect key="frame" x="48" y="750" width="279" height="28"/>
+                                <rect key="frame" x="67.5" y="834" width="279" height="28"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                 <state key="normal" title="Setup later">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -503,11 +503,11 @@
             <objects>
                 <viewController id="3o9-q2-bYO" customClass="ChooseYourGrowVC" customModule="reef" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nlh-Vq-qq6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Germinate" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8LE-75-oeg">
-                                <rect key="frame" x="158" y="63.999999999999993" width="59" height="16.666666666666664"/>
+                                <rect key="frame" x="177.5" y="64" width="59" height="16.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16.5" id="5IJ-Oa-O9f"/>
                                 </constraints>
@@ -516,7 +516,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap below when you’ve selected the strain you’d like to grow." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjw-DC-fvK">
-                                <rect key="frame" x="31" y="194.66666666666666" width="186" height="60"/>
+                                <rect key="frame" x="31" y="194.5" width="186" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="35d-jr-c3H"/>
                                 </constraints>
@@ -525,21 +525,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="germinate Image" translatesAutoresizingMaskIntoConstraints="NO" id="eWb-Ai-q5x">
-                                <rect key="frame" x="130.66666666666666" y="329.66666666666669" width="114" height="100"/>
+                                <rect key="frame" x="150" y="329.5" width="114" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="QiI-aM-mwf"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Water Design-1" translatesAutoresizingMaskIntoConstraints="NO" id="yd1-uc-JcC">
-                                <rect key="frame" x="0.0" y="494" width="375" height="318"/>
+                                <rect key="frame" x="0.0" y="494" width="414" height="402"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pyq-h6-ql9">
-                                <rect key="frame" x="48" y="705" width="279" height="45"/>
+                                <rect key="frame" x="67.5" y="789" width="279" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="mQy-9L-q4V"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
-                                <state key="normal" title="Select strain" backgroundImage="Primary Setup-Btn">
+                                <state key="normal" title="Pick strain" backgroundImage="Primary Setup-Btn">
                                     <color key="titleColor" red="0.96861833330000002" green="0.96862131360000003" blue="0.96862787009999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
@@ -547,7 +547,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Your Grow." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="urT-Gv-Mf7">
-                                <rect key="frame" x="31" y="115.66666666666669" width="200" height="74"/>
+                                <rect key="frame" x="31" y="115.5" width="200" height="74"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="74" id="rZL-Bj-oLo"/>
                                     <constraint firstAttribute="width" constant="200" id="vHI-lM-upj"/>
@@ -557,7 +557,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IzZ-1B-7Yg">
-                                <rect key="frame" x="0.0" y="58.666666666666657" width="75" height="27"/>
+                                <rect key="frame" x="0.0" y="59" width="75" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="csP-go-fGq"/>
                                     <constraint firstAttribute="height" constant="27" id="rab-7Y-9Ch"/>
@@ -605,15 +605,15 @@
             <objects>
                 <tableViewController title="Select Strain" id="iAc-Yv-Hab" customClass="SelectStrainVC" customModule="reef" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zvP-no-bQl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="jbM-jj-kbB">
-                                <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jbM-jj-kbB" id="izI-r9-RUY">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -640,31 +640,31 @@
             <objects>
                 <viewController id="ATd-ZG-q93" customClass="SeedTypeVC" customModule="reef" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jFV-H0-75k">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seed type" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AfI-C8-DaS">
-                                <rect key="frame" x="159.66666666666666" y="63.999999999999993" width="56" height="16.666666666666664"/>
+                                <rect key="frame" x="179" y="64" width="56" height="16.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the type of seeds that you’re going to grow in reef." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vh0-lk-FwU">
-                                <rect key="frame" x="31" y="194.66666666666666" width="186" height="38.333333333333343"/>
+                                <rect key="frame" x="31" y="194.5" width="186" height="38.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Seed Type Image" translatesAutoresizingMaskIntoConstraints="NO" id="PLf-r9-oTY">
-                                <rect key="frame" x="239" y="115.66666666666669" width="86" height="64"/>
+                                <rect key="frame" x="239" y="115.5" width="145" height="64"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXr-ch-gbb">
-                                <rect key="frame" x="48" y="705" width="279" height="45"/>
+                                <rect key="frame" x="67.5" y="789" width="279" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="ltG-cq-gWQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
-                                <state key="normal" title="Select seed type" backgroundImage="Primary Setup-Btn">
+                                <state key="normal" title="Confirm" backgroundImage="Primary Setup-Btn">
                                     <color key="titleColor" red="0.96861833330000002" green="0.96862131360000003" blue="0.96862787009999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
@@ -672,7 +672,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alohaberry- Hybrid" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71D-33-KFJ">
-                                <rect key="frame" x="31" y="115.66666666666669" width="200" height="74"/>
+                                <rect key="frame" x="31" y="115.5" width="200" height="74"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="BIf-Dz-SR7"/>
                                 </constraints>
@@ -691,7 +691,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZZ-On-UVg">
-                                <rect key="frame" x="31" y="258" width="313" height="82"/>
+                                <rect key="frame" x="31" y="544" width="352" height="92.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hZZ-On-UVg" secondAttribute="height" multiplier="80:21" id="PFa-Qi-yHs"/>
                                 </constraints>
@@ -701,19 +701,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Regular" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4Y-ZD-fuw">
-                                <rect key="frame" x="81" y="273" width="46.666666666666657" height="18"/>
+                                <rect key="frame" x="106" y="559" width="47" height="18"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="13"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="These seeds can be either male or female. Only females produce flower." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfx-zp-iq3">
-                                <rect key="frame" x="81" y="291" width="243" height="30.333333333333314"/>
+                                <rect key="frame" x="106" y="577" width="257" height="30.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="11"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRK-qz-eB7">
-                                <rect key="frame" x="31" y="355" width="313" height="82.333333333333314"/>
+                                <rect key="frame" x="31" y="349.5" width="352" height="92.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="wRK-qz-eB7" secondAttribute="height" multiplier="80:21" id="TGg-tt-edK"/>
                                 </constraints>
@@ -723,19 +723,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feminized" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tov-Oc-o1c">
-                                <rect key="frame" x="81" y="370" width="62.666666666666657" height="18"/>
+                                <rect key="frame" x="106" y="364.5" width="62.5" height="18"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="13"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="These seeds are always female and will produce flower during harvest." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZ0-vL-3KS">
-                                <rect key="frame" x="81" y="388" width="223" height="30.333333333333314"/>
+                                <rect key="frame" x="106" y="382.5" width="237" height="30.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="11"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="luk-Bt-O8b">
-                                <rect key="frame" x="31" y="451.66666666666669" width="313" height="82.000000000000057"/>
+                                <rect key="frame" x="31" y="447" width="352" height="92"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="luk-Bt-O8b" secondAttribute="height" multiplier="80:21" id="6SD-FZ-Shp"/>
                                 </constraints>
@@ -745,13 +745,35 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto-Flower" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOj-H5-6QR">
-                                <rect key="frame" x="81" y="466.66666666666669" width="75" height="18"/>
+                                <rect key="frame" x="106" y="462" width="75" height="18"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="13"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="These seeds automatically flower without a need for a “light-trigger”" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQy-fu-ToQ">
-                                <rect key="frame" x="81" y="484.66666666666669" width="223" height="30.333333333333314"/>
+                                <rect key="frame" x="106" y="480" width="237" height="30.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="11"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZv-Er-dA3">
+                                <rect key="frame" x="31" y="252" width="352" height="92.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wZv-Er-dA3" secondAttribute="height" multiplier="80:21" id="6Dn-A9-I7Z"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Unselected seed button"/>
+                                <connections>
+                                    <action selector="selectedClone:" destination="ATd-ZG-q93" eventType="touchUpInside" id="QLJ-OE-4o4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clone" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lex-zU-21M">
+                                <rect key="frame" x="106" y="267" width="35.5" height="18"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="13"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best way to start a reef grow. A clone is a cutting from a mother plant." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTq-J8-He7">
+                                <rect key="frame" x="106" y="285" width="257" height="30.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="11"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -760,8 +782,10 @@
                         <viewLayoutGuide key="safeArea" id="lHo-7j-Ely"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="hZZ-On-UVg" firstAttribute="top" secondItem="luk-Bt-O8b" secondAttribute="bottom" constant="5" id="016-pc-d4f"/>
                             <constraint firstItem="wRK-qz-eB7" firstAttribute="trailing" secondItem="hZZ-On-UVg" secondAttribute="trailing" id="0YF-7u-Of5"/>
-                            <constraint firstItem="lHo-7j-Ely" firstAttribute="trailing" secondItem="PLf-r9-oTY" secondAttribute="trailing" constant="50" id="1Ay-Jt-0ca"/>
+                            <constraint firstItem="lHo-7j-Ely" firstAttribute="trailing" secondItem="PLf-r9-oTY" secondAttribute="trailing" constant="30" id="1Ay-Jt-0ca"/>
+                            <constraint firstItem="eTq-J8-He7" firstAttribute="leading" secondItem="lex-zU-21M" secondAttribute="leading" id="1rh-Hn-sH7"/>
                             <constraint firstItem="jQy-fu-ToQ" firstAttribute="leading" secondItem="TOj-H5-6QR" secondAttribute="leading" id="4n1-sB-HUl"/>
                             <constraint firstItem="luk-Bt-O8b" firstAttribute="width" secondItem="luk-Bt-O8b" secondAttribute="height" multiplier="80:21" id="5qc-R0-CuR"/>
                             <constraint firstItem="tZ0-vL-3KS" firstAttribute="leading" secondItem="Tov-Oc-o1c" secondAttribute="leading" id="5uC-7a-r4L"/>
@@ -769,18 +793,24 @@
                             <constraint firstItem="PLf-r9-oTY" firstAttribute="top" secondItem="71D-33-KFJ" secondAttribute="top" id="6EJ-5l-UQA"/>
                             <constraint firstItem="lHo-7j-Ely" firstAttribute="trailing" secondItem="hZZ-On-UVg" secondAttribute="trailing" constant="31" id="8pI-un-XZH"/>
                             <constraint firstItem="71D-33-KFJ" firstAttribute="leading" secondItem="lHo-7j-Ely" secondAttribute="leading" constant="31" id="A2q-wl-MIm"/>
+                            <constraint firstItem="eTq-J8-He7" firstAttribute="trailing" secondItem="wZv-Er-dA3" secondAttribute="trailing" constant="-20" id="D0D-jZ-QO0"/>
+                            <constraint firstItem="wZv-Er-dA3" firstAttribute="trailing" secondItem="wRK-qz-eB7" secondAttribute="trailing" id="ETu-0g-AnA"/>
                             <constraint firstItem="AXr-ch-gbb" firstAttribute="centerX" secondItem="lHo-7j-Ely" secondAttribute="centerX" id="JwK-xv-dfc"/>
+                            <constraint firstItem="wZv-Er-dA3" firstAttribute="leading" secondItem="wRK-qz-eB7" secondAttribute="leading" id="LxY-b7-twy"/>
                             <constraint firstItem="PLf-r9-oTY" firstAttribute="bottom" secondItem="71D-33-KFJ" secondAttribute="bottom" constant="-10" id="Lyw-pY-6Bx"/>
+                            <constraint firstItem="wZv-Er-dA3" firstAttribute="top" secondItem="Vh0-lk-FwU" secondAttribute="bottom" constant="19" id="Mg0-fk-vd5"/>
                             <constraint firstItem="O4Y-ZD-fuw" firstAttribute="top" secondItem="hZZ-On-UVg" secondAttribute="top" constant="15" id="O88-4N-Ahr"/>
                             <constraint firstItem="jQy-fu-ToQ" firstAttribute="top" secondItem="TOj-H5-6QR" secondAttribute="bottom" id="OB6-pf-S5Q"/>
                             <constraint firstItem="Vh0-lk-FwU" firstAttribute="top" secondItem="71D-33-KFJ" secondAttribute="bottom" constant="5" id="PS1-EU-sa9"/>
                             <constraint firstItem="lHo-7j-Ely" firstAttribute="bottom" secondItem="AXr-ch-gbb" secondAttribute="bottom" constant="28" id="RrG-21-uz8"/>
                             <constraint firstItem="FZH-xb-EsW" firstAttribute="centerY" secondItem="AfI-C8-DaS" secondAttribute="centerY" id="TS0-2A-e0q"/>
-                            <constraint firstItem="luk-Bt-O8b" firstAttribute="top" secondItem="wRK-qz-eB7" secondAttribute="bottom" constant="14.333333333333314" id="Tlv-eP-4Jn"/>
+                            <constraint firstItem="luk-Bt-O8b" firstAttribute="top" secondItem="wRK-qz-eB7" secondAttribute="bottom" constant="5" id="Tlv-eP-4Jn"/>
                             <constraint firstItem="FZH-xb-EsW" firstAttribute="leading" secondItem="lHo-7j-Ely" secondAttribute="leading" id="UjH-LE-03y"/>
                             <constraint firstItem="PLf-r9-oTY" firstAttribute="leading" secondItem="71D-33-KFJ" secondAttribute="trailing" constant="8" id="WgG-jf-AG9"/>
-                            <constraint firstItem="TOj-H5-6QR" firstAttribute="leading" secondItem="luk-Bt-O8b" secondAttribute="leading" constant="50" id="YfS-hr-bVb"/>
-                            <constraint firstItem="O4Y-ZD-fuw" firstAttribute="leading" secondItem="hZZ-On-UVg" secondAttribute="leading" constant="50" id="ZES-N3-d0i"/>
+                            <constraint firstItem="lex-zU-21M" firstAttribute="leading" secondItem="wZv-Er-dA3" secondAttribute="leading" constant="75" id="XGw-9q-dTe"/>
+                            <constraint firstItem="TOj-H5-6QR" firstAttribute="leading" secondItem="luk-Bt-O8b" secondAttribute="leading" constant="75" id="YfS-hr-bVb"/>
+                            <constraint firstItem="O4Y-ZD-fuw" firstAttribute="leading" secondItem="hZZ-On-UVg" secondAttribute="leading" constant="75" id="ZES-N3-d0i"/>
+                            <constraint firstItem="wRK-qz-eB7" firstAttribute="top" secondItem="wZv-Er-dA3" secondAttribute="bottom" constant="5" id="ZrX-g4-PjG"/>
                             <constraint firstItem="luk-Bt-O8b" firstAttribute="leading" secondItem="wRK-qz-eB7" secondAttribute="leading" id="bbx-yn-tAI"/>
                             <constraint firstItem="hZZ-On-UVg" firstAttribute="leading" secondItem="lHo-7j-Ely" secondAttribute="leading" constant="31" id="cEy-jO-Gxp"/>
                             <constraint firstItem="AfI-C8-DaS" firstAttribute="centerX" secondItem="lHo-7j-Ely" secondAttribute="centerX" id="cWZ-q2-saT"/>
@@ -789,18 +819,19 @@
                             <constraint firstItem="Tov-Oc-o1c" firstAttribute="top" secondItem="wRK-qz-eB7" secondAttribute="top" constant="15" id="fKZ-bO-m2C"/>
                             <constraint firstItem="jQy-fu-ToQ" firstAttribute="trailing" secondItem="luk-Bt-O8b" secondAttribute="trailing" constant="-40" id="fNI-A0-Gy6"/>
                             <constraint firstItem="luk-Bt-O8b" firstAttribute="trailing" secondItem="wRK-qz-eB7" secondAttribute="trailing" id="ffe-0k-ygb"/>
+                            <constraint firstItem="lex-zU-21M" firstAttribute="top" secondItem="wZv-Er-dA3" secondAttribute="top" constant="15" id="g18-jq-ixP"/>
                             <constraint firstItem="AfI-C8-DaS" firstAttribute="top" secondItem="lHo-7j-Ely" secondAttribute="top" constant="20" id="hDM-ql-KFj"/>
                             <constraint firstItem="wRK-qz-eB7" firstAttribute="leading" secondItem="hZZ-On-UVg" secondAttribute="leading" id="hEq-Jd-BVV"/>
-                            <constraint firstItem="Tov-Oc-o1c" firstAttribute="leading" secondItem="wRK-qz-eB7" secondAttribute="leading" constant="50" id="ixr-dP-efU"/>
+                            <constraint firstItem="Tov-Oc-o1c" firstAttribute="leading" secondItem="wRK-qz-eB7" secondAttribute="leading" constant="75" id="ixr-dP-efU"/>
                             <constraint firstItem="luk-Bt-O8b" firstAttribute="width" secondItem="luk-Bt-O8b" secondAttribute="height" multiplier="80:21" id="jLw-eF-umu"/>
                             <constraint firstItem="TOj-H5-6QR" firstAttribute="top" secondItem="luk-Bt-O8b" secondAttribute="top" constant="15" id="jzd-RD-qLg"/>
                             <constraint firstItem="Vh0-lk-FwU" firstAttribute="width" secondItem="71D-33-KFJ" secondAttribute="width" multiplier="0.93" id="kaM-hW-jj9"/>
+                            <constraint firstItem="wZv-Er-dA3" firstAttribute="width" secondItem="wZv-Er-dA3" secondAttribute="height" multiplier="80:21" id="ml4-2A-UEL"/>
                             <constraint firstItem="71D-33-KFJ" firstAttribute="top" secondItem="AfI-C8-DaS" secondAttribute="bottom" constant="35" id="nYI-Bt-rqO"/>
+                            <constraint firstItem="eTq-J8-He7" firstAttribute="top" secondItem="lex-zU-21M" secondAttribute="bottom" id="sFG-uU-kfP"/>
                             <constraint firstItem="dfx-zp-iq3" firstAttribute="top" secondItem="O4Y-ZD-fuw" secondAttribute="bottom" id="st7-Si-5nr"/>
                             <constraint firstItem="Vh0-lk-FwU" firstAttribute="leading" secondItem="71D-33-KFJ" secondAttribute="leading" id="tjg-P8-AHM"/>
                             <constraint firstItem="wRK-qz-eB7" firstAttribute="width" secondItem="wRK-qz-eB7" secondAttribute="height" multiplier="80:21" id="uI0-l5-0BP"/>
-                            <constraint firstItem="wRK-qz-eB7" firstAttribute="top" secondItem="hZZ-On-UVg" secondAttribute="bottom" constant="15" id="uK0-S7-Bjp"/>
-                            <constraint firstItem="hZZ-On-UVg" firstAttribute="top" secondItem="Vh0-lk-FwU" secondAttribute="bottom" constant="25" id="vCG-TP-RtX"/>
                             <constraint firstItem="dfx-zp-iq3" firstAttribute="trailing" secondItem="hZZ-On-UVg" secondAttribute="trailing" constant="-20" id="z9n-MD-OVj"/>
                         </constraints>
                     </view>
@@ -808,6 +839,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="autoFlowerButton" destination="luk-Bt-O8b" id="uZ2-fB-y1b"/>
+                        <outlet property="cloneButton" destination="wZv-Er-dA3" id="vkQ-3Q-12i"/>
                         <outlet property="feminizedButton" destination="wRK-qz-eB7" id="j4v-9j-cWu"/>
                         <outlet property="regularButton" destination="hZZ-On-UVg" id="n0j-zW-N7R"/>
                         <outlet property="seedTypeLabel" destination="71D-33-KFJ" id="SFB-Cu-0V0"/>
@@ -823,40 +855,40 @@
             <objects>
                 <viewController id="Os5-Ho-ljj" customClass="PlantSeedVC" customModule="reef" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QyC-Rn-Xim">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plant seed" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aV6-5h-D5r">
-                                <rect key="frame" x="158.66666666666666" y="63.999999999999993" width="58" height="16.666666666666664"/>
+                                <rect key="frame" x="178" y="64" width="58" height="16.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap below when you’ve planted your seed in the reef grow capsule." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6jv-em-GKS">
-                                <rect key="frame" x="31" y="194.66666666666666" width="186" height="57.666666666666657"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap below when you’ve planted your seed or clone in the reef grow capsule." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6jv-em-GKS">
+                                <rect key="frame" x="31" y="194.5" width="186" height="57.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Plant Seed Image" translatesAutoresizingMaskIntoConstraints="NO" id="qfe-Zr-S9Q">
-                                <rect key="frame" x="140" y="277.33333333333331" width="95" height="170"/>
+                                <rect key="frame" x="140" y="277" width="134" height="170"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="170" id="bzr-JM-scT"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Water Design-1" translatesAutoresizingMaskIntoConstraints="NO" id="pW2-Sn-98Y">
-                                <rect key="frame" x="0.0" y="587" width="375" height="225"/>
+                                <rect key="frame" x="0.0" y="647.5" width="414" height="248.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="pW2-Sn-98Y" secondAttribute="height" multiplier="375:225" id="hPI-Tb-wtS"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jc-04-Fiu">
-                                <rect key="frame" x="48" y="705" width="279" height="45"/>
+                                <rect key="frame" x="67.5" y="789" width="279" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="iMQ-65-gHZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
-                                <state key="normal" title="Planted seed!" backgroundImage="Primary Setup-Btn">
+                                <state key="normal" title="Planted!" backgroundImage="Primary Setup-Btn">
                                     <color key="titleColor" red="0.96861833330000002" green="0.96862131360000003" blue="0.96862787009999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
@@ -864,7 +896,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plant Your Seed." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYH-zb-ZK9">
-                                <rect key="frame" x="31" y="115.66666666666669" width="200" height="74"/>
+                                <rect key="frame" x="31" y="115.5" width="200" height="74"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="5mR-Fd-5SJ"/>
                                 </constraints>
@@ -883,7 +915,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J63-5P-HfJ">
-                                <rect key="frame" x="48" y="750" width="279" height="28"/>
+                                <rect key="frame" x="67.5" y="834" width="279" height="28"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                 <state key="normal" title="Plant seed later">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -934,41 +966,41 @@
             <objects>
                 <viewController id="5lo-sS-cga" customClass="SeedSproutedVC" customModule="reef" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0w6-Gh-5Hh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plant seed" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmw-Zk-VuH">
-                                <rect key="frame" x="158.66666666666666" y="63.999999999999993" width="58" height="16.666666666666664"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Sprout" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmw-Zk-VuH">
+                                <rect key="frame" x="164.5" y="64" width="85" height="16.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap below when you confirm that your seed has successfully sprouted. Usually takes 5-8 days." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxV-PT-QkP">
-                                <rect key="frame" x="31" y="194.66666666666666" width="214" height="57.666666666666657"/>
+                                <rect key="frame" x="31" y="194.5" width="214" height="57.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Seed Type Image" translatesAutoresizingMaskIntoConstraints="NO" id="naT-ri-7Mj">
-                                <rect key="frame" x="147.66666666666666" y="336" width="80" height="150"/>
+                                <rect key="frame" x="167" y="378" width="80" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="Fon-lh-Amw"/>
                                     <constraint firstAttribute="height" constant="150" id="xyu-3L-O66"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Water Design-1" translatesAutoresizingMaskIntoConstraints="NO" id="SEa-G7-Qeh">
-                                <rect key="frame" x="0.0" y="587" width="375" height="225"/>
+                                <rect key="frame" x="0.0" y="647.5" width="414" height="248.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="SEa-G7-Qeh" secondAttribute="height" multiplier="375:225" id="wGp-1w-o3f"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAE-s1-yF1">
-                                <rect key="frame" x="48" y="705" width="279" height="45"/>
+                                <rect key="frame" x="-72" y="789" width="558" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="0UG-P5-C8H"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
-                                <state key="normal" title="Seed sprouted!" backgroundImage="Primary Setup-Btn">
+                                <state key="normal" title="Spouted" backgroundImage="Primary Setup-Btn">
                                     <color key="titleColor" red="0.96861833330000002" green="0.96862131360000003" blue="0.96862787009999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
@@ -976,7 +1008,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did Your Seed Sprout?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjD-KV-rOx">
-                                <rect key="frame" x="31" y="115.66666666666669" width="230" height="74"/>
+                                <rect key="frame" x="31" y="115.5" width="230" height="74"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="230" id="oLQ-oB-Wnj"/>
                                 </constraints>
@@ -995,7 +1027,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFd-ZN-cDf">
-                                <rect key="frame" x="48" y="750" width="279" height="28"/>
+                                <rect key="frame" x="-72" y="834" width="558" height="28"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                 <state key="normal" title="Come back later">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1042,11 +1074,11 @@
             <objects>
                 <viewController id="U5d-hf-bnV" customClass="IntroduceFishVC" customModule="reef" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yb6-KI-RVO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Introduce Fish" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIN-Bg-225">
-                                <rect key="frame" x="148.33333333333334" y="63.999999999999993" width="78.666666666666657" height="16.666666666666664"/>
+                                <rect key="frame" x="168" y="64" width="78.5" height="16.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16.670000000000002" id="Ail-3Q-Fej"/>
                                 </constraints>
@@ -1055,7 +1087,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the link to learn more about which type and how many fish to add." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcK-w5-uN4">
-                                <rect key="frame" x="31" y="194.66666666666666" width="186" height="57.666666666666657"/>
+                                <rect key="frame" x="31" y="194.5" width="186" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57.670000000000002" id="CKT-BX-cOk"/>
                                 </constraints>
@@ -1064,10 +1096,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Water Design-1" translatesAutoresizingMaskIntoConstraints="NO" id="24x-22-rxQ">
-                                <rect key="frame" x="0.0" y="302.33333333333326" width="375" height="509.66666666666674"/>
+                                <rect key="frame" x="0.0" y="302.5" width="414" height="593.5"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYb-cL-C5m">
-                                <rect key="frame" x="48" y="705" width="279" height="45"/>
+                                <rect key="frame" x="48" y="789" width="318" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="U6c-N8-P4q"/>
                                 </constraints>
@@ -1080,7 +1112,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time To Add Fish." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="878-Dd-m39">
-                                <rect key="frame" x="31" y="115.66666666666669" width="200" height="74"/>
+                                <rect key="frame" x="31" y="115.5" width="200" height="74"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="74" id="Y8p-gm-0HE"/>
                                     <constraint firstAttribute="width" constant="200" id="xEe-nO-bdT"/>
@@ -1101,10 +1133,10 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clown-fish" translatesAutoresizingMaskIntoConstraints="NO" id="MJd-lH-UoQ">
-                                <rect key="frame" x="120" y="393" width="135" height="171"/>
+                                <rect key="frame" x="120" y="393" width="174" height="171"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaz-Lw-jD8">
-                                <rect key="frame" x="48" y="750" width="279" height="28"/>
+                                <rect key="frame" x="48" y="834" width="318" height="28"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                 <state key="normal" title="Learn about adding fish">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1145,7 +1177,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKy-0v-3YL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5974" y="-1074"/>
+            <point key="canvasLocation" x="5910" y="-1074"/>
         </scene>
         <!--AnalyticsVC-->
         <scene sceneID="gcy-WW-8hg">
@@ -1182,26 +1214,26 @@
             <objects>
                 <viewController id="dch-4G-ezN" customClass="HomeVC" customModule="reef" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sKy-fh-gou">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Grow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yp7-9H-GHq">
-                                <rect key="frame" x="20" y="74" width="207" height="45.666666666666657"/>
+                                <rect key="frame" x="20" y="74" width="207" height="45.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="33"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Northern Lights - Hybrid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEz-9A-hcB">
-                                <rect key="frame" x="25" y="119.66666666666669" width="177" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEz-9A-hcB">
+                                <rect key="frame" x="25" y="119.5" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wUZ-gQ-4IL" userLabel="Progress View">
-                                <rect key="frame" x="0.0" y="191.66666666666666" width="375" height="380.33333333333337"/>
+                                <rect key="frame" x="0.0" y="169.5" width="414" height="486.5"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JXc-F6-txw">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="380.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="486.5"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="20" minimumInteritemSpacing="20" id="Nme-fx-NQt">
                                             <size key="itemSize" width="221" height="362"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -1210,14 +1242,14 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProgressCell" id="USF-nz-QlW" customClass="ProgressCell" customModule="reef" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="12.666666666666666" width="221" height="355.33333333333331"/>
+                                                <rect key="frame" x="20" y="65.5" width="221" height="355.33333333333331"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="O5n-rj-Ja2">
                                                     <rect key="frame" x="0.0" y="0.0" width="221" height="355.33333333333331"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ecosystem" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4l-gO-2uJ">
-                                                            <rect key="frame" x="14" y="14.999999999999996" width="123" height="34.666666666666657"/>
+                                                            <rect key="frame" x="14" y="15" width="123" height="34.5"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="25"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -1232,20 +1264,20 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to finish setup" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ihm-jF-4gM">
-                                                            <rect key="frame" x="14" y="49.666666666666664" width="108" height="17.999999999999993"/>
+                                                            <rect key="frame" x="14" y="49.5" width="108" height="18"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TNZ-3e-WJQ">
-                                                            <rect key="frame" x="10" y="335.33333333333331" width="201" height="10"/>
+                                                            <rect key="frame" x="10" y="335.5" width="201" height="10"/>
                                                             <color key="backgroundColor" red="0.83136469130000001" green="0.83136725430000002" blue="0.83137291670000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="10" id="GYx-ak-0CE"/>
                                                             </constraints>
                                                         </view>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="koi" translatesAutoresizingMaskIntoConstraints="NO" id="A1H-Ox-dqj">
-                                                            <rect key="frame" x="65.666666666666671" y="134.33333333333334" width="90.000000000000014" height="87"/>
+                                                            <rect key="frame" x="65.5" y="134.5" width="90" height="87"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="90" id="C7V-jf-x2l"/>
                                                             </constraints>
@@ -1256,7 +1288,7 @@
                                                             <color key="backgroundColor" red="0.83136469130000001" green="0.83136725430000002" blue="0.83137291670000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps Complete" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IzQ-8I-fq0">
-                                                            <rect key="frame" x="65" y="310" width="95.666666666666686" height="18"/>
+                                                            <rect key="frame" x="65" y="310" width="95.5" height="18"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -1307,7 +1339,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w5S-gf-fNG" userLabel="Tips View">
-                                <rect key="frame" x="25" y="615" width="330" height="75"/>
+                                <rect key="frame" x="25" y="699" width="369" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reef tips" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vf-XP-KBe">
                                         <rect key="frame" x="20" y="8" width="60" height="22"/>
@@ -1316,13 +1348,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wait until cycling is complete before adding any fish to your reef." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVZ-q3-cRZ">
-                                        <rect key="frame" x="20" y="29.999999999999996" width="235" height="35.666666666666657"/>
+                                        <rect key="frame" x="20" y="30" width="274" height="36"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="warningIcon" translatesAutoresizingMaskIntoConstraints="NO" id="hvt-36-TEV">
-                                        <rect key="frame" x="277" y="8" width="31" height="29"/>
+                                        <rect key="frame" x="316" y="8" width="31" height="29"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96861833330000002" green="0.96862131360000003" blue="0.96862787009999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1338,7 +1370,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ap4-zM-OiT" userLabel="Home Tab">
-                                <rect key="frame" x="9.3333333333333357" y="718" width="75" height="50"/>
+                                <rect key="frame" x="14.5" y="802" width="75" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="BnA-2s-EAr"/>
                                     <constraint firstAttribute="width" constant="75" id="kL1-Hz-aKZ"/>
@@ -1346,7 +1378,7 @@
                                 <state key="normal" backgroundImage="Home Selected"/>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKS-5y-9tJ" userLabel="Analytics Tab">
-                                <rect key="frame" x="115.66666666666669" y="727" width="50" height="32"/>
+                                <rect key="frame" x="130.5" y="811" width="50" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="QVQ-ac-BMx"/>
                                 </constraints>
@@ -1356,7 +1388,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wlb-Je-OJa" userLabel="Alerts Tab">
-                                <rect key="frame" x="209.33333333333334" y="727.66666666666663" width="50.000000000000028" height="31"/>
+                                <rect key="frame" x="234" y="811.5" width="50" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="Bo4-LK-V81"/>
                                 </constraints>
@@ -1366,7 +1398,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3N-MU-Lm7" userLabel="Settings Tab">
-                                <rect key="frame" x="303" y="726" width="50" height="34"/>
+                                <rect key="frame" x="337.5" y="810" width="50" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="Owd-Hu-8ZP"/>
                                 </constraints>
@@ -1375,16 +1407,40 @@
                                     <segue destination="n91-wb-Xmt" kind="presentation" animates="NO" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="pqZ-h0-Di8"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HIa-Jb-06M" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                <rect key="frame" x="132" y="378" width="150" height="150"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="6JR-in-Q1u"/>
+                                    <constraint firstAttribute="height" constant="150" id="nGu-Rm-uKW"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.59222418070000005" green="0.69099956750000002" blue="0.62352222199999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="ballScaleMultiple"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Getting data from reef..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cui-nS-KGs">
+                                <rect key="frame" x="117.5" y="319.5" width="179.5" height="23.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2A7-df-Vaq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="HIa-Jb-06M" firstAttribute="top" secondItem="Cui-nS-KGs" secondAttribute="bottom" constant="35" id="0Ch-OZ-0mF"/>
                             <constraint firstItem="2A7-df-Vaq" firstAttribute="trailing" secondItem="wUZ-gQ-4IL" secondAttribute="trailing" id="7aM-s6-Der"/>
                             <constraint firstItem="2A7-df-Vaq" firstAttribute="bottom" secondItem="ap4-zM-OiT" secondAttribute="bottom" constant="10" id="9JC-t4-pjY"/>
                             <constraint firstItem="wlb-Je-OJa" firstAttribute="centerY" secondItem="lKS-5y-9tJ" secondAttribute="centerY" id="BJ2-MF-cMr"/>
                             <constraint firstItem="wlb-Je-OJa" firstAttribute="centerX" secondItem="2A7-df-Vaq" secondAttribute="centerX" multiplier="1.25" id="H2Q-JQ-Ubh"/>
                             <constraint firstItem="P3N-MU-Lm7" firstAttribute="centerY" secondItem="wlb-Je-OJa" secondAttribute="centerY" id="Hto-02-53a"/>
+                            <constraint firstItem="HIa-Jb-06M" firstAttribute="centerX" secondItem="2A7-df-Vaq" secondAttribute="centerX" id="MG0-a6-xTs"/>
                             <constraint firstItem="wUZ-gQ-4IL" firstAttribute="leading" secondItem="2A7-df-Vaq" secondAttribute="leading" id="Mmp-Fl-YQZ"/>
+                            <constraint firstItem="Cui-nS-KGs" firstAttribute="centerX" secondItem="HIa-Jb-06M" secondAttribute="centerX" id="QVf-P7-qpb"/>
+                            <constraint firstItem="HIa-Jb-06M" firstAttribute="centerY" secondItem="2A7-df-Vaq" secondAttribute="centerY" id="WAH-Qd-T3r"/>
                             <constraint firstItem="nEz-9A-hcB" firstAttribute="top" secondItem="Yp7-9H-GHq" secondAttribute="bottom" id="b6N-6o-Dsx"/>
                             <constraint firstItem="ap4-zM-OiT" firstAttribute="top" secondItem="w5S-gf-fNG" secondAttribute="bottom" constant="28" id="fHS-dl-S9t"/>
                             <constraint firstItem="lKS-5y-9tJ" firstAttribute="centerX" secondItem="2A7-df-Vaq" secondAttribute="centerX" multiplier="0.75" id="fPX-3k-4hV"/>
@@ -1404,6 +1460,10 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="JXc-F6-txw" id="pLz-Pu-mdN"/>
+                        <outlet property="currentGrowLabel" destination="Yp7-9H-GHq" id="xg4-5Y-xgT"/>
+                        <outlet property="growTipsView" destination="w5S-gf-fNG" id="GXC-FA-ywd"/>
+                        <outlet property="loadingIndicator" destination="HIa-Jb-06M" id="n7z-MS-5po"/>
+                        <outlet property="loadingLabel" destination="Cui-nS-KGs" id="koh-qc-Gb7"/>
                         <outlet property="notificationIcon" destination="wlb-Je-OJa" id="nVC-yt-Vwi"/>
                         <outlet property="strainLabel" destination="nEz-9A-hcB" id="Blv-Zh-zQ2"/>
                         <segue destination="yio-Gs-dEJ" kind="show" identifier="GerminationVC" id="MYB-Al-3vE"/>
@@ -1415,7 +1475,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QBb-aw-lWO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1172" y="-696"/>
+            <point key="canvasLocation" x="1172" y="-696.7016491754124"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oMl-ga-t6T">
@@ -1440,11 +1500,11 @@
             <objects>
                 <viewController id="yio-Gs-dEJ" customClass="GerminationVC" customModule="reef" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P1Z-TW-vfI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seed Germination" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsL-sw-eFK">
-                                <rect key="frame" x="30" y="104" width="240" height="98.666666666666686"/>
+                                <rect key="frame" x="30" y="104" width="240" height="98.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="qPt-yu-NCS"/>
                                 </constraints>
@@ -1453,31 +1513,31 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5-10" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smr-db-zzv">
-                                <rect key="frame" x="30.000000000000007" y="509.33333333333331" width="77.666666666666686" height="49.333333333333314"/>
+                                <rect key="frame" x="30" y="509" width="77.5" height="49.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18 Hours" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kq-0n-PT5">
-                                <rect key="frame" x="168" y="509.33333333333331" width="151.66666666666663" height="49.333333333333314"/>
+                                <rect key="frame" x="168" y="509" width="152" height="49.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AwG-wA-YHE">
-                                <rect key="frame" x="29.999999999999996" y="558.66666666666663" width="35.666666666666657" height="22"/>
+                                <rect key="frame" x="30" y="558.5" width="36" height="22"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daylight" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Myx-6b-CYm">
-                                <rect key="frame" x="168" y="558.66666666666663" width="61.333333333333343" height="22"/>
+                                <rect key="frame" x="168" y="558.5" width="61.5" height="22"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pYu-WY-H6q">
-                                <rect key="frame" x="30" y="219.33333333333337" width="240" height="240"/>
+                                <rect key="frame" x="30" y="219" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="Dsd-gW-Lfe"/>
                                 </constraints>
@@ -1489,7 +1549,7 @@ The quality of seeds can be detemined by their color and texture. Seeds should b
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seed reversed" translatesAutoresizingMaskIntoConstraints="NO" id="qId-qp-DYu">
-                                <rect key="frame" x="278.66666666666669" y="54" width="155" height="159"/>
+                                <rect key="frame" x="316" y="54" width="155" height="159"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woI-7s-IDz">
                                 <rect key="frame" x="0.0" y="54" width="100" height="27"/>
@@ -1502,7 +1562,7 @@ The quality of seeds can be detemined by their color and texture. Seeds should b
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1G-kZ-BDq">
-                                <rect key="frame" x="17" y="714" width="159" height="54"/>
+                                <rect key="frame" x="17" y="798" width="178.5" height="54"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="-3" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Get Started" backgroundImage="taskButton">
@@ -1513,7 +1573,7 @@ The quality of seeds can be detemined by their color and texture. Seeds should b
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgg-MB-hCb">
-                                <rect key="frame" x="199" y="714" width="160" height="54"/>
+                                <rect key="frame" x="218.5" y="798" width="179.5" height="54"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="-3" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Learn More" backgroundImage="learnMoreButton"/>
@@ -1577,11 +1637,11 @@ The quality of seeds can be detemined by their color and texture. Seeds should b
             <objects>
                 <viewController id="6mr-8N-xm2" customClass="SeedlingVC" customModule="reef" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ykB-jk-Klt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seedling Stage" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2u-jy-ZR8">
-                                <rect key="frame" x="30" y="104" width="240" height="98.666666666666686"/>
+                                <rect key="frame" x="30" y="104" width="240" height="98.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="oUC-X5-1xx"/>
                                 </constraints>
@@ -1590,13 +1650,13 @@ The quality of seeds can be detemined by their color and texture. Seeds should b
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2-3" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPK-V7-FD9">
-                                <rect key="frame" x="29.999999999999996" y="509.33333333333331" width="55.666666666666657" height="49.333333333333314"/>
+                                <rect key="frame" x="30" y="509" width="55.5" height="49.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNT-q0-YSZ">
-                                <rect key="frame" x="146" y="509.33333333333331" width="118.33333333333331" height="49.333333333333314"/>
+                                <rect key="frame" x="146" y="509" width="118.5" height="49.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="18 ">
                                         <attributes>
@@ -1616,19 +1676,19 @@ The quality of seeds can be detemined by their color and texture. Seeds should b
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weeks" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5h-Nl-6an">
-                                <rect key="frame" x="29.999999999999996" y="558.66666666666663" width="48.666666666666657" height="22"/>
+                                <rect key="frame" x="30" y="558.5" width="48.5" height="22"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daylight" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gx0-cU-RQN">
-                                <rect key="frame" x="146" y="558.66666666666663" width="61.333333333333343" height="22"/>
+                                <rect key="frame" x="146" y="558.5" width="61.5" height="22"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q18-v4-w5T">
-                                <rect key="frame" x="30" y="219.33333333333337" width="240" height="240"/>
+                                <rect key="frame" x="30" y="219" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="xms-WP-zIM"/>
                                 </constraints>
@@ -1640,7 +1700,7 @@ A healthy seedling will be vibrant and green. Seedlings are sensitive and don’
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vegetative" translatesAutoresizingMaskIntoConstraints="NO" id="nj0-3k-cto">
-                                <rect key="frame" x="289.66666666666669" y="54" width="171" height="171"/>
+                                <rect key="frame" x="328.5" y="54" width="171" height="171"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOd-xj-bzT">
                                 <rect key="frame" x="0.0" y="54" width="100" height="27"/>
@@ -1653,7 +1713,7 @@ A healthy seedling will be vibrant and green. Seedlings are sensitive and don’
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKd-3a-323">
-                                <rect key="frame" x="38" y="714" width="299" height="54"/>
+                                <rect key="frame" x="38" y="798" width="338" height="54"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="-3" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Learn More" backgroundImage="learnMoreButtonLrg"/>
@@ -1706,11 +1766,11 @@ A healthy seedling will be vibrant and green. Seedlings are sensitive and don’
             <objects>
                 <viewController id="w8D-wo-yqS" customClass="VegetativeVC" customModule="reef" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v48-8G-Clg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vegetative Stage" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlP-lp-1Yo">
-                                <rect key="frame" x="30" y="104" width="240" height="98.666666666666686"/>
+                                <rect key="frame" x="30" y="104" width="240" height="98.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="pGQ-fS-Wq7"/>
                                 </constraints>
@@ -1719,13 +1779,13 @@ A healthy seedling will be vibrant and green. Seedlings are sensitive and don’
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5-8" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zb-FW-iT1">
-                                <rect key="frame" x="29.999999999999996" y="509.33333333333331" width="55.666666666666657" height="49.333333333333314"/>
+                                <rect key="frame" x="30" y="509" width="55.5" height="49.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbp-RL-Ufy">
-                                <rect key="frame" x="146" y="509.33333333333331" width="118.33333333333331" height="49.333333333333314"/>
+                                <rect key="frame" x="146" y="509" width="118.5" height="49.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="18 ">
                                         <attributes>
@@ -1745,19 +1805,19 @@ A healthy seedling will be vibrant and green. Seedlings are sensitive and don’
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weeks" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6q-qK-Dad">
-                                <rect key="frame" x="29.999999999999996" y="558.66666666666663" width="48.666666666666657" height="22"/>
+                                <rect key="frame" x="30" y="558.5" width="48.5" height="22"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daylight" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ed-38-QFr">
-                                <rect key="frame" x="146" y="558.66666666666663" width="61.333333333333343" height="22"/>
+                                <rect key="frame" x="146" y="558.5" width="61.5" height="22"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hca-B5-dU6">
-                                <rect key="frame" x="30" y="219.33333333333337" width="240" height="240"/>
+                                <rect key="frame" x="30" y="219" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="Qj6-u9-YTs"/>
                                 </constraints>
@@ -1771,7 +1831,7 @@ You will be prompted to refill your tank with water when necessary and trim your
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vegetative" translatesAutoresizingMaskIntoConstraints="NO" id="BO7-fN-kUq">
-                                <rect key="frame" x="289.66666666666669" y="54" width="171" height="171"/>
+                                <rect key="frame" x="328.5" y="54" width="171" height="171"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBA-cC-bm9">
                                 <rect key="frame" x="0.0" y="54" width="100" height="27"/>
@@ -1784,7 +1844,7 @@ You will be prompted to refill your tank with water when necessary and trim your
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1R-4i-FDP">
-                                <rect key="frame" x="38" y="714" width="299" height="54"/>
+                                <rect key="frame" x="38" y="798" width="338" height="54"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="-3" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Learn More" backgroundImage="learnMoreButtonLrg"/>
@@ -1836,11 +1896,11 @@ You will be prompted to refill your tank with water when necessary and trim your
             <objects>
                 <viewController id="UeI-dg-bRP" customClass="FloweringVC" customModule="reef" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x9L-VI-8h6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flowering Stage" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPU-Fk-tps">
-                                <rect key="frame" x="30" y="104" width="240" height="98.666666666666686"/>
+                                <rect key="frame" x="30" y="104" width="240" height="98.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="TxI-D8-fGE"/>
                                 </constraints>
@@ -1849,13 +1909,13 @@ You will be prompted to refill your tank with water when necessary and trim your
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7-10" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="889-Oh-Mmn">
-                                <rect key="frame" x="30.000000000000007" y="509.33333333333331" width="77.666666666666686" height="49.333333333333314"/>
+                                <rect key="frame" x="30" y="509" width="77.5" height="49.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CzJ-7h-d0O">
-                                <rect key="frame" x="168" y="509.00000000000006" width="118" height="49.666666666666686"/>
+                                <rect key="frame" x="168" y="509" width="118" height="49.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="12 ">
                                         <attributes>
@@ -1875,19 +1935,19 @@ You will be prompted to refill your tank with water when necessary and trim your
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weeks" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZT-OS-dKs">
-                                <rect key="frame" x="29.999999999999996" y="558.66666666666663" width="48.666666666666657" height="22"/>
+                                <rect key="frame" x="30" y="558.5" width="48.5" height="22"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daylight" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0r0-fO-igF">
-                                <rect key="frame" x="168" y="558.66666666666663" width="61.333333333333343" height="22"/>
+                                <rect key="frame" x="168" y="558.5" width="61.5" height="22"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5b-3P-KhP">
-                                <rect key="frame" x="30" y="219.33333333333337" width="240" height="240"/>
+                                <rect key="frame" x="30" y="219" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="MUe-x0-2qt"/>
                                 </constraints>
@@ -1902,8 +1962,12 @@ Once the buds are fully formed, it’s time to harvest.</string>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cannabis leaf" translatesAutoresizingMaskIntoConstraints="NO" id="GSO-ir-86s">
-                                <rect key="frame" x="280" y="54" width="171" height="171"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cannabisLeafBlue" translatesAutoresizingMaskIntoConstraints="NO" id="GSO-ir-86s">
+                                <rect key="frame" x="341" y="54" width="125" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="KLh-vu-X0b"/>
+                                    <constraint firstAttribute="height" constant="125" id="akV-AL-pnt"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCe-ib-oNZ">
                                 <rect key="frame" x="0.0" y="54" width="100" height="27"/>
@@ -1916,7 +1980,7 @@ Once the buds are fully formed, it’s time to harvest.</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="od7-OU-u84">
-                                <rect key="frame" x="38" y="714" width="299" height="54"/>
+                                <rect key="frame" x="38" y="798" width="338" height="54"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="-3" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Learn More" backgroundImage="learnMoreButtonLrg"/>
@@ -1968,11 +2032,11 @@ Once the buds are fully formed, it’s time to harvest.</string>
             <objects>
                 <viewController id="LtQ-Zi-xZd" customClass="EcosystemVC" customModule="reef" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SXl-pk-xcy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reef Ecosystem" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sko-rh-Jol">
-                                <rect key="frame" x="30" y="104" width="240" height="98.666666666666686"/>
+                                <rect key="frame" x="30" y="104" width="240" height="98.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="TTD-X3-5HT"/>
                                 </constraints>
@@ -1981,31 +2045,31 @@ Once the buds are fully formed, it’s time to harvest.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqZ-V9-wij">
-                                <rect key="frame" x="30" y="509.33333333333331" width="22" height="49.333333333333314"/>
+                                <rect key="frame" x="30" y="509" width="22" height="49.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25 Gal" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcR-GJ-QLG">
-                                <rect key="frame" x="152" y="509.33333333333331" width="110.33333333333331" height="49.333333333333314"/>
+                                <rect key="frame" x="152" y="509" width="110.5" height="49.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goldfish" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHR-4n-Tf7">
-                                <rect key="frame" x="29.999999999999996" y="558.66666666666663" width="61.666666666666657" height="22"/>
+                                <rect key="frame" x="30" y="558.5" width="62" height="22"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aquarium" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xo0-zM-4e5">
-                                <rect key="frame" x="152" y="558.66666666666663" width="72.666666666666686" height="22"/>
+                                <rect key="frame" x="152" y="558.5" width="72.5" height="22"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3D9-He-zvl">
-                                <rect key="frame" x="30" y="219.33333333333337" width="240" height="240"/>
+                                <rect key="frame" x="30" y="219" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="eaf-ZQ-rb8"/>
                                 </constraints>
@@ -2021,7 +2085,7 @@ By processing the nutrients in their food your fish provide truly organic, bio-a
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="koi" translatesAutoresizingMaskIntoConstraints="NO" id="guX-Zh-qLH">
-                                <rect key="frame" x="293.66666666666669" y="54" width="125" height="125"/>
+                                <rect key="frame" x="331" y="54" width="125" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="125" id="eTx-ba-7Pp"/>
                                     <constraint firstAttribute="height" constant="125" id="euf-sY-fES"/>
@@ -2038,7 +2102,7 @@ By processing the nutrients in their food your fish provide truly organic, bio-a
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4h2-aA-LIp">
-                                <rect key="frame" x="17" y="714" width="159" height="54"/>
+                                <rect key="frame" x="17" y="798" width="178.5" height="54"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="-3" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Get Started" backgroundImage="taskButton">
@@ -2049,7 +2113,7 @@ By processing the nutrients in their food your fish provide truly organic, bio-a
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCr-zR-NBx">
-                                <rect key="frame" x="199" y="714" width="160" height="54"/>
+                                <rect key="frame" x="218.5" y="798" width="179.5" height="54"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="-3" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Learn More" backgroundImage="learnMoreButton"/>
@@ -2114,8 +2178,8 @@ By processing the nutrients in their food your fish provide truly organic, bio-a
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hp5-Eg-AOv"/>
-        <segue reference="M26-aA-TJw"/>
+        <segue reference="tpt-dB-iVj"/>
+        <segue reference="KuX-jQ-Rxn"/>
         <segue reference="9s7-Ff-tcP"/>
         <segue reference="65t-rM-FiB"/>
     </inferredMetricsTieBreakers>
@@ -2138,7 +2202,7 @@ By processing the nutrients in their food your fish provide truly organic, bio-a
         <image name="analytics Unselected" width="30" height="32"/>
         <image name="back arrow" width="17" height="27"/>
         <image name="backButton" width="17" height="27"/>
-        <image name="cannabis leaf" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="cannabisLeafBlue" width="96" height="96"/>
         <image name="clown-fish" width="170.66667175292969" height="170.66667175292969"/>
         <image name="germinate Image" width="114" height="108"/>
         <image name="koi" width="91" height="87"/>

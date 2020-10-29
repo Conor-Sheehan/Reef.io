@@ -35,7 +35,7 @@ class ProgressCell: UICollectionViewCell {
   
   let cellTitles = ["Ecosystem", "Germination", "Seedling", "Vegetative", "Flowering", "Harvest"]
   let cellImages = [R.image.koi(), R.image.germinateImage(), R.image.seedTypeImage(), R.image.vegetative(),
-                    R.image.cannabisLeaf(), R.image.harvest()]
+                    R.image.cannabisLeafBlue(), R.image.harvest()]
   
   let greenColor = UIColor(red: 0.59, green: 0.69, blue: 0.62, alpha: 1.0)
   let blueColor = UIColor(red: 0.18, green: 0.39, blue: 0.39, alpha: 1.0)
@@ -56,6 +56,7 @@ class ProgressCell: UICollectionViewCell {
         titleLabel.text = cellTitles[data.index]
         image.image = cellImages[data.index]
         stylizeContentView()
+        
         self.percentComplete = data.percentComplete
         self.index = data.index
         self.status = data.status
@@ -67,11 +68,15 @@ class ProgressCell: UICollectionViewCell {
         
         setCellColor()
         setStatus()
-        updateProgressBarLayout()
         setProgressHeaders()
         setSubtitle()
         setActionRequiredImage()
       }
+  }
+  
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    updateProgressBarLayout()
   }
   
   func setActionRequiredImage() {
